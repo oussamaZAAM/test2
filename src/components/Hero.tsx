@@ -9,9 +9,14 @@ type Props = {}
 
 export default function Hero({ }: Props) {
     return (
-        <div className='relative flex w-full px-48 py-32'>
+        <div className='relative flex w-full px-4 sm:px-12 xm:px-24 lg:px-36 xl:px-48 py-32'>
             <div className="parallax-bg absolute inset-0 bg-fixed bg-center"></div>
-            <div className="absolute top-0 left-0 w-full h-full z-20 bg-gradient-to-r from-white from-10% via-[#ffffffbf] via-45% to-[#ffffff00] to-90%"></div>
+            {/* Web Overlay  */}
+            <div className="hidden md:block absolute top-0 left-0 w-full h-full z-20 bg-gradient-to-r from-white from-10% via-[#ffffffbf] via-45% to-[#ffffff00] to-90%"></div>
+
+            {/* Mobile Overlay  */}
+            <div className="md:hidden block absolute top-0 left-0 w-full h-full z-20 bg-gradient-to-r from-white via-[#ffffffbf] via-50%"></div>
+
             <div className="flex flex-col justify-center items-center gap-12 z-50">
                 <div className="flex flex-col justify-center items-start gap-4">
                     <p className={taglineFont.className + " max-w-md whitespace-normal text-4xl"}>
