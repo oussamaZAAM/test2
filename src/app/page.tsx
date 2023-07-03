@@ -3,6 +3,7 @@
 import { Metadata } from 'next'
 import Navbar from '../components/Navbar'
 import Footer from '@/components/Footer';
+import Hero from '@/components/Hero';
  
 export const metadata: Metadata = {
   title: 'Welcome to AleeConseil',
@@ -11,11 +12,12 @@ export const metadata: Metadata = {
 
 export default function Home() {
   return (
-    <div className="flex flex-col justify-center items-center gap-12 bg-ac-gray w-full">
+    <div className="flex flex-col justify-center items-center bg-ac-gray w-full">
       {/* Navbar  */}
       <Navbar />
 
       {/* Hero  */}
+      <Hero />
 
       {/* Nos Services */}
 
