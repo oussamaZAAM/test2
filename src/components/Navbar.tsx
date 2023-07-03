@@ -5,7 +5,7 @@ import { BsSearch, BsXLg } from "react-icons/bs";
 import { HiMenuAlt2, HiOutlineArrowRight } from "react-icons/hi";
 
 
-const ibm = IBM_Plex_Sans_Condensed({ weight: "700", subsets: ['latin'] })
+const ibmFont = IBM_Plex_Sans_Condensed({ weight: "700", subsets: ['latin'] })
 
 type Props = {}
 
@@ -13,7 +13,7 @@ export default function Navbar({ }: Props) {
     const [showMenu, setShowMenu] = useState(false);
     const [searchBar, setSearchBar] = useState(false);
     return (
-        <div className={ibm.className + ' flex justify-center items-center w-full bg-white box-shadow'}>
+        <div className={ibmFont.className + ' flex justify-center items-center w-full bg-white box-shadow'}>
             <div className="flex justify-between items-center w-11/12 lg:w-10/12 gap- xl:gap-8">
                 {/* Hamburger Menu  */}
                 <div onClick={() => setShowMenu(prev => !prev)} className="xm:hidden relative border-2 border-ac-violet rounded-md cursor-pointer">
