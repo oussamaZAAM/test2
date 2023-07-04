@@ -9,7 +9,7 @@ type Props = {}
 
 export default function Hero({ }: Props) {
     return (
-        <div className='relative flex w-full px-1 fold:px-12 xm:px-24 lg:px-36 xl:px-48 py-16 xm:py-32 mt-20'>
+        <div className='relative flex w-full px-1 fold:px-12 xm:px-24 lg:px-36 xl:px-48 py-16 xm:py-32'>
             <div className="parallax-bg absolute inset-0 bg-fixed bg-center"></div>
             {/* Web Overlay  */}
             <div className="hidden md:block absolute top-0 left-0 w-full h-full z-20 hero-gradient"></div>
@@ -25,9 +25,11 @@ export default function Hero({ }: Props) {
                     </h1>
                     <p className={miniTaglineFont + " text-md sm:text-lg italic max-w-sm md:max-w-md"}>Vestibulum consequat augue nec mi rhoncus iaculis</p>
                 </div>
-                <div className="flex justify-center items-center bg-ac-bleu p-5 max-w-[200px] group hover:bg-transparent border-2 border-ac-bleu transition duration-300 cursor-pointer">
-                    <p className={buttonFont + " uppercase text-xl font-bold text-white group-hover:text-ac-bleu transition duration-300"}>Nos Services</p>
-                </div>
+                <a href="#services">
+                    <div className="flex justify-center items-center bg-ac-bleu p-5 max-w-[200px] group hover:bg-transparent border-2 border-ac-bleu transition duration-300 cursor-pointer">
+                        <p className={buttonFont + " uppercase text-xl font-bold text-white group-hover:text-ac-bleu transition duration-300"}>Nos Services</p>
+                    </div>
+                </a>
             </div>
         </div>
     )

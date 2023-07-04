@@ -2,6 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+  html {
+    @apply scroll-smooth;
+  }
+}
+
 :root {
   --foreground-rgb: 0, 0, 0;
   --background-rgb: 250, 250, 250;
@@ -35,6 +41,18 @@ body {
   /* Create the parallax scrolling effect */
   background-attachment: fixed;
   background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.parallax-formations {
+  width: 100%;
+  height: 100%;
+  background-image: url(../../public/Formations/formations.jpg);
+
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: end;
   background-repeat: no-repeat;
   background-size: cover;
 }

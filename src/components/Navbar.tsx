@@ -1,5 +1,6 @@
 import { IBM_Plex_Sans_Condensed } from 'next/font/google';
 import Image from 'next/image';
+import Link from 'next/link';
 import { useState } from 'react';
 import { BsSearch, BsXLg } from "react-icons/bs";
 import { HiMenuAlt2, HiOutlineArrowRight } from "react-icons/hi";
@@ -13,7 +14,7 @@ export default function Navbar({ }: Props) {
     const [showMenu, setShowMenu] = useState(false);
     const [searchBar, setSearchBar] = useState(false);
     return (
-        <div className={ibmFont.className + ' flex justify-center items-center w-full bg-white box-shadow z-50 fixed top-0 z-50'}>
+        <div className={ibmFont.className + ' flex justify-center items-center w-full bg-white box-shadow sticky top-0 z-50'}>
             <div className="flex justify-between items-center w-11/12 lg:w-10/12 gap- xl:gap-8">
                 {/* Hamburger Menu  */}
                 <div onClick={() => setShowMenu(prev => !prev)} className="xm:hidden relative border-2 border-ac-violet rounded-md cursor-pointer">
@@ -22,10 +23,14 @@ export default function Navbar({ }: Props) {
                 <div className={`xm:hidden flex justify-start items-center absolute top-20 left-0 w-full bg-white transition ${showMenu ? "translate-x-0 duration-300" : "-translate-x-full duration-75"}`}>
                     <ul className="flex flex-col justify-start items-center mx-4 w-full bg-white rounded gap-1 py-2 my-2">
                         <li className='w-11/12 sm:w-10/12 flex justify-center items-center bg-gray-100 hover:bg-gray-200 rounded-lg cursor-pointer'>
-                            <a href="#" className="block py-2 pl-3 pr-4 text-gray-900 rounded md:border-0 ">Formations</a>
+                            <Link href={"/formations"}>
+                                <p className="block py-2 pl-3 pr-4 text-gray-900 rounded md:border-0 ">Formations</p>
+                            </Link>
                         </li>
                         <li className='w-11/12 sm:w-10/12 flex justify-center items-center bg-gray-100 hover:bg-gray-200 rounded-lg cursor-pointer'>
-                            <a href="#" className="block py-2 pl-3 pr-4 text-gray-900 rounded md:border-0 ">Consulting</a>
+                            <Link href={"/consulting"}>
+                                <p className="block py-2 pl-3 pr-4 text-gray-900 rounded md:border-0 ">Consulting</p>
+                            </Link>
                         </li>
                         <li className='w-11/12 sm:w-10/12 flex justify-center items-center bg-gray-100 hover:bg-gray-200 rounded-lg cursor-pointer'>
                             <a href="#" className="block py-2 pl-3 pr-4 text-gray-900 rounded md:border-0 ">Blog</a>
@@ -43,15 +48,23 @@ export default function Navbar({ }: Props) {
                     </ul>
                 </div>
                 {/* Logo  */}
-                <div className="flex w-36 h-20 overflow-hidden cursor-pointer">
-                    <Image className='w-36 h-20 object-cover object-center' src="/logo.png" height={400} width={400} alt='AleeConseil' />
-                </div>
+                <Link href={"/"}>
+                    <div className="flex w-36 h-20 overflow-hidden cursor-pointer">
+                        <Image className='w-36 h-20 object-cover object-center' src="/logo.png" height={400} width={400} alt='AleeConseil' />
+                    </div>
+                </Link>
                 {/* Navs  */}
                 {!searchBar && <div className="hidden xm:flex justify-start items-center gap-3 xl:gap-8">
-                    <p className="text-sm lg:text-base uppercase font-semibold text-center text-black whitespace-nowrap select-none cursor-pointer hover:text-gray-600">Formations</p>
-                    <p className="text-sm lg:text-base uppercase font-semibold text-center text-black whitespace-nowrap select-none cursor-pointer hover:text-gray-600">Consulting</p>
+                    <Link href={"/formations"}>
+                        <p className="text-sm lg:text-base uppercase font-semibold text-center text-black whitespace-nowrap select-none cursor-pointer hover:text-gray-600">Formations</p>
+                    </Link>
+                    <Link href={"/consulting"}>
+                        <p className="text-sm lg:text-base uppercase font-semibold text-center text-black whitespace-nowrap select-none cursor-pointer hover:text-gray-600">Consulting</p>
+                    </Link>
                     <p className="text-sm lg:text-base uppercase font-semibold text-center text-black whitespace-nowrap select-none cursor-pointer hover:text-gray-600">Blog</p>
-                    <p className="text-sm lg:text-base uppercase font-semibold text-center text-black whitespace-nowrap select-none cursor-pointer hover:text-gray-600">Contact</p>
+                    <a href="#footer">
+                        <p className="text-sm lg:text-base uppercase font-semibold text-center text-black whitespace-nowrap select-none cursor-pointer hover:text-gray-600">Contact</p>
+                    </a>
                     <p className="text-sm lg:text-base uppercase font-semibold text-center text-black whitespace-nowrap select-none cursor-pointer hover:text-gray-600">Qui sommes-nous?</p>
                 </div>}
                 <div className={"xm:flex items-center transition " + (searchBar ? "flex w-1/2 opacity-100 scale-100 translate-x-0 duration-300" : "hidden w-0 scale-0 translate-x-full opacity-0 duration-75")}>

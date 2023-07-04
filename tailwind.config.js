@@ -20,6 +20,10 @@ module.exports = {
       },
       fontFamily: {
         montserrat: ['Montserrat', 'sans-serif']
+      },
+      boxShadow: {
+        'formation-unhover': '-4px -4px 6px 0px rgba(0, 0, 0, 0.25)',
+        'formation-hover': '4px 4px 4px 0px rgba(0, 0, 0, 0.25)',
       }
     },
     screens: {

@@ -14,7 +14,7 @@ type Props = {}
 export default function Footer({ }: Props) {
     return (
         <>
-            <div className='hidden bg-ac-violet rounded-t-[25px] w-full md:flex justify-between items-stretch py-12 px-6 xm:px-24 lg:px-36 xl:px-48 gap-4'>
+            <div id='footer' className='hidden bg-ac-violet rounded-t-[25px] w-full md:flex justify-between items-stretch py-12 px-6 xm:px-24 lg:px-36 xl:px-48 gap-4'>
                 <div className="flex flex-col justify-between items-start">
                     <div className="w-full flex justify-start items-center">
                         {/* Logo  */}
