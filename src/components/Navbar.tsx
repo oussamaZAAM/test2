@@ -13,13 +13,13 @@ export default function Navbar({ }: Props) {
     const [showMenu, setShowMenu] = useState(false);
     const [searchBar, setSearchBar] = useState(false);
     return (
-        <div className={ibmFont.className + ' flex justify-center items-center w-full bg-white box-shadow z-50'}>
+        <div className={ibmFont.className + ' flex justify-center items-center w-full bg-white box-shadow z-50 fixed top-0 z-50'}>
             <div className="flex justify-between items-center w-11/12 lg:w-10/12 gap- xl:gap-8">
                 {/* Hamburger Menu  */}
                 <div onClick={() => setShowMenu(prev => !prev)} className="xm:hidden relative border-2 border-ac-violet rounded-md cursor-pointer">
                     <HiMenuAlt2 size={35} color='#644E9B' />
                 </div>
-                <div className={"xm:hidden flex justify-start items-center absolute top-20 left-0 w-full bg-white rounded transition " + (showMenu ? "translate-x-0 duration-300" : "-translate-x-full duration-75")}>
+                <div className={`xm:hidden flex justify-start items-center absolute top-20 left-0 w-full bg-white transition ${showMenu ? "translate-x-0 duration-300" : "-translate-x-full duration-75"}`}>
                     <ul className="flex flex-col justify-start items-center mx-4 w-full bg-white rounded gap-1 py-2 my-2">
                         <li className='w-11/12 sm:w-10/12 flex justify-center items-center bg-gray-100 hover:bg-gray-200 rounded-lg cursor-pointer'>
                             <a href="#" className="block py-2 pl-3 pr-4 text-gray-900 rounded md:border-0 ">Formations</a>
