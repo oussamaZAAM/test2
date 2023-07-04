@@ -28,15 +28,15 @@ export default function Home() {
 
       {/* Nos Services */}
       <div className="flex justify-center items-center bg-ac-bleu rounded-t-3xl w-full pt-12 pb-20 px-4">
-        <div className="flex flex-col justify-start items-center gap-16">
-          <h5 className={montserratFont.className + " font-medium text-5xl text-center text-white"}>Nos Services</h5>
-          <div className="flex flex-col md:flex-row justify-between items-center md:items-start md:gap-56">
+        <div className="flex flex-col justify-start items-center gap-8 xm:gap-16">
+          <h5 className={montserratFont.className + " font-medium text-4xl xm:text-5xl text-center text-white"}>Nos Services</h5>
+          <div className="flex flex-col md:flex-row justify-between items-center md:items-start gap-20 md:gap-56">
 
             {/* Formations Service  */}
             <div className="flex flex-col justify-start items-center gap-4 max-w-[236px]">
               <Image className='w-24 h-24' width={96} height={96} src="/Homepage/formations.png" alt='service-formation' />
-              <h6 className={latoFont.className + " font-semibold text-3xl leading-7 text-center text-white"}>Formations</h6>
-              <p className={latoFont.className + " font-medium text-base leading-5 text-center text-white"}>
+              <h6 className={latoFont.className + " font-semibold text-2xl xm:text-3xl leading-7 text-center text-white"}>Formations</h6>
+              <p className={latoFont.className + " font-medium text-sm xm:text-base leading-5 text-center text-white"}>
                 Neque porro quisquam est qui dolorem ipsum quia dolor sit amet,
                 consectetur, adipisci velit...
               </p>
@@ -47,8 +47,8 @@ export default function Home() {
             {/* Consulting Service  */}
             <div className="flex flex-col justify-start items-center gap-4 max-w-[236px]">
               <Image className='w-24 h-24' width={96} height={96} src="/Homepage/consulting.png" alt='service-formation' />
-              <h6 className={latoFont.className + " font-semibold text-3xl leading-7 text-center text-white"}>Consulting</h6>
-              <p className={latoFont.className + " font-medium text-base leading-5 text-center text-white"}>
+              <h6 className={latoFont.className + " font-semibold text-2xl xm:text-3xl leading-7 text-center text-white"}>Consulting</h6>
+              <p className={latoFont.className + " font-medium text-sm xm:text-base leading-5 text-center text-white"}>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
               Sed pulvinar turpis quis sem sodales 
               </p>
