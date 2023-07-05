@@ -13,7 +13,7 @@ export default function FormationCard({ }: Props) {
       <div className="flex flex-col justify-start items-center gap-3 w-full">
         <div className="flex justify-between items-end w-full">
           <Image src={"/Formations/testing.png"} width={75} height={75} alt='testing' />
-          <h5 className={montserratFont.className + " text-3xl text-ac-violet text-center font-medium"}>Testing</h5>
+          <h5 className={montserratFont.className + " text-3xl text-ac-violet text-left font-medium w-min"}>Cyber Security</h5>
         </div>
 
         <div className="bg-ac-violet h-0.5 w-full"></div>
