@@ -1,5 +1,6 @@
 import { Lato, Montserrat } from 'next/font/google';
 import Image from 'next/image';
+import Link from 'next/link';
 import { HiArrowNarrowRight } from "react-icons/hi";
 
 type Props = {}
@@ -36,7 +37,7 @@ export default function FormationCard({ }: Props) {
         </div>
 
         <div className="flex justify-center items-center">
-          <p className={montserratFont.className + " font-medium text-base text-center text-[#5C8BFC] underline"}>Voir plus</p>
+          <Link href={"/formations/cyber-security"}><p className={montserratFont.className + " font-medium text-base text-center text-[#5C8BFC] underline"}>Voir plus</p></Link>
         </div>
       </div>
     </div>
