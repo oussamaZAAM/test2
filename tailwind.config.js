@@ -36,6 +36,7 @@ module.exports = {
       'lg': '1080px',
       'xl': '1280px',
       '2xl': '1536px',
+      'formation1': "1220px",
     }
   },
   plugins: [],
