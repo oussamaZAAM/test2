@@ -1,5 +1,9 @@
 import { Montserrat } from 'next/font/google';
 import { ChangeEvent, useState } from "react";
+import DatePicker from "react-datepicker";
+import { BsCalendar } from 'react-icons/bs';
+
+import "react-datepicker/dist/react-datepicker.css";
 
 const montserratNormalFont = Montserrat({ weight: "400", subsets: ["latin"] });
 const montserratBoldFont = Montserrat({ weight: "700", subsets: ["latin"] });
@@ -24,10 +28,11 @@ interface FormDevisInputs {
     telephone: string;
     email: string;
     message: string;
-    date: Date;
 }
 
 export default function ContactUsForm({ type, formation }: Props) {
+    const [devisDate, setDevisDate] = useState(new Date());
+
     const [contactInputs, setContactInputs] = useState<FormContactInputs>({
         nom: '',
         prenom: '',
@@ -41,8 +46,7 @@ export default function ContactUsForm({ type, formation }: Props) {
         fullname: '',
         telephone: '',
         email: '',
-        message: '',
-        date: new Date(),
+        message: ''
     });
 
     const handleContactInputChange = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -73,76 +77,87 @@ export default function ContactUsForm({ type, formation }: Props) {
 
                 {/* Form */}
                 <form className={montserratNormalFont.className + " flex flex-col justify-start items-stretch gap-3 w-full"}>
-                    <div className="flex justify-center items-center relative border border-zinc-300 ">
-                        <label htmlFor="nom" className={`flex justify-center items-center text-sm absolute top-2.5 left-5 gap-1 ${contactInputs.nom && 'hidden'}`}>
-                            <span className="text-zinc-400 font-normal">Nom</span>
+                    <div className="flex flex-col justify-center items-start w-full">
+                        <label htmlFor="nom" className="flex justify-center items-center text-sm gap-1">
+                            <h3 className="font-semibold text-sm text-black text-start">Nom</h3>
                             <span className="text-red-500">*</span>
                         </label>
-                        <input
-                            name="nom"
-                            type="text"
-                            placeholder=''
-                            className="py-2 px-5 w-full"
-                            value={contactInputs.nom}
-                            onChange={handleContactInputChange}
-                        />
+                        <div className="flex justify-center items-center border border-zinc-300 w-full">
+                            <input
+                                name="nom"
+                                type="text"
+                                placeholder='Nom'
+                                className="py-2 px-5 w-full"
+                                value={contactInputs.nom}
+                                onChange={handleContactInputChange}
+                            />
+                        </div>
                     </div>
 
-                    <div className="flex justify-center items-center relative border border-zinc-300 ">
-                        <label htmlFor="prenom" className={`flex justify-center items-center text-sm absolute top-2.5 left-5 gap-1 ${contactInputs.prenom && 'hidden'}`}>
-                            <span className="text-zinc-400 font-normal">Prénom</span>
+                    <div className="flex flex-col justify-center items-start w-full">
+                        <label htmlFor="prenom" className="flex justify-center items-center text-sm gap-1">
+                            <h3 className="font-semibold text-sm text-black text-start">Prénom</h3>
                             <span className="text-red-500">*</span>
                         </label>
-                        <input
-                            name="prenom"
-                            type="text"
-                            placeholder=''
-                            className="py-2 px-5 w-full"
-                            value={contactInputs.prenom}
-                            onChange={handleContactInputChange}
-                        />
+                        <div className="flex justify-center items-center border border-zinc-300 w-full">
+                            <input
+                                name="prenom"
+                                type="text"
+                                placeholder='Prénom'
+                                className="py-2 px-5 w-full"
+                                value={contactInputs.prenom}
+                                onChange={handleContactInputChange}
+                            />
+                        </div>
                     </div>
 
-                    <div className="flex justify-center items-center relative border border-zinc-300 ">
-                        <label htmlFor="telephone" className={`flex justify-center items-center text-sm absolute top-2.5 left-5 gap-1 ${contactInputs.telephone && 'hidden'}`}>
-                            <span className="text-zinc-400 font-normal">Téléphone</span>
+                    <div className="flex flex-col justify-center items-start w-full">
+                        <label htmlFor="telephone" className="flex justify-center items-center text-sm gap-1">
+                            <h3 className="font-semibold text-sm text-black text-start">Téléphone</h3>
                         </label>
-                        <input
-                            name="telephone"
-                            type="text"
-                            placeholder=''
-                            className="py-2 px-5 w-full"
-                            value={contactInputs.telephone}
-                            onChange={handleContactInputChange}
-                        />
+                        <div className="flex justify-center items-center border border-zinc-300 w-full">
+                            <input
+                                name="telephone"
+                                type="tel"
+                                placeholder='Téléphone'
+                                className="py-2 px-5 w-full"
+                                value={contactInputs.telephone}
+                                onChange={handleContactInputChange}
+                            />
+                        </div>
                     </div>
 
-                    <div className="flex justify-center items-center relative border border-zinc-300 ">
-                        <label htmlFor="email" className={`flex justify-center items-center text-sm absolute top-2.5 left-5 gap-1 ${contactInputs.email && 'hidden'}`}>
-                            <span className="text-zinc-400 font-normal">Email</span>
-                        </label>
-                        <input
-                            name="email"
-                            type="text"
-                            placeholder=''
-                            className="py-2 px-5 w-full"
-                            value={contactInputs.email}
-                            onChange={handleContactInputChange}
-                        />
-                    </div>
-
-                    <div className="flex justify-center items-center relative border border-zinc-300 ">
-                        <label htmlFor="message" className={`flex justify-center items-center text-sm absolute top-2.5 left-5 gap-1 ${contactInputs.message && 'hidden'}`}>
-                            <span className="text-zinc-400 font-normal">Message</span>
+                    <div className="flex flex-col justify-center items-start w-full">
+                        <label htmlFor="email" className="flex justify-center items-center text-sm gap-1">
+                            <h3 className="font-semibold text-sm text-black text-start">Email</h3>
                             <span className="text-red-500">*</span>
                         </label>
-                        <textarea
-                            name="message"
-                            placeholder=''
-                            className="py-2 px-5 w-full min-h-[40px]"
-                            value={contactInputs.message}
-                            onChange={handleContactInputChange}
-                        />
+                        <div className="flex justify-center items-center border border-zinc-300 w-full">
+                            <input
+                                name="email"
+                                type="email"
+                                placeholder='Email'
+                                className="py-2 px-5 w-full"
+                                value={contactInputs.email}
+                                onChange={handleContactInputChange}
+                            />
+                        </div>
+                    </div>
+
+                    <div className="flex flex-col justify-center items-start w-full">
+                        <label htmlFor="message" className="flex justify-center items-center text-sm gap-1">
+                            <h3 className="font-semibold text-sm text-black text-start">Message</h3>
+                            <span className="text-red-500">*</span>
+                        </label>
+                        <div className="flex justify-center items-center border border-zinc-300 w-full">
+                            <textarea
+                                name="message"
+                                placeholder='Message'
+                                className="py-2 px-5 w-full"
+                                value={contactInputs.message}
+                                onChange={handleContactInputChange}
+                            />
+                        </div>
                     </div>
                 </form>
 
@@ -162,34 +177,33 @@ export default function ContactUsForm({ type, formation }: Props) {
                 {/* Form */}
                 <form className={montserratNormalFont.className + " flex flex-col justify-start items-stretch gap-3 w-full"}>
                     <div className="flex flex-col justify-center items-start w-full">
-                        <h3 className="font-semibold text-sm text-black text-start">Formation</h3>
-                        <div className="flex justify-center items-center relative border border-zinc-300 w-full">
-                            <label htmlFor="formation" className={`flex justify-center items-center text-sm absolute top-2.5 left-5 gap-1 ${devisInputs.formation && 'hidden'}`}>
-                                <span className="text-zinc-400 font-normal">Formation</span>
-                                <span className="text-red-500">*</span>
-                            </label>
+                        <label htmlFor="formation" className="flex justify-center items-center text-sm gap-1">
+                            <h3 className="font-semibold text-sm text-black text-start">Formation</h3>
+                            <span className="text-red-500">*</span>
+                        </label>
+                        <div className="flex justify-center items-center border border-zinc-300 w-full">
                             <input
                                 name="formation"
+                                readOnly
                                 type="text"
-                                placeholder=''
-                                className="py-2 px-5 w-full"
-                                value={devisInputs.formation}
+                                placeholder='Formation'
+                                className="py-2 px-5 w-full text-zinc-500 font-medium"
+                                value={formation ? formation : devisInputs.formation}
                                 onChange={handleDevisInputChange}
                             />
                         </div>
                     </div>
 
                     <div className="flex flex-col justify-center items-start w-full">
-                        <h3 className="font-semibold text-sm text-black text-start">Entreprise</h3>
-                        <div className="flex justify-center items-center relative border border-zinc-300 w-full">
-                            <label htmlFor="nom" className={`flex justify-center items-center text-sm absolute top-2.5 left-5 gap-1 ${contactInputs.nom && 'hidden'}`}>
-                                <span className="text-zinc-400 font-normal">Entreprise</span>
-                                <span className="text-red-500">*</span>
-                            </label>
+                        <label htmlFor="entreprise" className="flex justify-center items-center text-sm gap-1">
+                            <h3 className="font-semibold text-sm text-black text-start">Entreprise</h3>
+                            <span className="text-red-500">*</span>
+                        </label>
+                        <div className="flex justify-center items-center border border-zinc-300 w-full">
                             <input
-                                name="nom"
+                                name="entreprise"
                                 type="text"
-                                placeholder=''
+                                placeholder='Entreprise'
                                 className="py-2 px-5 w-full"
                                 value={devisInputs.entreprise}
                                 onChange={handleDevisInputChange}
@@ -198,16 +212,15 @@ export default function ContactUsForm({ type, formation }: Props) {
                     </div>
 
                     <div className="flex flex-col justify-center items-start w-full">
-                        <h3 className="font-semibold text-sm text-black text-start">Nom & Prénom</h3>
+                        <label htmlFor="fullname" className="flex justify-center items-center text-sm gap-1">
+                            <h3 className="font-semibold text-sm text-black text-start">Nom & Prénom</h3>
+                            <span className="text-red-500">*</span>
+                        </label>
                         <div className="flex justify-center items-center relative border border-zinc-300 w-full">
-                            <label htmlFor="fullname" className={`flex justify-center items-center text-sm absolute top-2.5 left-5 gap-1 ${devisInputs.fullname && 'hidden'}`}>
-                                <span className="text-zinc-400 font-normal">Nom & Prénom</span>
-                                <span className="text-red-500">*</span>
-                            </label>
                             <input
                                 name="fullname"
                                 type="text"
-                                placeholder=''
+                                placeholder='Nom & Prénom'
                                 className="py-2 px-5 w-full"
                                 value={devisInputs.fullname}
                                 onChange={handleDevisInputChange}
@@ -216,15 +229,14 @@ export default function ContactUsForm({ type, formation }: Props) {
                     </div>
 
                     <div className="flex flex-col justify-center items-start w-full">
-                        <h3 className="font-semibold text-sm text-black text-start">Téléphone</h3>
+                        <label htmlFor="telephone" className="flex justify-center items-center text-sm gap-1">
+                            <h3 className="font-semibold text-sm text-black text-start">Téléphone</h3>
+                        </label>
                         <div className="flex justify-center items-center relative border border-zinc-300 w-full">
-                            <label htmlFor="telephone" className={`flex justify-center items-center text-sm absolute top-2.5 left-5 gap-1 ${devisInputs.telephone && 'hidden'}`}>
-                                <span className="text-zinc-400 font-normal">Téléphone</span>
-                            </label>
                             <input
                                 name="telephone"
-                                type="text"
-                                placeholder=''
+                                type="tel"
+                                placeholder='Téléphone'
                                 className="py-2 px-5 w-full"
                                 value={devisInputs.telephone}
                                 onChange={handleDevisInputChange}
@@ -233,16 +245,15 @@ export default function ContactUsForm({ type, formation }: Props) {
                     </div>
 
                     <div className="flex flex-col justify-center items-start w-full">
-                        <h3 className="font-semibold text-sm text-black text-start">Email</h3>
+                        <label htmlFor="email" className="flex justify-center items-center text-sm gap-1">
+                            <h3 className="font-semibold text-sm text-black text-start">Email</h3>
+                            <span className="text-red-500">*</span>
+                        </label>
                         <div className="flex justify-center items-center relative border border-zinc-300 w-full">
-                            <label htmlFor="email" className={`flex justify-center items-center text-sm absolute top-2.5 left-5 gap-1 ${devisInputs.email && 'hidden'}`}>
-                                <span className="text-zinc-400 font-normal">Email</span>
-                                <span className="text-red-500">*</span>
-                            </label>
                             <input
                                 name="email"
-                                type="text"
-                                placeholder=''
+                                type="email"
+                                placeholder='Email'
                                 className="py-2 px-5 w-full"
                                 value={devisInputs.email}
                                 onChange={handleDevisInputChange}
@@ -251,18 +262,32 @@ export default function ContactUsForm({ type, formation }: Props) {
                     </div>
 
                     <div className="flex flex-col justify-center items-start w-full">
-                        <h3 className="font-semibold text-sm text-black text-start">Message</h3>
+                        <label htmlFor="message" className="flex justify-center items-center text-sm gap-1">
+                            <h3 className="font-semibold text-sm text-black text-start">Message</h3>
+                            <span className="text-red-500">*</span>
+                        </label>
                         <div className="flex justify-center items-center relative border border-zinc-300 w-full">
-                            <label htmlFor="message" className={`flex justify-center items-center text-sm absolute top-2.5 left-5 gap-1 ${devisInputs.message && 'hidden'}`}>
-                                <span className="text-zinc-400 font-normal">Message</span>
-                                <span className="text-red-500">*</span>
-                            </label>
                             <textarea
                                 name="message"
-                                placeholder=''
+                                placeholder='Message'
                                 className="py-2 px-5 w-full min-h-[40px]"
                                 value={devisInputs.message}
                                 onChange={handleDevisInputChange}
+                            />
+                        </div>
+                    </div>
+
+                    <div className="flex flex-col justify-center items-start w-full">
+                        <label htmlFor="date" className="flex justify-center items-center text-sm gap-1">
+                            <h3 className="font-semibold text-sm text-black text-start">Date</h3>
+                            <span className="text-red-500">*</span>
+                        </label>
+                        <div className="flex justify-start items-center border border-zinc-300 w-full py-2 px-5 gap-3">
+                            <BsCalendar className="h-6 w-6" color='#828282' />
+                            <DatePicker
+                                dateFormat="dd/MM/yyyy"
+                                selected={devisDate}
+                                onSelect={setDevisDate}
                             />
                         </div>
                     </div>
