@@ -52,8 +52,8 @@ export default function Home() {
               <Image className='w-24 h-24' width={96} height={96} src="/Homepage/consulting.png" alt='service-formation' />
               <h6 className={latoFont.className + " font-semibold text-2xl xm:text-3xl leading-7 text-center text-white"}>Consulting</h6>
               <p className={latoFont.className + " font-medium text-sm xm:text-base leading-5 text-center text-white"}>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-              Sed pulvinar turpis quis sem sodales 
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                Sed pulvinar turpis quis sem sodales
               </p>
               <div className="flex justify-center items-center rounded-sm bg-white px-5 py-2 cursor-pointer">
                 <h6 className={ibmFont.className + " text-ac-bleu uppercase text-xl font-bold"}>Accéder</h6>
@@ -65,7 +65,7 @@ export default function Home() {
 
       {/* Contact Us */}
       <div className="flex justify-center items-center w-full bg-ac-gray -translate-y-6 rounded-t-3xl">
-        <ContactUsForm />
+        <ContactUsForm type='contact' />
       </div>
 
       {/* Footer  */}

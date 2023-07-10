@@ -23,16 +23,16 @@ export default function Formations({ }: Props) {
                 {/* Overlay */}
                 <div className="absolute top-0 left-0 w-full h-full z-20 bg-[#00000050]"></div>
 
-                <div className="flex flex-col justify-start items-center mt-20 mb-24 mx-4 sm:ml-[10%] xm:ml-[15%] rounded-xl bg-ac-bleu gap-3 py-3 px-4 sm:py-6 sm:px-8 xm:px-12 z-30">
+                <a href='#formations' className="flex flex-col justify-start items-center mt-20 mb-24 mx-4 sm:ml-[10%] xm:ml-[15%] rounded-xl bg-ac-bleu gap-3 py-3 px-4 sm:py-6 sm:px-8 xm:px-12 z-30">
                     <h1 className={montserratFont.className + " text-3xl sm:text-4xl xm:text-5xl font-medium text-white text-center max-w-[270px] fold:max-w-[350px] xs:max-w-xs"}>Formations</h1>
                     <h3 className={latoFont.className + " text-xs sm:text-sm xm:text-base font-medium text-white text-center max-w-[300px] sm:max-w-sm"}>
                         Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...
                     </h3>
-                </div>
+                </a>
             </div>
 
             {/* Nos Formations */}
-            <div className="flex flex-col justify-start items-center w-full rounded-t-3xl px-4 xs:px-8 sm:px-12 md:px-16 xm:px-20 lg:px-24 py-24 bg-ac-gray -translate-y-5 z-30 gap-16">
+            <div id='formations' className="flex flex-col justify-start items-center w-full rounded-t-3xl px-4 xs:px-8 sm:px-12 md:px-16 xm:px-20 lg:px-24 py-24 bg-ac-gray -translate-y-5 z-30 gap-16">
                 <div className="flex justify-center items-center w-full relative">
                     <div className="flex justify-center items-center bg-ac-gray z-20 p-4">
                         <h2 className={montserratFont.className + " text-ac-violet text-5xl font-semibold text-center"}>Nos Formations</h2>
