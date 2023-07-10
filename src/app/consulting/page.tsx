@@ -2,9 +2,10 @@
 
 import Footer from '@/components/Footer';
 import Navbar from '@/components/Navbar';
+import { getXfromY1, getXfromY2 } from '@/utils/functions';
 import { Lato, Montserrat, Poppins } from 'next/font/google';
 import Image from 'next/image';
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 
 const montserratFont = Montserrat({ subsets: ["latin"] })
 const latoFont = Lato({ weight: "400", subsets: ["latin"] })
@@ -15,13 +16,21 @@ type Props = {}
 export default function Consulting({ }: Props) {
     const [xPosition, setXPosition] = useState(0);
     const [yPosition, setYPosition] = useState(-18);
-    const circleRef = useRef<SVGCircleElement>();
 
     useEffect(() => {
         const handleScroll = () => {
             const yPos = window.pageYOffset;
             if (yPos <= 1396 && yPos >= 0) {
-                setYPosition(yPos-18);
+                setYPosition(yPos - 18);
+                if (yPos <= 470) {
+                    setXPosition(getXfromY1(yPos));
+                } else {
+                    if (yPos <= 934) {
+                        setXPosition(getXfromY2(yPos));
+                    } else {
+                        setXPosition(getXfromY1(yPos));
+                    }
+                }
             }
         };
 
@@ -74,9 +83,9 @@ export default function Consulting({ }: Props) {
                     <svg className='absolute top-[928px] -translate-x-[38px]' width="80" height="470" viewBox="0 0 80 470" fill="none">
                         <path d="M80 0 C-20 150 -20 320 80 470" stroke="black" strokeWidth="6" />
                     </svg>
-                    {/* <svg style={{ transform: `translate(${xPosition}px, ${yPosition}px)` }} className='absolute top-0 -translate-y-[18px]' width="40" height="40">
+                    <svg style={{ transform: `translate(${xPosition}px, ${yPosition}px)` }} className='absolute top-0 -translate-y-[18px]' width="40" height="40">
                         <circle cx="20" cy="20" r="20" fill="black" />
-                    </svg> */}
+                    </svg>
                 </div>
 
                 {/* Liste des Offres */}
