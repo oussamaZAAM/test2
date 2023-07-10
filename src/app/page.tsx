@@ -13,11 +13,6 @@ const montserratFont = Montserrat({ weight: "400", subsets: ["latin"] });
 const latoFont = Lato({ weight: "400", subsets: ["latin"] });
 const ibmFont = IBM_Plex_Sans({ weight: "700", subsets: ["latin"] });
 
-export const metadata: Metadata = {
-  title: 'Welcome to AleeConseil',
-  description: 'Homepage',
-}
-
 export default function Home() {
   return (
     <div className="flex flex-col justify-center items-center bg-ac-gray w-full">
@@ -55,9 +50,11 @@ export default function Home() {
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                 Sed pulvinar turpis quis sem sodales
               </p>
-              <div className="flex justify-center items-center rounded-sm bg-white px-5 py-2 cursor-pointer">
-                <h6 className={ibmFont.className + " text-ac-bleu uppercase text-xl font-bold"}>Accéder</h6>
-              </div>
+              <Link href={"/consulting"}>
+                <div className="flex justify-center items-center rounded-sm bg-white px-5 py-2 cursor-pointer">
+                  <h6 className={ibmFont.className + " text-ac-bleu uppercase text-xl font-bold"}>Accéder</h6>
+                </div>
+              </Link>
             </div>
           </div>
         </div>
