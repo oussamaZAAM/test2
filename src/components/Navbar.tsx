@@ -88,10 +88,12 @@ export default function Navbar({ }: Props) {
                             : <BsSearch size={25} color='black' />
                         }
                     </div>
-                    <div className="hidden xm:flex justify-center items-center bg-ac-violet rounded-full gap-1 py-2.5 px-5 w-fit cursor-pointer">
-                        <p className="text-base uppercase font-bold text-center text-white whitespace-nowrap select-none">Consultez-nous</p>
-                        <HiOutlineArrowRight size={25} color='white' />
-                    </div>
+                    <Link href={"/consultez-nous"}>
+                        <div className="hidden xm:flex justify-center items-center bg-ac-violet rounded-full gap-1 py-2.5 px-5 w-fit cursor-pointer">
+                            <p className="text-base uppercase font-bold text-center text-white whitespace-nowrap select-none">Consultez-nous</p>
+                            <HiOutlineArrowRight size={25} color='white' />
+                        </div>
+                    </Link>
                 </div>
             </div>
         </div>

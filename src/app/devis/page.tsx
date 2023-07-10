@@ -15,7 +15,7 @@ export default function Devis({ }: Props) {
 
     const formation = searchParams.get("formation") !== null ? searchParams.get("formation")! : "";
     return (
-        <div className="flex flex-col justify-start items-center w-full">
+        <div className="flex flex-col justify-start items-center w-full bg-ac-gray">
             <Navbar />
             <div className="flex w-full h-44 bg-ac-bleu rounded-b-3xl -mb-28"></div>
 
