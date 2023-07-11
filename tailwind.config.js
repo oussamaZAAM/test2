@@ -22,8 +22,8 @@ module.exports = {
         montserrat: ['Montserrat', 'sans-serif']
       },
       boxShadow: {
-        'formation-unhover': '-4px -4px 6px 0px rgba(0, 0, 0, 0.25)',
-        'formation-hover': '4px 4px 4px 0px rgba(0, 0, 0, 0.25)',
+        'formation-unhover': '0 0 10px 1px rgba(0, 0, 0, 0.1)',
+        'formation-hover': '4px 4px 10px 1px rgba(0, 0, 0, 0.1)',
         'formation-card': '0px 4px 4px 0px rgba(0, 0, 0, 0.25)',
       }
     },

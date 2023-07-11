@@ -5,8 +5,12 @@ export const namifySlug = (slug: string): string => {
 }
 
 export const readableDate = (date: Date) => {
-    const day = String(date.getDate()).padStart(2, '0');
-    const month = String(date.getMonth() + 1).padStart(2, '0');
+    const monthNames = [
+      "Janvier", "Février", "Mars", "Avril", "Mai", "Juin",
+      "Juillet", "Août", "Septembre", "Octobre", "Novembre", "Décembre"
+    ];
+    const day = String(date.getDate()).padStart(2, '0'); 
+    const month = monthNames[date.getMonth()];
     const year = String(date.getFullYear());
 
     return `${day} ${month} ${year}`;
