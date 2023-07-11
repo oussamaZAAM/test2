@@ -33,8 +33,6 @@ interface FormDevisInputs {
 export default function ContactUsForm({ type, formation }: Props) {
     const [devisDate, setDevisDate] = useState(new Date());
 
-    console.log(devisDate);
-
     const [contactInputs, setContactInputs] = useState<FormContactInputs>({
         nom: '',
         prenom: '',
