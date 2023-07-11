@@ -33,7 +33,9 @@ export default function Navbar({ }: Props) {
                             </Link>
                         </li>
                         <li className='w-11/12 sm:w-10/12 flex justify-center items-center bg-gray-100 hover:bg-gray-200 rounded-lg cursor-pointer'>
-                            <a href="#" className="block py-2 pl-3 pr-4 text-gray-900 rounded md:border-0 ">Blog</a>
+                            <Link href={"/blogs"}>
+                                <p className="block py-2 pl-3 pr-4 text-gray-900 rounded md:border-0 ">Blog</p>
+                            </Link>
                         </li>
                         <li className='w-11/12 sm:w-10/12 flex justify-center items-center bg-gray-100 hover:bg-gray-200 rounded-lg cursor-pointer'>
                             <a href="#" className="block py-2 pl-3 pr-4 text-gray-900 rounded md:border-0 ">Contact</a>
@@ -61,7 +63,9 @@ export default function Navbar({ }: Props) {
                     <Link href={"/consulting"}>
                         <p className="text-sm lg:text-base uppercase font-semibold text-center text-black whitespace-nowrap select-none cursor-pointer hover:text-gray-600">Consulting</p>
                     </Link>
-                    <p className="text-sm lg:text-base uppercase font-semibold text-center text-black whitespace-nowrap select-none cursor-pointer hover:text-gray-600">Blog</p>
+                    <Link href={"/blogs"}>
+                        <p className="text-sm lg:text-base uppercase font-semibold text-center text-black whitespace-nowrap select-none cursor-pointer hover:text-gray-600">Blog</p>
+                    </Link>
                     <a href="#footer">
                         <p className="text-sm lg:text-base uppercase font-semibold text-center text-black whitespace-nowrap select-none cursor-pointer hover:text-gray-600">Contact</p>
                     </a>

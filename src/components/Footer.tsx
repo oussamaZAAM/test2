@@ -1,5 +1,6 @@
 import { Lato, Roboto } from 'next/font/google';
 import Image from 'next/image';
+import Link from 'next/link';
 import { AiFillLinkedin, AiFillYoutube, AiOutlineInstagram, AiOutlineTwitter } from "react-icons/ai";
 import { MdOutlinePhone } from "react-icons/md";
 import { PiMapPinLine } from "react-icons/pi";
@@ -30,10 +31,10 @@ export default function Footer({ }: Props) {
                         <p className={latoFont + "text-sm font-semibold text-white uppercase"}>Alee Conseil</p>
                         <div className="flex flex-col justify-start items-start gap-2">
                             <p className={robotoFont + "text-sm font-light text-white"}>Qui sommes-nous?</p>
-                            <p className={robotoFont + "text-sm font-light text-white"}>Blog</p>
-                            <p className={robotoFont + "text-sm font-light text-white"}>Prenez un rendez-vous</p>
-                            <p className={robotoFont + "text-sm font-light text-white"}>Formations</p>
-                            <p className={robotoFont + "text-sm font-light text-white"}>Consultations</p>
+                            <Link href={"/blogs"}><p className={robotoFont + "text-sm font-light text-white"}>Blog</p></Link>
+                            <Link href={"/consultez-nous"}><p className={robotoFont + "text-sm font-light text-white"}>Prenez un rendez-vous</p></Link>
+                            <Link href={"/formations"}><p className={robotoFont + "text-sm font-light text-white"}>Formations</p></Link>
+                            <Link href={"/consulting"}><p className={robotoFont + "text-sm font-light text-white"}>Consultations</p></Link>
                         </div>
                     </div>
                     <div className="flex flex-col justify-start items-stretch gap-8">
@@ -83,10 +84,10 @@ export default function Footer({ }: Props) {
                     <div className="flex flex-col justify-start items-stretch gap-4">
                         <div className="flex flex-col justify-start items-start gap-2">
                             <p className={robotoFont + "text-sm font-light text-white"}>Qui sommes-nous?</p>
-                            <p className={robotoFont + "text-sm font-light text-white"}>Blog</p>
-                            <p className={robotoFont + "text-sm font-light text-white"}>Prenez un rendez-vous</p>
-                            <p className={robotoFont + "text-sm font-light text-white"}>Formations</p>
-                            <p className={robotoFont + "text-sm font-light text-white"}>Consultations</p>
+                            <Link href={"/blogs"}><p className={robotoFont + "text-sm font-light text-white"}>Blog</p></Link>
+                            <Link href={"/consultez-nous"}><p className={robotoFont + "text-sm font-light text-white"}>Prenez un rendez-vous</p></Link>
+                            <Link href={"/formations"}><p className={robotoFont + "text-sm font-light text-white"}>Formations</p></Link>
+                            <Link href={"/consulting"}><p className={robotoFont + "text-sm font-light text-white"}>Consultations</p></Link>
                         </div>
                     </div>
                     <div className="flex flex-col justify-center items-stretch gap-8">
