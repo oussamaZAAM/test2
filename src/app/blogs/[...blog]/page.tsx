@@ -57,7 +57,7 @@ export default function Blog({ }: Props) {
                     <div className="sticky top-48 flex flex-col justify-start items-center gap-6 px-2 fold:px-6 py-6 rounded-2xl bg-ac-gray mt-24">
                         <div className="flex justify-center items-center w-full relative -mt-24">
                             <div className="w-32 xs:w-40 h-32 xs:h-40 rounded-full absolute overflow-hidden bg-zinc-300"></div>
-                            <img className='object-contain object-center w-32 xs:w-40 h-32 xs:h-40 rounded-full border-2 border-zinc-500 z-30' src={"/user.png"} width={160} height={160} alt='user' />
+                            <img className='object-contain object-center w-32 xs:w-40 h-32 xs:h-40 rounded-full border-2 border-zinc-500 z-30' src={"https://i.ibb.co/pK6T2DN/user.png"} width={160} height={160} alt='user' />
                         </div>
                         <div className="flex flex-col justify-start items-center gap-10">
                             <div className="flex flex-col justify-start items-center">

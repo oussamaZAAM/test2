@@ -38,21 +38,23 @@ export default function Navbar({ }: Props) {
                             </Link>
                         </li>
                         <li className='w-11/12 sm:w-10/12 flex justify-center items-center bg-gray-100 hover:bg-gray-200 rounded-lg cursor-pointer'>
-                            <a href="#" className="block py-2 pl-3 pr-4 text-gray-900 rounded md:border-0 ">Contact</a>
+                            <a href="#footer" className="block py-2 pl-3 pr-4 text-gray-900 rounded md:border-0 ">Contact</a>
                         </li>
                         <li className='w-11/12 sm:w-10/12 flex justify-center items-center bg-gray-100 hover:bg-gray-200 rounded-lg cursor-pointer'>
-                            <a href="#" className="block py-2 pl-3 pr-4 text-gray-900 rounded md:border-0 ">Qui sommes-nous?</a>
+                            <a href="" className="block py-2 pl-3 pr-4 text-gray-900 rounded md:border-0 ">Qui sommes-nous?</a>
                         </li>
-                        <li className="w-11/12 sm:w-10/12 flex justify-center items-center bg-ac-violet rounded-lg gap-1 py-2.5 px-5 mt-2 cursor-pointer">
-                            <p className="text-base uppercase font-bold text-center text-white whitespace-nowrap">Consultez-nous</p>
-                            <HiOutlineArrowRight size={25} color='white' />
-                        </li>
+                        <Link href={"/consultez-nous"}>
+                            <li className="w-11/12 sm:w-10/12 flex justify-center items-center bg-ac-violet rounded-lg gap-1 py-2.5 px-5 mt-2 cursor-pointer">
+                                <p className="text-base uppercase font-bold text-center text-white whitespace-nowrap">Consultez-nous</p>
+                                <HiOutlineArrowRight size={25} color='white' />
+                            </li>
+                        </Link>
                     </ul>
                 </div>
                 {/* Logo  */}
                 <Link href={"/"}>
                     <div className="flex w-36 h-20 overflow-hidden cursor-pointer">
-                        <img className='w-36 h-20 object-cover object-center' src="/logo.png" height={400} width={400} alt='AleeConseil' />
+                        <img className='w-36 h-20 object-cover object-center' src="https://i.ibb.co/NxzmfDS/logo.png" height={400} width={400} alt='AleeConseil' />
                     </div>
                 </Link>
                 {/* Navs  */}

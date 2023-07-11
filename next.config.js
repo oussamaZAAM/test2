@@ -3,8 +3,19 @@
  */
 const nextConfig = {
     /* config options here */
+    reactStrictMode: true,
     output: 'export',
-    images: { unoptimized: true } 
+    images: {
+        unoptimized: true,
+        remotePatterns: [
+            {
+                protocol: 'https',
+                hostname: 'i.ibb.co',
+                port: '',
+                pathname: '/**',
+            },
+        ],
+    }
 }
 
 module.exports = nextConfig
