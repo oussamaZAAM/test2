@@ -30,7 +30,8 @@ export default function Home() {
 
             {/* Formations Service  */}
             <div className="flex flex-col justify-start items-center gap-4 max-w-[236px]">
-              <Image className='w-24 h-24' width={96} height={96} src="/Homepage/formations.png" alt='service-formation' />
+              {/* <img loading='lazy' decoding='async' className='w-24 h-24' width={96} height={96} src="/Homepage/formations.png" alt='service-formation' /> */}
+              <img className='w-24 h-24' width={96} height={96} src="/Homepage/formations.png" alt='service-formation' />
               <h6 className={latoFont.className + " font-semibold text-2xl xm:text-3xl leading-7 text-center text-white"}>Formations</h6>
               <p className={latoFont.className + " font-medium text-sm xm:text-base leading-5 text-center text-white"}>
                 Neque porro quisquam est qui dolorem ipsum quia dolor sit amet,
@@ -44,7 +45,7 @@ export default function Home() {
             </div>
             {/* Consulting Service  */}
             <div className="flex flex-col justify-start items-center gap-4 max-w-[236px]">
-              <Image className='w-24 h-24' width={96} height={96} src="/Homepage/consulting.png" alt='service-formation' />
+              <img className='w-24 h-24' width={96} height={96} src="/Homepage/consulting.png" alt='service-formation' />
               <h6 className={latoFont.className + " font-semibold text-2xl xm:text-3xl leading-7 text-center text-white"}>Consulting</h6>
               <p className={latoFont.className + " font-medium text-sm xm:text-base leading-5 text-center text-white"}>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit.

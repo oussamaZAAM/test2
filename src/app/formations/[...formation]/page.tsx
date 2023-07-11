@@ -83,7 +83,7 @@ export default function Page() {
             </div>
 
             <div className="flex flex-col justify-start items-center gap-4 px-4 xs:px-8 xm:px-12">
-              <Image src={"/Formations/testing.png"} width={200} height={200} alt='testing' />
+              <img src={"/Formations/testing.png"} width={200} height={200} alt='testing' />
               <div className="w-full xm:w-[140%] h-px bg-[#888888]"></div>
               <Link href={{ pathname: '/devis', query: { formation: formation_id } }}>
                 <div className="flex justify-center items-center bg-ac-bleu rounded-full py-2 xm:py-4 px-2 sm:px-4 xm:px-8">
