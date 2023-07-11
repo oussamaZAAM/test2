@@ -44,7 +44,7 @@ export default function Blog({ }: Props) {
                         </p>
                         {body.split("\n\n").slice(1).map(paragraph => {
                             return (
-                                <p className={latoFont.className + " font-medium text-lg text-black text-start indent-5"}>
+                                <p key={paragraph} className={latoFont.className + " font-medium text-lg text-black text-start indent-5"}>
                                     {paragraph}
                                 </p>
                             )
