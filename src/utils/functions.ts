@@ -37,9 +37,9 @@ function bezierFunction1(t: number) {
 
 function bezierFunction2(t: number) {
     const P0 = { x: 0, y: 470 };
-    const P1 = { x: 100, y: 320 };
-    const P2 = { x: 100, y: 150 };
-    const P3 = { x: 0, y: 0 };
+    const P1 = { x: 150, y: 790 };
+    const P2 = { x: 150, y: 620 };
+    const P3 = { x: 0, y: 934 };
 
     const Q0 = P0;
     const Q1 = {
