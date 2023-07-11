@@ -33,6 +33,8 @@ interface FormDevisInputs {
 export default function ContactUsForm({ type, formation }: Props) {
     const [devisDate, setDevisDate] = useState(new Date());
 
+    console.log(devisDate);
+
     const [contactInputs, setContactInputs] = useState<FormContactInputs>({
         nom: '',
         prenom: '',
@@ -184,11 +186,11 @@ export default function ContactUsForm({ type, formation }: Props) {
                         <div className="flex justify-center items-center border border-zinc-300 w-full">
                             <input
                                 name="formation"
-                                readOnly
+                                readOnly={formation !== null}
                                 type="text"
                                 placeholder='Formation'
                                 className="py-2 px-5 w-full text-zinc-500 font-medium"
-                                value={formation ? formation : devisInputs.formation}
+                                value={(formation !== null) ? formation : devisInputs.formation}
                                 onChange={handleDevisInputChange}
                             />
                         </div>
@@ -288,6 +290,7 @@ export default function ContactUsForm({ type, formation }: Props) {
                                 dateFormat="dd/MM/yyyy"
                                 selected={devisDate}
                                 onSelect={setDevisDate}
+                                onChange={() => {}}
                             />
                         </div>
                     </div>

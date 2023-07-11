@@ -2,7 +2,7 @@
 
 import Footer from '@/components/Footer';
 import Navbar from '@/components/Navbar';
-import { getXfromY1, getXfromY2 } from '@/utils/functions';
+import { getXfromY1, getXfromY2, getXfromY3 } from '@/utils/curveFunctions';
 import { Lato, Montserrat, Poppins } from 'next/font/google';
 import Image from 'next/image';
 import { useEffect, useState } from "react";
@@ -28,7 +28,7 @@ export default function Consulting({ }: Props) {
                     if (yPos <= 934) {
                         setXPosition(getXfromY2(yPos));
                     } else {
-                        setXPosition(getXfromY1(yPos));
+                        setXPosition(getXfromY3(yPos));
                     }
                 }
             }
