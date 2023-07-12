@@ -3,27 +3,24 @@
 import Footer from '@/components/Footer';
 import Navbar from '@/components/Navbar';
 import { readableDate } from '@/utils/functions';
+import { Blog } from '@/utils/interfaces';
 import { blogsData } from '@/utils/mockData';
 import { Jost, Lato, Montserrat } from 'next/font/google';
+import { usePathname } from 'next/navigation';
 
 const jostFont = Jost({ subsets: ["latin"] });
 const montserratFont = Montserrat({ subsets: ["latin"] });
 const latoFont = Lato({ weight: "400", subsets: ["latin"] });
 
-type Props = {
-    params: {
-        blog: string
-    }
-}
+type Props = {}
 
-export default function Blog({ params }: Props) {
-    const blog_id = params.blog;
+export default function Blog({}: Props) {
+    const pathname = usePathname();
+    const blog_id = pathname.split("/")[pathname.split("/").length - 1];
+    const blog = blogsData[parseInt(blog_id) - 1] !== undefined ? blogsData[parseInt(blog_id) - 1] : false;
 
-    const blogPost = blogsData.find((blog) => blog.id === blog_id);
-
-    if (!blogPost) {
-        // Handle the case when blogPost is undefined
-        return <div>Blog not found</div>;
+    if (!blog) {
+        return (<div>Blog Bot Found</div>)
     }
 
     return (
@@ -32,11 +29,11 @@ export default function Blog({ params }: Props) {
 
             <div className="flex flex-col justify-start items-start w-full gap-12 pt-10 px-6 sm:px-12 md:px-20 xm:px-6 lg:px-12 xl:px-20 mx-6 sm:mx-12 md:mx-20 xm:mx-6 lg:mx-12 xl:mx-20">
                 <h1 className={jostFont.className + " font-bold text-3xl xm:text-5xl lg:text-5xl xl:text-6xl text-start text-black"}>
-                    {blogPost.title}
+                    {blog.title}
                 </h1>
                 <div className={montserratFont.className + " flex flex-col xm:flex-row justify-start items-start xm:items-center gap-6 xm:gap-32 font-medium text-xl text-start text-black"}>
-                    <p>{readableDate(blogPost.date)}</p>
-                    <p>par {blogPost.author.name}</p>
+                    <p>{readableDate(blog.date)}</p>
+                    <p>par {blog.author.name}</p>
                 </div>
             </div>
 
@@ -47,9 +44,9 @@ export default function Blog({ params }: Props) {
                     <div className="w-full h-px bg-black"></div>
                     <div className="flex flex-col justify-start items-start gap-6">
                         <p className={latoFont.className + " font-medium text-lg text-black text-start first-letter:text-7xl first-letter:font-bold first-letter:mr-1 indent-5"}>
-                            {blogPost.body.split("\n\n")[0]}
+                            {blog.body.split("\n\n")[0]}
                         </p>
-                        {blogPost.body.split("\n\n").slice(1).map(paragraph => {
+                        {blog.body.split("\n\n").slice(1).map(paragraph => {
                             return (
                                 <p key={paragraph} className={latoFont.className + " font-medium text-lg text-black text-start indent-5"}>
                                     {paragraph}
@@ -67,11 +64,11 @@ export default function Blog({ params }: Props) {
                     </div>
                     <div className="flex flex-col justify-start items-center gap-10">
                         <div className="flex flex-col justify-start items-center">
-                            <p className="uppercase font-bold text-2xl text-black text-center">{blogPost.author.name}</p>
-                            <p className="font-semibold text-xl text-black text-center">{blogPost.author.job}</p>
+                            <p className="uppercase font-bold text-2xl text-black text-center">{blog.author.name}</p>
+                            <p className="font-semibold text-xl text-black text-center">{blog.author.job}</p>
                         </div>
                         <p className="font-normal text-base text-black text-center fold:w-[248px] xm:w-auto xm:min-w-[248px]">
-                            {blogPost.author.description}
+                            {blog.author.description}
                         </p>
                     </div>
                 </div>
@@ -80,30 +77,4 @@ export default function Blog({ params }: Props) {
             <Footer />
         </div>
     )
-}
-
-export const getStaticProps = async ({ params }: { params: { blog: string } }) => {
-    const blogPost = blogsData.find((blog) => blog.id === params.blog);
-
-    if (!blogPost) {
-        return {
-            notFound: true
-        }
-    }
-
-    return {
-        props: {
-            params
-        },
-    };
-};
-
-export const getStaticPaths = async () => {
-    const ids = blogsData.map((blog) => blog.id);
-    const paths = ids.map((blog) => ({ params: { blog: blog.toString() } }));
-
-    return {
-        paths,
-        fallback: false,
-    };
 }
