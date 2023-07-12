@@ -11,3 +11,13 @@ export interface User {
   job: string;
   description: string;
 }
+
+export interface Formation {
+  formation_id: string;
+  title: string;
+  description: string;
+  price: number;
+  duration: string;
+  image_url: string;
+  lessons?: Array<string>;
+}

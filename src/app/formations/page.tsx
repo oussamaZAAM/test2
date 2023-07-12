@@ -3,6 +3,7 @@
 import Footer from '@/components/Footer';
 import FormationCard from '@/components/FormationCard';
 import Navbar from '@/components/Navbar';
+import { formationsData } from '@/utils/mockData';
 import { Lato, Montserrat } from 'next/font/google';
 
 const montserratFont = Montserrat({ subsets: ["latin"] })
@@ -42,10 +43,18 @@ export default function Formations({ }: Props) {
                     <div className="absolute w-full h-px bg-ac-violet z-10"></div>
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 gap-10">
-                    <FormationCard />
-                    <FormationCard />
-                    <FormationCard />
-                    <FormationCard />
+                    {formationsData.map((formation) => {
+                        return (
+                            <FormationCard
+                                key={formation.formation_id}
+                                formation_id={formation.formation_id}
+                                title={formation.title}
+                                description={formation.description}
+                                lessons={formation.lessons}
+                                image_url={formation.image_url}
+                            />
+                        )
+                    })}
                 </div>
             </div>
             <Footer />
