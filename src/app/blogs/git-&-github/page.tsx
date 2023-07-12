@@ -3,26 +3,27 @@
 import Footer from '@/components/Footer';
 import Navbar from '@/components/Navbar';
 import { readableDate } from '@/utils/functions';
+import { Blog } from '@/utils/interfaces';
 import { blogsData } from '@/utils/mockData';
 import { Jost, Lato, Montserrat } from 'next/font/google';
+import { usePathname } from 'next/navigation';
 
 const jostFont = Jost({ subsets: ["latin"] });
 const montserratFont = Montserrat({ subsets: ["latin"] });
 const latoFont = Lato({ weight: "400", subsets: ["latin"] });
 
-type Props = {
-    params: {
-        blog: string
-    }
-}
+type Props = {}
 
-export default function Blog({ params }: Props) {
-    const blog_id = params.blog;
-    const blog = blogsData.find((blog) => blog.id === blog_id);
+export default function Blog({}: Props) {
+    const blog = blogsData[1];
 
-    if (!blog) {
-        return (<div>Blog Bot Found</div>)
-    }
+    // const pathname = usePathname();
+    // const blog_id = pathname.split("/")[pathname.split("/").length - 1];
+    // const blog = blogsData[parseInt(blog_id) - 1] !== undefined ? blogsData[parseInt(blog_id) - 1] : false;
+
+    // if (!blog) {
+    //     return (<div>Blog Bot Found</div>)
+    // }
 
     return (
         <div className="flex flex-col justify-start items-center w-full bg-ac-gray2">

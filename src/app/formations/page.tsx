@@ -45,7 +45,7 @@ export default function Formations({ }: Props) {
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 gap-10">
                     {formationsData.map((formation) => {
                         return (
-                            <FormationCard
+                            <FormationCard 
                                 key={formation.formation_id}
                                 formation_id={formation.formation_id}
                                 title={formation.title}
@@ -55,6 +55,7 @@ export default function Formations({ }: Props) {
                             />
                         )
                     })}
+                    
                 </div>
             </div>
             <Footer />
