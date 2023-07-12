@@ -12,9 +12,13 @@ const jostFont = Jost({ subsets: ["latin"] });
 const montserratFont = Montserrat({ subsets: ["latin"] });
 const latoFont = Lato({ weight: "400", subsets: ["latin"] });
 
-type Props = {}
+type Props = {
+    params: {
+        id: string
+    }
+}
 
-export default function Blog({}: Props) {
+export default function Blog({ }: Props) {
     const pathname = usePathname();
     const blog_id = pathname.split("/")[pathname.split("/").length - 1];
     const blog = blogsData[parseInt(blog_id) - 1] !== undefined ? blogsData[parseInt(blog_id) - 1] : false;
