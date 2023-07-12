@@ -1,13 +1,12 @@
 "use client";
 
-import { Metadata } from 'next'
-import Navbar from '../components/Navbar'
+import ContactUsForm from '@/components/ContactUsForm';
 import Footer from '@/components/Footer';
 import Hero from '@/components/Hero';
-import { Montserrat, Lato, IBM_Plex_Sans } from 'next/font/google';
+import { IBM_Plex_Sans, Lato, Montserrat } from 'next/font/google';
 import Image from 'next/image';
-import ContactUsForm from '@/components/ContactUsForm';
 import Link from 'next/link';
+import Navbar from '../components/Navbar';
 
 const montserratFont = Montserrat({ weight: "400", subsets: ["latin"] });
 const latoFont = Lato({ weight: "400", subsets: ["latin"] });
@@ -31,7 +30,6 @@ export default function Home() {
             {/* Formations Service  */}
             <div className="flex flex-col justify-start items-center gap-4 max-w-[236px]">
               <img loading='lazy' decoding='async' className='w-24 h-24' width={96} height={96} src="https://i.ibb.co/DgFnzJ4/formations.png" alt='service-formation' />
-              <img className='w-24 h-24' width={96} height={96} src="https://i.ibb.co/DgFnzJ4/formations.png" alt='service-formation' />
               <h6 className={latoFont.className + " font-semibold text-2xl xm:text-3xl leading-7 text-center text-white"}>Formations</h6>
               <p className={latoFont.className + " font-medium text-sm xm:text-base leading-5 text-center text-white"}>
                 Neque porro quisquam est qui dolorem ipsum quia dolor sit amet,
