@@ -60,7 +60,7 @@ export default function Home() {
       </div>
 
       {/* Contact Us */}
-      <div className="flex justify-center items-center w-full bg-ac-gray -translate-y-6 rounded-t-3xl">
+      <div className="flex justify-center items-center w-full bg-ac-gray -translate-y-6 rounded-t-3xl ">
         <ContactUsForm type='contact' />
       </div>
 

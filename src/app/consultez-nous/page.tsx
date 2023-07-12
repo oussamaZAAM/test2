@@ -11,7 +11,11 @@ export default function page({ }: Props) {
         <div className="bg-ac-gray flex flex-col justify-start items-center w-full">
             <Navbar />
 
-            <ContactUsForm type='contact' />
+            {/* Contact Us */}
+            <div className="flex justify-center items-center w-full bg-ac-gray -translate-y-6 rounded-t-3xl ">
+                <ContactUsForm type='contact' />
+            </div>
+
             <Footer />
         </div>
     )

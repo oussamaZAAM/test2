@@ -18,7 +18,7 @@ type Props = {
 
 export default function Blog({ params }: Props) {
     const blog_id = params.blog;
-    const blog = blogsData[parseInt(blog_id) - 1] !== undefined ? blogsData[parseInt(blog_id) - 1] : false;
+    const blog = blogsData.find((blog) => blog.id === blog_id);
 
     if (!blog) {
         return (<div>Blog Bot Found</div>)

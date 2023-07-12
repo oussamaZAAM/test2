@@ -2,7 +2,6 @@
 
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
-import { namifySlug } from "@/utils/functions";
 import { formationsData } from "@/utils/mockData";
 import { IBM_Plex_Sans_Condensed, Lato, Montserrat } from "next/font/google";
 import Link from "next/link";
@@ -15,12 +14,12 @@ const latoFont = Lato({ weight: "400", subsets: ["latin"] })
 
 type Props = {
   params: {
-    formation: string
+    slug: string
   }
 }
 
 export default function Page({ params }: Props) {
-  const formation_id = params.formation;
+  const formation_id = params.slug;
   const formation = formationsData.find((formation) => formation.formation_id === formation_id);
 
   if (!formation) {

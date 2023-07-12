@@ -153,7 +153,7 @@ export default function ContactUsForm({ type, formation }: Props) {
                             <textarea
                                 name="message"
                                 placeholder='Message'
-                                className="py-2 px-5 w-full"
+                                className="py-2 px-5 w-full min-h-[40px]"
                                 value={contactInputs.message}
                                 onChange={handleContactInputChange}
                             />
@@ -184,11 +184,11 @@ export default function ContactUsForm({ type, formation }: Props) {
                         <div className="flex justify-center items-center border border-zinc-300 w-full">
                             <input
                                 name="formation"
-                                readOnly={formation !== null}
+                                readOnly={formation?.length !== 0}
                                 type="text"
                                 placeholder='Formation'
                                 className="py-2 px-5 w-full text-zinc-500 font-medium"
-                                value={(formation !== null) ? formation : devisInputs.formation}
+                                value={(formation?.length !== 0) ? formation : devisInputs.formation}
                                 onChange={handleDevisInputChange}
                             />
                         </div>
