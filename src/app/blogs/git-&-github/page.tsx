@@ -15,13 +15,15 @@ const latoFont = Lato({ weight: "400", subsets: ["latin"] });
 type Props = {}
 
 export default function Blog({}: Props) {
-    const pathname = usePathname();
-    const blog_id = pathname.split("/")[pathname.split("/").length - 1];
-    const blog = blogsData[parseInt(blog_id) - 1] !== undefined ? blogsData[parseInt(blog_id) - 1] : false;
+    const blog = blogsData[1];
 
-    if (!blog) {
-        return (<div>Blog Bot Found</div>)
-    }
+    // const pathname = usePathname();
+    // const blog_id = pathname.split("/")[pathname.split("/").length - 1];
+    // const blog = blogsData[parseInt(blog_id) - 1] !== undefined ? blogsData[parseInt(blog_id) - 1] : false;
+
+    // if (!blog) {
+    //     return (<div>Blog Bot Found</div>)
+    // }
 
     return (
         <div className="flex flex-col justify-start items-center w-full bg-ac-gray2">
