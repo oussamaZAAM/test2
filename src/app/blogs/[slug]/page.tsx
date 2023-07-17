@@ -12,18 +12,24 @@ const jostFont = Jost({ subsets: ["latin"] });
 const montserratFont = Montserrat({ subsets: ["latin"] });
 const latoFont = Lato({ weight: "400", subsets: ["latin"] });
 
-type Props = {}
+type Props = {
+    params: {
+        slug: string
+    }
+}
 
-export default function Blog({}: Props) {
-    const blog = blogsData[1];
+export default function Blog({ params }: Props) {
+    const blog_id = params.slug;
+    const blog = blogsData.find((blog) => blog.id === blog_id);
 
-    // const pathname = usePathname();
-    // const blog_id = pathname.split("/")[pathname.split("/").length - 1];
-    // const blog = blogsData[parseInt(blog_id) - 1] !== undefined ? blogsData[parseInt(blog_id) - 1] : false;
-
-    // if (!blog) {
-    //     return (<div>Blog Bot Found</div>)
-    // }
+    if (!blog) {
+        return (
+            <div className="flex flex-col justify-center items-center gap-6 w-screen h-screen bg-black text-white text-center">
+                <p className="text-5xl font-bold">404</p>
+                <p className="text-3xl font-medium">Article Non trouvée</p>
+            </div>
+        )
+    }
 
     return (
         <div className="flex flex-col justify-start items-center w-full bg-ac-gray2">
