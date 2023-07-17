@@ -9,7 +9,7 @@ type Props = {}
 export default function Devis({ }: Props) {
 
   const handleSendContact = () => {
-    console.log('not here')
+    console.log('homepage')
   }
   return (
     <div className="flex flex-col justify-start items-center w-full bg-ac-gray">
