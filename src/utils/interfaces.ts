@@ -21,3 +21,13 @@ export interface Formation {
   image_url: string;
   lessons?: Array<string>;
 }
+
+export interface DevisInputs {
+  formation: string;
+  entreprise: string;
+  fullname: string;
+  telephone: string;
+  email: string;
+  message: string;
+
+}

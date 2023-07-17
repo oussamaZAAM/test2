@@ -11,6 +11,7 @@ const montserratBoldFont = Montserrat({ weight: "700", subsets: ["latin"] });
 type Props = {
     type: string,
     formation?: string
+    handleSendDevis: any
 }
 
 interface FormContactInputs {
@@ -30,7 +31,7 @@ interface FormDevisInputs {
     message: string;
 }
 
-export default function ContactUsForm({ type, formation }: Props) {
+export default function ContactUsForm({ type, formation, handleSendDevis }: Props) {
     const [devisDate, setDevisDate] = useState(new Date());
 
     const [contactInputs, setContactInputs] = useState<FormContactInputs>({
@@ -64,6 +65,10 @@ export default function ContactUsForm({ type, formation }: Props) {
             [name]: value
         }));
     };
+
+    const handleSubmitDevis = () => {
+        handleSendDevis();
+    }
     return (
         type === "contact"
             ? <div className='flex flex-col justify-start items-center mt-10 mb-4 mx-2 py-6 px-5 box-shadow2 w-[464px] bg-white gap-5'>
@@ -295,7 +300,7 @@ export default function ContactUsForm({ type, formation }: Props) {
                 </form>
 
                 <div className="bg-ac-bleu py-3 px-6 w-full">
-                    <p className={montserratBoldFont.className + " text-white text-base font-bold text-center uppercase"}>Envoyer</p>
+                    <button onClick={handleSubmitDevis} className={montserratBoldFont.className + " text-white text-base font-bold text-center uppercase"}>Envoyer</button>
                 </div>
             </div>
     )
