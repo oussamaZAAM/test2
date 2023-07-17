@@ -11,7 +11,7 @@ const montserratBoldFont = Montserrat({ weight: "700", subsets: ["latin"] });
 type Props = {
     type: string,
     formation?: string
-    handleSendDevis: any
+    handleSendDevis?: any
 }
 
 interface FormContactInputs {
