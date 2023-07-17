@@ -10,8 +10,8 @@ const montserratBoldFont = Montserrat({ weight: "700", subsets: ["latin"] });
 
 type Props = {
     type: string,
-    formation?: string
-    handleSendDevis: any
+    formation?: string,
+    handleSendDevis: Function,
 }
 
 interface FormContactInputs {
@@ -299,7 +299,7 @@ export default function ContactUsForm({ type, formation, handleSendDevis }: Prop
                     </div>
                 </form>
 
-                <div className="bg-ac-bleu py-3 px-6 w-full">
+                <div className="flex justify-center bg-ac-bleu py-3 px-6 w-full">
                     <button onClick={handleSubmitDevis} className={montserratBoldFont.className + " text-white text-base font-bold text-center uppercase"}>Envoyer</button>
                 </div>
             </div>
