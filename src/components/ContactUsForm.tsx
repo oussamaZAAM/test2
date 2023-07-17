@@ -293,7 +293,7 @@ export default function ContactUsForm({ type, formation, handleSendDevis }: Prop
                                 dateFormat="dd/MM/yyyy"
                                 selected={devisDate}
                                 onSelect={setDevisDate}
-                                onChange={() => {}}
+                                onChange={() => { }}
                             />
                         </div>
                     </div>

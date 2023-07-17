@@ -1,12 +1,11 @@
 "use client";
 
-import ContactUsForm from '@/components/ContactUsForm'
+import ContactUsForm from '@/components/ContactUsForm';
 import Footer from '@/components/Footer';
 import Navbar from '@/components/Navbar';
 import { namifySlug } from '@/utils/functions';
 import { DevisInputs } from '@/utils/interfaces';
 import { useSearchParams } from 'next/navigation';
-import React from 'react'
 
 type Props = {}
 
