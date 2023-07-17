@@ -11,7 +11,7 @@ const montserratBoldFont = Montserrat({ weight: "700", subsets: ["latin"] });
 type Props = {
     type: string,
     formation?: string,
-    handleSendDevis: Function,
+    handleSend: Function,
 }
 
 interface FormContactInputs {
@@ -31,7 +31,7 @@ interface FormDevisInputs {
     message: string;
 }
 
-export default function ContactUsForm({ type, formation, handleSendDevis }: Props) {
+export default function ContactUsForm({ type, formation, handleSend }: Props) {
     const [devisDate, setDevisDate] = useState(new Date());
 
     const [contactInputs, setContactInputs] = useState<FormContactInputs>({
@@ -66,8 +66,19 @@ export default function ContactUsForm({ type, formation, handleSendDevis }: Prop
         }));
     };
 
-    const handleSubmitDevis = () => {
-        handleSendDevis();
+    const handleSubmit = () => {
+        if (type === "devis") {
+            handleSend({
+                formation: '',
+                entreprise: '',
+                fullname: '',
+                telephone: '',
+                email: '',
+                message: ''
+            });
+        } else {
+            handleSend();
+        }
     }
     return (
         type === "contact"
@@ -165,8 +176,7 @@ export default function ContactUsForm({ type, formation, handleSendDevis }: Prop
                         </div>
                     </div>
                 </form>
-
-                <div className="bg-ac-bleu py-3 px-6 w-full">
+                <div onClick={handleSubmit} className="bg-ac-bleu py-3 px-6 w-full cursor-pointer">
                     <p className={montserratBoldFont.className + " text-white text-base font-bold text-center uppercase"}>Envoyer</p>
                 </div>
             </div>
@@ -299,8 +309,8 @@ export default function ContactUsForm({ type, formation, handleSendDevis }: Prop
                     </div>
                 </form>
 
-                <div className="flex justify-center bg-ac-bleu py-3 px-6 w-full">
-                    <button onClick={handleSubmitDevis} className={montserratBoldFont.className + " text-white text-base font-bold text-center uppercase"}>Envoyer</button>
+                <div onClick={handleSubmit} className="bg-ac-bleu py-3 px-6 w-full cursor-pointer">
+                    <p className={montserratBoldFont.className + " text-white text-base font-bold text-center uppercase"}>Envoyer</p>
                 </div>
             </div>
     )

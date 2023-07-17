@@ -37,7 +37,7 @@ export default function Devis({ }: Props) {
             <div className="flex w-full h-44 bg-ac-bleu rounded-b-3xl -mb-28"></div>
 
             <div className="flex justify-center items-center w-full bg-transparent -translate-y-6 rounded-t-3xl">
-                <ContactUsForm type="devis" formation={namifySlug(formation)} handleSendDevis={handleSendDevis} />
+                <ContactUsForm type="devis" formation={namifySlug(formation)} handleSend={handleSendDevis} />
             </div>
 
             <Footer />
