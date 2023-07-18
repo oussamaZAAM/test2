@@ -68,20 +68,32 @@ export default function ContactUsForm({ loading, type, formation, handleSend }: 
     };
 
     const handleSubmit = () => {
-        if (!loading) {
-            if (type === "devis") {
-                handleSend({
-                    formation: formation || devisInputs.formation,
-                    entreprise: devisInputs.entreprise,
-                    fullname: devisInputs.fullname,
-                    telephone: devisInputs.telephone,
-                    email: devisInputs.email,
-                    message: devisInputs.message,
-                    date: devisDate
-                });
-            } else {
-                handleSend();
+        if ((formation !== "" || devisInputs.formation !== "") && devisInputs.entreprise !== "" && devisInputs.email !== "" && devisInputs.fullname !== "") {
+            if (!loading) {
+                if (type === "devis") {
+                    handleSend({
+                        formation: formation || devisInputs.formation,
+                        entreprise: devisInputs.entreprise,
+                        fullname: devisInputs.fullname,
+                        telephone: devisInputs.telephone,
+                        email: devisInputs.email,
+                        message: devisInputs.message,
+                        date: devisDate
+                    });
+                    setDevisInputs({
+                        formation: '',
+                        entreprise: '',
+                        fullname: '',
+                        telephone: '',
+                        email: '',
+                        message: ''
+                    });
+                } else {
+                    handleSend();
+                }
             }
+        } else {
+            alert("Veuillez entrer les informations nécéssaires!");
         }
     }
     return (
@@ -248,22 +260,6 @@ export default function ContactUsForm({ loading, type, formation, handleSend }: 
                     </div>
 
                     <div className="flex flex-col justify-center items-start w-full">
-                        <label htmlFor="telephone" className="flex justify-center items-center text-sm gap-1">
-                            <h3 className="font-semibold text-sm text-black text-start">Téléphone</h3>
-                        </label>
-                        <div className="flex justify-center items-center relative border border-zinc-300 w-full">
-                            <input
-                                name="telephone"
-                                type="tel"
-                                placeholder='Téléphone'
-                                className="py-2 px-5 w-full"
-                                value={devisInputs.telephone}
-                                onChange={handleDevisInputChange}
-                            />
-                        </div>
-                    </div>
-
-                    <div className="flex flex-col justify-center items-start w-full">
                         <label htmlFor="email" className="flex justify-center items-center text-sm gap-1">
                             <h3 className="font-semibold text-sm text-black text-start">Email</h3>
                             <span className="text-red-500">*</span>
@@ -281,9 +277,24 @@ export default function ContactUsForm({ loading, type, formation, handleSend }: 
                     </div>
 
                     <div className="flex flex-col justify-center items-start w-full">
+                        <label htmlFor="telephone" className="flex justify-center items-center text-sm gap-1">
+                            <h3 className="font-semibold text-sm text-black text-start">Téléphone</h3>
+                        </label>
+                        <div className="flex justify-center items-center relative border border-zinc-300 w-full">
+                            <input
+                                name="telephone"
+                                type="tel"
+                                placeholder='Téléphone'
+                                className="py-2 px-5 w-full"
+                                value={devisInputs.telephone}
+                                onChange={handleDevisInputChange}
+                            />
+                        </div>
+                    </div>
+
+                    <div className="flex flex-col justify-center items-start w-full">
                         <label htmlFor="message" className="flex justify-center items-center text-sm gap-1">
                             <h3 className="font-semibold text-sm text-black text-start">Message</h3>
-                            <span className="text-red-500">*</span>
                         </label>
                         <div className="flex justify-center items-center relative border border-zinc-300 w-full">
                             <textarea
