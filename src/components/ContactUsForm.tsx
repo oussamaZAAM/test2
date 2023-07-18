@@ -9,6 +9,7 @@ const montserratNormalFont = Montserrat({ weight: "400", subsets: ["latin"] });
 const montserratBoldFont = Montserrat({ weight: "700", subsets: ["latin"] });
 
 type Props = {
+    loading: boolean,
     type: string,
     formation?: string,
     handleSend: Function,
@@ -31,7 +32,7 @@ interface FormDevisInputs {
     message: string;
 }
 
-export default function ContactUsForm({ type, formation, handleSend }: Props) {
+export default function ContactUsForm({ loading, type, formation, handleSend }: Props) {
     const [devisDate, setDevisDate] = useState(new Date());
 
     const [contactInputs, setContactInputs] = useState<FormContactInputs>({
@@ -67,17 +68,32 @@ export default function ContactUsForm({ type, formation, handleSend }: Props) {
     };
 
     const handleSubmit = () => {
-        if (type === "devis") {
-            handleSend({
-                formation: '',
-                entreprise: '',
-                fullname: '',
-                telephone: '',
-                email: '',
-                message: ''
-            });
+        if ((formation !== "" || devisInputs.formation !== "") && devisInputs.entreprise !== "" && devisInputs.email !== "" && devisInputs.fullname !== "") {
+            if (!loading) {
+                if (type === "devis") {
+                    handleSend({
+                        formation: formation || devisInputs.formation,
+                        entreprise: devisInputs.entreprise,
+                        fullname: devisInputs.fullname,
+                        telephone: devisInputs.telephone,
+                        email: devisInputs.email,
+                        message: devisInputs.message,
+                        date: devisDate
+                    });
+                    setDevisInputs({
+                        formation: '',
+                        entreprise: '',
+                        fullname: '',
+                        telephone: '',
+                        email: '',
+                        message: ''
+                    });
+                } else {
+                    handleSend();
+                }
+            }
         } else {
-            handleSend();
+            alert("Veuillez entrer les informations nécéssaires!");
         }
     }
     return (
@@ -244,22 +260,6 @@ export default function ContactUsForm({ type, formation, handleSend }: Props) {
                     </div>
 
                     <div className="flex flex-col justify-center items-start w-full">
-                        <label htmlFor="telephone" className="flex justify-center items-center text-sm gap-1">
-                            <h3 className="font-semibold text-sm text-black text-start">Téléphone</h3>
-                        </label>
-                        <div className="flex justify-center items-center relative border border-zinc-300 w-full">
-                            <input
-                                name="telephone"
-                                type="tel"
-                                placeholder='Téléphone'
-                                className="py-2 px-5 w-full"
-                                value={devisInputs.telephone}
-                                onChange={handleDevisInputChange}
-                            />
-                        </div>
-                    </div>
-
-                    <div className="flex flex-col justify-center items-start w-full">
                         <label htmlFor="email" className="flex justify-center items-center text-sm gap-1">
                             <h3 className="font-semibold text-sm text-black text-start">Email</h3>
                             <span className="text-red-500">*</span>
@@ -277,9 +277,24 @@ export default function ContactUsForm({ type, formation, handleSend }: Props) {
                     </div>
 
                     <div className="flex flex-col justify-center items-start w-full">
+                        <label htmlFor="telephone" className="flex justify-center items-center text-sm gap-1">
+                            <h3 className="font-semibold text-sm text-black text-start">Téléphone</h3>
+                        </label>
+                        <div className="flex justify-center items-center relative border border-zinc-300 w-full">
+                            <input
+                                name="telephone"
+                                type="tel"
+                                placeholder='Téléphone'
+                                className="py-2 px-5 w-full"
+                                value={devisInputs.telephone}
+                                onChange={handleDevisInputChange}
+                            />
+                        </div>
+                    </div>
+
+                    <div className="flex flex-col justify-center items-start w-full">
                         <label htmlFor="message" className="flex justify-center items-center text-sm gap-1">
                             <h3 className="font-semibold text-sm text-black text-start">Message</h3>
-                            <span className="text-red-500">*</span>
                         </label>
                         <div className="flex justify-center items-center relative border border-zinc-300 w-full">
                             <textarea
@@ -309,8 +324,15 @@ export default function ContactUsForm({ type, formation, handleSend }: Props) {
                     </div>
                 </form>
 
-                <div onClick={handleSubmit} className="bg-ac-bleu py-3 px-6 w-full cursor-pointer">
-                    <p className={montserratBoldFont.className + " text-white text-base font-bold text-center uppercase"}>Envoyer</p>
+                <div onClick={handleSubmit} className={"bg-ac-bleu py-3 px-6 w-full " + (!loading && "cursor-pointer")}>
+                    {!loading
+                        ? <p className={montserratBoldFont.className + " text-white text-base font-bold text-center uppercase"}>Envoyer</p>
+                        : <div className="flex justify-center items-center gap-2.5 p-[5px]">
+                            <div className="rounded-full bg-white w-3.5 h-3.5 animate-loading1"></div>
+                            <div className="rounded-full bg-white w-3.5 h-3.5 animate-loading2"></div>
+                            <div className="rounded-full bg-white w-3.5 h-3.5 animate-loading3"></div>
+                        </div>
+                    }
                 </div>
             </div>
     )
