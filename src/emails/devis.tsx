@@ -41,21 +41,21 @@ export const DevisEmail = ({
                     <Section style={content}>
                         <Text style={paragraph}>Bonjour Admin,</Text>
                         <Text style={paragraph}>
-                            Vous avez reçu une demande de devis d'après <b>{fullname}</b>.
+                            Vous avez reçu une demande de devis d&apos;après <b>{fullname}</b>.
                         </Text>
                         <Text style={paragraph}>
-                            L'utilisateur <b>{fullname}</b> affilié avec l'entreprise <b>{entreprise}</b> {" "}
+                            L&apos;utilisateur <b>{fullname}</b> affilié avec l&apos;entreprise <b>{entreprise}</b> {" "}
                             a demandé une demande de devis pour la formation <b>{formation}</b> {" "}
                             à commencer le <b>{readableDate(date)}</b>.
                         </Text>
                         <Text style={paragraph}>
-                            L'utilisateur <b>{fullname}</b> a laissé un message :
+                            L&apos;utilisateur <b>{fullname}</b> a laissé un message :
                             <Section style={messageSection}>
                                 <b>{message}</b>
                             </Section>
                         </Text>
                         <Text style={paragraph}>
-                            Plus d'informations sur l'utilisateur <b>{fullname}</b>:
+                            Plus d&apos;informations sur l&apos;utilisateur <b>{fullname}</b>:
                         </Text>
                         <Text style={indentparagraph}>
                             - Adresse Email : <b>{email}</b>
