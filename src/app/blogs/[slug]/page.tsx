@@ -6,6 +6,7 @@ import { readableDate } from '@/utils/functions';
 import { Blog } from '@/utils/interfaces';
 import { blogsData } from '@/utils/mockData';
 import { Jost, Lato, Montserrat } from 'next/font/google';
+import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 
 const jostFont = Jost({ subsets: ["latin"] });

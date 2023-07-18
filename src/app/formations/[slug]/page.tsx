@@ -4,6 +4,7 @@ import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
 import { formationsData } from "@/utils/mockData";
 import { IBM_Plex_Sans_Condensed, Lato, Montserrat } from "next/font/google";
+import Image from "next/image";
 import Link from "next/link";
 import { MdOutlineKeyboardArrowRight } from "react-icons/md";
 import { RiCopperCoinLine } from "react-icons/ri";
