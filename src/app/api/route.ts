@@ -9,7 +9,7 @@ export async function POST(request: NextRequest) {
     resend.emails.send({
         from: 'onboarding@resend.dev',
         to: 'zaam.oussama@gmail.com',
-        subject: 'hello world',
+        subject: 'Reçu de devis',
         react: DevisEmail({
             formation: data.formation,
             entreprise: data.entreprise,

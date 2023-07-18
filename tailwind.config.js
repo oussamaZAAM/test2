@@ -25,6 +25,30 @@ module.exports = {
         'formation-unhover': '0 0 10px 1px rgba(0, 0, 0, 0.1)',
         'formation-hover': '0 0 15px 5px rgba(0, 0, 0, 0.1)',
         'formation-card': '0px 4px 4px 0px rgba(0, 0, 0, 0.25)',
+      },
+      keyframes: {
+        loading1: {
+          "0%": {transform: "scale(1)"},
+          "50%": {transform: "scale(0)"},
+          "100%": {transform: "scale(1)"},
+        },
+        loading2: {
+          "0%": {transform: "scale(0.66)"},
+          "16.6%": {transform: "scale(1)"},
+          "66%": {transform: "scale(0)"},
+          "100%": {transform: "scale(0.66)"},
+        },
+        loading3: {
+          "0%": {transform: "scale(0.33)"},
+          "33%": {transform: "scale(1)"},
+          "83%": {transform: "scale(0)"},
+          "100%": {transform: "scale(0.33)"}
+        },
+      }, 
+      animation: {
+        "loading1": "loading1 0.75s linear infinite",
+        "loading2": "loading2 0.75s linear infinite",
+        "loading3": "loading3 0.75s linear infinite"
       }
     },
     screens: {
