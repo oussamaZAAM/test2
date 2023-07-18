@@ -29,5 +29,14 @@ export interface DevisInputs {
   telephone: string;
   email: string;
   message: string;
+}
 
+export interface DevisPayload {
+  formation: string;
+  entreprise: string;
+  fullname: string;
+  telephone: string;
+  email: string;
+  message: string;
+  date: Date;
 }

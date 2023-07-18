@@ -4,7 +4,7 @@ import ContactUsForm from '@/components/ContactUsForm';
 import Footer from '@/components/Footer';
 import Navbar from '@/components/Navbar';
 import { namifySlug } from '@/utils/functions';
-import { DevisInputs } from '@/utils/interfaces';
+import { DevisInputs, DevisPayload } from '@/utils/interfaces';
 import { useSearchParams } from 'next/navigation';
 
 type Props = {}
@@ -15,7 +15,7 @@ export default function Devis({ }: Props) {
 
     const formation = searchParams.get("formation") !== null ? searchParams.get("formation")! : "";
 
-    const handleSendDevis = async (args: DevisInputs) => {
+    const handleSendDevis = async (args: DevisPayload) => {
         await fetch("/api", {
             method: "POST",
             headers: {
@@ -28,6 +28,7 @@ export default function Devis({ }: Props) {
                 telephone: args.telephone,
                 email: args.email,
                 message: args.message,
+                date: args.date
             })
         });
     }

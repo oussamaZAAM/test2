@@ -69,12 +69,13 @@ export default function ContactUsForm({ type, formation, handleSend }: Props) {
     const handleSubmit = () => {
         if (type === "devis") {
             handleSend({
-                formation: '',
-                entreprise: '',
-                fullname: '',
-                telephone: '',
-                email: '',
-                message: ''
+                formation: formation || devisInputs.formation,
+                entreprise: devisInputs.entreprise,
+                fullname: devisInputs.fullname,
+                telephone: devisInputs.telephone,
+                email: devisInputs.email,
+                message: devisInputs.message,
+                date: devisDate
             });
         } else {
             handleSend();
