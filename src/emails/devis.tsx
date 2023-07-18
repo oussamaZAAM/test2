@@ -48,12 +48,12 @@ export const DevisEmail = ({
                             a demandé une demande de devis pour la formation <b>{formation}</b> {" "}
                             à commencer le <b>{readableDate(date)}</b>.
                         </Text>
-                        <Text style={paragraph}>
+                        {message && <Text style={paragraph}>
                             L&apos;utilisateur <b>{fullname}</b> a laissé un message :
                             <Section style={messageSection}>
                                 <b>{message}</b>
                             </Section>
-                        </Text>
+                        </Text>}
                         <Text style={paragraph}>
                             Plus d&apos;informations sur l&apos;utilisateur <b>{fullname}</b>:
                         </Text>
