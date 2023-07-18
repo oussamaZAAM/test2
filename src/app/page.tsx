@@ -32,7 +32,7 @@ export default function Home() {
 
             {/* Formations Service  */}
             <div className="flex flex-col justify-start items-center gap-4 max-w-[236px]">
-              <img loading='lazy' decoding='async' className='w-24 h-24' width={96} height={96} src="https://i.ibb.co/DgFnzJ4/formations.png" alt='service-formation' />
+              <Image className='w-24 h-24' width={96} height={96} src="https://i.ibb.co/DgFnzJ4/formations.png" alt='service-formation' />
               <h6 className={latoFont.className + " font-semibold text-2xl xm:text-3xl leading-7 text-center text-white"}>Formations</h6>
               <p className={latoFont.className + " font-medium text-sm xm:text-base leading-5 text-center text-white"}>
                 Neque porro quisquam est qui dolorem ipsum quia dolor sit amet,

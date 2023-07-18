@@ -54,7 +54,7 @@ export default function Navbar({ }: Props) {
                 {/* Logo  */}
                 <Link href={"/"}>
                     <div className="flex w-36 h-20 overflow-hidden cursor-pointer">
-                        <img  loading='lazy' decoding='async' className='w-36 h-20 object-cover object-center' src="https://i.ibb.co/NxzmfDS/logo.png" height={400} width={400} alt='AleeConseil' />
+                        <Image className='w-36 h-20 object-cover object-center' src="https://i.ibb.co/NxzmfDS/logo.png" height={400} width={400} alt='AleeConseil' />
                     </div>
                 </Link>
                 {/* Navs  */}

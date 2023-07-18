@@ -19,7 +19,7 @@ export default function FormationCard({ formation_id, title, description, lesson
     <div className='flex flex-col justify-between items-center gap-6 w-full py-5 px-6 rounded-xl border transition duration-100 hover:duration-300 shadow-formation-unhover hover:shadow-formation-hover max-w-[270px] fold:max-w-[320px]'>
       <div className="flex flex-col justify-start items-center gap-3 w-full">
         <div className="flex justify-between items-end w-full">
-          <img loading='lazy' decoding='async' src={image_url} width={75} height={75} alt='testing' />
+          <Image src={image_url} width={75} height={75} alt='testing' />
           <h5 className={montserratFont.className + " text-3xl text-ac-violet text-left font-medium w-min"}>{title}</h5>
         </div>
 

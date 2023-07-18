@@ -19,7 +19,7 @@ export default function Footer({ }: Props) {
                 <div className="flex flex-col justify-between items-start">
                     <div className="w-full flex justify-start items-center">
                         {/* Logo  */}
-                        <img  loading='lazy' decoding='async' className='w-36 h-20 object-cover object-center brightness-150' src="https://i.ibb.co/NxzmfDS/logo.png" height={400} width={400} alt='AleeConseil' />
+                        <Image className='w-36 h-20 object-cover object-center brightness-150' src="https://i.ibb.co/NxzmfDS/logo.png" height={400} width={400} alt='AleeConseil' />
                     </div>
                     <div className="flex flex-col justify-start items-start">
                         <p className="text-sm text-white">Copyright © 2023 Alee Conseil SARL</p>
@@ -78,7 +78,7 @@ export default function Footer({ }: Props) {
             <div className='md:hidden bg-ac-violet rounded-t-[25px] w-full flex flex-col justify-between items-stretch py-12 px-6 xm:px-24 lg:px-36 xl:px-48 gap-4'>
                 <div className="w-full flex justify-center items-center">
                     {/* Logo  */}
-                    <img  loading='lazy' decoding='async' className='w-36 h-20 object-cover object-center brightness-150' src="https://i.ibb.co/NxzmfDS/logo.png" height={400} width={400} alt='AleeConseil' />
+                    <Image className='w-36 h-20 object-cover object-center brightness-150' src="https://i.ibb.co/NxzmfDS/logo.png" height={400} width={400} alt='AleeConseil' />
                 </div>
                 <div className="flex flex-col justify-end items-center gap-16">
                     <div className="flex flex-col justify-start items-stretch gap-4">
