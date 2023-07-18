@@ -4,7 +4,7 @@ import ContactUsForm from '@/components/ContactUsForm';
 import Footer from '@/components/Footer';
 import Navbar from '@/components/Navbar';
 import { namifySlug } from '@/utils/functions';
-import { DevisInputs, DevisPayload } from '@/utils/interfaces';
+import { DevisPayload } from '@/utils/interfaces';
 import { useSearchParams } from 'next/navigation';
 import { useState } from 'react';
 
