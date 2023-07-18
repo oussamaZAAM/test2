@@ -26,5 +26,5 @@ export default function BlogCard({ id, title, body }: Props) {
             </p>
             </Link>
         </div>
-    )
+    ) 
 }
