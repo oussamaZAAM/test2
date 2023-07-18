@@ -4,23 +4,31 @@ import { Resend } from 'resend';
 
 
 export async function POST(request: NextRequest) {
-    const resend = new Resend(process.env.API_KEY);
-    
-    const data = await request.json();
-    resend.emails.send({
-        from: 'onboarding@resend.dev',
-        to: 'zaam.oussama@gmail.com',
-        subject: 'Reçu de devis',
-        react: DevisEmail({
-            formation: data.formation,
-            entreprise: data.entreprise,
-            fullname: data.fullname,
-            telephone: data.telephone,
-            email: data.email,
-            message: data.message,
-            date: new Date(data.date)
-        }),
-    });
+    try {
+        const resend = new Resend(process.env.RESEND_API_KEY);
 
-    return NextResponse.json({ status: "200" });
+        const data = await request.json();
+        if (process.env.EMAIL_SENDER && process.env.EMAIL_RECEIVER) {
+            resend.emails.send({
+                from: process.env.EMAIL_SENDER,
+                to: process.env.EMAIL_RECEIVER,
+                subject: 'Reçu de devis',
+                react: DevisEmail({
+                    formation: data.formation,
+                    entreprise: data.entreprise,
+                    fullname: data.fullname,
+                    telephone: data.telephone,
+                    email: data.email,
+                    message: data.message,
+                    date: new Date(data.date)
+                }),
+            });
+            return NextResponse.json({ status: "200" });
+        } else {
+            return NextResponse.json({ message: "Les emails d'envoi et de reçu ne sont pas configurés!" });
+        }
+    } catch (error) {
+        return NextResponse.json({ message: "Internal Server Error" }, { status: 500 });
+    }
+
 }
