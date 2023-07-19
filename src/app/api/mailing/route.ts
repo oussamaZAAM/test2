@@ -2,14 +2,14 @@ import { DevisEmail } from "@/emails/devis";
 import { NextRequest, NextResponse } from "next/server";
 import { Resend } from 'resend';
 
+const resend = new Resend(process.env.RESEND_API_KEY);
 
 export async function POST(request: NextRequest) {
-    const resend = new Resend(process.env.RESEND_API_KEY);
 
     try {
         const data = await request.json();
         if (process.env.EMAIL_SENDER && process.env.EMAIL_RECEIVER) {
-            resend.emails.send({
+            const mailData = await resend.emails.send({
                 from: process.env.EMAIL_SENDER,
                 to: process.env.EMAIL_RECEIVER,
                 subject: 'Reçu de devis',
@@ -25,7 +25,7 @@ export async function POST(request: NextRequest) {
                     date: new Date(data.date)
                 }),
             });
-            return NextResponse.json({ status: 200 });
+            return NextResponse.json(mailData, { status: 200 });
         } else {
             return NextResponse.json({ message: "Les emails d'envoi et de reçu ne sont pas configurés!" }, { status: 406 });
         }
