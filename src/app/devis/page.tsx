@@ -23,29 +23,30 @@ export default function Devis({ }: Props) {
         const searchFormation = formationsData.find((element) => element.title.toLowerCase() === formation.toLowerCase());
         if (searchFormation) {
             setLoading(true);
-            try {
-                await fetch("/api/mailing", {
-                    method: "POST",
-                    headers: {
-                        "Content-Type": "application/json"
-                    },
-                    body: JSON.stringify({
-                        formation: searchFormation.title,
-                        price: searchFormation.price,
-                        duration: searchFormation.duration,
-                        entreprise: args.entreprise,
-                        fullname: args.fullname,
-                        telephone: args.telephone,
-                        email: args.email,
-                        message: args.message,
-                        date: args.date
-                    })
+            await fetch("/api/mailing", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({
+                    formation: searchFormation.title,
+                    price: searchFormation.price,
+                    duration: searchFormation.duration,
+                    entreprise: args.entreprise,
+                    fullname: args.fullname,
+                    telephone: args.telephone,
+                    email: args.email,
+                    message: args.message,
+                    date: args.date
+                })
+            })
+                .then(() => {
+                    setLoading(false);
+                })
+                .catch((error) => {
+                    alert("Erreur d'envoyer l'email! Veuillez réessayer " + error);
+                    setLoading(false);
                 });
-                setLoading(false);
-            } catch (error) {
-                alert("Erreur d'envoyer l'email! Veuillez réessayer");
-                setLoading(false);
-            }
         } else {
             alert("Formation non trouvée!");
         }
