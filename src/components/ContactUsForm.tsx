@@ -67,11 +67,11 @@ export default function ContactUsForm({ loading, type, formation, handleSend }: 
         }));
     };
 
-    const handleSubmit = () => {
+    const handleSubmit = async () => {
         if ((formation !== "" || devisInputs.formation !== "") && devisInputs.entreprise !== "" && devisInputs.email !== "" && devisInputs.fullname !== "") {
             if (!loading) {
                 if (type === "devis") {
-                    handleSend({
+                    await handleSend({
                         formation: formation || devisInputs.formation,
                         entreprise: devisInputs.entreprise,
                         fullname: devisInputs.fullname,
@@ -81,11 +81,7 @@ export default function ContactUsForm({ loading, type, formation, handleSend }: 
                         date: devisDate
                     });
                     setDevisInputs({
-                        formation: '',
-                        entreprise: '',
-                        fullname: '',
-                        telephone: '',
-                        email: '',
+                        ...devisInputs,
                         message: ''
                     });
                 } else {

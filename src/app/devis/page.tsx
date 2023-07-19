@@ -5,6 +5,7 @@ import Footer from '@/components/Footer';
 import Navbar from '@/components/Navbar';
 import { namifySlug } from '@/utils/functions';
 import { DevisPayload } from '@/utils/interfaces';
+import { formationsData } from '@/utils/mockData';
 import { useSearchParams } from 'next/navigation';
 import { useState } from 'react';
 
@@ -19,26 +20,34 @@ export default function Devis({ }: Props) {
     const [loading, setLoading] = useState(false);
 
     const handleSendDevis = async (args: DevisPayload) => {
-        setLoading(true);
-        try {
-            await fetch("/api", {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json"
-                },
-                body: JSON.stringify({
-                    formation: args.formation,
-                    entreprise: args.entreprise,
-                    fullname: args.fullname,
-                    telephone: args.telephone,
-                    email: args.email,
-                    message: args.message,
-                    date: args.date
-                })
-            });
-            setLoading(false);
-        } catch (error) {
-            alert("Erreur d'envoyer l'email! Veuillez réessayer");
+        const searchFormation = formationsData.find((element) => element.title.toLowerCase() === formation.toLowerCase());
+        if (searchFormation) {
+            setLoading(true);
+            try {
+                await fetch("/api/mailing", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify({
+                        formation: searchFormation.title,
+                        price: searchFormation.price,
+                        duration: searchFormation.duration,
+                        entreprise: args.entreprise,
+                        fullname: args.fullname,
+                        telephone: args.telephone,
+                        email: args.email,
+                        message: args.message,
+                        date: args.date
+                    })
+                });
+                setLoading(false);
+            } catch (error) {
+                alert("Erreur d'envoyer l'email! Veuillez réessayer");
+                setLoading(false);
+            }
+        } else {
+            alert("Formation non trouvée!");
         }
     }
     return (

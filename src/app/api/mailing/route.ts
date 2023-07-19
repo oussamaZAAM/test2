@@ -15,6 +15,8 @@ export async function POST(request: NextRequest) {
                 subject: 'Reçu de devis',
                 react: DevisEmail({
                     formation: data.formation,
+                    price: data.price,
+                    duration: data.duration,
                     entreprise: data.entreprise,
                     fullname: data.fullname,
                     telephone: data.telephone,
@@ -23,12 +25,11 @@ export async function POST(request: NextRequest) {
                     date: new Date(data.date)
                 }),
             });
-            return NextResponse.json({ status: "200" });
+            return NextResponse.json({ status: 200 });
         } else {
-            return NextResponse.json({ message: "Les emails d'envoi et de reçu ne sont pas configurés!" });
+            return NextResponse.json({ message: "Les emails d'envoi et de reçu ne sont pas configurés!" }, { status: 406 });
         }
     } catch (error) {
         return NextResponse.json({ message: "Internal Server Error" }, { status: 500 });
     }
-
 }

@@ -1,5 +1,6 @@
 import { readableDate } from '@/utils/functions';
 import { DevisPayload } from '@/utils/interfaces';
+import { currency } from '@/utils/variables';
 import {
     Body,
     Column,
@@ -15,6 +16,8 @@ import {
 
 export const DevisEmail = ({
     formation,
+    price,
+    duration,
     entreprise,
     fullname,
     telephone,
@@ -48,6 +51,17 @@ export const DevisEmail = ({
                             a demandé une demande de devis pour la formation <b>{formation}</b> {" "}
                             à commencer le <b>{readableDate(date)}</b>.
                         </Text>
+
+                        <Text style={indentparagraph}>
+                            - Nom de la formation : <b style={{fontSize: "16px", fontWeight: "bold"}}>{formation}</b>
+                        </Text>
+                        <Text style={indentparagraph}>
+                            - Prix de la formation : <b style={{fontSize: "16px", fontWeight: "bold"}}>{price + " " + currency}</b>
+                        </Text>
+                        <Text style={indentparagraph}>
+                            - Durée de la formation : <b style={{fontSize: "16px", fontWeight: "bold"}}>{duration}</b>
+                        </Text>
+
                         {message && <Text style={paragraph}>
                             L&apos;utilisateur <b>{fullname}</b> a laissé un message :
                             <Section style={messageSection}>

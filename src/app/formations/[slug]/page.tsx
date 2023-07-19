@@ -3,6 +3,7 @@
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
 import { formationsData } from "@/utils/mockData";
+import { currency } from "@/utils/variables";
 import { IBM_Plex_Sans_Condensed, Lato, Montserrat } from "next/font/google";
 import Image from "next/image";
 import Link from "next/link";
@@ -109,7 +110,7 @@ export default function Page({ params }: Props) {
                 <RiCopperCoinLine className="fill-ac-bleu" size={25} />
                 <p className="text-xl font-bold uppercase text-black text-center">Prix</p>
               </div>
-              <p className="text-base font-medium text-center text-black uppsercase">{formation.price} €</p>
+              <p className="text-base font-medium text-center text-black uppsercase">{formation.price + " " + currency}</p>
             </div>
 
             <div className="hidden xm:block w-0.5 bg-[#888888]"></div>
