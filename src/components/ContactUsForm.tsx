@@ -95,7 +95,7 @@ export default function ContactUsForm({ loading, type, formation, handleSend }: 
     }
     return (
         type === "contact"
-            ? <div className='scale-125 flex flex-col justify-start items-center mt-10 mb-4 mx-2 py-6 px-5 box-shadow2 w-[464px] bg-white gap-5'>
+            ? <div className='flex flex-col justify-start items-center mt-10 mb-4 mx-2 py-6 px-5 box-shadow2 w-[464px] bg-white gap-5'>
                 <div className="flex flex-col justify-start items-start w-full gap-3">
                     <h2 className={montserratBoldFont.className + " font-bold text-4xl text-black text-start"}>Contactez-<span className='text-ac-violet'>nous</span></h2>
                     <p className="text-black text-xs font-semibold text-start">

@@ -52,7 +52,7 @@ export default function Navbar({ }: Props) {
                     </div>
                 </Link>
                 {/* Navs  */}
-                <div className="hidden xm:flex justify-start items-center gap-3 xl:gap-8">
+                <div className="hidden xm:flex justify-start items-center gap-8 xl:gap-8">
                     <Link href={"/formations"}>
                         <p className="text-sm lg:text-base uppercase font-semibold text-center text-black whitespace-nowrap select-none cursor-pointer hover:text-gray-600">Formations</p>
                     </Link>
