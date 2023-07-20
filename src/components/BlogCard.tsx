@@ -14,7 +14,7 @@ export default function BlogCard({ id, title, body }: Props) {
     return (
         <div className="w-full flex flex-col justify-between items-start py-5 px-6 border-2 gap-4 border-ac-bleu">
             <div className="w-full flex flex-col justify-start items-start gap-4">
-                <h3 className={jostFont.className + " font-bold text-2xl text-black text-start line-clamp-3"}>
+                <h3 className={jostFont.className + " font-bold text-2xl text-black text-start line-clamp-2 md:h-16"}>
                     {title}
                 </h3>
                 <h5 className={montserratFont.className + " font-normal text-sm text-black text-start line-clamp-6"}>

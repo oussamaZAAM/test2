@@ -7,6 +7,7 @@ import { IBM_Plex_Sans, Lato, Montserrat } from 'next/font/google';
 import Image from 'next/image';
 import Link from 'next/link';
 import Navbar from '../components/Navbar';
+import { homepage } from "@/content/content";
 
 const montserratFont = Montserrat({ weight: "400", subsets: ["latin"] });
 const latoFont = Lato({ weight: "400", subsets: ["latin"] });
@@ -14,7 +15,7 @@ const ibmFont = IBM_Plex_Sans({ weight: "700", subsets: ["latin"] });
 
 export default function Home() {
   const handleSendContact = () => {
-    
+
   }
   return (
     <div className="flex flex-col justify-center items-center bg-ac-gray w-full">
@@ -35,8 +36,7 @@ export default function Home() {
               <Image className='w-24 h-24' width={96} height={96} src="https://i.ibb.co/DgFnzJ4/formations.png" alt='service-formation' />
               <h6 className={latoFont.className + " font-semibold text-2xl xm:text-3xl leading-7 text-center text-white"}>Formations</h6>
               <p className={latoFont.className + " font-medium text-sm xm:text-base leading-5 text-center text-white"}>
-                Neque porro quisquam est qui dolorem ipsum quia dolor sit amet,
-                consectetur, adipisci velit...
+                {homepage.formations}
               </p>
               <Link href={"/formations"}>
                 <div className="flex justify-center items-center rounded-sm bg-white px-5 py-2 cursor-pointer">
@@ -49,8 +49,7 @@ export default function Home() {
               <Image className='w-24 h-24' width={96} height={96} src="https://i.ibb.co/gy3RfPC/consulting.png" alt='service-formation' />
               <h6 className={latoFont.className + " font-semibold text-2xl xm:text-3xl leading-7 text-center text-white"}>Consulting</h6>
               <p className={latoFont.className + " font-medium text-sm xm:text-base leading-5 text-center text-white"}>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                Sed pulvinar turpis quis sem sodales
+                {homepage.consulting}
               </p>
               <Link href={"/consulting"}>
                 <div className="flex justify-center items-center rounded-sm bg-white px-5 py-2 cursor-pointer">

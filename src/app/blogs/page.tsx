@@ -40,14 +40,14 @@ export default function Blogs({ }: Props) {
   }, [screenHeight]);
 
   return (
-    <div className="flex flex-col justify-start items-center w-full bg-ac-gray">
+    <div className="flex flex-col justify-start items-center w-full h-full bg-ac-gray">
       <Navbar />
 
       {/* Blogs Hero */}
-      <div className="relative parallax-blogs flex justify-start items-center w-full py-36 px-24">
+      <div className="relative parallax-blogs flex justify-start items-center w-full py-36 px-12 sm:px-24">
         {/* Overlay */}
         <div className="absolute top-0 left-0 w-full h-full z-20 bg-[#00000050]"></div>
-        <h1 className={jostFont.className + " text-white font-bold text-5xl text-left z-30"}>Alee Conseil Blogs</h1>
+        <h1 className={jostFont.className + " text-white font-bold text-4xl xs:text-5xl text-left z-30"}>Alee Conseil Blogs</h1>
       </div>
 
       <div className="rounded-t-xl flex flex-col justify-start items-center w-full bg-ac-gray gap-24 mb-24 -translate-y-5 z-30">

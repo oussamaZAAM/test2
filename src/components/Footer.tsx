@@ -1,3 +1,4 @@
+import { footer } from '@/content/general';
 import { Lato, Roboto } from 'next/font/google';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -15,15 +16,15 @@ type Props = {}
 export default function Footer({ }: Props) {
     return (
         <>
-            <div id='footer' className='hidden bg-ac-violet rounded-t-[25px] w-full md:flex justify-between items-stretch py-12 px-6 xm:px-24 lg:px-36 xl:px-48 gap-4'>
+            <div id='footer' className='hidden translate-y-1 bg-ac-violet rounded-t-[25px] w-full md:flex justify-between items-stretch py-12 px-6 xm:px-24 lg:px-36 xl:px-48 gap-4'>
                 <div className="flex flex-col justify-between items-start">
                     <div className="w-full flex justify-start items-center">
                         {/* Logo  */}
                         <Image className='w-36 h-20 object-cover object-center brightness-150' src="https://i.ibb.co/NxzmfDS/logo.png" height={400} width={400} alt='AleeConseil' />
                     </div>
                     <div className="flex flex-col justify-start items-start">
-                        <p className="text-sm text-white">Copyright © 2023 Alee Conseil SARL</p>
-                        <p className="text-sm text-white">Tout droit réservé</p>
+                        <p className="text-sm text-white">{footer.copyright1}</p>
+                        <p className="text-sm text-white">{footer.copyright2}</p>
                     </div>
                 </div>
                 <div className="flex justify-end items-center gap-12">
@@ -41,15 +42,21 @@ export default function Footer({ }: Props) {
                         <div className="flex flex-col justify-start items-stretch gap-4">
                             <div className="flex justify-start items-center gap-3">
                                 <PiMapPinLine size={20} color='white' />
-                                <p className={robotoFont + "text-sm font-light text-white whitespace-normal max-w-[180px]"}>49, avenue de Pichon 66366 Saint Éric</p>
+                                <p className={robotoFont + "text-sm font-light text-white whitespace-normal max-w-[180px]"}>
+                                    {footer.address}
+                                </p>
                             </div>
                             <div className="flex justify-start items-center gap-3">
                                 <MdOutlinePhone size={20} color='white' />
-                                <p className={robotoFont + "text-sm font-light text-white whitespace-normal max-w-[180px]"}>+33 5 18 19 48 92</p>
+                                <p className={robotoFont + "text-sm font-light text-white whitespace-normal max-w-[180px]"}>
+                                    {footer.phone}
+                                </p>
                             </div>
                             <div className="flex justify-start items-center gap-3">
                                 <TbMailFilled size={20} color='white' />
-                                <p className={robotoFont + "text-sm font-light text-white whitespace-normal max-w-[180px]"}>lorem@company.ma</p>
+                                <p className={robotoFont + "text-sm font-light text-white whitespace-normal max-w-[180px]"}>
+                                    {footer.email}
+                                </p>
                             </div>
                         </div>
                         <div className="relative flex justify-between items-center gap-4">
@@ -94,15 +101,21 @@ export default function Footer({ }: Props) {
                         <div className="flex flex-col justify-start items-stretch gap-4">
                             <div className="flex justify-start items-center gap-3">
                                 <PiMapPinLine size={20} color='white' />
-                                <p className={robotoFont + "text-sm font-light text-white whitespace-normal max-w-[180px]"}>49, avenue de Pichon 66366 Saint Éric</p>
+                                <p className={robotoFont + "text-sm font-light text-white whitespace-normal max-w-[180px]"}>
+                                    {footer.address}
+                                </p>
                             </div>
                             <div className="flex justify-start items-center gap-3">
                                 <MdOutlinePhone size={20} color='white' />
-                                <p className={robotoFont + "text-sm font-light text-white whitespace-normal max-w-[180px]"}>+33 5 18 19 48 92</p>
+                                <p className={robotoFont + "text-sm font-light text-white whitespace-normal max-w-[180px]"}>
+                                    {footer.phone}
+                                </p>
                             </div>
                             <div className="flex justify-start items-center gap-3">
                                 <TbMailFilled size={20} color='white' />
-                                <p className={robotoFont + "text-sm font-light text-white whitespace-normal max-w-[180px]"}>lorem@company.ma</p>
+                                <p className={robotoFont + "text-sm font-light text-white whitespace-normal max-w-[180px]"}>
+                                    {footer.email}
+                                </p>
                             </div>
                         </div>
                         <div className="relative flex justify-between items-center gap-4">
@@ -126,8 +139,8 @@ export default function Footer({ }: Props) {
                     </div>
                 </div>
                 <div className="flex flex-col justify-center items-center my-8">
-                    <p className="text-sm text-white">Copyright © 2023 Alee Conseil SARL</p>
-                    <p className="text-sm text-white">Tout droit réservé</p>
+                    <p className="text-sm text-white">{footer.copyright1}</p>
+                    <p className="text-sm text-white">{footer.copyright2}</p>
                 </div>
             </div>
         </>
