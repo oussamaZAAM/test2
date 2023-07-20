@@ -19,11 +19,11 @@ export default function Hero({ }: Props) {
 
             <div className="flex flex-col justify-center items-center gap-12 z-30">
                 <div className="flex flex-col justify-center items-start gap-4">
-                    <h1 className={taglineFont.className + " max-w-[270px] fold:max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg whitespace-normal text-4xl sm:text-5xl"}>
+                    <h1 className={taglineFont.className + " max-w-[270px] fold:max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg text-black whitespace-normal text-4xl sm:text-5xl"}>
                         Lorem ipsum dolor sit amet,
                         consectetur adipiscing elit mauris in condimentum
                     </h1>
-                    <p className={miniTaglineFont + " text-md sm:text-lg italic max-w-sm md:max-w-md"}>Vestibulum consequat augue nec mi rhoncus iaculis</p>
+                    <p className={miniTaglineFont + " text-black text-md sm:text-lg italic max-w-sm md:max-w-md"}>Vestibulum consequat augue nec mi rhoncus iaculis</p>
                 </div>
                 <a href="#services">
                     <div className="flex justify-center items-center bg-ac-bleu p-5 max-w-[200px] group hover:bg-transparent border-2 border-ac-bleu transition duration-300 cursor-pointer">

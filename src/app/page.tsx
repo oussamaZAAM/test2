@@ -14,7 +14,7 @@ const ibmFont = IBM_Plex_Sans({ weight: "700", subsets: ["latin"] });
 
 export default function Home() {
   const handleSendContact = () => {
-    console.log('homepage')
+    
   }
   return (
     <div className="flex flex-col justify-center items-center bg-ac-gray w-full">

@@ -96,8 +96,8 @@ export default function Page({ params }: Props) {
               <Image src={formation.image_url} width={200} height={200} alt='testing' />
               <div className="w-full xm:w-[140%] h-px bg-[#888888]"></div>
               <Link href={{ pathname: '/devis', query: { formation: formation.formation_id } }}>
-                <div className="flex justify-center items-center bg-ac-bleu rounded-full py-2 xm:py-4 px-2 sm:px-4 xm:px-8">
-                  <p className={ibmFont.className + " text-sm xs:text-base font-bold text-white uppercase text-center"}>Recevoir un devis</p>
+                <div className="flex justify-center items-center bg-ac-bleu rounded-full py-3 xm:py-4 px-3 sm:px-4 xm:px-8">
+                  <p className={ibmFont.className + " text-sm xs:text-base font-bold text-white uppercase text-center whitespace-nowrap"}>Recevoir un devis</p>
                 </div>
               </Link>
             </div>

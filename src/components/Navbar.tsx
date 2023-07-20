@@ -22,21 +22,15 @@ export default function Navbar({ }: Props) {
                 </div>
                 <div className={`xm:hidden flex justify-start items-center absolute top-20 left-0 w-full bg-white transition ${showMenu ? "translate-x-0 duration-300" : "-translate-x-full duration-75"}`}>
                     <ul className="flex flex-col justify-start items-center mx-4 w-full bg-white rounded gap-1 py-2 my-2">
-                        <li className='w-11/12 sm:w-10/12 flex justify-center items-center bg-gray-100 hover:bg-gray-200 rounded-lg cursor-pointer'>
-                            <Link href={"/formations"}>
-                                <p className="block py-2 pl-3 pr-4 text-gray-900 rounded md:border-0 ">Formations</p>
-                            </Link>
-                        </li>
-                        <li className='w-11/12 sm:w-10/12 flex justify-center items-center bg-gray-100 hover:bg-gray-200 rounded-lg cursor-pointer'>
-                            <Link href={"/consulting"}>
-                                <p className="block py-2 pl-3 pr-4 text-gray-900 rounded md:border-0 ">Consulting</p>
-                            </Link>
-                        </li>
-                        <li className='w-11/12 sm:w-10/12 flex justify-center items-center bg-gray-100 hover:bg-gray-200 rounded-lg cursor-pointer'>
-                            <Link href={"/blogs"}>
-                                <p className="block py-2 pl-3 pr-4 text-gray-900 rounded md:border-0 ">Blog</p>
-                            </Link>
-                        </li>
+                        <Link className='w-11/12 sm:w-10/12 flex justify-center items-center bg-gray-100 hover:bg-gray-200 rounded-lg cursor-pointer' href={"/formations"}>
+                            <p className="block py-2 pl-3 pr-4 text-gray-900 rounded md:border-0 ">Formations</p>
+                        </Link>
+                        <Link className='w-11/12 sm:w-10/12 flex justify-center items-center bg-gray-100 hover:bg-gray-200 rounded-lg cursor-pointer' href={"/consulting"}>
+                            <p className="block py-2 pl-3 pr-4 text-gray-900 rounded md:border-0 ">Consulting</p>
+                        </Link>
+                        <Link className='w-11/12 sm:w-10/12 flex justify-center items-center bg-gray-100 hover:bg-gray-200 rounded-lg cursor-pointer' href={"/blogs"}>
+                            <p className="block py-2 pl-3 pr-4 text-gray-900 rounded md:border-0 ">Blog</p>
+                        </Link>
                         <li className='w-11/12 sm:w-10/12 flex justify-center items-center bg-gray-100 hover:bg-gray-200 rounded-lg cursor-pointer'>
                             <a href="#footer" className="block py-2 pl-3 pr-4 text-gray-900 rounded md:border-0 ">Contact</a>
                         </li>

@@ -58,6 +58,7 @@ module.exports = {
       'md': '768px',
       'xm': '890px',
       'lg': '1080px',
+      'lg2': '1145px',
       'xl': '1280px',
       '2xl': '1536px',
       'formation1': "1220px",
