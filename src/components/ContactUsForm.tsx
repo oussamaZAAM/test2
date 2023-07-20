@@ -311,6 +311,7 @@ export default function ContactUsForm({ loading, type, formation, handleSend }: 
                         <div className="flex justify-start items-center border border-zinc-300 w-full py-2 px-5 gap-3">
                             <BsCalendar className="h-6 w-6" color='#828282' />
                             <DatePicker
+                                className='text-black'
                                 dateFormat="dd/MM/yyyy"
                                 selected={devisDate}
                                 onSelect={setDevisDate}
