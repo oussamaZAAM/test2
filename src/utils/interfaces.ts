@@ -10,6 +10,7 @@ export interface User {
   name: string;
   job: string;
   description: string;
+  image: string;
 }
 
 export interface Formation {

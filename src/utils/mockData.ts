@@ -4,12 +4,14 @@ const users: User[] = [
   {
     name: "John Doe",
     job: "Formateur",
-    description: "Proin nec massa massa. Fusce placerat justo nisi"
+    description: "Proin nec massa massa. Fusce placerat justo nisi",
+    image: "https://i.ibb.co/pK6T2DN/user.png"
   },
   {
     name: "Jane Doe",
     job: "Formatrice",
-    description: "Lorem ipsum dolor sit amet, consectetur "
+    description: "Lorem ipsum dolor sit amet, consectetur ",
+    image: "https://i.ibb.co/nwwjwd3/4140047.png"
   },
 ];
 
@@ -55,13 +57,5 @@ export const formationsData: Formation[] = [
     price: 1299,
     duration: "3 Semaines",
     image_url: "https://i.ibb.co/C7Tv1dH/automation.png"
-  },
-  // {
-  //   formation_id: "graphic-design",
-  //   title: "Graphic Design",
-  //   description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi rhoncus",
-  //   price: 699,
-  //   duration: "1 Mois",
-  //   image_url: "https://i.ibb.co/C7Tv1dH/automation.png"
-  // },
+  }
 ]

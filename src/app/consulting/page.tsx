@@ -88,10 +88,10 @@ export default function Consulting({ }: Props) {
                     <div className="w-full flex flex-col justify-start items-center gap-40">
                         {/* Offre 1 */}
                         <div className="flex flex-row justify-center sm:justify-between items-center sm:mr-4 md:mr-10 xm:mr-20 w-full gap-4">
-                            <Image className='hidden sm:block max-w-md max-h-72 object-contain object-center' src={"https://i.ibb.co/LzQ4Csy/cloud.png"} width={448} height={288} alt='consulting-1' />
+                            <Image className='hidden sm:block max-w-md max-h-72 object-contain object-center' src="/Consulting/cloud.png" width={448} height={288} alt='consulting-1' />
                             <div className="flex flex-col justify-center items-center gap-8 sm:gap-16">
                                 <h3 className={poppinsFont.className + " font-semibold text-center text-4xl text-black"}>Audit</h3>
-                                <Image className='sm:hidden w-full max-w-sm sm:max-w-md max-h-72 object-contain object-center' src={"https://i.ibb.co/LzQ4Csy/cloud.png"} width={448} height={288} alt='consulting-1' />
+                                <Image className='sm:hidden w-full max-w-sm sm:max-w-md max-h-72 object-contain object-center' src="/Consulting/cloud.png" width={448} height={288} alt='consulting-1' />
                                 <p className={montserratFont.className + " text-lg text-black text-center font-medium w-full max-w-sm sm:max-w-md"}>
                                     {consulting.audit}
                                 </p>
@@ -99,10 +99,10 @@ export default function Consulting({ }: Props) {
                         </div>
                         {/* Offre 2 */}
                         <div className="flex flex-row-reverse justify-center sm:justify-between items-center sm:ml-4 md:ml-10 xm:ml-20 w-full gap-4">
-                            <Image className='hidden sm:block max-w-md max-h-72 object-contain object-center' src={"https://i.ibb.co/JBzXT8Y/cyber-security.png"} width={448} height={288} alt='consulting-2' />
+                            <Image className='hidden sm:block max-w-md max-h-72 object-contain object-center' src="/Consulting/cyber-security.png" width={448} height={288} alt='consulting-2' />
                             <div className="flex flex-col justify-center items-center gap-8 sm:gap-16">
                                 <h3 className={poppinsFont.className + " font-semibold text-center text-4xl text-black"}>Prestation</h3>
-                                <Image className='sm:hidden w-full max-w-sm sm:max-w-md max-h-72 object-contain object-center' src={"https://i.ibb.co/JBzXT8Y/cyber-security.png"} width={448} height={288} alt='consulting-2' />
+                                <Image className='sm:hidden w-full max-w-sm sm:max-w-md max-h-72 object-contain object-center' src="/Consulting/cyber-security.png" width={448} height={288} alt='consulting-2' />
                                 <p className={montserratFont.className + " text-lg text-black text-center font-medium w-full max-w-sm sm:max-w-md"}>
                                     {consulting.prestation}
                                 </p>
@@ -110,10 +110,10 @@ export default function Consulting({ }: Props) {
                         </div>
                         {/* Offre 3 */}
                         <div className="flex flex-row justify-center sm:justify-between items-center sm:mr-4 md:mr-10 xm:mr-20 w-full gap-4">
-                            <Image className='hidden sm:block max-w-md max-h-72 object-contain object-center' src={"https://i.ibb.co/dDZFmNv/testing.png"} width={448} height={288} alt='consulting-3' />
+                            <Image className='hidden sm:block max-w-md max-h-72 object-contain object-center' src="/Consulting/testing.png" width={448} height={288} alt='consulting-3' />
                             <div className="flex flex-col justify-center items-center gap-8 sm:gap-16">
                                 <h3 className={poppinsFont.className + " font-semibold text-center text-4xl text-black"}>Off-Shore</h3>
-                                <Image className='sm:hidden w-full max-w-sm sm:max-w-md max-h-72 object-contain object-center' src={"https://i.ibb.co/dDZFmNv/testing.png"} width={448} height={288} alt='consulting-3' />
+                                <Image className='sm:hidden w-full max-w-sm sm:max-w-md max-h-72 object-contain object-center' src="/Consulting/testing.png" width={448} height={288} alt='consulting-3' />
                                 <p className={montserratFont.className + " text-lg text-black text-center font-medium w-full max-w-sm sm:max-w-md"}>
                                     {consulting.offshore}
                                 </p>

@@ -1,6 +1,6 @@
 import { readableDate } from '@/utils/functions';
 import { DevisPayload } from '@/utils/interfaces';
-import { currency } from '@/utils/variables';
+import { currency, logoOnGithub } from '@/utils/variables';
 import {
     Body,
     Column,
@@ -32,7 +32,7 @@ export const DevisEmail = ({
             <Body style={main}>
                 <Container style={container}>
                     <Section style={logo}>
-                        <Img width={114} src="https://i.ibb.co/NxzmfDS/logo.png" />
+                        <Img width={114} src={logoOnGithub} />
                     </Section>
                     <Section style={sectionsBorders}>
                         <Row>
@@ -83,7 +83,7 @@ export const DevisEmail = ({
                 <Section style={footer}>
                     <Row>
                         <Column align="center" style={{ width: '50%', paddingLeft: '8px' }}>
-                            <Img width={114} src="https://i.ibb.co/NxzmfDS/logo.png" />
+                            <Img width={114} src={logoOnGithub} />
                         </Column>
                     </Row>
                     <Text style={{ textAlign: 'center', color: '#706a7b' }}>
