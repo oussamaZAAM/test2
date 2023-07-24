@@ -1,6 +1,6 @@
 # Site Vitrine Alee Conseil
 
-<div style="text-align:center"><img src="https://i.ibb.co/XXT3608/logo.png" /></div>
+<div align="center"><img src="https://i.ibb.co/XXT3608/logo.png" /></div>
 
 Bienvenue sur le Site de Alee Conseil ! Ce site affiche nos solutions en domaines de formations technologiques d'automation et en domaine de consulting.
 
