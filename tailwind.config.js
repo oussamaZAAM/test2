@@ -62,6 +62,7 @@ module.exports = {
       'xl': '1280px',
       '2xl': '1536px',
       'formation1': "1220px",
+      'calendly': "1333px",
     }
   },
   plugins: [],
