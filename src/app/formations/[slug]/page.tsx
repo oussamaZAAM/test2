@@ -2,6 +2,7 @@
 
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
+import ReturnToTop from "@/components/ReturnToTop";
 import { formationsData } from "@/utils/mockData";
 import { currency } from "@/utils/variables";
 import { IBM_Plex_Sans_Condensed, Lato, Montserrat } from "next/font/google";
@@ -35,6 +36,7 @@ export default function Page({ params }: Props) {
 
   return (
     <div className="flex flex-col justify-between items-center bg-ac-gray w-full min-h-[100vh]">
+      <ReturnToTop />
       <div className="flex flex-col justify-center items-center bg-ac-gray w-full">
         <Navbar />
         {/* Formation Page Hero */}

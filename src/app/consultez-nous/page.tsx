@@ -3,6 +3,7 @@
 import ContactUsForm from '@/components/ContactUsForm';
 import Footer from '@/components/Footer';
 import Navbar from '@/components/Navbar';
+import ReturnToTop from '@/components/ReturnToTop';
 
 type Props = {}
 
@@ -13,6 +14,7 @@ export default function page({ }: Props) {
     }
     return (
         <div className="bg-ac-gray flex flex-col justify-start items-center w-full">
+            <ReturnToTop />
             <Navbar />
 
             {/* Contact Us */}

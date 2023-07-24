@@ -2,6 +2,7 @@
 
 import Footer from '@/components/Footer';
 import Navbar from '@/components/Navbar';
+import ReturnToTop from '@/components/ReturnToTop';
 import { readableDate } from '@/utils/functions';
 import { Blog } from '@/utils/interfaces';
 import { blogsData } from '@/utils/mockData';
@@ -34,6 +35,7 @@ export default function Blog({ params }: Props) {
 
     return (
         <div className="flex flex-col justify-between items-center w-full min-h-[100vh] bg-ac-gray2">
+            <ReturnToTop />
             <Navbar />
 
             <div className="flex flex-col justify-start items-center w-full bg-ac-gray2">

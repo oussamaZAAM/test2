@@ -8,6 +8,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import Navbar from '../components/Navbar';
 import { homepage } from "@/content/content";
+import ReturnToTop from '@/components/ReturnToTop';
 
 const montserratFont = Montserrat({ weight: "400", subsets: ["latin"] });
 const latoFont = Lato({ weight: "400", subsets: ["latin"] });
@@ -19,6 +20,8 @@ export default function Home() {
   }
   return (
     <div className="flex flex-col justify-center items-center bg-ac-gray w-full">
+      <ReturnToTop />
+      
       {/* Navbar  */}
       <Navbar />
 

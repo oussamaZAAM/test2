@@ -3,6 +3,7 @@
 import Footer from '@/components/Footer';
 import FormationCard from '@/components/FormationCard';
 import Navbar from '@/components/Navbar';
+import ReturnToTop from '@/components/ReturnToTop';
 import { formationsData } from '@/utils/mockData';
 import { Lato, Montserrat } from 'next/font/google';
 
@@ -14,6 +15,7 @@ type Props = {}
 export default function Formations({ }: Props) {
     return (
         <div className="flex flex-col justify-between items-center bg-ac-gray w-full min-h-[100vh]">
+            <ReturnToTop />
             <div className="flex flex-col justify-center items-center bg-ac-gray w-full">
                 <Navbar />
                 {/* Formation Page Hero */}

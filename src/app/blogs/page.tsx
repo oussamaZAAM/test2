@@ -3,6 +3,7 @@
 import BlogCard from '@/components/BlogCard';
 import Footer from '@/components/Footer';
 import Navbar from '@/components/Navbar';
+import ReturnToTop from '@/components/ReturnToTop';
 import { blogsData } from '@/utils/mockData';
 import { Jost, Montserrat } from 'next/font/google';
 import { useEffect, useRef, useState } from 'react';
@@ -41,6 +42,7 @@ export default function Blogs({ }: Props) {
 
   return (
     <div className="flex flex-col justify-between items-center w-full h-full min-h-[100vh] bg-ac-gray">
+      <ReturnToTop />
       <div className="flex flex-col justify-start items-center w-full h-full  bg-ac-gray">
         <Navbar />
         {/* Blogs Hero */}

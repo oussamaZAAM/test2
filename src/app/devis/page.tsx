@@ -3,6 +3,7 @@
 import ContactUsForm from '@/components/ContactUsForm';
 import Footer from '@/components/Footer';
 import Navbar from '@/components/Navbar';
+import ReturnToTop from '@/components/ReturnToTop';
 import { namifySlug } from '@/utils/functions';
 import { DevisPayload } from '@/utils/interfaces';
 import { formationsData } from '@/utils/mockData';
@@ -53,6 +54,7 @@ export default function Devis({ }: Props) {
     }
     return (
         <div className="flex flex-col justify-between items-center w-full min-h-[100vh] bg-ac-gray">
+            <ReturnToTop />
             <div className="flex flex-col justify-start items-center w-full h-full bg-ac-gray mb-24">
                 <Navbar />
                 <div className="flex w-full h-44 bg-ac-bleu rounded-b-3xl -mb-28"></div>
