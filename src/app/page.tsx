@@ -37,26 +37,26 @@ export default function Home() {
             {/* Formations Service  */}
             <div className="flex flex-col justify-start items-center gap-4 max-w-[236px]">
               <Image className='w-24 h-24' width={96} height={96} src="/Homepage/formations.png" alt='service-formation' />
-              <h6 className={latoFont.className + " font-semibold text-2xl xm:text-3xl leading-7 text-center text-white"}>Formations</h6>
+              <h6 className={latoFont.className + " font-semibold text-2xl xm:text-3xl leading-7 text-center text-white"}>Formation</h6>
               <p className={latoFont.className + " font-medium text-sm xm:text-base leading-5 text-center text-white"}>
                 {homepage.formations}
               </p>
               <Link href={"/formations"}>
                 <div className="flex justify-center items-center rounded-sm bg-white px-5 py-2 cursor-pointer">
-                  <h6 className={ibmFont.className + " text-ac-bleu uppercase text-xl font-bold"}>Accéder</h6>
+                  <h6 className={ibmFont.className + " text-ac-bleu uppercase text-xl font-bold"}>Catalogue</h6>
                 </div>
               </Link>
             </div>
             {/* Consulting Service  */}
             <div className="flex flex-col justify-start items-center gap-4 max-w-[236px]">
               <Image className='w-24 h-24' width={96} height={96} src="/Homepage/consulting.png" alt='service-formation' />
-              <h6 className={latoFont.className + " font-semibold text-2xl xm:text-3xl leading-7 text-center text-white"}>Consulting</h6>
+              <h6 className={latoFont.className + " font-semibold text-2xl xm:text-3xl leading-7 text-center text-white"}>Qualité Logicielle</h6>
               <p className={latoFont.className + " font-medium text-sm xm:text-base leading-5 text-center text-white"}>
                 {homepage.consulting}
               </p>
               <Link href={"/consulting"}>
                 <div className="flex justify-center items-center rounded-sm bg-white px-5 py-2 cursor-pointer">
-                  <h6 className={ibmFont.className + " text-ac-bleu uppercase text-xl font-bold"}>Accéder</h6>
+                  <h6 className={ibmFont.className + " text-ac-bleu uppercase text-xl font-bold"}>Services</h6>
                 </div>
               </Link>
             </div>

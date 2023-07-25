@@ -32,10 +32,10 @@ export default function Footer({ }: Props) {
                         <p className={latoFont + "text-sm font-semibold text-white uppercase"}>Alee Conseil</p>
                         <div className="flex flex-col justify-start items-start gap-2">
                             {/* <p className={robotoFont + "text-sm font-light text-white"}>Qui sommes-nous?</p> */}
+                            <Link href={"/formations"}><p className={robotoFont + "text-sm font-light text-white"}>Formation</p></Link>
+                            <Link href={"/consulting"}><p className={robotoFont + "text-sm font-light text-white"}>Conseil</p></Link>
                             <Link href={"/blogs"}><p className={robotoFont + "text-sm font-light text-white"}>Blog</p></Link>
-                            <Link href={"/consultez-nous"}><p className={robotoFont + "text-sm font-light text-white"}>Prenez un rendez-vous</p></Link>
-                            <Link href={"/formations"}><p className={robotoFont + "text-sm font-light text-white"}>Formations</p></Link>
-                            <Link href={"/consulting"}><p className={robotoFont + "text-sm font-light text-white"}>Consultations</p></Link>
+                            <Link href={"/consultez-nous"}><p className={robotoFont + "text-sm font-light text-white"}>Contact</p></Link>
                         </div>
                     </div>
                     <div className="flex flex-col justify-start items-stretch gap-8">
@@ -59,17 +59,9 @@ export default function Footer({ }: Props) {
                                 </p>
                             </div>
                         </div>
-                        <div className="relative flex justify-between items-center gap-4">
-                            <div className="flex justify-center items-center">
-                                <AiOutlineInstagram size={25} color='white' />
-                                <div className="w-9 h-9 absolute bg-white opacity-10 rounded-full"></div>
-                            </div>
+                        <div className="relative flex justify-center items-center gap-8">
                             <div className="flex justify-center items-center">
                                 <AiFillLinkedin size={25} color='white' />
-                                <div className="w-9 h-9 absolute bg-white opacity-10 rounded-full"></div>
-                            </div>
-                            <div className="flex justify-center items-center">
-                                <AiOutlineTwitter size={25} color='white' />
                                 <div className="w-9 h-9 absolute bg-white opacity-10 rounded-full"></div>
                             </div>
                             <div className="flex justify-center items-center">
@@ -91,10 +83,10 @@ export default function Footer({ }: Props) {
                     <div className="flex flex-col justify-start items-stretch gap-4">
                         <div className="flex flex-col justify-start items-start gap-2">
                             {/* <p className={robotoFont + "text-sm font-light text-white"}>Qui sommes-nous?</p> */}
+                            <Link href={"/formations"}><p className={robotoFont + "text-sm font-light text-white"}>Formation</p></Link>
+                            <Link href={"/consulting"}><p className={robotoFont + "text-sm font-light text-white"}>Conseil</p></Link>
                             <Link href={"/blogs"}><p className={robotoFont + "text-sm font-light text-white"}>Blog</p></Link>
-                            <Link href={"/consultez-nous"}><p className={robotoFont + "text-sm font-light text-white"}>Prenez un rendez-vous</p></Link>
-                            <Link href={"/formations"}><p className={robotoFont + "text-sm font-light text-white"}>Formations</p></Link>
-                            <Link href={"/consulting"}><p className={robotoFont + "text-sm font-light text-white"}>Consultations</p></Link>
+                            <Link href={"/consultez-nous"}><p className={robotoFont + "text-sm font-light text-white"}>Contact</p></Link>
                         </div>
                     </div>
                     <div className="flex flex-col justify-center items-stretch gap-8">
@@ -120,15 +112,7 @@ export default function Footer({ }: Props) {
                         </div>
                         <div className="relative flex justify-between items-center gap-4">
                             <div className="flex justify-center items-center">
-                                <AiOutlineInstagram size={25} color='white' />
-                                <div className="w-9 h-9 absolute bg-white opacity-10 rounded-full"></div>
-                            </div>
-                            <div className="flex justify-center items-center">
                                 <AiFillLinkedin size={25} color='white' />
-                                <div className="w-9 h-9 absolute bg-white opacity-10 rounded-full"></div>
-                            </div>
-                            <div className="flex justify-center items-center">
-                                <AiOutlineTwitter size={25} color='white' />
                                 <div className="w-9 h-9 absolute bg-white opacity-10 rounded-full"></div>
                             </div>
                             <div className="flex justify-center items-center">

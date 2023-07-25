@@ -1,13 +1,11 @@
 export const footer = {
     copyright1: `Copyright © 2023 Alee Conseil`,
-    copyright2: `Tout droit réservés`,
-    address: `49, avenue de Pichon 66366 Saint Éric`,
-    phone: `+33 5 18 19 48 92`,
-    email: `lorem@company.ma`,
+    copyright2: `Tous droits réservés`,
+    address: `Rue Al Borj, Résidence Zineb, Appt12, Rabat 10020, Maroc`, 
+    phone: `+212 6 62 88 28 41`,
+    email: `contact@aleeconseil.com`,
     socialLinks: {
-        instagram: ``,
-        linkedin: ``,
-        twitter: ``,
+        linkedin: `https://www.linkedin.com/company/alee-conseil-ma`,
         youtube: ``
     }
 }

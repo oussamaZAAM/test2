@@ -1,9 +1,8 @@
 export const homepage = {
-    tagline: `Lorem ipsum dolor sit amet, consectetur adipiscing elit mauris in condimentum`,
-    subtagline: `Vestibulum consequat augue nec mi rhoncus iaculis`,
-    formations: `Neque porro quisquam est qui dolorem ipsum quia dolor sit amet,
-    consectetur, adipisci velit...`,
-    consulting: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed pulvinar turpis quis sem sodales`,
+    tagline: `Spécialistes en qualité logicielle, nous vous proposons du conseil et de la formation en tests logiciels`,
+    subtagline: `Découvrez nos services`,
+    formations: `Nous proposons des formations en différentes technologies en automatisation des tests`,
+    consulting: `Nous vous aidons à accroitre votre confiance dans la qualité de vos produits logiciels`,
 }
 
 export const consulting = {

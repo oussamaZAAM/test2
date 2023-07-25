@@ -23,23 +23,20 @@ export default function Navbar({ }: Props) {
                 <div className={`xm:hidden flex justify-start items-center absolute top-20 left-0 w-full bg-white transition ${showMenu ? "translate-x-0 duration-300" : "-translate-x-full duration-75"}`}>
                     <ul className="flex flex-col justify-start items-center mx-4 w-full bg-white rounded gap-1 py-2 my-2">
                         <Link className='w-11/12 sm:w-10/12 flex justify-center items-center bg-gray-100 hover:bg-gray-200 rounded-lg cursor-pointer' href={"/formations"}>
-                            <p className="block py-2 pl-3 pr-4 text-gray-900 rounded md:border-0 ">Formations</p>
+                            <p className="block py-2 pl-3 pr-4 text-gray-900 rounded md:border-0 ">Formation</p>
                         </Link>
                         <Link className='w-11/12 sm:w-10/12 flex justify-center items-center bg-gray-100 hover:bg-gray-200 rounded-lg cursor-pointer' href={"/consulting"}>
-                            <p className="block py-2 pl-3 pr-4 text-gray-900 rounded md:border-0 ">Consulting</p>
+                            <p className="block py-2 pl-3 pr-4 text-gray-900 rounded md:border-0 ">Conseil</p>
                         </Link>
                         <Link className='w-11/12 sm:w-10/12 flex justify-center items-center bg-gray-100 hover:bg-gray-200 rounded-lg cursor-pointer' href={"/blogs"}>
                             <p className="block py-2 pl-3 pr-4 text-gray-900 rounded md:border-0 ">Blog</p>
                         </Link>
-                        <li className='w-11/12 sm:w-10/12 flex justify-center items-center bg-gray-100 hover:bg-gray-200 rounded-lg cursor-pointer'>
-                            <a href="#footer" className="block py-2 pl-3 pr-4 text-gray-900 rounded md:border-0 ">Contact</a>
-                        </li>
                         {/* <li className='w-11/12 sm:w-10/12 flex justify-center items-center bg-gray-100 hover:bg-gray-200 rounded-lg cursor-pointer'>
                             <a href="" className="block py-2 pl-3 pr-4 text-gray-900 rounded md:border-0 ">Qui sommes-nous?</a>
                         </li> */}
                         <Link href={"/consultez-nous"}>
                             <li className="w-11/12 sm:w-10/12 flex justify-center items-center bg-ac-violet rounded-lg gap-1 py-2.5 px-5 mt-2 cursor-pointer">
-                                <p className="text-base uppercase font-bold text-center text-white whitespace-nowrap">Consultez-nous</p>
+                                <p className="text-base uppercase font-bold text-center text-white whitespace-nowrap">Contactez-nous</p>
                                 <HiOutlineArrowRight size={25} color='white' />
                             </li>
                         </Link>
@@ -54,17 +51,14 @@ export default function Navbar({ }: Props) {
                 {/* Navs  */}
                 <div className="hidden xm:flex justify-start items-center gap-8 xl:gap-8">
                     <Link href={"/formations"}>
-                        <p className="text-sm lg:text-base uppercase font-semibold text-center text-black whitespace-nowrap select-none cursor-pointer hover:text-gray-600">Formations</p>
+                        <p className="text-sm lg:text-base uppercase font-semibold text-center text-black whitespace-nowrap select-none cursor-pointer hover:text-gray-600">Formation</p>
                     </Link>
                     <Link href={"/consulting"}>
-                        <p className="text-sm lg:text-base uppercase font-semibold text-center text-black whitespace-nowrap select-none cursor-pointer hover:text-gray-600">Consulting</p>
+                        <p className="text-sm lg:text-base uppercase font-semibold text-center text-black whitespace-nowrap select-none cursor-pointer hover:text-gray-600">Conseil</p>
                     </Link>
                     <Link href={"/blogs"}>
                         <p className="text-sm lg:text-base uppercase font-semibold text-center text-black whitespace-nowrap select-none cursor-pointer hover:text-gray-600">Blog</p>
                     </Link>
-                    <a href="#footer">
-                        <p className="text-sm lg:text-base uppercase font-semibold text-center text-black whitespace-nowrap select-none cursor-pointer hover:text-gray-600">Contact</p>
-                    </a>
                     {/* <p className="text-sm lg:text-base uppercase font-semibold text-center text-black whitespace-nowrap select-none cursor-pointer hover:text-gray-600">Qui sommes-nous?</p> */}
                 </div>
                 {/* Consultez-nous  */}
@@ -72,7 +66,7 @@ export default function Navbar({ }: Props) {
                     <div className="w-6 flex justify-center items-center cursor-pointer hover:drop-shadow-md"></div>
                     <Link href={"/consultez-nous"}>
                         <div className="hidden xm:flex justify-center items-center bg-ac-violet rounded-full gap-1 py-2.5 px-5 w-fit cursor-pointer">
-                            <p className="text-base uppercase font-bold text-center text-white whitespace-nowrap select-none">Consultez-nous</p>
+                            <p className="text-base uppercase font-bold text-center text-white whitespace-nowrap select-none">Contactez-nous</p>
                             <HiOutlineArrowRight size={25} color='white' />
                         </div>
                     </Link>
