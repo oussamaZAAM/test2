@@ -115,7 +115,7 @@ export default function ContactUsForm({ loading, type, formation, handleSend }: 
                                 name="nom"
                                 type="text"
                                 placeholder='Nom'
-                                className="py-2 px-5 w-full"
+                                className="py-2 px-5 w-full text-black"
                                 value={contactInputs.nom}
                                 onChange={handleContactInputChange}
                             />
@@ -132,7 +132,7 @@ export default function ContactUsForm({ loading, type, formation, handleSend }: 
                                 name="prenom"
                                 type="text"
                                 placeholder='Prénom'
-                                className="py-2 px-5 w-full"
+                                className="py-2 px-5 w-full text-black"
                                 value={contactInputs.prenom}
                                 onChange={handleContactInputChange}
                             />
@@ -148,7 +148,7 @@ export default function ContactUsForm({ loading, type, formation, handleSend }: 
                                 name="telephone"
                                 type="tel"
                                 placeholder='Téléphone'
-                                className="py-2 px-5 w-full"
+                                className="py-2 px-5 w-full text-black"
                                 value={contactInputs.telephone}
                                 onChange={handleContactInputChange}
                             />
@@ -165,7 +165,7 @@ export default function ContactUsForm({ loading, type, formation, handleSend }: 
                                 name="email"
                                 type="email"
                                 placeholder='Email'
-                                className="py-2 px-5 w-full"
+                                className="py-2 px-5 w-full text-black"
                                 value={contactInputs.email}
                                 onChange={handleContactInputChange}
                             />
@@ -181,7 +181,7 @@ export default function ContactUsForm({ loading, type, formation, handleSend }: 
                             <textarea
                                 name="message"
                                 placeholder='Message'
-                                className="py-2 px-5 w-full min-h-[40px]"
+                                className="py-2 px-5 w-full text-black min-h-[40px]"
                                 value={contactInputs.message}
                                 onChange={handleContactInputChange}
                             />
@@ -213,7 +213,7 @@ export default function ContactUsForm({ loading, type, formation, handleSend }: 
                                 readOnly={formation?.length !== 0}
                                 type="text"
                                 placeholder='Formation'
-                                className="py-2 px-5 w-full text-zinc-500 font-medium"
+                                className="py-2 px-5 w-full text-black text-zinc-500 font-medium"
                                 value={(formation?.length !== 0) ? formation : devisInputs.formation}
                                 onChange={handleDevisInputChange}
                             />
@@ -230,7 +230,7 @@ export default function ContactUsForm({ loading, type, formation, handleSend }: 
                                 name="entreprise"
                                 type="text"
                                 placeholder='Entreprise'
-                                className="py-2 px-5 w-full"
+                                className="py-2 px-5 w-full text-black"
                                 value={devisInputs.entreprise}
                                 onChange={handleDevisInputChange}
                             />
@@ -247,7 +247,7 @@ export default function ContactUsForm({ loading, type, formation, handleSend }: 
                                 name="fullname"
                                 type="text"
                                 placeholder='Nom & Prénom'
-                                className="py-2 px-5 w-full"
+                                className="py-2 px-5 w-full text-black"
                                 value={devisInputs.fullname}
                                 onChange={handleDevisInputChange}
                             />
@@ -264,7 +264,7 @@ export default function ContactUsForm({ loading, type, formation, handleSend }: 
                                 name="email"
                                 type="email"
                                 placeholder='Email'
-                                className="py-2 px-5 w-full"
+                                className="py-2 px-5 w-full text-black"
                                 value={devisInputs.email}
                                 onChange={handleDevisInputChange}
                             />
@@ -280,7 +280,7 @@ export default function ContactUsForm({ loading, type, formation, handleSend }: 
                                 name="telephone"
                                 type="tel"
                                 placeholder='Téléphone'
-                                className="py-2 px-5 w-full"
+                                className="py-2 px-5 w-full text-black"
                                 value={devisInputs.telephone}
                                 onChange={handleDevisInputChange}
                             />
@@ -295,7 +295,7 @@ export default function ContactUsForm({ loading, type, formation, handleSend }: 
                             <textarea
                                 name="message"
                                 placeholder='Message'
-                                className="py-2 px-5 w-full min-h-[40px]"
+                                className="py-2 px-5 w-full text-black min-h-[40px]"
                                 value={devisInputs.message}
                                 onChange={handleDevisInputChange}
                             />
