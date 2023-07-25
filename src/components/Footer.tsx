@@ -35,7 +35,7 @@ export default function Footer({ }: Props) {
                             <Link href={"/formations"}><p className={robotoFont + "text-sm font-light text-white"}>Formation</p></Link>
                             <Link href={"/consulting"}><p className={robotoFont + "text-sm font-light text-white"}>Conseil</p></Link>
                             <Link href={"/blogs"}><p className={robotoFont + "text-sm font-light text-white"}>Blog</p></Link>
-                            <Link href={"/consultez-nous"}><p className={robotoFont + "text-sm font-light text-white"}>Contact</p></Link>
+                            <Link href={"/contactez-nous"}><p className={robotoFont + "text-sm font-light text-white"}>Contact</p></Link>
                         </div>
                     </div>
                     <div className="flex flex-col justify-start items-stretch gap-8">
@@ -60,14 +60,14 @@ export default function Footer({ }: Props) {
                             </div>
                         </div>
                         <div className="relative flex justify-center items-center gap-8">
-                            <div className="flex justify-center items-center">
+                            <a target='_blank' href={footer.socialLinks.linkedin} className="flex justify-center items-center">
                                 <AiFillLinkedin size={25} color='white' />
                                 <div className="w-9 h-9 absolute bg-white opacity-10 rounded-full"></div>
-                            </div>
-                            <div className="flex justify-center items-center">
+                            </a>
+                            <a target='_blank' href={footer.socialLinks.youtube} className="flex justify-center items-center">
                                 <AiFillYoutube size={25} color='white' />
                                 <div className="w-9 h-9 absolute bg-white opacity-10 rounded-full"></div>
-                            </div>
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -86,7 +86,7 @@ export default function Footer({ }: Props) {
                             <Link href={"/formations"}><p className={robotoFont + "text-sm font-light text-white"}>Formation</p></Link>
                             <Link href={"/consulting"}><p className={robotoFont + "text-sm font-light text-white"}>Conseil</p></Link>
                             <Link href={"/blogs"}><p className={robotoFont + "text-sm font-light text-white"}>Blog</p></Link>
-                            <Link href={"/consultez-nous"}><p className={robotoFont + "text-sm font-light text-white"}>Contact</p></Link>
+                            <Link href={"/contactez-nous"}><p className={robotoFont + "text-sm font-light text-white"}>Contact</p></Link>
                         </div>
                     </div>
                     <div className="flex flex-col justify-center items-stretch gap-8">
@@ -110,15 +110,15 @@ export default function Footer({ }: Props) {
                                 </p>
                             </div>
                         </div>
-                        <div className="relative flex justify-between items-center gap-4">
-                            <div className="flex justify-center items-center">
+                        <div className="relative flex justify-center items-center gap-8">
+                            <a target='_blank' href={footer.socialLinks.linkedin} className="flex justify-center items-center">
                                 <AiFillLinkedin size={25} color='white' />
                                 <div className="w-9 h-9 absolute bg-white opacity-10 rounded-full"></div>
-                            </div>
-                            <div className="flex justify-center items-center">
+                            </a>
+                            <a target='_blank' href={footer.socialLinks.youtube} className="flex justify-center items-center">
                                 <AiFillYoutube size={25} color='white' />
                                 <div className="w-9 h-9 absolute bg-white opacity-10 rounded-full"></div>
-                            </div>
+                            </a>
                         </div>
                     </div>
                 </div>
