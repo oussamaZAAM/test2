@@ -15,9 +15,6 @@ const latoFont = Lato({ weight: "400", subsets: ["latin"] });
 const ibmFont = IBM_Plex_Sans({ weight: "700", subsets: ["latin"] });
 
 export default function Home() {
-  const handleSendContact = () => {
-
-  }
   return (
     <div className="flex flex-col justify-center items-center bg-ac-gray w-full">
       <ReturnToTop />
@@ -66,7 +63,7 @@ export default function Home() {
 
       {/* Contact Us */}
       <div className="flex justify-center items-center w-full bg-ac-gray -translate-y-6 rounded-t-3xl ">
-        <ContactUsForm loading={false} type='contact' handleSend={handleSendContact} />
+        <ContactUsForm />
       </div>
 
       {/* Footer  */}

@@ -1,0 +1,289 @@
+import { Montserrat } from 'next/font/google';
+import { ChangeEvent, useState } from "react";
+import DatePicker from "react-datepicker";
+import { BsCalendar } from 'react-icons/bs';
+import { IoClose } from 'react-icons/io5';
+
+import { devis } from '@/content/general';
+import { formationsData } from '@/utils/mockData';
+import "react-datepicker/dist/react-datepicker.css";
+import { useRouter } from 'next/navigation';
+
+
+const montserratNormalFont = Montserrat({ weight: "400", subsets: ["latin"] });
+const montserratBoldFont = Montserrat({ weight: "700", subsets: ["latin"] });
+
+type Props = {
+    formation: string;
+}
+
+interface FormDevisInputs {
+    formation: string;
+    entreprise: string;
+    fullname: string;
+    telephone: string;
+    email: string;
+    message: string;
+}
+
+interface DevisProps {
+    formation: string;
+    entreprise: string;
+    fullname: string;
+    telephone: string;
+    email: string;
+    message: string;
+    date: Date;
+}
+
+export default function DevisForm({ formation }: Props) {
+    const router = useRouter();
+
+    const [devisDate, setDevisDate] = useState(new Date());
+    const [devisInputs, setDevisInputs] = useState<FormDevisInputs>({
+        formation: '',
+        entreprise: '',
+        fullname: '',
+        telephone: '',
+        email: '',
+        message: ''
+    });
+    const handleDevisInputChange = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+        const { name, value } = e.target;
+        setDevisInputs((prevState) => ({
+            ...prevState,
+            [name]: value
+        }));
+    };
+    
+
+    const [loading, setLoading] = useState(false);
+    const [errorMessage, setErrorMessage] = useState({
+        success: false,
+        message: "",
+        show: false
+    });
+
+    const handleSendDevis = async (args: DevisProps) => {
+        const searchFormation = formationsData.find((element) => element.title.toLowerCase() === formation?.toLowerCase());
+        if (searchFormation) {
+            try {
+                setLoading(true);
+                const response = await fetch("/api/mailing", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify({
+                        formation: searchFormation.title,
+                        price: searchFormation.price,
+                        duration: searchFormation.duration,
+                        entreprise: args.entreprise,
+                        fullname: args.fullname,
+                        telephone: args.telephone,
+                        email: args.email,
+                        message: args.message,
+                        date: args.date
+                    })
+                })
+
+                const data = await response.json();
+
+                if (!response.ok) {
+                    setErrorMessage({
+                        success: false,
+                        message: data.message.message,
+                        show: true
+                    });
+                    throw new Error(data.message.message);
+                }
+
+                setErrorMessage({
+                    success: true,
+                    message: "Votre demande de devis a été envoyé avec succés",
+                    show: true
+                });
+                setLoading(false);
+                setTimeout(() => {
+                    router.replace("/formations");
+                }, 1000);
+            } catch (error) {
+                console.log(error);
+                setLoading(false);
+            }
+        } else {
+            alert("Formation non trouvée!");
+        }
+    }
+
+    const handleSubmit = async () => {
+        if ((formation !== "" || devisInputs.formation !== "") && devisInputs.entreprise !== "" && devisInputs.email !== "" && devisInputs.fullname !== "") {
+            if (!loading) {
+                await handleSendDevis({
+                    formation: formation || devisInputs.formation,
+                    entreprise: devisInputs.entreprise,
+                    fullname: devisInputs.fullname,
+                    telephone: devisInputs.telephone,
+                    email: devisInputs.email,
+                    message: devisInputs.message,
+                    date: devisDate
+                });
+                setDevisInputs({
+                    ...devisInputs,
+                    message: ''
+                });
+            }
+        } else {
+            alert("Veuillez entrer les informations nécéssaires!");
+        }
+    }
+
+    return (
+        <div className='flex flex-col justify-start items-center mt-10 mb-4 mx-2 py-6 px-5 box-shadow2 w-[464px] bg-white gap-5'>
+            <div className="flex flex-col justify-start items-start w-full gap-3">
+                <h2 className={montserratBoldFont.className + " font-bold text-4xl text-ac-bleu text-start"}>Demande de Devis</h2>
+                <p className="text-xs font-semibold text-start text-black">
+                    {devis.description}
+                </p>
+            </div>
+
+            {/* Form */}
+            <form className={montserratNormalFont.className + " flex flex-col justify-start items-stretch gap-3 w-full"}>
+                <div className="flex flex-col justify-center items-start w-full">
+                    <label htmlFor="formation" className="flex justify-center items-center text-sm gap-1">
+                        <h3 className="font-semibold text-sm text-black text-start">Formation</h3>
+                        <span className="text-red-500">*</span>
+                    </label>
+                    <div className="flex justify-center items-center border border-zinc-300 w-full">
+                        <input
+                            name="formation"
+                            readOnly={formation?.length !== 0}
+                            type="text"
+                            placeholder='Formation'
+                            className="py-2 px-5 w-full text-zinc-500 font-medium"
+                            value={(formation?.length !== 0) ? formation : devisInputs.formation}
+                            onChange={handleDevisInputChange}
+                        />
+                    </div>
+                </div>
+
+                <div className="flex flex-col justify-center items-start w-full">
+                    <label htmlFor="entreprise" className="flex justify-center items-center text-sm gap-1">
+                        <h3 className="font-semibold text-sm text-black text-start">Entreprise</h3>
+                        <span className="text-red-500">*</span>
+                    </label>
+                    <div className="flex justify-center items-center border border-zinc-300 w-full">
+                        <input
+                            name="entreprise"
+                            type="text"
+                            placeholder='Entreprise'
+                            className="py-2 px-5 w-full text-black"
+                            value={devisInputs.entreprise}
+                            onChange={handleDevisInputChange}
+                        />
+                    </div>
+                </div>
+
+                <div className="flex flex-col justify-center items-start w-full">
+                    <label htmlFor="fullname" className="flex justify-center items-center text-sm gap-1">
+                        <h3 className="font-semibold text-sm text-black text-start">Nom & Prénom</h3>
+                        <span className="text-red-500">*</span>
+                    </label>
+                    <div className="flex justify-center items-center relative border border-zinc-300 w-full">
+                        <input
+                            name="fullname"
+                            type="text"
+                            placeholder='Nom & Prénom'
+                            className="py-2 px-5 w-full text-black"
+                            value={devisInputs.fullname}
+                            onChange={handleDevisInputChange}
+                        />
+                    </div>
+                </div>
+
+                <div className="flex flex-col justify-center items-start w-full">
+                    <label htmlFor="email" className="flex justify-center items-center text-sm gap-1">
+                        <h3 className="font-semibold text-sm text-black text-start">Email</h3>
+                        <span className="text-red-500">*</span>
+                    </label>
+                    <div className="flex justify-center items-center relative border border-zinc-300 w-full">
+                        <input
+                            name="email"
+                            type="email"
+                            placeholder='Email'
+                            className="py-2 px-5 w-full text-black"
+                            value={devisInputs.email}
+                            onChange={handleDevisInputChange}
+                        />
+                    </div>
+                </div>
+
+                <div className="flex flex-col justify-center items-start w-full">
+                    <label htmlFor="telephone" className="flex justify-center items-center text-sm gap-1">
+                        <h3 className="font-semibold text-sm text-black text-start">Téléphone</h3>
+                    </label>
+                    <div className="flex justify-center items-center relative border border-zinc-300 w-full">
+                        <input
+                            name="telephone"
+                            type="tel"
+                            placeholder='Téléphone'
+                            className="py-2 px-5 w-full text-black"
+                            value={devisInputs.telephone}
+                            onChange={handleDevisInputChange}
+                        />
+                    </div>
+                </div>
+
+                <div className="flex flex-col justify-center items-start w-full">
+                    <label htmlFor="message" className="flex justify-center items-center text-sm gap-1">
+                        <h3 className="font-semibold text-sm text-black text-start">Message</h3>
+                    </label>
+                    <div className="flex justify-center items-center relative border border-zinc-300 w-full">
+                        <textarea
+                            name="message"
+                            placeholder='Message'
+                            className="py-2 px-5 w-full text-black min-h-[40px]"
+                            value={devisInputs.message}
+                            onChange={handleDevisInputChange}
+                        />
+                    </div>
+                </div>
+
+                <div className="flex flex-col justify-center items-start w-full">
+                    <label htmlFor="date" className="flex justify-center items-center text-sm gap-1">
+                        <h3 className="font-semibold text-sm text-black text-start">Date</h3>
+                        <span className="text-red-500">*</span>
+                    </label>
+                    <div className="flex justify-start items-center border border-zinc-300 w-full py-2 px-5 gap-3">
+                        <BsCalendar className="h-6 w-6" color='#828282' />
+                        <DatePicker
+                            className='text-black'
+                            dateFormat="dd/MM/yyyy"
+                            selected={devisDate}
+                            onSelect={setDevisDate}
+                            onChange={() => { }}
+                        />
+                    </div>
+                </div>
+            </form>
+
+            {errorMessage.show &&
+                <div className={"flex justify-between items-center w-full py-2 px-4 rounded-md " + (errorMessage.success ? "bg-green-100" : "bg-red-100")}>
+                    <p className={"text-sm text-left max-w-[240px] fold:max-w-[300px] font-semibold " + (errorMessage.success ? "text-green-600" : "text-red-600")}>{errorMessage.message}</p>
+                    <IoClose onClick={() => setErrorMessage({ ...errorMessage, message: "", show: false })} className='fill-gray-700 w-6 h-6 border border-gray-700 rounded-md cursor-pointer' />
+                </div>
+            }
+
+            <div onClick={handleSubmit} className={"bg-ac-bleu py-3 px-6 w-full " + (!loading && "cursor-pointer")}>
+                {!loading
+                    ? <p className={montserratBoldFont.className + " text-white text-base font-bold text-center uppercase"}>Envoyer</p>
+                    : <div className="flex justify-center items-center gap-2.5 p-[5px]">
+                        <div className="rounded-full bg-white w-3.5 h-3.5 animate-loading1"></div>
+                        <div className="rounded-full bg-white w-3.5 h-3.5 animate-loading2"></div>
+                        <div className="rounded-full bg-white w-3.5 h-3.5 animate-loading3"></div>
+                    </div>
+                }
+            </div>
+        </div>
+    )
+}
