@@ -89,9 +89,10 @@ export default function DevisForm({ formation }: Props) {
                 const data = await response.json();
 
                 if (!response.ok) {
+                    console.log(data.message.message);
                     setErrorMessage({
                         success: false,
-                        message: data.message.message,
+                        message: "Erreur de configuration de serveur",
                         show: true
                     });
                     throw new Error(data.message.message);
