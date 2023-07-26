@@ -43,3 +43,11 @@ export interface DevisPayload {
   message: string;
   date: Date;
 }
+
+export interface ContactUsPayload {
+  nom: string;
+  prenom: string;
+  telephone: string;
+  email: string;
+  message: string;
+}

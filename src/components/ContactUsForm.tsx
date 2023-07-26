@@ -3,7 +3,9 @@ import { ChangeEvent, useState } from "react";
 
 import { contactus } from '@/content/general';
 import "react-datepicker/dist/react-datepicker.css";
-import { Formation } from '@/utils/interfaces';
+import { ContactUsPayload, Formation } from '@/utils/interfaces';
+import { useRouter } from 'next/navigation';
+import { IoClose } from 'react-icons/io5';
 
 const montserratNormalFont = Montserrat({ weight: "400", subsets: ["latin"] });
 const montserratBoldFont = Montserrat({ weight: "700", subsets: ["latin"] });
@@ -19,6 +21,8 @@ interface FormContactInputs {
 }
 
 export default function ContactUsForm({ }: Props) {
+    const router = useRouter();
+
     const [contactInputs, setContactInputs] = useState<FormContactInputs>({
         nom: '',
         prenom: '',
@@ -26,7 +30,6 @@ export default function ContactUsForm({ }: Props) {
         email: '',
         message: ''
     });
-
     const handleContactInputChange = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
         const { name, value } = e.target;
         setContactInputs((prevState) => ({
@@ -36,15 +39,69 @@ export default function ContactUsForm({ }: Props) {
     };
 
     const [loading, setLoading] = useState(false);
+    const [errorMessage, setErrorMessage] = useState({
+        success: false,
+        message: "",
+        show: false
+    });
+    const handleSendEmail = async (args: ContactUsPayload) => {
+        try {
+            setLoading(true);
+            const response = await fetch("/api/mailing/contactus", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({
+                    nom: args.nom,
+                    prenom: args.prenom,
+                    telephone: args.telephone,
+                    email: args.email,
+                    message: args.message,
+                })
+            })
 
+            const data = await response.json();
+
+            if (!response.ok) {
+                setErrorMessage({
+                    success: false,
+                    message: data.message.message,
+                    show: true
+                });
+                throw new Error(data.message.message);
+            }
+
+            setErrorMessage({
+                success: true,
+                message: "Votre email a été envoyé avec succés",
+                show: true
+            });
+            setLoading(false);
+            // setTimeout(() => {
+            //     router.replace("/");
+            // }, 1000);
+        } catch (error) {
+            console.log(error);
+            setLoading(false);
+        }
+    }
     const handleSubmit = async () => {
-        if ((contactInputs.nom !== "") && contactInputs.prenom !== "" && contactInputs.email !== "") {
+        if (contactInputs.nom !== "" && contactInputs.prenom !== "" && contactInputs.message !== "") {
             if (!loading) {
+                await handleSendEmail({
+                    nom: contactInputs.nom,
+                    prenom: contactInputs.prenom,
+                    telephone: contactInputs.telephone,
+                    email: contactInputs.email,
+                    message: contactInputs.message
+                });
             }
         } else {
             alert("Veuillez entrer les informations nécéssaires!");
         }
     }
+
     return (
         <div className='flex flex-col justify-start items-center mt-10 mb-4 mx-2 py-6 px-5 box-shadow2 w-[464px] bg-white gap-5'>
             <div className="flex flex-col justify-start items-start w-full gap-3">
@@ -139,6 +196,13 @@ export default function ContactUsForm({ }: Props) {
                     </div>
                 </div>
             </form>
+
+            {errorMessage.show &&
+                <div className={"flex justify-between items-center w-full py-2 px-4 rounded-md " + (errorMessage.success ? "bg-green-100" : "bg-red-100")}>
+                    <p className={"text-sm text-left max-w-[240px] fold:max-w-[300px] font-semibold " + (errorMessage.success ? "text-green-600" : "text-red-600")}>{errorMessage.message}</p>
+                    <IoClose onClick={() => setErrorMessage({ ...errorMessage, message: "", show: false })} className='fill-gray-700 w-6 h-6 border border-gray-700 rounded-md cursor-pointer' />
+                </div>
+            }
             <div onClick={handleSubmit} className="bg-ac-bleu py-3 px-6 w-full cursor-pointer">
                 <p className={montserratBoldFont.className + " text-white text-base font-bold text-center uppercase"}>Envoyer</p>
             </div>

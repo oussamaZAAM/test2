@@ -8,10 +8,6 @@ import ReturnToTop from '@/components/ReturnToTop';
 type Props = {}
 
 export default function page({ }: Props) {
-
-    const handleSendContact = () => {
-        console.log('contactez-nous page')
-    }
     return (
         <div className="bg-ac-gray flex flex-col justify-start items-center w-full">
             <ReturnToTop />

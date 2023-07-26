@@ -63,13 +63,12 @@ export default function DevisForm({ formation }: Props) {
         message: "",
         show: false
     });
-
     const handleSendDevis = async (args: DevisProps) => {
         const searchFormation = formationsData.find((element) => element.title.toLowerCase() === formation?.toLowerCase());
         if (searchFormation) {
             try {
                 setLoading(true);
-                const response = await fetch("/api/mailing", {
+                const response = await fetch("/api/mailing/devis", {
                     method: "POST",
                     headers: {
                         "Content-Type": "application/json"
@@ -115,7 +114,6 @@ export default function DevisForm({ formation }: Props) {
             alert("Formation non trouvée!");
         }
     }
-
     const handleSubmit = async () => {
         if ((formation !== "" || devisInputs.formation !== "") && devisInputs.entreprise !== "" && devisInputs.email !== "" && devisInputs.fullname !== "") {
             if (!loading) {
@@ -127,10 +125,6 @@ export default function DevisForm({ formation }: Props) {
                     email: devisInputs.email,
                     message: devisInputs.message,
                     date: devisDate
-                });
-                setDevisInputs({
-                    ...devisInputs,
-                    message: ''
                 });
             }
         } else {
