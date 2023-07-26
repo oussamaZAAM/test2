@@ -55,7 +55,7 @@ export default function DevisForm({ formation }: Props) {
             [name]: value
         }));
     };
-    
+
 
     const [loading, setLoading] = useState(false);
     const [errorMessage, setErrorMessage] = useState({

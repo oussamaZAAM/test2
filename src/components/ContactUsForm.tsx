@@ -204,8 +204,15 @@ export default function ContactUsForm({ }: Props) {
                     <IoClose onClick={() => setErrorMessage({ ...errorMessage, message: "", show: false })} className='fill-gray-700 w-6 h-6 border border-gray-700 rounded-md cursor-pointer' />
                 </div>
             }
-            <div onClick={handleSubmit} className="bg-ac-bleu py-3 px-6 w-full cursor-pointer">
-                <p className={montserratBoldFont.className + " text-white text-base font-bold text-center uppercase"}>Envoyer</p>
+            <div onClick={handleSubmit} className={"bg-ac-bleu py-3 px-6 w-full " + (!loading && "cursor-pointer")}>
+                {!loading
+                    ? <p className={montserratBoldFont.className + " text-white text-base font-bold text-center uppercase"}>Envoyer</p>
+                    : <div className="flex justify-center items-center gap-2.5 p-[5px]">
+                        <div className="rounded-full bg-white w-3.5 h-3.5 animate-loading1"></div>
+                        <div className="rounded-full bg-white w-3.5 h-3.5 animate-loading2"></div>
+                        <div className="rounded-full bg-white w-3.5 h-3.5 animate-loading3"></div>
+                    </div>
+                }
             </div>
         </div>
     )
