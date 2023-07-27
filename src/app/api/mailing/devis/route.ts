@@ -7,11 +7,16 @@ export async function POST(request: NextRequest) {
 
     try {
         const data = await request.json();
+
+        if (!data || !data.formation || !data.entreprise || !data.fullname || !data.email || !data.date) {
+            return NextResponse.json({ message: 'Invalid input data' }, { status: 400 });
+        }
+
         if (process.env.EMAIL_SENDER && process.env.EMAIL_SENDER !== "" && process.env.EMAIL_RECEIVER && process.env.EMAIL_RECEIVER !== "") {
             const mailData = await resend.emails.send({
                 from: process.env.EMAIL_SENDER,
                 to: process.env.EMAIL_RECEIVER,
-                subject: 'Reçu de devis',
+                subject: 'Reçu de devis', 
                 react: DevisEmail({
                     formation: data.formation,
                     price: data.price,

@@ -7,6 +7,10 @@ export async function POST(request: NextRequest) {
 
     try {
         const data = await request.json();
+        if (!data || !data.nom || !data.prenom || !data.email || !data.message) {
+            return NextResponse.json({ message: 'Invalid input data' }, { status: 400 });
+        }
+
         if (process.env.EMAIL_SENDER && process.env.EMAIL_SENDER !== "" && process.env.EMAIL_RECEIVER && process.env.EMAIL_RECEIVER !== "") {
             const mailData = await resend.emails.send({
                 from: process.env.EMAIL_SENDER,

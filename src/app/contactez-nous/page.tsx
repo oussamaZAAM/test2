@@ -4,10 +4,22 @@ import ContactUsForm from '@/components/ContactUsForm';
 import Footer from '@/components/Footer';
 import Navbar from '@/components/Navbar';
 import ReturnToTop from '@/components/ReturnToTop';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 type Props = {}
 
-export default function page({ }: Props) {
+export default function ContactUs({ }: Props) {
+    const triggerToaster = (type: string, message: string) => {
+        if (type === "success") {
+            toast.success(message);
+        } else {
+            if (type === "error") {
+                toast.error(message);
+            }
+        }
+    }
+
     return (
         <div className="bg-ac-gray flex flex-col justify-start items-center w-full">
             <ReturnToTop />
@@ -24,10 +36,19 @@ export default function page({ }: Props) {
 
             {/* Contact Us */}
             <div className="flex justify-center items-center w-full bg-ac-gray -translate-y-6 rounded-t-3xl ">
-                <ContactUsForm />
+                <ContactUsForm triggerToaster={triggerToaster} />
             </div>
 
             <Footer />
+            <ToastContainer
+                className="mt-16"
+                position="top-center"
+                autoClose={2000}
+                closeOnClick
+                pauseOnHover={false}
+                newestOnTop={true}
+                theme="light"
+            />
         </div>
     )
 }

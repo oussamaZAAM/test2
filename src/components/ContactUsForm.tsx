@@ -2,15 +2,17 @@ import { Montserrat } from 'next/font/google';
 import { ChangeEvent, useState } from "react";
 
 import { contactus } from '@/content/general';
-import "react-datepicker/dist/react-datepicker.css";
-import { ContactUsPayload, Formation } from '@/utils/interfaces';
+import { ContactUsPayload } from '@/utils/interfaces';
 import { useRouter } from 'next/navigation';
-import { IoClose } from 'react-icons/io5';
+
+import "react-datepicker/dist/react-datepicker.css";
 
 const montserratNormalFont = Montserrat({ weight: "400", subsets: ["latin"] });
 const montserratBoldFont = Montserrat({ weight: "700", subsets: ["latin"] });
 
-type Props = {}
+type Props = {
+    triggerToaster: Function
+}
 
 interface FormContactInputs {
     nom: string;
@@ -20,7 +22,7 @@ interface FormContactInputs {
     message: string;
 }
 
-export default function ContactUsForm({ }: Props) {
+export default function ContactUsForm({ triggerToaster }: Props) {
     const router = useRouter();
 
     const [contactInputs, setContactInputs] = useState<FormContactInputs>({
@@ -39,11 +41,11 @@ export default function ContactUsForm({ }: Props) {
     };
 
     const [loading, setLoading] = useState(false);
-    const [errorMessage, setErrorMessage] = useState({
-        success: false,
-        message: "",
-        show: false
-    });
+    // const [errorMessage, setErrorMessage] = useState({
+    //     success: false,
+    //     message: "",
+    //     show: false
+    // });
     const handleSendEmail = async (args: ContactUsPayload) => {
         try {
             setLoading(true);
@@ -65,23 +67,32 @@ export default function ContactUsForm({ }: Props) {
 
             if (!response.ok) {
                 console.log(data.message.message);
-                setErrorMessage({
-                    success: false,
-                    message: "Erreur de configuration de serveur",
-                    show: true
-                });
+                // setErrorMessage({
+                //     success: false,
+                //     message: "Erreur de configuration de serveur",
+                //     show: true
+                // });
+                triggerToaster("error", "Erreur de configuration de serveur");
                 throw new Error(data.message.message);
             }
 
-            setErrorMessage({
-                success: true,
-                message: "Votre email a été envoyé avec succés",
-                show: true
+            // setErrorMessage({
+            //     success: true,
+            //     message: "Votre email a été envoyé avec succés",
+            //     show: true
+            // });
+            triggerToaster("success", "Votre email a été envoyé avec succés")
+            setContactInputs({
+                nom: '',
+                prenom: '',
+                telephone: '',
+                email: '',
+                message: ''
             });
             setLoading(false);
-            // setTimeout(() => {
-            //     router.replace("/");
-            // }, 1000);
+            setTimeout(() => {
+                router.replace("/");
+            }, 2750); // Redirect to /formations page after 2s
         } catch (error) {
             console.log(error);
             setLoading(false);
@@ -198,12 +209,12 @@ export default function ContactUsForm({ }: Props) {
                 </div>
             </form>
 
-            {errorMessage.show &&
+            {/* {errorMessage.show &&
                 <div className={"flex justify-between items-center w-full py-2 px-4 rounded-md " + (errorMessage.success ? "bg-green-100" : "bg-red-100")}>
                     <p className={"text-sm text-left max-w-[240px] fold:max-w-[300px] font-semibold " + (errorMessage.success ? "text-green-600" : "text-red-600")}>{errorMessage.message}</p>
                     <IoClose onClick={() => setErrorMessage({ ...errorMessage, message: "", show: false })} className='fill-gray-700 w-6 h-6 border border-gray-700 rounded-md cursor-pointer' />
                 </div>
-            }
+            } */}
             <div onClick={handleSubmit} className={"bg-ac-bleu py-3 px-6 w-full " + (!loading && "cursor-pointer")}>
                 {!loading
                     ? <p className={montserratBoldFont.className + " text-white text-base font-bold text-center uppercase"}>Envoyer</p>

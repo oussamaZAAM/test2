@@ -3,22 +3,36 @@
 import ContactUsForm from '@/components/ContactUsForm';
 import Footer from '@/components/Footer';
 import Hero from '@/components/Hero';
+import Navbar from '@/components/Navbar';
+import ReturnToTop from '@/components/ReturnToTop';
+import { homepage } from "@/content/content";
+
 import { IBM_Plex_Sans, Lato, Montserrat } from 'next/font/google';
 import Image from 'next/image';
 import Link from 'next/link';
-import Navbar from '../components/Navbar';
-import { homepage } from "@/content/content";
-import ReturnToTop from '@/components/ReturnToTop';
+
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 
 const montserratFont = Montserrat({ weight: "400", subsets: ["latin"] });
 const latoFont = Lato({ weight: "400", subsets: ["latin"] });
 const ibmFont = IBM_Plex_Sans({ weight: "700", subsets: ["latin"] });
 
 export default function Home() {
+  const triggerToaster = (type: string, message: string) => {
+    if (type === "success") {
+      toast.success(message);
+    } else {
+      if (type === "error") {
+        toast.error(message);
+      }
+    }
+  }
   return (
     <div className="flex flex-col justify-center items-center bg-ac-gray w-full">
       <ReturnToTop />
-      
+
       {/* Navbar  */}
       <Navbar />
 
@@ -63,11 +77,20 @@ export default function Home() {
 
       {/* Contact Us */}
       <div className="flex justify-center items-center w-full bg-ac-gray -translate-y-6 rounded-t-3xl ">
-        <ContactUsForm />
+        <ContactUsForm triggerToaster={triggerToaster} />
       </div>
 
       {/* Footer  */}
       <Footer />
+      <ToastContainer
+        className="mt-16"
+        position="top-center"
+        autoClose={2000}
+        closeOnClick
+        pauseOnHover={false}
+        newestOnTop={true}
+        theme="light"
+      />
     </div>
   )
 }

@@ -1,13 +1,12 @@
-import { Montserrat } from 'next/font/google';
-import { ChangeEvent, useState } from "react";
-import DatePicker from "react-datepicker";
-import { BsCalendar } from 'react-icons/bs';
-import { IoClose } from 'react-icons/io5';
-
 import { devis } from '@/content/general';
 import { formationsData } from '@/utils/mockData';
-import "react-datepicker/dist/react-datepicker.css";
+import { Montserrat } from 'next/font/google';
 import { useRouter } from 'next/navigation';
+import { ChangeEvent, useState } from "react";
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
+
+import { BsCalendar } from 'react-icons/bs';
 
 
 const montserratNormalFont = Montserrat({ weight: "400", subsets: ["latin"] });
@@ -15,6 +14,7 @@ const montserratBoldFont = Montserrat({ weight: "700", subsets: ["latin"] });
 
 type Props = {
     formation: string;
+    triggerToaster: Function
 }
 
 interface FormDevisInputs {
@@ -36,7 +36,7 @@ interface DevisProps {
     date: Date;
 }
 
-export default function DevisForm({ formation }: Props) {
+export default function DevisForm({ formation, triggerToaster }: Props) {
     const router = useRouter();
 
     const [devisDate, setDevisDate] = useState(new Date());
@@ -58,11 +58,6 @@ export default function DevisForm({ formation }: Props) {
 
 
     const [loading, setLoading] = useState(false);
-    const [errorMessage, setErrorMessage] = useState({
-        success: false,
-        message: "",
-        show: false
-    });
     const handleSendDevis = async (args: DevisProps) => {
         const searchFormation = formationsData.find((element) => element.title.toLowerCase() === formation?.toLowerCase());
         if (searchFormation) {
@@ -89,24 +84,22 @@ export default function DevisForm({ formation }: Props) {
                 const data = await response.json();
 
                 if (!response.ok) {
-                    console.log(data.message.message);
-                    setErrorMessage({
-                        success: false,
-                        message: "Erreur de configuration de serveur",
-                        show: true
-                    });
+                    triggerToaster("error", "Erreur de configuration de serveur");
                     throw new Error(data.message.message);
                 }
-
-                setErrorMessage({
-                    success: true,
-                    message: "Votre demande de devis a été envoyé avec succés",
-                    show: true
-                });
+                triggerToaster("success", "Votre demande de devis a été envoyé avec succés")
+                setDevisInputs({ // Wipe the devis inputs Data to prevent spam
+                    formation: '',
+                    entreprise: '',
+                    fullname: '',
+                    telephone: '',
+                    email: '',
+                    message: ''
+                })
                 setLoading(false);
                 setTimeout(() => {
                     router.replace("/formations");
-                }, 1000);
+                }, 2750); // Redirect to /formations page after 2s
             } catch (error) {
                 console.log(error);
                 setLoading(false);
@@ -261,13 +254,6 @@ export default function DevisForm({ formation }: Props) {
                     </div>
                 </div>
             </form>
-
-            {errorMessage.show &&
-                <div className={"flex justify-between items-center w-full py-2 px-4 rounded-md " + (errorMessage.success ? "bg-green-100" : "bg-red-100")}>
-                    <p className={"text-sm text-left max-w-[240px] fold:max-w-[300px] font-semibold " + (errorMessage.success ? "text-green-600" : "text-red-600")}>{errorMessage.message}</p>
-                    <IoClose onClick={() => setErrorMessage({ ...errorMessage, message: "", show: false })} className='fill-gray-700 w-6 h-6 border border-gray-700 rounded-md cursor-pointer' />
-                </div>
-            }
 
             <div onClick={handleSubmit} className={"bg-ac-bleu py-3 px-6 w-full " + (!loading && "cursor-pointer")}>
                 {!loading
