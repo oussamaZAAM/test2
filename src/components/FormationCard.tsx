@@ -1,20 +1,21 @@
+import { currency } from '@/utils/variables';
 import { Lato, Montserrat } from 'next/font/google';
 import Image from 'next/image';
 import Link from 'next/link';
-import { HiArrowNarrowRight } from "react-icons/hi";
 
 type Props = {
   formation_id: string,
   title: string,
   description: string,
-  lessons: Array<string> | undefined,
-  image_url: string
+  image_url: string,
+  price: number,
+  duration: number
 }
 
 const montserratFont = Montserrat({ subsets: ["latin"] });
 const latoFont = Lato({ weight: "400", subsets: ["latin"] });
 
-export default function FormationCard({ formation_id, title, description, lessons, image_url }: Props) {
+export default function FormationCard({ formation_id, title, description, image_url, price, duration }: Props) {
   return (
     <div className='flex flex-col justify-between items-center gap-6 w-full py-5 px-6 rounded-xl border transition duration-100 hover:duration-300 shadow-formation-unhover hover:shadow-formation-hover max-w-[270px] fold:max-w-[320px]'>
       <div className="flex flex-col justify-start items-center gap-3 w-full">
@@ -29,14 +30,15 @@ export default function FormationCard({ formation_id, title, description, lesson
         </p>
       </div>
       <div className="flex flex-col justify-start items-stretch gap-3 w-full">
-        {lessons && lessons.map((lesson) => {
-          return (
-            <div key={lesson} className="flex justify-between items-center w-full">
-              <p className={montserratFont.className + " font-semibold text-black text-xl text-start"}>{lesson}</p>
-              <HiArrowNarrowRight color='black' size={30} />
-            </div>
-          )
-        })}
+        <div className="flex justify-start items-center gap-6 w-full">
+          <Image src="/Formations/coin.png" width={50} height={50} alt='Prix' />
+          <p className={montserratFont.className + " font-medium text-black text-lg text-start"}>{price + " " +currency} HT / personne</p>
+        </div>
+
+        <div className="flex justify-start items-center gap-6 w-full">
+          <Image src="/Formations/hourglass.png" width={50} height={50} alt='Durée' />
+          <p className={montserratFont.className + " font-medium text-black text-lg text-start"}>{Math.ceil(duration / 8)} jours ({duration} heures)</p>
+        </div>
 
         <div className="flex justify-center items-center">
           <Link href={"/formations/" + formation_id}><p className={montserratFont.className + " font-medium text-base text-center text-[#5C8BFC] underline"}>Voir plus</p></Link>

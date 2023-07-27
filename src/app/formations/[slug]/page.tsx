@@ -99,20 +99,20 @@ export default function Page({ params }: Props) {
             </div>
             {/* Billing */}
             <div className={montserratFont.className + " flex flex-col xm:flex-row justify-between items-stretch w-full gap-8 xm:gap-0"}>
-              <div className="flex flex-col justify-start items-center gap-4 xm:gap-10">
+              <div className="flex flex-col justify-start items-center gap-4 xm:gap-10 xm:max-w-[125px]">
                 <div className="flex justify-center items-center gap-2.5">
                   <RiCopperCoinLine className="fill-ac-bleu" size={25} />
                   <p className="text-xl font-bold uppercase text-black text-center">Prix</p>
                 </div>
-                <p className="text-base font-medium text-center text-black uppsercase">{formation.price + " " + currency}</p>
+                <p className="text-base font-medium text-center text-black uppsercase whitespace-normal"><span className="font-bold">{formation.price}</span>{" " +currency} HT / personne</p>
               </div>
               <div className="hidden xm:block w-0.5 bg-[#888888]"></div>
-              <div className="flex flex-col justify-start items-center gap-4 xm:gap-10">
+              <div className="flex flex-col justify-start items-center gap-4 xm:gap-10 xm:max-w-[125px]">
                 <div className="flex justify-center items-center gap-2.5">
                   <RiCopperCoinLine className="fill-ac-bleu" size={25} />
                   <p className="text-xl font-bold uppercase text-black text-center">Durée</p>
                 </div>
-                <p className="text-base font-medium text-center text-black uppsercase">{formation.duration}</p>
+                <p className="text-base font-medium text-center text-black uppsercase"><span className="font-bold">{Math.ceil(formation.duration / 8)}</span> jours (<span className="font-bold">{formation.duration}</span>&nbsp;heures)</p>
               </div>
             </div>
           </div>

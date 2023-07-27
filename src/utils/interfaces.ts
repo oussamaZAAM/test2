@@ -31,7 +31,7 @@ export interface Formation {
   title: string;
   description: string;
   price: number;
-  duration: string;
+  duration: number;
   image_url: string;
   lessons?: Array<string>;
 }

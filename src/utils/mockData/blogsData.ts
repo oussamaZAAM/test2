@@ -12,7 +12,7 @@ const users: User[] = [
     name: "Abdelkarim AJEKAL",
     job: "Consultant en test et automatisation",
     description: "",
-    image: "https://media.licdn.com/dms/image/D5603AQHjb_yvd732NQ/profile-displayphoto-shrink_400_400/0/1667845689631?e=1695859200&v=beta&t=or3z9e1CxZcogD73Ej0hSjxhYbKjqCl9WFzh1Bj8jBk",
+    image: "https://i.ibb.co/9wGJxdT/4140048.png",
     contact: "https://www.linkedin.com/in/abdelkarimaj/"
   },
 ];

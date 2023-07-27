@@ -49,8 +49,9 @@ export default function Formations({ }: Props) {
                                     formation_id={formation.formation_id}
                                     title={formation.title}
                                     description={formation.description}
-                                    lessons={formation.lessons}
                                     image_url={formation.image_url}
+                                    price={formation.price}
+                                    duration={formation.duration}
                                 />
                             )
                         })}

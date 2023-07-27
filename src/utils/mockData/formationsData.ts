@@ -2,20 +2,35 @@ import { Formation } from "../interfaces";
 
 export const formationsData: Formation[] = [
   {
-    formation_id: "testing",
-    title: "Testing",
+    formation_id: "postman",
+    title: "Postman",
     description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi rhoncus",
     price: 799,
-    duration: "2 Mois",
-    lessons: ["Postman", "Selenium", "Mockito"],
-    image_url: "https://i.ibb.co/dDZFmNv/testing.png"
+    duration: 14,
+    image_url: "/Formations/postman.png"
   },
   {
-    formation_id: "automation",
-    title: "Automation",
+    formation_id: "cypress",
+    title: "Cypress",
     description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi rhoncus",
     price: 1299,
-    duration: "3 Semaines",
-    image_url: "https://i.ibb.co/C7Tv1dH/automation.png"
-  }
+    duration: 15,
+    image_url: "/Formations/cypress.png"
+  },
+  {
+    formation_id: "robot-framework",
+    title: "Robot Framework",
+    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi rhoncus",
+    price: 1499,
+    duration: 21,
+    image_url: "/Formations/robot-framework.png"
+  },
+  {
+    formation_id: "playwright",
+    title: "Playwright",
+    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi rhoncus",
+    price: 299,
+    duration: 6,
+    image_url: "/Formations/playwright.png"
+  },
 ]
