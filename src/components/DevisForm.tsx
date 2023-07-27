@@ -1,5 +1,5 @@
 import { devis } from '@/content/general';
-import { formationsData } from '@/utils/mockData';
+import { formationsData } from '@/utils/formationsData';
 import { Montserrat } from 'next/font/google';
 import { useRouter } from 'next/navigation';
 import { ChangeEvent, useState } from "react";

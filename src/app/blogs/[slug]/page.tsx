@@ -3,16 +3,13 @@
 import Footer from '@/components/Footer';
 import Navbar from '@/components/Navbar';
 import ReturnToTop from '@/components/ReturnToTop';
+import { blogsData } from '@/utils/blogsData';
 import { readableDate } from '@/utils/functions';
-import { Blog } from '@/utils/interfaces';
-import { blogsData } from '@/utils/mockData';
-import { Jost, Lato, Montserrat } from 'next/font/google';
+import { Jost, Montserrat } from 'next/font/google';
 import Image from 'next/image';
-import { usePathname } from 'next/navigation';
 
 const jostFont = Jost({ subsets: ["latin"] });
 const montserratFont = Montserrat({ subsets: ["latin"] });
-const latoFont = Lato({ weight: "400", subsets: ["latin"] });
 
 type Props = {
     params: {
@@ -53,16 +50,50 @@ export default function Blog({ params }: Props) {
                     <div className="flex w-full flex-col justify-start items-start gap-8">
                         <h5 className="uppercase font-medium text-base text-black text-start">Share</h5>
                         <div className="w-full h-px bg-black"></div>
-                        <div className="flex flex-col justify-start items-start gap-6">
-                            <p className={latoFont.className + " font-medium text-lg text-black text-start first-letter:text-7xl first-letter:font-bold first-letter:mr-1 indent-5"}>
-                                {blog.body.split("\n\n")[0]}
-                            </p>
-                            {blog.body.split("\n\n").slice(1).map(paragraph => {
-                                return (
-                                    <p key={paragraph} className={latoFont.className + " font-medium text-lg text-black text-start indent-5"}>
-                                        {paragraph}
-                                    </p>
-                                )
+                        <div className="flex flex-col justify-start items-start gap-10">
+                            {blog.body.map(section => {
+                                if (section.type === "image" && section.url) {
+                                    return (
+                                        <figure key={section.section} className='self-center text-center'>
+                                            <Image width={500} height={500} src={section.url} alt={blog.id} />
+                                            <figcaption>{section.imageCaption}</figcaption>
+                                        </figure>
+                                    )
+                                }
+                                if (section.type === "paragraph" && section.text) {
+                                    return (
+                                        <p key={section.section} className={"font-medium text-lg text-black text-start " + (section.section === 1 ? "indent-5" : "")}>
+                                            {section.text}
+                                        </p>
+                                    )
+                                }
+                                if (section.type === "question" && section.text) {
+                                    return (
+                                        <p key={section.section} className={"font-semibold text-lg text-black text-start " + (section.section === 1 ? "indent-5" : "")}>
+                                            {section.text}
+                                        </p>
+                                    )
+                                }
+                                if (section.type === "itemize" && section.items) {
+                                    return (
+                                        <div key={section.section} className="flex flex-col justify-start items-start gap-3">
+                                            {section.items.map((item) => {
+                                                return (
+                                                    <p key={item.title} className="font-medium text-lg text-black text-start">
+                                                        <span className='italic font-semibold'>{item.title}</span>
+                                                        {" "} : {" "}
+                                                        {item.body}
+                                                    </p>
+                                                )
+                                            })}
+                                        </div>
+                                    )
+                                }
+                                if (section.type === "iframe" && section.url) {
+                                    return (
+                                        <iframe key={section.section} className='max-w-full self-center' width={640} height={360} src={section.url} />
+                                    )
+                                }
                             })}
                         </div>
                     </div>

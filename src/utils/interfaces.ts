@@ -1,7 +1,19 @@
+export interface BlogBody {
+  section: number;
+  type: string;
+  text?: string;
+  url?: string;
+  items?: {
+    title: string;
+    body: string;
+  }[],
+  imageCaption?: string;
+}
+
 export interface Blog {
   id: string;
   title: string;
-  body: string;
+  body: BlogBody[];
   author: User;
   date: Date;
 }
