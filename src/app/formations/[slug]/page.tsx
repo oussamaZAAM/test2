@@ -3,7 +3,7 @@
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
 import ReturnToTop from "@/components/ReturnToTop";
-import { formationsData } from "@/utils/formationsData";
+import { formationsData } from "@/utils/mockData/formationsData";
 import { currency } from "@/utils/variables";
 import { IBM_Plex_Sans_Condensed, Lato, Montserrat } from "next/font/google";
 import Image from "next/image";

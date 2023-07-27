@@ -4,7 +4,7 @@ import BlogCard from '@/components/BlogCard';
 import Footer from '@/components/Footer';
 import Navbar from '@/components/Navbar';
 import ReturnToTop from '@/components/ReturnToTop';
-import { blogsData } from '@/utils/blogsData';
+import { blogsData } from '@/utils/mockData/blogsData';
 import { Jost, Montserrat } from 'next/font/google';
 import { useEffect, useRef, useState } from 'react';
 

@@ -3,7 +3,7 @@
 import Footer from '@/components/Footer';
 import Navbar from '@/components/Navbar';
 import ReturnToTop from '@/components/ReturnToTop';
-import { blogsData } from '@/utils/blogsData';
+import { blogsData } from '@/utils/mockData/blogsData';
 import { readableDate } from '@/utils/functions';
 import { Jost, Montserrat } from 'next/font/google';
 import Image from 'next/image';
@@ -45,7 +45,7 @@ export default function Blog({ params }: Props) {
                         <p>par {blog.author.name}</p>
                     </div>
                 </div>
-                <div className={montserratFont.className + " w-[90%] flex flex-col xm:flex-row justify-start items-center xm:items-start rounded-md bg-white gap-16 py-8 px-2 fold:px-6 sm:px-12 md:px-20 xm:px-6 lg:px-12 xl:px-20 mx-2 fold:mx-6 sm:mx-12 md:mx-20 xm:mx-6 lg:mx-12 xl:mx-20 my-11"}>
+                <div className={montserratFont.className + " w-[97%] flex flex-col xm:flex-row justify-start items-center xm:items-start rounded-md bg-white gap-16 py-8 px-2 fold:px-6 sm:px-12 md:px-20 xm:px-6 lg:px-12 xl:px-20 mx-2 fold:mx-6 sm:mx-12 md:mx-20 xm:mx-6 lg:mx-12 xl:mx-20 my-11"}>
                     {/* Article Body */}
                     <div className="flex w-full flex-col justify-start items-start gap-8">
                         <h5 className="uppercase font-medium text-base text-black text-start">Share</h5>
@@ -91,7 +91,7 @@ export default function Blog({ params }: Props) {
                                 }
                                 if (section.type === "iframe" && section.url) {
                                     return (
-                                        <iframe key={section.section} className='max-w-full self-center' width={640} height={360} src={section.url} />
+                                        <iframe key={section.section} style={{height: 100 * (9/16) + "vw"}} className={'max-w-full xm:!h-[280px] lg:!h-[360px] self-center'} allow="fullscreen" width={640} height={360} src={section.url} />
                                     )
                                 }
                             })}

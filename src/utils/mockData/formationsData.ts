@@ -1,4 +1,4 @@
-import { Formation } from "./interfaces";
+import { Formation } from "../interfaces";
 
 export const formationsData: Formation[] = [
   {
