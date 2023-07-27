@@ -33,4 +33,20 @@ export const formationsData: Formation[] = [
     duration: 6,
     image_url: "/Formations/playwright.png"
   },
+  {
+    formation_id: "selenium",
+    title: "Selenium",
+    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi rhoncus",
+    price: 449,
+    duration: 10,
+    image_url: "/Formations/selenium.png"
+  },
+  {
+    formation_id: "soapui",
+    title: "SoapUI",
+    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi rhoncus",
+    price: 599,
+    duration: 16,
+    image_url: "/Formations/soapui.png"
+  },
 ]
