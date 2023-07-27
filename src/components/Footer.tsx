@@ -1,8 +1,10 @@
 import { footer } from '@/content/general';
+
 import { Lato, Roboto } from 'next/font/google';
 import Image from 'next/image';
 import Link from 'next/link';
-import { AiFillLinkedin, AiFillYoutube, AiOutlineInstagram, AiOutlineTwitter } from "react-icons/ai";
+
+import { AiFillLinkedin, AiFillYoutube } from "react-icons/ai";
 import { MdOutlinePhone } from "react-icons/md";
 import { PiMapPinLine } from "react-icons/pi";
 import { TbMailFilled } from "react-icons/tb";

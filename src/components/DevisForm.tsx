@@ -1,12 +1,14 @@
 import { devis } from '@/content/general';
 import { formationsData } from '@/utils/mockData/formationsData';
+
 import { Montserrat } from 'next/font/google';
 import { useRouter } from 'next/navigation';
 import { ChangeEvent, useState } from "react";
-import DatePicker from "react-datepicker";
-import "react-datepicker/dist/react-datepicker.css";
 
+import DatePicker from "react-datepicker";
 import { BsCalendar } from 'react-icons/bs';
+
+import "react-datepicker/dist/react-datepicker.css";
 
 
 const montserratNormalFont = Montserrat({ weight: "400", subsets: ["latin"] });

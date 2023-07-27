@@ -1,4 +1,5 @@
 import { currency } from '@/utils/variables';
+
 import { Lato, Montserrat } from 'next/font/google';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -32,7 +33,7 @@ export default function FormationCard({ formation_id, title, description, image_
       <div className="flex flex-col justify-start items-stretch gap-3 w-full">
         <div className="flex justify-start items-center gap-6 w-full">
           <Image src="/Formations/coin.png" width={50} height={50} alt='Prix' />
-          <p className={montserratFont.className + " font-medium text-black text-lg text-start"}>{price + " " +currency} HT / personne</p>
+          <p className={montserratFont.className + " font-medium text-black text-lg text-start"}>{price + " " + currency} HT / personne</p>
         </div>
 
         <div className="flex justify-start items-center gap-6 w-full">

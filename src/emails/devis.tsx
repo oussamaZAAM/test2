@@ -56,10 +56,10 @@ export const DevisEmail = ({
                             - Nom de la formation : <b style={{fontSize: "16px", fontWeight: "bold"}}>{formation}</b>
                         </Text>
                         <Text style={indentparagraph}>
-                            - Prix de la formation : <b style={{fontSize: "16px", fontWeight: "bold"}}>{price + " " + currency}</b>
+                            - Prix de la formation : <b style={{fontSize: "16px", fontWeight: "bold"}}>{price + " " +currency} HT / personne</b>
                         </Text>
                         <Text style={indentparagraph}>
-                            - Durée de la formation : <b style={{fontSize: "16px", fontWeight: "bold"}}>{duration}</b>
+                            - Durée de la formation : <b style={{fontSize: "16px", fontWeight: "bold"}}>{Math.ceil(duration / 8)} jours ({duration} heures)</b>
                         </Text>
 
                         {message && <Text style={paragraph}>

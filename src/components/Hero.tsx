@@ -1,7 +1,5 @@
-import React from 'react'
-import { K2D, Roboto, Jost } from 'next/font/google'
-import Image from 'next/image';
 import { homepage } from '@/content/pages';
+import { Jost, K2D, Roboto } from 'next/font/google';
 
 const taglineFont = K2D({ weight: "400", subsets: ['latin'] });
 const miniTaglineFont = Roboto({ weight: "400", subsets: ['latin'] });

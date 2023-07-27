@@ -2,7 +2,7 @@ import { IBM_Plex_Sans_Condensed } from 'next/font/google';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useState } from 'react';
-import { BsSearch, BsXLg } from "react-icons/bs";
+
 import { HiMenuAlt2, HiOutlineArrowRight } from "react-icons/hi";
 
 

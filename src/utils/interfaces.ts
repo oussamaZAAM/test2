@@ -48,7 +48,7 @@ export interface DevisInputs {
 export interface DevisPayload {
   formation: string;
   price: number;
-  duration: string;
+  duration: number;
   entreprise: string;
   fullname: string;
   telephone: string;
