@@ -3,7 +3,7 @@
 import Footer from '@/components/Footer';
 import Navbar from '@/components/Navbar';
 import ReturnToTop from '@/components/ReturnToTop';
-import { consulting } from '@/content/content';
+import { consulting } from '@/content/pages';
 import { getXfromY1, getXfromY2, getXfromY3 } from '@/utils/curveFunctions';
 import { Lato, Montserrat, Poppins } from 'next/font/google';
 import Image from 'next/image';

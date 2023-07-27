@@ -1,3 +1,8 @@
+export const pageMetadata = {
+    title: "",
+    description: "Alee Conseil est une société dans le domaine du conseil et de la formation en développement logiciel. Elle propose des produits à destinations du grand public et des entreprises"
+}
+
 export const footer = {
     copyright1: `Copyright © 2023 Alee Conseil`,
     copyright2: `Tous droits réservés`,
