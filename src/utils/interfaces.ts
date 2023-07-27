@@ -23,6 +23,7 @@ export interface User {
   job: string;
   description: string;
   image: string;
+  contact: string;
 }
 
 export interface Formation {

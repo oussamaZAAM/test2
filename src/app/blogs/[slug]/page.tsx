@@ -3,10 +3,11 @@
 import Footer from '@/components/Footer';
 import Navbar from '@/components/Navbar';
 import ReturnToTop from '@/components/ReturnToTop';
-import { blogsData } from '@/utils/mockData/blogsData';
 import { readableDate } from '@/utils/functions';
+import { blogsData } from '@/utils/mockData/blogsData';
 import { Jost, Montserrat } from 'next/font/google';
 import Image from 'next/image';
+import { AiFillLinkedin } from 'react-icons/ai';
 
 const jostFont = Jost({ subsets: ["latin"] });
 const montserratFont = Montserrat({ subsets: ["latin"] });
@@ -103,14 +104,14 @@ export default function Blog({ params }: Props) {
                             <div className="w-32 xs:w-40 h-32 xs:h-40 rounded-full absolute overflow-hidden bg-zinc-300"></div>
                             <Image className='object-contain object-center w-32 xs:w-40 h-32 xs:h-40 rounded-full border-2 border-zinc-500 z-30' src={blog.author.image} width={160} height={160} alt='user' />
                         </div>
-                        <div className="flex flex-col justify-start items-center gap-10">
-                            <div className="flex flex-col justify-start items-center">
+                        <div className="flex flex-col justify-start items-center gap-4">
+                            <div className="flex flex-col justify-start items-center gap-1">
                                 <p className="uppercase font-bold text-2xl text-black text-center">{blog.author.name}</p>
                                 <p className="font-semibold text-xl text-black text-center">{blog.author.job}</p>
                             </div>
-                            <p className="font-normal text-base text-black text-center fold:w-[248px] xm:w-auto xm:min-w-[248px]">
-                                {blog.author.description}
-                            </p>
+                            <a target='_blank' href={blog.author.contact} className="flex justify-center items-center">
+                                <AiFillLinkedin size={20} />
+                            </a>
                         </div>
                     </div>
                 </div>

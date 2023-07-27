@@ -2,23 +2,19 @@ import { Blog, User } from "../interfaces";
 
 const users: User[] = [
   {
-    name: "John Doe",
-    job: "Formateur",
-    description: "Proin nec massa massa. Fusce placerat justo nisi",
-    image: "https://i.ibb.co/pK6T2DN/user.png"
-  },
-  {
-    name: "Jane Doe",
-    job: "Formatrice",
-    description: "Lorem ipsum dolor sit amet, consectetur ",
-    image: "https://i.ibb.co/nwwjwd3/4140047.png"
-  },
-  {
     name: "Hamza Jakan",
-    job: "Blogueur",
+    job: "Consultant en test et automatisation",
     description: "",
-    image: "https://miro.medium.com/v2/resize:fill:176:176/0*mWhJ2i0Q09Z4sESH"
-  }
+    image: "https://i.ibb.co/pK6T2DN/user.png",
+    contact: "https://www.linkedin.com/in/hamza-jakan-18835727b"
+  },
+  {
+    name: "Abdelkarim AJEKAL",
+    job: "Consultant en test et automatisation",
+    description: "",
+    image: "https://media.licdn.com/dms/image/D5603AQHjb_yvd732NQ/profile-displayphoto-shrink_400_400/0/1667845689631?e=1695859200&v=beta&t=or3z9e1CxZcogD73Ej0hSjxhYbKjqCl9WFzh1Bj8jBk",
+    contact: "https://www.linkedin.com/in/abdelkarimaj/"
+  },
 ];
 
 export const blogsData: Blog[] = [
@@ -194,7 +190,7 @@ export const blogsData: Blog[] = [
         url: "https://www.youtube.com/embed/xg3CpNGyfA0?wmode=opaque&widget_referrer=https%3A%2F%2Fmedium.com%2F%40jakanhamza%2Fles-tests-api-pourquoi-et-comment-207e22a33ea2&enablejsapi=1&origin=https%3A%2F%2Fcdn.embedly.com&widgetid=1"
       }
     ],
-    author: users[2],
+    author: users[0],
     date: new Date("2023-07-25"),
   },
 ];
