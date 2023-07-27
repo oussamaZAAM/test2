@@ -4,7 +4,7 @@ export interface BlogBody {
   text?: string;
   url?: string;
   items?: {
-    title: string;
+    title?: string;
     body: string;
   }[],
   imageCaption?: string;

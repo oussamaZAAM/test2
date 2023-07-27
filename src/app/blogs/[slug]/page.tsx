@@ -77,12 +77,37 @@ export default function Blog({ params }: Props) {
                                 }
                                 if (section.type === "itemize" && section.items) {
                                     return (
-                                        <div key={section.section} className="flex flex-col justify-start items-start gap-3">
+                                        <div key={section.section} className="flex flex-col justify-start items-start gap-3 ml-5">
                                             {section.items.map((item) => {
+                                                if (item.title === "" && item.body === "") {
+                                                    return <></>
+                                                }
                                                 return (
-                                                    <p key={item.title} className="font-medium text-lg text-black text-start">
-                                                        <span className='italic font-semibold'>{item.title}</span>
-                                                        {" "} : {" "}
+                                                    <p key={item.title ? item.title : item.body} className="font-medium text-lg text-black text-start">
+                                                        <span>● </span>
+                                                        {item.title &&
+                                                            <>
+                                                                <span className='italic font-semibold'>{item.title}</span>
+                                                                {" "} : {" "}
+                                                            </>
+                                                        }
+                                                        {item.body}
+                                                    </p>
+                                                )
+                                            })}
+                                        </div>
+                                    )
+                                }
+                                if (section.type === "enumerate" && section.items) {
+                                    return (
+                                        <div key={section.section} className="flex flex-col justify-start items-start gap-3 ml-5">
+                                            {section.items.map((item, index) => {
+                                                if (item.title === "" && item.body === "") {
+                                                    return <></>
+                                                }
+                                                return (
+                                                    <p key={item.title ? item.title : item.body} className="font-medium text-lg text-black text-start">
+                                                        <span>{index + 1}. </span>
                                                         {item.body}
                                                     </p>
                                                 )
@@ -92,7 +117,7 @@ export default function Blog({ params }: Props) {
                                 }
                                 if (section.type === "iframe" && section.url) {
                                     return (
-                                        <iframe key={section.section} style={{height: 100 * (9/16) + "vw"}} className={'max-w-full xm:!h-[280px] lg:!h-[360px] self-center'} allow="fullscreen" width={640} height={360} src={section.url} />
+                                        <iframe key={section.section} style={{ height: 100 * (9 / 16) + "vw" }} className={'max-w-full xm:!h-[280px] lg:!h-[360px] self-center'} allow="fullscreen" width={640} height={360} src={section.url} />
                                     )
                                 }
                             })}

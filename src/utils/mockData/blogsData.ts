@@ -2,195 +2,308 @@ import { Blog, User } from "../interfaces";
 
 const users: User[] = [
   {
-    name: "Hamza Jakan",
-    job: "Consultant en test et automatisation",
-    description: "",
-    image: "https://i.ibb.co/pK6T2DN/user.png",
-    contact: "https://www.linkedin.com/in/hamza-jakan-18835727b"
+    name: `Hamza Jakan`,
+    job: `Consultant en test et automatisation`,
+    description: ``,
+    image: `https://i.ibb.co/pK6T2DN/user.png`,
+    contact: `https://www.linkedin.com/in/hamza-jakan-18835727b`
   },
   {
-    name: "Abdelkarim AJEKAL",
-    job: "Consultant en test et automatisation",
-    description: "",
-    image: "https://i.ibb.co/9wGJxdT/4140048.png",
-    contact: "https://www.linkedin.com/in/abdelkarimaj/"
+    name: `Abdelkarim AJEKAL`,
+    job: `Consultant en test et automatisation`,
+    description: ``,
+    image: `https://i.ibb.co/9wGJxdT/4140048.png`,
+    contact: `https://www.linkedin.com/in/abdelkarimaj/`
   },
 ];
 
 export const blogsData: Blog[] = [
   {
-    id: "tests-api",
-    title: "Les tests api , pourquoi et comment ?",
+    id: `tests-api`,
+    title: `Les tests api , pourquoi et comment ?`,
     body: [
       {
         section: 1,
-        type: "image",
-        url: "https://miro.medium.com/v2/resize:fit:828/format:webp/1*sFRJH-ISgCobtCDKbnPzPQ.png"
+        type: `image`,
+        url: `https://miro.medium.com/v2/resize:fit:828/format:webp/1*sFRJH-ISgCobtCDKbnPzPQ.png`
       },
       {
         section: 2,
-        type: "paragraph",
-        text: "Les tests API (Application Programming Interface) sont une partie essentielle du développement de logiciels. Ils permettent de vérifier que les interfaces de programmation de votre application fonctionnent comme prévu, en assurant la communication correcte et l’interaction entre différentes parties de logiciels."
+        type: `paragraph`,
+        text: `Les tests API (Application Programming Interface) sont une partie essentielle du développement de logiciels. Ils permettent de vérifier que les interfaces de programmation de votre application fonctionnent comme prévu, en assurant la communication correcte et l’interaction entre différentes parties de logiciels.`
       },
       {
         section: 3,
-        type: "question",
-        text: "Pourquoi les tests API sont-ils importants ?",
+        type: `question`,
+        text: `Pourquoi les tests API sont-ils importants ?`,
       },
       {
         section: 4,
-        type: "image",
-        url: "https://miro.medium.com/v2/resize:fit:828/format:webp/1*zsbb6EAtxe_Iqn0_-YTWgg.png",
-        imageCaption: "Assurance fonctionnement de l’api"
+        type: `image`,
+        url: `https://miro.medium.com/v2/resize:fit:828/format:webp/1*zsbb6EAtxe_Iqn0_-YTWgg.png`,
+        imageCaption: `Assurance fonctionnement de l’api`
       },
       {
         section: 5,
-        type: "itemize",
+        type: `itemize`,
         items: [
           {
-            title: "Fiabilité",
-            body: "Les tests API garantissent que l’interface fonctionne correctement et peut gérer les demandes prévues, les réponses, les erreurs et les performances attendues."
+            title: `Fiabilité`,
+            body: `Les tests API garantissent que l’interface fonctionne correctement et peut gérer les demandes prévues, les réponses, les erreurs et les performances attendues.`
           },
           {
-            title: "Intégration",
-            body: "Ils permettent de vérifier que différents composants logiciels interagissent correctement entre eux."
+            title: `Intégration`,
+            body: `Ils permettent de vérifier que différents composants logiciels interagissent correctement entre eux.`
           },
           {
-            title: "Performance",
-            body: "Les tests de performance API peuvent aider à identifier les goulots d’étranglement et à déterminer la capacité de charge de l’API"
+            title: `Performance`,
+            body: `Les tests de performance API peuvent aider à identifier les goulots d’étranglement et à déterminer la capacité de charge de l’API`
           },
           {
-            title: "Sécurité",
-            body: "Les tests API peuvent également aider à identifier les vulnérabilités potentielles dans l’API, comme les fuites de données."
+            title: `Sécurité`,
+            body: `Les tests API peuvent également aider à identifier les vulnérabilités potentielles dans l’API, comme les fuites de données.`
           },
         ]
       },
       {
         section: 6,
-        type: "question",
-        text: "Comment effectuer les tests API ?",
+        type: `question`,
+        text: `Comment effectuer les tests API ?`,
       },
       {
         section: 7,
-        type: "itemize",
+        type: `itemize`,
         items: [
           {
-            title: "Comprendre la documentation de l’API",
-            body: "La première étape consiste à lire attentivement la documentation de l’API que vous souhaitez tester. La documentation fournira des informations sur les points d’extrémité disponibles, les paramètres requis, les méthodes HTTP supportées, les formats de données acceptés et retournés, ainsi que les éventuelles limitations ou restrictions."
+            title: `Comprendre la documentation de l’API`,
+            body: `La première étape consiste à lire attentivement la documentation de l’API que vous souhaitez tester. La documentation fournira des informations sur les points d’extrémité disponibles, les paramètres requis, les méthodes HTTP supportées, les formats de données acceptés et retournés, ainsi que les éventuelles limitations ou restrictions.`
           }
         ]
       },
       {
         section: 8,
-        type: "itemize",
+        type: `itemize`,
         items: [
           {
-            title: "Configurer l’environnement de test",
-            body: "Assurez vous d’avoir un environnement de test approprié pour effectuer vos tests. Cela peut inclure l’installation de logiciels supplémentaires, la configuration de variables d’environnement, ou la création de comptes d’accès si nécessaire."
+            title: `Configurer l’environnement de test`,
+            body: `Assurez vous d’avoir un environnement de test approprié pour effectuer vos tests. Cela peut inclure l’installation de logiciels supplémentaires, la configuration de variables d’environnement, ou la création de comptes d’accès si nécessaire.`
           }
         ]
       },
       {
         section: 9,
-        type: "itemize",
+        type: `itemize`,
         items: [
           {
-            title: "Utiliser un outil de test d’API",
-            body: "Il existe de nombreux outils disponibles pour tester les API. Certains outils populaires incluent Postman, cURL, SoapUI, et Insomnia. Ces outils vous permettent d’envoyer des requêtes HTTP aux points d’extrémité ou les de l’API, de spécifier les paramètres requis, et d’analyser les réponses reçues."
+            title: `Utiliser un outil de test d’API`,
+            body: `Il existe de nombreux outils disponibles pour tester les API. Certains outils populaires incluent Postman, cURL, SoapUI, et Insomnia. Ces outils vous permettent d’envoyer des requêtes HTTP aux points d’extrémité ou les de l’API, de spécifier les paramètres requis, et d’analyser les réponses reçues.`
           }
         ]
       },
       {
         section: 10,
-        type: "itemize",
+        type: `itemize`,
         items: [
           {
-            title: "Tester les différentes fonctionnalités de l’API",
-            body: "Une fois que vous avez configuré votre environnement de test et choisi un outil, vous pouvez commencer à tester les différentes fonctionnalités de l’API. Cela peut inclure l’envoi de requêtes GET, POST, PUT, DELETE, ou d’autres méthodes HTTP spécifiques, en fonction des fonctionnalités fournies par l’API."
+            title: `Tester les différentes fonctionnalités de l’API`,
+            body: `Une fois que vous avez configuré votre environnement de test et choisi un outil, vous pouvez commencer à tester les différentes fonctionnalités de l’API. Cela peut inclure l’envoi de requêtes GET, POST, PUT, DELETE, ou d’autres méthodes HTTP spécifiques, en fonction des fonctionnalités fournies par l’API.`
           }
         ]
       },
       {
         section: 11,
-        type: "itemize",
+        type: `itemize`,
         items: [
           {
-            title: "Vérifier les réponses et les résultats",
-            body: "Après avoir envoyé une requête, assurez vous de vérifier la réponse reçue. Vérifiez si la réponse correspond à ce que vous attendiez, si les données sont correctes, et si les codes de statut HTTP sont appropriés. Vous pouvez également vérifier les journaux ou les rapports d’erreurs pour identifier d’éventuels problèmes."
+            title: `Vérifier les réponses et les résultats`,
+            body: `Après avoir envoyé une requête, assurez vous de vérifier la réponse reçue. Vérifiez si la réponse correspond à ce que vous attendiez, si les données sont correctes, et si les codes de statut HTTP sont appropriés. Vous pouvez également vérifier les journaux ou les rapports d’erreurs pour identifier d’éventuels problèmes.`
           }
         ]
       },
       {
         section: 12,
-        type: "itemize",
+        type: `itemize`,
         items: [
           {
-            title: "Gérer les erreurs et les exceptions",
-            body: "Pendant les tests, il est important de gérer les erreurs et les exceptions qui peuvent survenir. Assurez vous de tester les scénarios d’erreur en envoyant des requêtes incorrectes ou en simulant des conditions d’erreur spécifiques. Vérifiez si l’API renvoie des messages d’erreur appropriés et si elle gère correctement les exceptions."
+            title: `Gérer les erreurs et les exceptions`,
+            body: `Pendant les tests, il est important de gérer les erreurs et les exceptions qui peuvent survenir. Assurez vous de tester les scénarios d’erreur en envoyant des requêtes incorrectes ou en simulant des conditions d’erreur spécifiques. Vérifiez si l’API renvoie des messages d’erreur appropriés et si elle gère correctement les exceptions.`
           }
         ]
       },
       {
         section: 13,
-        type: "itemize",
+        type: `itemize`,
         items: [
           {
-            title: "Automatiser les tests",
-            body: "Si vous prévoyez de tester l’API de manière régulière ou si vous souhaitez intégrer les tests dans un processus d’intégration continue, vous pouvez envisager d’automatiser les tests à l’aide d’outils tels que Newman (pour Postman), cURL avec des scripts, ou des bibliothèques de test spécifiques à votre langage de programmation."
+            title: `Automatiser les tests`,
+            body: `Si vous prévoyez de tester l’API de manière régulière ou si vous souhaitez intégrer les tests dans un processus d’intégration continue, vous pouvez envisager d’automatiser les tests à l’aide d’outils tels que Newman (pour Postman), cURL avec des scripts, ou des bibliothèques de test spécifiques à votre langage de programmation.`
           }
         ]
       },
       {
         section: 14,
-        type: "itemize",
+        type: `itemize`,
         items: [
           {
-            title: "Documenter les résultats des tests",
-            body: "Il est important de documenter les résultats de vos tests, y compris les requêtes envoyées, les réponses reçues, les problèmes rencontrés, et les corrections apportées. Cela vous aidera à suivre les progrès des tests et à partager les résultats avec d’autres membres de l’équipe."
+            title: `Documenter les résultats des tests`,
+            body: `Il est important de documenter les résultats de vos tests, y compris les requêtes envoyées, les réponses reçues, les problèmes rencontrés, et les corrections apportées. Cela vous aidera à suivre les progrès des tests et à partager les résultats avec d’autres membres de l’équipe.`
           }
         ]
       },
       {
         section: 15,
-        type: "paragraph",
-        text: "En suivant ces étapes, vous devriez être en mesure de tester efficacement une API et de vous assurer qu’elle fonctionne correctement selon les spécifications fournies."
+        type: `paragraph`,
+        text: `En suivant ces étapes, vous devriez être en mesure de tester efficacement une API et de vous assurer qu’elle fonctionne correctement selon les spécifications fournies.`
       },
       {
         section: 16,
-        type: "paragraph",
-        text: "Il existe plusieurs types de tests API, qui sont utilisés pour vérifier le bon fonctionnement des interfaces de programmation d'applications (API). Voici quelques-uns des types de tests API les plus courants :"
+        type: `paragraph`,
+        text: `Il existe plusieurs types de tests API, qui sont utilisés pour vérifier le bon fonctionnement des interfaces de programmation d'applications (API). Voici quelques-uns des types de tests API les plus courants :`
       },
       {
         section: 17,
-        type: "itemize",
+        type: `itemize`,
         items: [
           {
-            title: "Tests d'intégration",
-            body: "Ces tests vérifient la communication et l'intégration entre différentes parties de l'API, telles que les modules, les services ou les composants. Ils permettent de s'assurer que les différentes parties de l'API fonctionnent correctement ensemble."
+            title: `Tests d'intégration`,
+            body: `Ces tests vérifient la communication et l'intégration entre différentes parties de l'API, telles que les modules, les services ou les composants. Ils permettent de s'assurer que les différentes parties de l'API fonctionnent correctement ensemble.`
           },
           {
-            title: "Tests de performance",
-            body: "Ces tests évaluent les performances de l'API en termes de temps de réponse, de débit, de charge et de scalabilité. Ils permettent de s'assurer que l'API peut gérer un volume élevé de requêtes et de trafic sans compromettre ses performances."
+            title: `Tests de performance`,
+            body: `Ces tests évaluent les performances de l'API en termes de temps de réponse, de débit, de charge et de scalabilité. Ils permettent de s'assurer que l'API peut gérer un volume élevé de requêtes et de trafic sans compromettre ses performances.`
           },
         ]
       },
       {
         section: 18,
-        type: "paragraph",
-        text: "Il existe de nombreux outils disponibles pour aider à automatiser ce processus, comme Postman, JMeter, et Rest-Assured pour les tests API REST, ou SoapUI pour les tests API SOAP. Ces outils peuvent aider à créer, exécuter et gérer des tests API de manière plus efficace."
+        type: `paragraph`,
+        text: `Il existe de nombreux outils disponibles pour aider à automatiser ce processus, comme Postman, JMeter, et Rest-Assured pour les tests API REST, ou SoapUI pour les tests API SOAP. Ces outils peuvent aider à créer, exécuter et gérer des tests API de manière plus efficace.`
       },
       {
         section: 19,
-        type: "paragraph",
-        text: "Ces outils offrent différents niveaux de fonctionnalités et de complexité, il est donc recommandé de choisir celui qui s’adapte le mieux à vos besoins spécifiques."
+        type: `paragraph`,
+        text: `Ces outils offrent différents niveaux de fonctionnalités et de complexité, il est donc recommandé de choisir celui qui s’adapte le mieux à vos besoins spécifiques.`
       },
       {
         section: 20,
-        type: "iframe",
-        url: "https://www.youtube.com/embed/xg3CpNGyfA0?wmode=opaque&widget_referrer=https%3A%2F%2Fmedium.com%2F%40jakanhamza%2Fles-tests-api-pourquoi-et-comment-207e22a33ea2&enablejsapi=1&origin=https%3A%2F%2Fcdn.embedly.com&widgetid=1"
+        type: `iframe`,
+        url: `https://www.youtube.com/embed/xg3CpNGyfA0?wmode=opaque&widget_referrer=https%3A%2F%2Fmedium.com%2F%40jakanhamza%2Fles-tests-api-pourquoi-et-comment-207e22a33ea2&enablejsapi=1&origin=https%3A%2F%2Fcdn.embedly.com&widgetid=1`
       }
     ],
     author: users[0],
-    date: new Date("2023-07-25"),
+    date: new Date(`2023-07-25`),
   },
+  {
+    id: `test-visuel`,
+    title: `Le Test Visuel`,
+    body: [
+      {
+        section: 1,
+        type: `question`,
+        text: `Qu'est-ce que le Test Visuel?`
+      },
+      {
+        section: 2,
+        type: `paragraph`,
+        text: `Le test visual est une méthode de test des applications qui vérifie leur apparence et leur comportement dans l'interface utilisateur (IU) ou l'interface utilisateur graphique. L'objectif est de s'assurer que tous les éléments visuels tels que les couleurs, les images, les polices de caractères et les mises en page apparaissent correctement et restent cohérentes sur différents appareils, systèmes d'exploitation et navigateurs.`,
+      },
+      {
+        section: 3,
+        type: `image`,
+        url: `/Blog/test-visuel-1.png`,
+        imageCaption: `Détection de changement`
+      },
+      {
+        section: 4,
+        type: `question`,
+        text: `Pourquoi effectuer un Test Visuel?`
+      },
+      {
+        section: 5,
+        type: `paragraph`,
+        text: `Les tests visuels garantissent que l'interface utilisateur du produit développé apparaît telle qu'elle est prévue pour les utilisateurs. Il permet d'atteindre cet objectif grâce à plusieurs avantages clés, notamment : `,
+      },
+      {
+        section: 6,
+        type: `itemize`,
+        items: [
+          {
+            body: `L'identification des défauts ou des problèmes dans l'interface utilisateur`
+          },
+          {
+            body: `Détecter les variations de l'interface utilisateur qui ne correspondent pas aux instantanés de base`
+          },
+          {
+            body: `Détecter les variations de l'interface utilisateur qui ne correspondent pas aux instantanés de base`
+          },
+          {
+            body: `Détecter les variations de l'interface utilisateur qui ne correspondent pas aux instantanés de base`
+          },
+        ]
+      },
+      {
+        section: 7,
+        type: `paragraph`,
+        text: `En outre, les tests visuels constituent une méthode efficace pour tester les applications, permettant aux testeurs d'identifier les défauts visuels et les incohérences qui peuvent avoir un impact négatif sur l'expérience de l'utilisateur et la facilité d'utilisation de l'application.`,
+      },
+      {
+        section: 8,
+        type: `question`,
+        text: `Comment faire un Test Visuel?`,
+      },
+      {
+        section: 9,
+        type: `paragraph`,
+        text: `Les tests visuels génèrent, analysent et comparent des instantanés de navigateur(snapshots) afin de détecter si des pixels ont été modifiés. Ces différences de pixels sont appelées "Visual diffs" (parfois appelés diffs perceptuels, pdiffs, diffs CSS, diffs UI). `,
+      },
+      {
+        section: 10,
+        type: `image`,
+        url: `/Blog/test-visuel-2.png`,
+        imageCaption: `une illustration d’un diff visuel`
+      },
+      {
+        section: 11,
+        type: `paragraph`,
+        text: `Pour effectuer un test visuel, vous devez suivre les étapes suivantes :`,
+      },
+      {
+        section: 12,
+        type: `enumerate`,
+        items: [
+          {
+            body: `Utiliser un Test Runner pour écrire et exécuter des tests.`
+          },
+          {
+            body: `Utiliser un navigateur d'automatisation pour reproduire les actions de l'utilisateur sur l'application ou le site web.`
+          },
+          {
+            body: `Réaliser des captures d'écran initiales des éléments de l'interface utilisateur de l'application afin de créer une base de comparaison.`
+          },
+          {
+            body: `Exécuter le code de test en arrière-plan pour simuler les interactions de l'utilisateur et faire des captures d'écran lorsque des changements sont identifiés.`
+          },
+          {
+            body: `Comparer les captures d'écran capturées aux images de référence afin de détecter toute différence visuelle.`
+          },
+          {
+            body: `Comparer les captures d'écran capturées aux images de référence afin de détecter toute différence visuelle.`
+          },
+        ]
+      },
+      
+      {
+        section: 13,
+        type: `question`,
+        text: `Test Visuel par rapport à Test Fonctionnel`,
+      },
+      {
+        section: 14,
+        type: `paragraph`,
+        text: `Les tests visuels et fonctionnels sont deux types différents de tests logiciels. Les deux types de tests sont importants pour la qualité globale d’une application logicielle.`,
+      },
+    ],
+    author: users[1],
+    date: new Date(`2023-07-27`)
+  }
 ];
