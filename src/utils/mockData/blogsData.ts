@@ -34,7 +34,7 @@ export const blogsData: Blog[] = [
       },
       {
         section: 3,
-        type: `question`,
+        type: `header2`,
         text: `Pourquoi les tests API sont-ils importants ?`,
       },
       {
@@ -67,7 +67,7 @@ export const blogsData: Blog[] = [
       },
       {
         section: 6,
-        type: `question`,
+        type: `header2`,
         text: `Comment effectuer les tests API ?`,
       },
       {
@@ -199,7 +199,7 @@ export const blogsData: Blog[] = [
     body: [
       {
         section: 1,
-        type: `question`,
+        type: `header1`,
         text: `Qu'est-ce que le Test Visuel?`
       },
       {
@@ -215,7 +215,7 @@ export const blogsData: Blog[] = [
       },
       {
         section: 4,
-        type: `question`,
+        type: `header1`,
         text: `Pourquoi effectuer un Test Visuel?`
       },
       {
@@ -248,7 +248,7 @@ export const blogsData: Blog[] = [
       },
       {
         section: 8,
-        type: `question`,
+        type: `header1`,
         text: `Comment faire un Test Visuel?`,
       },
       {
@@ -291,10 +291,9 @@ export const blogsData: Blog[] = [
           },
         ]
       },
-      
       {
         section: 13,
-        type: `question`,
+        type: `header1`,
         text: `Test Visuel par rapport à Test Fonctionnel`,
       },
       {
@@ -302,6 +301,161 @@ export const blogsData: Blog[] = [
         type: `paragraph`,
         text: `Les tests visuels et fonctionnels sont deux types différents de tests logiciels. Les deux types de tests sont importants pour la qualité globale d’une application logicielle.`,
       },
+      {
+        section: 15,
+        type: `image`,
+        url: "/Blog/test-visuel-3.png",
+        imageCaption: "Comparaison entre le test visuel et fonctionnel"
+      },
+      {
+        section: 16,
+        type: `header1`,
+        text: `Tests visuels manuels`,
+      },
+      {
+        section: 17,
+        type: `paragraph`,
+        text: `Les tests visuels manuels font référence au processus d'inspection et de vérification manuelles des aspects visuels d'une application logicielle ou d'un site web, afin de s'assurer qu'ils répondent à la conception souhaitée et aux exigences fonctionnelles. Ce type de test est généralement effectué par des testeurs humains qui utilisent leurs yeux pour évaluer l'apparence, la présentation et le comportement de l'application ou du site web.`
+      },
+      {
+        section: 18,
+        type: `header2`,
+        text: `Étapes du test manuel :`,
+      },
+      {
+        section: 19,
+        type: `enumerate`,
+        items: [
+          {
+            body: `Parcourez l'application et faites des captures d'écran de la version de base connue.`
+          },
+          {
+            body: `Faites une autre série de captures d'écran de la dernière version de l'application.`
+          },
+          {
+            body: `Comparez manuellement ces captures d'écran (de base par rapport à la version actuelle) pour identifier les bogues visuels.`
+          }
+        ]
+      },
+      {
+        section: 20,
+        type: `header1`,
+        text: `Tests visuels automatisés`,
+      },
+      {
+        section: 21,
+        type: `paragraph`,
+        text: `Les tests visuels automatisés consistent à utiliser des outils logiciels spécialisés pour vérifier automatiquement l'aspect visuel et le comportement d'une application logicielle ou d'un site web. Contrairement aux tests visuels manuels, qui sont effectués par des testeurs humains, les tests visuels automatisés sont réalisés à l’aide d'outils de test capables de simuler les actions d'un utilisateur humain et d'évaluer les éléments visuels d’un site web.`
+      },
+      {
+        section: 22,
+        type: `paragraph`,
+        text: `Voici quelques-uns des outils permettant de réaliser des tests visuels automatisés :`
+      },
+      {
+        section: 23,
+        type: `header2`,
+        text: `1. Applitools`
+      },
+      {
+        section: 24,
+        type: `image`,
+        url: `/Blog/test-visuel-4.png`
+      },
+      {
+        section: 25,
+        type: `paragraph`,
+        text: `Cet outil est connu pour ses tests visuels utilisant l'intelligence artificielle et ses capacités de tests intermédiaires entièrement automatisés. Il peut analyser les applications web et mobiles et identifier toute modification des éléments visuels.`
+      },
+      {
+        section: 26,
+        type: `header2`,
+        text: `2. Percy`
+      },
+      {
+        section: 27,
+        type: `image`,
+        url: `/Blog/test-visuel-5.png`
+      },
+      {
+        section: 28,
+        type: `paragraph`,
+        text: `Cet outil est idéal pour les tests d'applications web ou de bureau. Il offre des capacités de test visuel et s'intègre à d'autres frameworks de test.`
+      },
+      {
+        section: 29,
+        type: `header2`,
+        text: `3. Galen Framework`
+      },
+      {
+        section: 30,
+        type: `image`,
+        url: `/Blog/test-visuel-6.png`
+      },
+      {
+        section: 31,
+        type: `paragraph`,
+        text: `C’est un outil de test visuel qui offre un large éventail de fonctionnalités et d'intégrations pour aider les testeurs à automatiser leur processus de test. Il permet aux utilisateurs de tester la mise en page des applications web à l'aide d'une syntaxe simple.`
+      },
+      {
+        section: 32,
+        type: `header2`,
+        text: `4. VisualEyes`
+      },
+      {
+        section: 33,
+        type: `image`,
+        url: `/Blog/test-visuel-7.png`
+      },
+      {
+        section: 34,
+        type: `paragraph`,
+        text: `VisualEyes is a visual testing tool that offers automated visual testing and review for web applications. It uses machine learning to detect even the slightest visual changes in web pages with heat maps.`
+      },
+      {
+        section: 35,
+        type: `header2`,
+        text: `5. Happo.io`
+      },
+      {
+        section: 36,
+        type: `image`,
+        url: `/Blog/test-visuel-8.png`
+      },
+      {
+        section: 37,
+        type: `paragraph`,
+        text: `Happo.io est un service de test de capture d’écran multi-navigateur qui aide à prévenir les régressions visuelles et vous permet de visualiser les changements dans votre interface utilisateur (UI), Il vous permet de comparer l’apparence visuelle des composants de l’interface utilisateur avant et après les changements.`
+      },
+      {
+        section: 38,
+        type: `header1`,
+        text: `Ressources`
+      },
+      {
+        section: 39,
+        type: `itemize`,
+        items: [
+          {
+            body: `<a class="anchor-style" target="_blank" href="https://www.browserstack.com/guide/visual-testing-beginners-guide">https://www.browserstack.com/guide/visual-testing-beginners-guide</a>`
+          },
+          {
+            body: `<a class="anchor-style" target="_blank" href="https://www.geeksforgeeks.org/software-testing-visual-testing/">https://www.geeksforgeeks.org/software-testing-visual-testing/</a>`
+          },
+          {
+            body: `<a class="anchor-style" target="_blank" href="https://saucelabs.com/resources/blog/what-is-visual-testing">https://saucelabs.com/resources/blog/what-is-visual-testing</a>`
+          },
+          {
+            body: `<a class="anchor-style" target="_blank" href="https://www.youtube.com/watch?v=MXfZeE9RQDw&t=939s">https://www.youtube.com/watch?v=MXfZeE9RQDw&t=939s</a>`
+          },
+          {
+            body: `<a class="anchor-style" target="_blank" href="https://docs.percy.io/v1/docs">https://docs.percy.io/v1/docs</a>`
+          },
+          {
+            body: `<a class="anchor-style" target="_blank" href="https://smartbear.com/blog/what-is-visual-testing/">https://smartbear.com/blog/what-is-visual-testing/</a>`
+          },
+        ]
+      }
     ],
     author: users[1],
     date: new Date(`2023-07-27`)

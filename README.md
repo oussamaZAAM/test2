@@ -34,7 +34,7 @@ Pour exécuter ce site en local, suivez ces étapes :
 
 ## Contact
 
-Pour toute question ou demande, vous pouvez nous contacter à contact@example.com.
+Pour toute header ou demande, vous pouvez nous contacter à contact@example.com.
 
 ---
 

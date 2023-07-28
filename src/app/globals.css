@@ -31,7 +31,7 @@ body {
 }
 
 /* Style Scrollbar  */
-  /* Chrome + Safari */
+/* Chrome + Safari */
 ::-webkit-scrollbar {
   width: 7.5px;
 }
@@ -48,7 +48,7 @@ body {
   background-color: #342261;
 }
 
-  /* Mozilla Firefox */
+/* Mozilla Firefox */
 html {
   scrollbar-width: thin;
 }
@@ -70,6 +70,7 @@ html::-webkit-scrollbar-thumb:hover {
 .box-shadow {
   box-shadow: 0 2.75px 5.5px 0 rgba(171, 190, 209, 0.40);
 }
+
 .box-shadow2 {
   box-shadow: 2px 2px 22px 6px rgba(0, 0, 0, 0.25);
 }
@@ -117,6 +118,14 @@ html::-webkit-scrollbar-thumb:hover {
 .hero-gradient {
   background: linear-gradient(to right, #ffffff 10%, #ffffffbf 37%, #ffffff80 60%, #ffffff00);
 }
+
 .hero-gradient-mobile {
   background: linear-gradient(to right, #ffffff, #ffffffbf 50%, #ffffff00);
+}
+
+/* Anchor Style */
+.anchor-style {
+  color: blue;
+  text-decoration: underline;
+  word-break: break-all;
 }

@@ -51,12 +51,12 @@ export default function Blog({ params }: Props) {
                     <div className="flex w-full flex-col justify-start items-start gap-8">
                         <h5 className="uppercase font-medium text-base text-black text-start">Share</h5>
                         <div className="w-full h-px bg-black"></div>
-                        <div className="flex flex-col justify-start items-start gap-10">
+                        <div className="flex flex-col justify-start items-start gap-10 break-words">
                             {blog.body.map(section => {
                                 if (section.type === "image" && section.url) {
                                     return (
-                                        <figure key={section.section} className='self-center text-center'>
-                                            <Image width={500} height={500} src={section.url} alt={blog.id} />
+                                        <figure key={section.section} className='flex flex-col justify-center items-center self-center text-center'>
+                                            <Image className='max-h-[500px] max-w-[500px] w-[90%]' width={500} height={500} src={section.url} alt={blog.id} />
                                             <figcaption>{section.imageCaption}</figcaption>
                                         </figure>
                                     )
@@ -68,7 +68,14 @@ export default function Blog({ params }: Props) {
                                         </p>
                                     )
                                 }
-                                if (section.type === "question" && section.text) {
+                                if (section.type === "header1" && section.text) {
+                                    return (
+                                        <p key={section.section} className={"font-bold text-xl text-black text-start " + (section.section === 1 ? "indent-5" : "")}>
+                                            {section.text}
+                                        </p>
+                                    )
+                                }
+                                if (section.type === "header2" && section.text) {
                                     return (
                                         <p key={section.section} className={"font-semibold text-lg text-black text-start " + (section.section === 1 ? "indent-5" : "")}>
                                             {section.text}
@@ -91,7 +98,7 @@ export default function Blog({ params }: Props) {
                                                                 {" "} : {" "}
                                                             </>
                                                         }
-                                                        {item.body}
+                                                        <span dangerouslySetInnerHTML={{ __html: item.body }} />
                                                     </p>
                                                 )
                                             })}
