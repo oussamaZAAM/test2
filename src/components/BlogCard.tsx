@@ -12,7 +12,7 @@ type Props = {
 }
 
 export default function BlogCard({ id, title, body }: Props) {
-    const firstParagraph = body.find((section) => section.type === "paragraph" || section.type === "header");
+    const firstParagraph = body.find((section) => section.type === "paragraph" || section.type === "header1" || section.type === "header2");
     return (
         <div className="w-full flex flex-col justify-between items-start py-5 px-6 border-2 gap-4 border-ac-bleu">
             <div className="w-full flex flex-col justify-start items-start gap-4">
