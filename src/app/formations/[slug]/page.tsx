@@ -127,7 +127,7 @@ export default function Page({ params }: Props) {
             <div className="grid grid-cols-2 justify-center items-center gap-2">
               {nextDates.map((date) => {
                 return (
-                  <Link href={"/devis?formation=" + formation.formation_id + "&date=" + date} className="flex flex-col justify-start items-center py-2 px-4 bg-white rounded-xl cursor-pointer border border-ac-bleu hover:bg-ac-bleu group">
+                  <Link key={date} href={"/devis?formation=" + formation.formation_id + "&date=" + date} className="flex flex-col justify-start items-center py-2 px-4 bg-white rounded-xl cursor-pointer border border-ac-bleu hover:bg-ac-bleu group">
                     <p className="text-lg text-ac-bleu text-center font-bold group-hover:text-white">{readableDateFromString(date).split(" ").slice(0, 2).join(" ")}</p>
                     <p className="text-base text-black text-center font-medium group-hover:text-gray-300">{readableDateFromString(date).split(" ")[readableDateFromString(date).split(" ").length - 1]}</p>
                   </Link>
