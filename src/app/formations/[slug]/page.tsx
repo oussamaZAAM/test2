@@ -3,11 +3,13 @@
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
 import ReturnToTop from "@/components/ReturnToTop";
+import { getNextMondaysSeparatedBy3Weeks, readableDateFromString } from "@/utils/functions";
 import { formationsData } from "@/utils/mockData/formationsData";
-import { currency } from "@/utils/variables";
+import { currency, datesDisplayed, fixedReferenceDate } from "@/utils/variables";
 import { IBM_Plex_Sans_Condensed, Lato, Montserrat } from "next/font/google";
 import Image from "next/image";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import { MdOutlineKeyboardArrowRight } from "react-icons/md";
 import { RiCopperCoinLine } from "react-icons/ri";
 
@@ -22,8 +24,12 @@ type Props = {
 }
 
 export default function Page({ params }: Props) {
+  const router = useRouter();
+
   const formation_id = params.slug;
   const formation = formationsData.find((formation) => formation.formation_id === formation_id);
+
+  const nextDates = getNextMondaysSeparatedBy3Weeks(fixedReferenceDate, datesDisplayed);
 
   if (!formation) {
     return (
@@ -72,7 +78,7 @@ export default function Page({ params }: Props) {
               </p>
             </div>
           </div>
-          {/* Formation Card + Billing */}
+          {/* Formation Card + Billing + Available Dates*/}
           <div className="flex flex-col justify-start items-stretch gap-10 xm:-translate-y-28 lg:-translate-y-56">
             <div className={ibmFont.className + " xm:hidden flex justify-start items-center gap-2"}>
               <Link href={"/formations"}>
@@ -97,6 +103,7 @@ export default function Page({ params }: Props) {
                 </Link>
               </div>
             </div>
+
             {/* Billing */}
             <div className={montserratFont.className + " flex flex-col xm:flex-row justify-between items-stretch w-full gap-8 xm:gap-0"}>
               <div className="flex flex-col justify-start items-center gap-4 xm:gap-10 xm:max-w-[125px]">
@@ -104,7 +111,7 @@ export default function Page({ params }: Props) {
                   <RiCopperCoinLine className="fill-ac-bleu" size={25} />
                   <p className="text-xl font-bold uppercase text-black text-center">Prix</p>
                 </div>
-                <p className="text-base font-medium text-center text-black uppsercase whitespace-normal"><span className="font-bold">{formation.price}</span>{" " +currency} HT / personne</p>
+                <p className="text-base font-medium text-center text-black uppsercase whitespace-normal"><span className="font-bold">{formation.price}</span>{" " + currency} HT / personne</p>
               </div>
               <div className="hidden xm:block w-0.5 bg-[#888888]"></div>
               <div className="flex flex-col justify-start items-center gap-4 xm:gap-10 xm:max-w-[125px]">
@@ -114,6 +121,18 @@ export default function Page({ params }: Props) {
                 </div>
                 <p className="text-base font-medium text-center text-black uppsercase"><span className="font-bold">{Math.ceil(formation.duration / 8)}</span> jours (<span className="font-bold">{formation.duration}</span>&nbsp;heures)</p>
               </div>
+            </div>
+
+            {/* Available Dates */}
+            <div className="grid grid-cols-2 justify-center items-center gap-2">
+              {nextDates.map((date) => {
+                return (
+                  <Link href={"/devis?formation=" + formation.formation_id + "&date=" + date} className="flex flex-col justify-start items-center py-2 px-4 bg-white rounded-xl cursor-pointer border border-ac-bleu hover:bg-ac-bleu group">
+                    <p className="text-lg text-ac-bleu text-center font-bold group-hover:text-white">{readableDateFromString(date).split(" ").slice(0, 2).join(" ")}</p>
+                    <p className="text-base text-black text-center font-medium group-hover:text-gray-300">{readableDateFromString(date).split(" ")[readableDateFromString(date).split(" ").length - 1]}</p>
+                  </Link>
+                )
+              })}
             </div>
           </div>
         </div>
