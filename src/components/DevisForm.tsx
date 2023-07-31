@@ -16,7 +16,8 @@ const montserratBoldFont = Montserrat({ weight: "700", subsets: ["latin"] });
 
 type Props = {
     formation: string;
-    triggerToaster: Function
+    triggerToaster: Function;
+    formationDate: Date;
 }
 
 interface FormDevisInputs {
@@ -38,10 +39,10 @@ interface DevisProps {
     date: Date;
 }
 
-export default function DevisForm({ formation, triggerToaster }: Props) {
+export default function DevisForm({ formation, triggerToaster, formationDate }: Props) {
     const router = useRouter();
 
-    const [devisDate, setDevisDate] = useState(new Date());
+    const [devisDate, setDevisDate] = useState(new Date(formationDate));
     const [devisInputs, setDevisInputs] = useState<FormDevisInputs>({
         formation: '',
         entreprise: '',

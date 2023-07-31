@@ -17,6 +17,8 @@ export default function Devis({ }: Props) {
 
     const formation = searchParams.get("formation") !== null ? searchParams.get("formation")! : "";
 
+    const formationDate = new Date(searchParams.get("date") !== null ? searchParams.get("date")! : "");
+
     const triggerToaster = (type: string, message: string) => {
         if (type === "success") {
             toast.success(message);
@@ -34,7 +36,7 @@ export default function Devis({ }: Props) {
                 <Navbar />
                 <div className="flex w-full h-44 bg-ac-bleu rounded-b-3xl -mb-28"></div>
                 <div className="flex justify-center items-center w-full bg-transparent -translate-y-6 rounded-t-3xl">
-                    <DevisForm triggerToaster={triggerToaster} formation={namifySlug(formation)} />
+                    <DevisForm triggerToaster={triggerToaster} formation={namifySlug(formation)} formationDate={formationDate} />
                 </div>
             </div>
 
