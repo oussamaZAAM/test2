@@ -6,6 +6,7 @@ import Hero from '@/components/Hero';
 import Navbar from '@/components/Navbar';
 import ReturnToTop from '@/components/ReturnToTop';
 import { homepage } from "@/content/pages";
+import { googleMapsEmbed } from '@/utils/variables';
 
 import { IBM_Plex_Sans, Lato, Montserrat } from 'next/font/google';
 import Image from 'next/image';
@@ -18,6 +19,7 @@ import 'react-toastify/dist/ReactToastify.css';
 const montserratFont = Montserrat({ weight: "400", subsets: ["latin"] });
 const latoFont = Lato({ weight: "400", subsets: ["latin"] });
 const ibmFont = IBM_Plex_Sans({ weight: "700", subsets: ["latin"] });
+const montserratBoldFont = Montserrat({ weight: "700", subsets: ["latin"] });
 
 export default function Home() {
   const triggerToaster = (type: string, message: string) => {
@@ -76,8 +78,24 @@ export default function Home() {
       </div>
 
       {/* Contact Us */}
-      <div className="flex justify-center items-center w-full bg-ac-gray -translate-y-6 rounded-t-3xl ">
-        <ContactUsForm triggerToaster={triggerToaster} />
+      <div className="flex flex-col xm:flex-row justify-center items-start gap-8 w-full pt-8 bg-ac-gray -translate-y-6 rounded-t-3xl ">
+        <div className="flex flex-col justify-start items-center gap-4 w-full">
+          <h2 className={montserratBoldFont.className + " font-bold text-4xl text-black text-start"}><span className='text-ac-violet'>Nous</span> Trouver</h2>
+          <Image src="/Homepage/hand-drawn-arrow.png" width={96} height={96} alt='' />
+          <iframe
+            className='w-[270px] fold:w-80 sm:w-[450px] xm:w-[400px] lg:w-[450px] rounded-2xl box-shadow2 '
+            width="450"
+            height="600"
+            loading="lazy"
+            allowFullScreen={true}
+            src={googleMapsEmbed}>
+          </iframe>
+        </div>
+        <div className="flex flex-col justify-start items-center gap-4 w-full">
+          <h2 className={montserratBoldFont.className + " font-bold text-4xl text-black text-start"}>Contactez-<span className='text-ac-violet'>nous</span></h2>
+          <Image src="/Homepage/hand-drawn-arrow2.png" width={96} height={96} alt='' />
+          <ContactUsForm triggerToaster={triggerToaster} />
+        </div>
       </div>
 
       {/* Footer  */}
