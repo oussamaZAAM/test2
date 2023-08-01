@@ -18,7 +18,14 @@ const latoFont = Lato({ weight: "400", subsets: ["latin"] });
 
 export default function FormationCard({ formation_id, title, description, image_url, price, duration }: Props) {
   return (
-    <div className='flex flex-col justify-between items-center gap-6 w-full py-5 px-6 rounded-xl border transition duration-100 hover:duration-300 shadow-formation-unhover hover:shadow-formation-hover max-w-[270px] fold:max-w-[320px]'>
+    <div className="
+                  flex flex-col justify-between items-center w-full
+                  bg-white gap-6 py-5 px-6 
+                  rounded-xl border shadow-formation-unhover hover:shadow-formation-hover
+                  transition ease-in-out duration-100 hover:duration-300 
+                  hover:scale-105 hover:z-50 
+                  max-w-[270px] fold:max-w-[320px]"
+    >
       <div className="flex flex-col justify-start items-center gap-3 w-full">
         <div className="flex justify-between items-end w-full">
           <Image className='w-16 fold:w-[75px] lg:w-16 lg2:w-[75px] h-16 fold:h-[75px] lg:h-16 lg2:h-[75px]' src={image_url} width={75} height={75} alt='testing' />
