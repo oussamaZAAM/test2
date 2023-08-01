@@ -18,13 +18,14 @@ const latoFont = Lato({ weight: "400", subsets: ["latin"] });
 
 export default function FormationCard({ formation_id, title, description, image_url, price, duration }: Props) {
   return (
-    <div className="
+    <Link className="
                   flex flex-col justify-between items-center w-full
                   bg-white gap-6 py-5 px-6 
-                  rounded-xl border shadow-formation-unhover hover:shadow-formation-hover
+                  rounded-xl border shadow-formation-unhover xm:hover:shadow-formation-hover
                   transition ease-in-out duration-100 hover:duration-300 
-                  hover:scale-105 hover:z-50 
+                  xm:hover:scale-105 hover:z-50 
                   max-w-[270px] fold:max-w-[320px]"
+      href={"/formations/" + formation_id}
     >
       <div className="flex flex-col justify-start items-center gap-3 w-full">
         <div className="flex justify-between items-end w-full">
@@ -49,9 +50,9 @@ export default function FormationCard({ formation_id, title, description, image_
         </div>
 
         <div className="flex justify-center items-center">
-          <Link href={"/formations/" + formation_id}><p className={montserratFont.className + " font-medium text-base text-center text-[#5C8BFC] underline"}>Voir plus</p></Link>
+          <p className={montserratFont.className + " font-medium text-base text-center text-[#5C8BFC] underline"}>Voir plus</p>
         </div>
       </div>
-    </div>
+    </Link>
   )
 }
