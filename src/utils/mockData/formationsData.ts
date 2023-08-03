@@ -1,52 +1,128 @@
-import { Formation } from "../interfaces";
+import { Formation } from '../interfaces';
+
+// Nous utiiserons ici le Backtick ` a la place des aposrophes " / ' pour inclure la saute a une nouvelle ligne
 
 export const formationsData: Formation[] = [
   {
-    formation_id: "postman",
-    title: "Postman",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi rhoncus",
-    price: 799,
-    duration: 14,
-    image_url: "/Formations/postman.png"
-  },
-  {
-    formation_id: "cypress",
-    title: "Cypress",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi rhoncus",
-    price: 1299,
-    duration: 15,
-    image_url: "/Formations/cypress.png"
-  },
-  {
-    formation_id: "robot-framework",
-    title: "Robot Framework",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi rhoncus",
-    price: 1499,
-    duration: 21,
-    image_url: "/Formations/robot-framework.png"
-  },
-  {
-    formation_id: "playwright",
-    title: "Playwright",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi rhoncus",
-    price: 299,
-    duration: 6,
-    image_url: "/Formations/playwright.png"
-  },
-  {
-    formation_id: "selenium",
-    title: "Selenium",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi rhoncus",
-    price: 449,
-    duration: 10,
-    image_url: "/Formations/selenium.png"
-  },
-  {
-    formation_id: "soapui",
-    title: "SoapUI",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi rhoncus",
-    price: 599,
+    formation_id: `postman`,
+    title: `Postman`,
+    hero: `Apprenez à mettre en place des tests automatisés sur vos APIs avec Postman en suivant notre module alliant théorie, pratique et coaching.`,
+    description: `Postman est un outil de développement d'API qui permet aux développeurs de tester, de déboguer et de documenter leurs API. La formation Postman est un programme de formation qui permet aux développeurs d'apprendre à utiliser cet outil de manière efficace.
+                  La formation Postman couvre différents aspects de l'utilisation de l'outil, tels que la création de requêtes HTTP, l'envoi de données, la validation des réponses et la gestion des environnements. Les développeurs apprennent également à utiliser des fonctionnalités avancées telles que la collaboration en équipe, l'automatisation des tests et la génération de rapports.
+                  La formation Postman est souvent dispensée en ligne ou en présentiel et peut être adaptée aux besoins spécifiques des développeurs. Les participants peuvent suivre des cours pour débutants ou des cours avancés selon leur niveau d'expérience avec l'outil.`,
+    objectives: [
+                `Comprendre les bases du protocole HTTP`, 
+                `Tester manuellement des APIs avec Postman`, 
+                `Ecrire des scripts automatique d'APIs`, 
+                `Executer les tests Postman en ligne de commande`
+    ],
+    program: [
+      {
+        title: `Découvertes de l’API`,
+        parts: [
+          `Présentation des formats de données :Json, CSV, XML`,
+          `Protocole HTTP`,
+          `Présentation des APIs`
+        ]
+      },
+      {
+        title: `Bases de Postman`,
+        parts: [
+          `Présentation de l’interface`,
+          `Exemple pratiques de requêtes avec Postman`
+        ]
+      },
+      {
+        title: `Variables dans Postman`,
+        parts: [
+          ` Utilisation des variables Postman`,
+          `Portée des variables`
+        ]
+      },
+      {
+        title: `Scripts de test`,
+        parts: [
+          `Scripts de pre-requetes en Javascript`,
+          `Scripts des tests`,
+          `Aller plus loin dans les vérifications des réponses`
+        ]
+      },
+      {
+        title: `Industrialisation des tests`,
+        parts: [
+          `Utiliser le Collection Runner`,
+          `Jeux De Données de test avec Postman`,
+          `Utiliser newman pour executer les tests en ligne de commande`
+        ]
+      },
+    ],
+    targets: [
+      `Testeurs manuels et testeurs automatisés`,
+      `Développeur Back`,
+      `Manager et Product Owner`,
+      `Product Manager, Business Analyst`
+    ],
+    prerequisites: [
+      `Connaissances en test logiciel`,
+      `Une expérience avec un langage de programmation est un plus`
+    ],
+    price: 1950,
     duration: 16,
-    image_url: "/Formations/soapui.png"
+    image_url: `/Formations/postman.png`
   },
+  // {
+  //   formation_id: `cypress`,
+  //   title: `Cypress`,
+  //   hero: `Apprends à écrire des tests rapide et stable, du back comme du front end. Cypress est un outil d'automatisation de tests incontournable de nos jours pour les projets de développement logiciel.`,
+  //   description: `Découvrez notre formation sur Cypress, le framework de tests end-to-end pour les applications web. Apprenez à automatiser vos tests et à assurer la qualité de vos développements grâce à cette technologie moderne et performante. 
+  //                 Notre programme vous permettra de maîtriser les différents aspects de Cypress, depuis l'installation jusqu'à l'écriture de scénarios complets en passant par la gestion des assertions et des commandes. 
+  //                 Nos formateurs expérimentés vous guideront tout au long de la formation, avec des exercices pratiques et des cas concrets pour vous aider à progresser rapidement. Avec notre formation sur Cypress, vous serez prêt(e) à intégrer cette technologie à vos projets et à améliorer votre processus de développement. 
+  //                 Inscrivez-vous dès maintenant et boostez vos compétences en automatisation de tests avec Cypress !`,
+  //   objectives: [],
+  //   price: 2250,
+  //   duration: 16,
+  //   image_url: `/Formations/cypress.png`
+  // },
+  // {
+  //   formation_id: `robot-framework`,
+  //   title: `Robot Framework`,
+  //   hero: `Robot Framework est un framework générique et open source qui permet d'automatiser facilement les tests d'acceptation.`,
+  //   description: `Robot Framework est un framework open-source utilisé pour l'automatisation des tests logiciels. Il permet de créer des tests automatisés pour différents types d'applications, tels que les applications web, les applications de bureau et les applications mobiles.
+  //                 Robot Framework utilise une syntaxe simple et facile à apprendre pour écrire des tests, basée sur le langage naturel anglais. Il prend en charge différents types de tests tels que les tests unitaires, les tests fonctionnels, les tests de performance et les tests d'acceptation.
+  //                 Il est également extensible grâce à son architecture modulaire, permettant l'utilisation de bibliothèques tierces pour étendre les fonctionnalités de base du framework. De plus, il est possible d'écrire des bibliothèques personnalisées dans différents langages de programmation, tels que Python, Java, C#, etc.Robot Framework dispose d'une large communauté d'utilisateurs actifs, qui fournissent des plugins, des bibliothèques et des outils tiers pour faciliter l'utilisation du framework. Il est également intégré avec des outils de développement populaires tels que Jenkins, Travis CI, et Git.`,
+  //   objectives: [],
+  //   price: 2150,
+  //   duration: 16,
+  //   image_url: `/Formations/robot-framework.png`
+  // },
+  // {
+  //   formation_id: `playwright`,
+  //   title: `Playwright`,
+  //   hero: `Apprends à écrire des tests rapide et stable, du back comme du front end. Playwright est un outil d'automatisation de tests incontournable de nos jours pour les projets de développement logiciel.`,
+  //   description: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi rhoncus`,
+  //   objectives: [],
+  //   price: 2250,
+  //   duration: 16,
+  //   image_url: `/Formations/playwright.png`
+  // },
+  // {
+  //   formation_id: `selenium`,
+  //   title: `Selenium`,
+  //   hero: `Notre formation Selenium WebDriver vous enseignera comment utiliser Selenium pour automatiser vos tests de développement.`,
+  //   description: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi rhoncus`,
+  //   objectives: [],
+  //   price: 2450,
+  //   duration: 16,
+  //   image_url: `/Formations/selenium.png`
+  // },
+  // {
+  //   formation_id: `soapui`,
+  //   title: `SoapUI`,
+  //   hero: `Apprenez à mettre en place des tests automatisés sur vos APIs avec SoapUI, l'outil de test d'API Open Source le plus largement utilisé pour les API SOAP et REST.`,
+  //   description: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi rhoncus`,
+  //   objectives: [],
+  //   price: 599,
+  //   duration: 16,
+  //   image_url: `/Formations/soapui.png`
+  // },
 ]
