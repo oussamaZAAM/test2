@@ -144,11 +144,62 @@ export const formationsData: Formation[] = [
     hero: `Robot Framework est un framework générique et open source qui permet d'automatiser facilement les tests d'acceptation.`,
     description: `Robot Framework est un framework open-source utilisé pour l'automatisation des tests logiciels. Il permet de créer des tests automatisés pour différents types d'applications, tels que les applications web, les applications de bureau et les applications mobiles.
                   Robot Framework utilise une syntaxe simple et facile à apprendre pour écrire des tests, basée sur le langage naturel anglais. Il prend en charge différents types de tests tels que les tests unitaires, les tests fonctionnels, les tests de performance et les tests d'acceptation.
-                  Il est également extensible grâce à son architecture modulaire, permettant l'utilisation de bibliothèques tierces pour étendre les fonctionnalités de base du framework. De plus, il est possible d'écrire des bibliothèques personnalisées dans différents langages de programmation, tels que Python, Java, C#, etc.Robot Framework dispose d'une large communauté d'utilisateurs actifs, qui fournissent des plugins, des bibliothèques et des outils tiers pour faciliter l'utilisation du framework. Il est également intégré avec des outils de développement populaires tels que Jenkins, Travis CI, et Git.`,
-    objectives: [],
-    program: [],
-    targets: [],
-    prerequisites: [],
+                  Il est également extensible grâce à son architecture modulaire, permettant l'utilisation de bibliothèques tierces pour étendre les fonctionnalités de base du framework. De plus, il est possible d'écrire des bibliothèques personnalisées dans différents langages de programmation, tels que Python, Java, C#, etc.
+                  Robot Framework dispose d'une large communauté d'utilisateurs actifs, qui fournissent des plugins, des bibliothèques et des outils tiers pour faciliter l'utilisation du framework. Il est également intégré avec des outils de développement populaires tels que Jenkins, Travis CI, et Git.`,
+    objectives: [
+      `Maitriser les bases du tests automatiques avec RobotFramework`,
+      ` Écrire, analyser, structurer un test par mots-clés`,
+      `Comprendre l’intérêt de l’intégration continue dans un contexte Agile`,
+      `Industrialiser des tests Robot Framework sur Github Actions`
+    ],
+    program: [
+      {
+        title: `Introduction à l'automatisation`,
+        parts: [
+          `Pourquoi l’automatisation des tests`,
+          `Pattern d’automatisation : Arrange – Act - Assert`
+        ]
+      },
+      {
+        title: `Présentation de Robot Framework`,
+        parts: [
+          `Architecture et concepts`,
+          `Installation de l’environnement de développement`,
+          `Librairies standard de Robot Framework`
+        ]
+      },
+      {
+        title: `Écrire des tests avec les mots-clefs`,
+        parts: [
+          `Structure d’un cas de test, suite de test`,
+          `Exécution et reporting des tests`,
+          `Les variables Robot Framework`,
+          `SetUp, TearDown et Tag`,
+          `Data Driven Test avec Robot Framework`,
+          `Behavior Driven Test avec RobotFramework`,
+          `Librairie Builtin de Robot Framework`
+        ]
+      },
+      {
+        title: `Les tests front end avec la librairie Selenium`,
+        parts: [
+          `Installation des prérequis Selenium Webdriver`,
+          `Operations de base sur une page web :Cliquer, Écrire`,
+          `Sélectionner dans une liste`,
+          `Vérifications de base sur une page web`,
+          `Page Object Model avec Robot Framework`
+        ]
+      }
+    ],
+    targets: [
+      `Testeurs/automaticiens`,
+      `Chefs de projets`,
+      `Développeurs`
+    ],
+    prerequisites: [
+      `Connaissances en test logiciel`,
+      `Une expérience avec un langage de programmation est un plus est une nouvelle ligne`
+    ],
     price: 2150,
     duration: 16,
     image_url: `/Formations/robot-framework.png`
