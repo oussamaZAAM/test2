@@ -4,7 +4,7 @@ import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
 import ReturnToTop from "@/components/ReturnToTop";
 import { getNextMondaysSeparatedBy3Weeks, readableDateFromString } from "@/utils/functions";
-import { formationsData } from "@/utils/mockData/formationsData";
+import { formationsData } from "@/data/formationsData";
 import { currency, dailyHours, datesDisplayed, fixedReferenceDate } from "@/utils/variables";
 import { IBM_Plex_Sans_Condensed, Lato, Montserrat } from "next/font/google";
 import Image from "next/image";

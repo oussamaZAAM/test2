@@ -5,7 +5,7 @@ import FormationCard from '@/components/FormationCard';
 import Navbar from '@/components/Navbar';
 import ReturnToTop from '@/components/ReturnToTop';
 import { formations } from '@/content/pages';
-import { formationsData } from '@/utils/mockData/formationsData';
+import { formationsData } from '@/data/formationsData';
 import { Lato, Montserrat } from 'next/font/google';
 
 const montserratFont = Montserrat({ subsets: ["latin"] })

@@ -1,4 +1,4 @@
-import { Blog, User } from "../interfaces";
+import { Blog, User } from "../utils/interfaces";
 
 const users: User[] = [
   {

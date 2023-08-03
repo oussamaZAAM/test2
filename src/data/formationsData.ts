@@ -1,4 +1,4 @@
-import { Formation } from '../interfaces';
+import { Formation } from '../utils/interfaces';
 
 // Nous utiiserons ici le Backtick ` a la place des aposrophes " / ' pour inclure la saute a une nouvelle ligne
 
