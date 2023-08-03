@@ -1,5 +1,3 @@
-"use client";
-
 import Footer from '@/components/Footer';
 import FormationCard from '@/components/FormationCard';
 import Navbar from '@/components/Navbar';

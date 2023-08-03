@@ -1,6 +1,6 @@
 export const homepage = {
     tagline: `Partenaire de confiance pour un accompagnement réussi`,
-    subtagline: `Découvrez nos services`,
+    subtagline: ``,
     formations: `Nous proposons des formations en différentes technologies en automatisation des tests`,
     consulting: `Nous vous aidons à accroitre votre confiance dans la qualité de vos produits logiciels`,
 }

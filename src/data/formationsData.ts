@@ -89,7 +89,7 @@ export const formationsData: Formation[] = [
         title: `Introduction à l'automatisationIntroduction à l'automatisation`,
         parts: [
           `Pourquoi l’automatisation des tests`,
-          `Pattern d’automatisation:  Arrange – Act - Assert`
+          `Pattern d’automatisation:  Arrange - Act - Assert`
         ]
       },
       {
@@ -157,7 +157,7 @@ export const formationsData: Formation[] = [
         title: `Introduction à l'automatisation`,
         parts: [
           `Pourquoi l’automatisation des tests`,
-          `Pattern d’automatisation:  Arrange – Act - Assert`
+          `Pattern d’automatisation:  Arrange - Act - Assert`
         ]
       },
       {

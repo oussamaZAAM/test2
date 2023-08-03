@@ -1,3 +1,5 @@
+"use client";
+
 import { IBM_Plex_Sans_Condensed } from 'next/font/google';
 import Image from 'next/image';
 import Link from 'next/link';

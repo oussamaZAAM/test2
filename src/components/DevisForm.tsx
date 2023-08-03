@@ -9,6 +9,7 @@ import DatePicker from "react-datepicker";
 import { BsCalendar } from 'react-icons/bs';
 
 import "react-datepicker/dist/react-datepicker.css";
+import { toast } from 'react-toastify';
 
 
 const montserratNormalFont = Montserrat({ weight: "400", subsets: ["latin"] });
@@ -16,7 +17,6 @@ const montserratBoldFont = Montserrat({ weight: "700", subsets: ["latin"] });
 
 type Props = {
     formation: string;
-    triggerToaster: Function;
     formationDate: Date;
 }
 
@@ -39,7 +39,7 @@ interface DevisProps {
     date: Date;
 }
 
-export default function DevisForm({ formation, triggerToaster, formationDate }: Props) {
+export default function DevisForm({ formation, formationDate }: Props) {
     const router = useRouter();
 
     const [devisDate, setDevisDate] = useState(new Date(formationDate));
@@ -61,6 +61,15 @@ export default function DevisForm({ formation, triggerToaster, formationDate }: 
 
 
     const [loading, setLoading] = useState(false);
+    const triggerToaster = (type: string, message: string) => {
+        if (type === "success") {
+            toast.success(message);
+        } else {
+            if (type === "error") {
+                toast.error(message);
+            }
+        }
+    }
     const handleSendDevis = async (args: DevisProps) => {
         const searchFormation = formationsData.find((element) => element.title.toLowerCase() === formation?.toLowerCase());
         if (searchFormation) {

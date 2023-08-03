@@ -1,3 +1,5 @@
+"use client";
+
 import { contactus } from '@/content/general';
 import { ContactUsPayload } from '@/utils/interfaces';
 
@@ -6,12 +8,12 @@ import { useRouter } from 'next/navigation';
 import { ChangeEvent, useState } from "react";
 
 import "react-datepicker/dist/react-datepicker.css";
+import { toast } from 'react-toastify';
 
 const montserratNormalFont = Montserrat({ weight: "400", subsets: ["latin"] });
 const montserratBoldFont = Montserrat({ weight: "700", subsets: ["latin"] });
 
 type Props = {
-    triggerToaster: Function
 }
 
 interface FormContactInputs {
@@ -22,7 +24,7 @@ interface FormContactInputs {
     message: string;
 }
 
-export default function ContactUsForm({ triggerToaster }: Props) {
+export default function ContactUsForm({ }: Props) {
     const router = useRouter();
 
     const [contactInputs, setContactInputs] = useState<FormContactInputs>({
@@ -41,6 +43,15 @@ export default function ContactUsForm({ triggerToaster }: Props) {
     };
 
     const [loading, setLoading] = useState(false);
+    const triggerToaster = (type: string, message: string) => {
+        if (type === "success") {
+          toast.success(message);
+        } else {
+          if (type === "error") {
+            toast.error(message);
+          }
+        }
+      }
     const handleSendEmail = async (args: ContactUsPayload) => {
         try {
             setLoading(true);

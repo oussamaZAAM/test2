@@ -1,13 +1,10 @@
-"use client";
-
+import ConsultingCurvyLine from '@/components/ConsultingCurvyLine';
 import Footer from '@/components/Footer';
 import Navbar from '@/components/Navbar';
 import ReturnToTop from '@/components/ReturnToTop';
 import { consulting } from '@/content/pages';
-import { getXfromY1, getXfromY2, getXfromY3 } from '@/utils/curveFunctions';
 import { Lato, Montserrat, Poppins } from 'next/font/google';
 import Image from 'next/image';
-import { useEffect, useState } from "react";
 
 const montserratFont = Montserrat({ subsets: ["latin"] })
 const latoFont = Lato({ weight: "400", subsets: ["latin"] })
@@ -16,33 +13,6 @@ const poppinsFont = Poppins({ weight: "600", subsets: ["latin"] })
 type Props = {}
 
 export default function Consulting({ }: Props) {
-    const [xPosition, setXPosition] = useState(0);
-    const [yPosition, setYPosition] = useState(-18);
-
-    useEffect(() => {
-        const handleScroll = () => {
-            const yPos = window.pageYOffset;
-            if (yPos <= 1396 && yPos >= 0) {
-                setYPosition(yPos - 18);
-                if (yPos <= 470) {
-                    setXPosition(getXfromY1(yPos));
-                } else {
-                    if (yPos <= 934) {
-                        setXPosition(getXfromY2(yPos));
-                    } else {
-                        setXPosition(getXfromY3(yPos));
-                    }
-                }
-            }
-        };
-
-        window.addEventListener('scroll', handleScroll);
-
-        return () => {
-            window.removeEventListener('scroll', handleScroll);
-        };
-    }, []);
-
     return (
         <div className="flex flex-col justify-between items-center bg-ac-gray w-full min-h-[100vh]">
             <ReturnToTop />
@@ -71,21 +41,7 @@ export default function Consulting({ }: Props) {
                         </div>
                         <div className="absolute w-full h-px bg-ac-violet z-10"></div>
                     </div>
-                    {/* Absolute Curvy Line */}
-                    <div className="hidden xm:flex flex-col justify-start items-center relative z-50">
-                        <svg className='absolute top-0 -translate-x-[38px]' width="80" height="470" viewBox="0 0 80 470" fill="none">
-                            <path d="M80 0 C-20 150 -20 320 80 470" stroke="black" strokeWidth="6" />
-                        </svg>
-                        <svg className='absolute top-[464px] translate-x-[38px]' width="80" height="470" viewBox="0 0 80 470" fill="none">
-                            <path d="M0 470 C100 320 100 150 0 0" stroke="black" strokeWidth="6" />
-                        </svg>
-                        <svg className='absolute top-[928px] -translate-x-[38px]' width="80" height="470" viewBox="0 0 80 470" fill="none">
-                            <path d="M80 0 C-20 150 -20 320 80 470" stroke="black" strokeWidth="6" />
-                        </svg>
-                        <svg style={{ transform: `translate(${xPosition}px, ${yPosition}px)` }} className='absolute top-0 -translate-y-[18px]' width="40" height="40">
-                            <circle cx="20" cy="20" r="20" fill="black" />
-                        </svg>
-                    </div>
+                    <ConsultingCurvyLine />
                     {/* Liste des Offres */}
                     <div className="w-full flex flex-col justify-start items-center gap-40">
                         {/* Offre 1 */}

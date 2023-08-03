@@ -17,16 +17,23 @@ export default function Devis({ }: Props) {
 
     const formation = searchParams.get("formation") !== null ? searchParams.get("formation")! : "";
 
-    const formationDate = new Date(searchParams.get("date") !== null ? searchParams.get("date")! : "");
+    function isValidDatePattern(input: string): boolean {
+        const datePatternRegex = /^\d{4}-\d{2}-\d{2}$/;
+        return datePatternRegex.test(input);
+    }
 
-    const triggerToaster = (type: string, message: string) => {
-        if (type === "success") {
-            toast.success(message);
+    var formationDate;
+
+    const searchParamsDateString = searchParams.get("date");
+
+    if (searchParamsDateString !== null) {
+        if (isValidDatePattern(searchParamsDateString)) {
+            formationDate = new Date(searchParamsDateString);
         } else {
-            if (type === "error") {
-                toast.error(message);
-            }
+            formationDate = new Date();
         }
+    } else {
+        formationDate = new Date();
     }
 
     return (
@@ -36,7 +43,10 @@ export default function Devis({ }: Props) {
                 <Navbar />
                 <div className="flex w-full h-44 bg-ac-bleu rounded-b-3xl -mb-28"></div>
                 <div className="flex justify-center items-center w-full bg-transparent -translate-y-6 rounded-t-3xl">
-                    <DevisForm triggerToaster={triggerToaster} formation={namifySlug(formation)} formationDate={formationDate} />
+                    <DevisForm
+                        formation={namifySlug(formation)}
+                        formationDate={formationDate}
+                    />
                 </div>
             </div>
 

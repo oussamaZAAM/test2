@@ -1,5 +1,3 @@
-"use client";
-
 import ContactUsForm from '@/components/ContactUsForm';
 import Footer from '@/components/Footer';
 import Hero from '@/components/Hero';
@@ -94,7 +92,7 @@ export default function Home() {
         <div className="flex flex-col justify-start items-center gap-4 w-full">
           <h2 className={montserratBoldFont.className + " font-bold text-4xl text-black text-left"}>Contactez-<span className='text-ac-violet'>nous</span></h2>
           <Image src="/Homepage/hand-drawn-arrow2.png" width={96} height={96} alt='' />
-          <ContactUsForm triggerToaster={triggerToaster} />
+          <ContactUsForm />
         </div>
       </div>
 
