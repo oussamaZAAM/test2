@@ -10,6 +10,11 @@ const jostFont = Jost({ subsets: ["latin"] });
 
 type Props = {}
 
+export const metadata = {
+  title: "Alee Conseil - Blog",
+  description: "Les blogs tech qui vont vous aider a augmenter"
+}
+
 export default function Blogs({ }: Props) {
   return (
     <div className="flex flex-col justify-between items-center w-full h-full min-h-[100vh] bg-ac-gray">

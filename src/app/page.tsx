@@ -20,15 +20,6 @@ const ibmFont = IBM_Plex_Sans({ weight: "700", subsets: ["latin"] });
 const montserratBoldFont = Montserrat({ weight: "700", subsets: ["latin"] });
 
 export default function Home() {
-  const triggerToaster = (type: string, message: string) => {
-    if (type === "success") {
-      toast.success(message);
-    } else {
-      if (type === "error") {
-        toast.error(message);
-      }
-    }
-  }
   return (
     <div className="flex flex-col justify-center items-center bg-ac-gray w-full">
       <ReturnToTop />
