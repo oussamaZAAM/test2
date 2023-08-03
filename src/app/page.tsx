@@ -80,7 +80,7 @@ export default function Home() {
       {/* Contact Us */}
       <div className="flex flex-col xm:flex-row justify-center items-start gap-8 w-full pt-8 bg-ac-gray -translate-y-6 rounded-t-3xl ">
         <div className="flex flex-col justify-start items-center gap-4 w-full">
-          <h2 className={montserratBoldFont.className + " font-bold text-4xl text-black text-start"}><span className='text-ac-violet'>Nous</span> Trouver</h2>
+          <h2 className={montserratBoldFont.className + " font-bold text-4xl text-black text-left"}><span className='text-ac-violet'>Nous</span> Trouver</h2>
           <Image src="/Homepage/hand-drawn-arrow.png" width={96} height={96} alt='' />
           <iframe
             className='w-[270px] fold:w-80 sm:w-[450px] xm:w-[400px] lg:w-[450px] rounded-2xl box-shadow2 '
@@ -92,7 +92,7 @@ export default function Home() {
           </iframe>
         </div>
         <div className="flex flex-col justify-start items-center gap-4 w-full">
-          <h2 className={montserratBoldFont.className + " font-bold text-4xl text-black text-start"}>Contactez-<span className='text-ac-violet'>nous</span></h2>
+          <h2 className={montserratBoldFont.className + " font-bold text-4xl text-black text-left"}>Contactez-<span className='text-ac-violet'>nous</span></h2>
           <Image src="/Homepage/hand-drawn-arrow2.png" width={96} height={96} alt='' />
           <ContactUsForm triggerToaster={triggerToaster} />
         </div>

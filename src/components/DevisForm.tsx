@@ -132,8 +132,8 @@ export default function DevisForm({ formation, triggerToaster, formationDate }: 
     return (
         <div className='flex flex-col justify-start items-center mt-10 mb-4 mx-2 py-6 px-5 box-shadow2 w-[464px] bg-white gap-5'>
             <div className="flex flex-col justify-start items-start w-full gap-3">
-                <h2 className={montserratBoldFont.className + " font-bold text-4xl text-ac-bleu text-start"}>Demande de Devis</h2>
-                <p className="text-xs font-semibold text-start text-black">
+                <h2 className={montserratBoldFont.className + " font-bold text-4xl text-ac-bleu text-left"}>Demande de Devis</h2>
+                <p className="text-xs font-semibold text-left text-black">
                     {devis.description}
                 </p>
             </div>
@@ -142,7 +142,7 @@ export default function DevisForm({ formation, triggerToaster, formationDate }: 
             <form className={montserratNormalFont.className + " flex flex-col justify-start items-stretch gap-3 w-full"}>
                 <div className="flex flex-col justify-center items-start w-full">
                     <label htmlFor="formation" className="flex justify-center items-center text-sm gap-1">
-                        <h3 className="font-semibold text-sm text-black text-start">Formation</h3>
+                        <h3 className="font-semibold text-sm text-black text-left">Formation</h3>
                         <span className="text-red-500">*</span>
                     </label>
                     <div className="flex justify-center items-center border border-zinc-300 w-full">
@@ -160,7 +160,7 @@ export default function DevisForm({ formation, triggerToaster, formationDate }: 
 
                 <div className="flex flex-col justify-center items-start w-full">
                     <label htmlFor="entreprise" className="flex justify-center items-center text-sm gap-1">
-                        <h3 className="font-semibold text-sm text-black text-start">Entreprise</h3>
+                        <h3 className="font-semibold text-sm text-black text-left">Entreprise</h3>
                         <span className="text-red-500">*</span>
                     </label>
                     <div className="flex justify-center items-center border border-zinc-300 w-full">
@@ -177,7 +177,7 @@ export default function DevisForm({ formation, triggerToaster, formationDate }: 
 
                 <div className="flex flex-col justify-center items-start w-full">
                     <label htmlFor="fullname" className="flex justify-center items-center text-sm gap-1">
-                        <h3 className="font-semibold text-sm text-black text-start">Nom & Prénom</h3>
+                        <h3 className="font-semibold text-sm text-black text-left">Nom & Prénom</h3>
                         <span className="text-red-500">*</span>
                     </label>
                     <div className="flex justify-center items-center relative border border-zinc-300 w-full">
@@ -194,7 +194,7 @@ export default function DevisForm({ formation, triggerToaster, formationDate }: 
 
                 <div className="flex flex-col justify-center items-start w-full">
                     <label htmlFor="email" className="flex justify-center items-center text-sm gap-1">
-                        <h3 className="font-semibold text-sm text-black text-start">Email</h3>
+                        <h3 className="font-semibold text-sm text-black text-left">Email</h3>
                         <span className="text-red-500">*</span>
                     </label>
                     <div className="flex justify-center items-center relative border border-zinc-300 w-full">
@@ -211,7 +211,7 @@ export default function DevisForm({ formation, triggerToaster, formationDate }: 
 
                 <div className="flex flex-col justify-center items-start w-full">
                     <label htmlFor="telephone" className="flex justify-center items-center text-sm gap-1">
-                        <h3 className="font-semibold text-sm text-black text-start">Téléphone</h3>
+                        <h3 className="font-semibold text-sm text-black text-left">Téléphone</h3>
                     </label>
                     <div className="flex justify-center items-center relative border border-zinc-300 w-full">
                         <input
@@ -227,7 +227,7 @@ export default function DevisForm({ formation, triggerToaster, formationDate }: 
 
                 <div className="flex flex-col justify-center items-start w-full">
                     <label htmlFor="message" className="flex justify-center items-center text-sm gap-1">
-                        <h3 className="font-semibold text-sm text-black text-start">Message</h3>
+                        <h3 className="font-semibold text-sm text-black text-left">Message</h3>
                     </label>
                     <div className="flex justify-center items-center relative border border-zinc-300 w-full">
                         <textarea
@@ -242,7 +242,7 @@ export default function DevisForm({ formation, triggerToaster, formationDate }: 
 
                 <div className="flex flex-col justify-center items-start w-full">
                     <label htmlFor="date" className="flex justify-center items-center text-sm gap-1">
-                        <h3 className="font-semibold text-sm text-black text-start">Date</h3>
+                        <h3 className="font-semibold text-sm text-black text-left">Date</h3>
                         <span className="text-red-500">*</span>
                     </label>
                     <div className="flex justify-start items-center border border-zinc-300 w-full py-2 px-5 gap-3">

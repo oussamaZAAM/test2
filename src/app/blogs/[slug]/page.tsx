@@ -38,10 +38,10 @@ export default function Blog({ params }: Props) {
 
             <div className="flex flex-col justify-start items-center w-full bg-ac-gray2">
                 <div className="flex flex-col justify-start items-start w-full gap-12 pt-10 px-6 sm:px-12 md:px-20 xm:px-6 lg:px-12 xl:px-20 mx-6 sm:mx-12 md:mx-20 xm:mx-6 lg:mx-12 xl:mx-20">
-                    <h1 className={jostFont.className + " font-bold text-3xl xm:text-5xl lg:text-5xl xl:text-6xl text-start text-black"}>
+                    <h1 className={jostFont.className + " font-bold text-3xl xm:text-5xl lg:text-5xl xl:text-6xl text-left text-black"}>
                         {blog.title}
                     </h1>
-                    <div className={montserratFont.className + " flex flex-col xm:flex-row justify-start items-start xm:items-center gap-6 xm:gap-32 font-medium text-xl text-start text-black"}>
+                    <div className={montserratFont.className + " flex flex-col xm:flex-row justify-start items-start xm:items-center gap-6 xm:gap-32 font-medium text-xl text-left text-black"}>
                         <p>{readableDate(blog.date)}</p>
                         <p>par {blog.author.name}</p>
                     </div>
@@ -49,7 +49,7 @@ export default function Blog({ params }: Props) {
                 <div className={montserratFont.className + " w-[97%] flex flex-col xm:flex-row justify-start items-center xm:items-start rounded-md bg-white gap-16 py-8 px-2 fold:px-6 sm:px-12 md:px-20 xm:px-6 lg:px-12 xl:px-20 mx-2 fold:mx-6 sm:mx-12 md:mx-20 xm:mx-6 lg:mx-12 xl:mx-20 my-11"}>
                     {/* Article Body */}
                     <div className="flex w-full flex-col justify-start items-start gap-8">
-                        <h5 className="uppercase font-medium text-base text-black text-start">Share</h5>
+                        <h5 className="uppercase font-medium text-base text-black text-left">Share</h5>
                         <div className="w-full h-px bg-black"></div>
                         <div className="flex flex-col justify-start items-start gap-10 break-words">
                             {blog.body.map(section => {
@@ -63,21 +63,21 @@ export default function Blog({ params }: Props) {
                                 }
                                 if (section.type === "paragraph" && section.text) {
                                     return (
-                                        <p key={section.section} className={"font-medium text-lg text-black text-start " + (section.section === 1 ? "indent-5" : "")}>
+                                        <p key={section.section} className={"font-medium text-lg text-black text-left " + (section.section === 1 ? "indent-5" : "")}>
                                             {section.text}
                                         </p>
                                     )
                                 }
                                 if (section.type === "header1" && section.text) {
                                     return (
-                                        <p key={section.section} className={"font-bold text-xl text-black text-start " + (section.section === 1 ? "indent-5" : "")}>
+                                        <p key={section.section} className={"font-bold text-xl text-black text-left " + (section.section === 1 ? "indent-5" : "")}>
                                             {section.text}
                                         </p>
                                     )
                                 }
                                 if (section.type === "header2" && section.text) {
                                     return (
-                                        <p key={section.section} className={"font-semibold text-lg text-black text-start " + (section.section === 1 ? "indent-5" : "")}>
+                                        <p key={section.section} className={"font-semibold text-lg text-black text-left " + (section.section === 1 ? "indent-5" : "")}>
                                             {section.text}
                                         </p>
                                     )
@@ -90,7 +90,7 @@ export default function Blog({ params }: Props) {
                                                     return <></>
                                                 }
                                                 return (
-                                                    <p key={item.title ? item.title : item.body} className="font-medium text-lg text-black text-start">
+                                                    <p key={item.title ? item.title : item.body} className="font-medium text-lg text-black text-left">
                                                         <span>● </span>
                                                         {item.title &&
                                                             <>
@@ -113,7 +113,7 @@ export default function Blog({ params }: Props) {
                                                     return <></>
                                                 }
                                                 return (
-                                                    <p key={item.title ? item.title : item.body} className="font-medium text-lg text-black text-start">
+                                                    <p key={item.title ? item.title : item.body} className="font-medium text-lg text-black text-left">
                                                         <span>{index + 1}. </span>
                                                         {item.body}
                                                     </p>

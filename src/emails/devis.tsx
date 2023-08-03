@@ -1,6 +1,6 @@
 import { readableDate } from '@/utils/functions';
 import { DevisPayload } from '@/utils/interfaces';
-import { currency, logoOnGithub } from '@/utils/variables';
+import { currency, dailyHours, logoOnGithub } from '@/utils/variables';
 import {
     Body,
     Column,
@@ -59,7 +59,7 @@ export const DevisEmail = ({
                             - Prix de la formation : <b style={{fontSize: "16px", fontWeight: "bold"}}>{price + " " +currency} HT / personne</b>
                         </Text>
                         <Text style={indentparagraph}>
-                            - Durée de la formation : <b style={{fontSize: "16px", fontWeight: "bold"}}>{Math.ceil(duration / 8)} jours ({duration} heures)</b>
+                            - Durée de la formation : <b style={{fontSize: "16px", fontWeight: "bold"}}>{Math.ceil(duration / dailyHours)} jours ({duration} heures)</b>
                         </Text>
 
                         {message && <Text style={paragraph}>
