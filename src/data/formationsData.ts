@@ -20,7 +20,7 @@ export const formationsData: Formation[] = [
       {
         title: `Découvertes de l’API`,
         parts: [
-          `Présentation des formats de données :Json, CSV, XML`,
+          `Présentation des formats de données: Json, CSV, XML`,
           `Protocole HTTP`,
           `Présentation des APIs`
         ]
@@ -89,7 +89,7 @@ export const formationsData: Formation[] = [
         title: `Introduction à l'automatisationIntroduction à l'automatisation`,
         parts: [
           `Pourquoi l’automatisation des tests`,
-          `Pattern d’automatisation : Arrange – Act - Assert`
+          `Pattern d’automatisation:  Arrange – Act - Assert`
         ]
       },
       {
@@ -157,7 +157,7 @@ export const formationsData: Formation[] = [
         title: `Introduction à l'automatisation`,
         parts: [
           `Pourquoi l’automatisation des tests`,
-          `Pattern d’automatisation : Arrange – Act - Assert`
+          `Pattern d’automatisation:  Arrange – Act - Assert`
         ]
       },
       {
@@ -184,7 +184,7 @@ export const formationsData: Formation[] = [
         title: `Les tests front end avec la librairie Selenium`,
         parts: [
           `Installation des prérequis Selenium Webdriver`,
-          `Operations de base sur une page web :Cliquer, Écrire`,
+          `Operations de base sur une page web: Cliquer, Écrire`,
           `Sélectionner dans une liste`,
           `Vérifications de base sur une page web`,
           `Page Object Model avec Robot Framework`

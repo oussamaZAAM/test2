@@ -3,13 +3,14 @@
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
 import ReturnToTop from "@/components/ReturnToTop";
-import { getNextMondaysSeparatedBy3Weeks, readableDateFromString } from "@/utils/functions";
 import { formationsData } from "@/data/formationsData";
+import { getNextMondaysSeparatedBy3Weeks, readableDateFromString } from "@/utils/functions";
 import { currency, dailyHours, datesDisplayed, fixedReferenceDate } from "@/utils/variables";
+
 import { IBM_Plex_Sans_Condensed, Lato, Montserrat } from "next/font/google";
 import Image from "next/image";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
+
 import { BiTimeFive } from "react-icons/bi";
 import { MdOutlineKeyboardArrowRight } from "react-icons/md";
 import { RiCopperCoinLine } from "react-icons/ri";
@@ -25,12 +26,11 @@ type Props = {
 }
 
 export default function Page({ params }: Props) {
-  const router = useRouter();
-
   const formation_id = params.slug;
   const formation = formationsData.find((formation) => formation.formation_id === formation_id);
 
   const nextDates = getNextMondaysSeparatedBy3Weeks(fixedReferenceDate, datesDisplayed);
+  
 
   if (!formation) {
     return (
@@ -40,7 +40,6 @@ export default function Page({ params }: Props) {
       </div>
     )
   }
-
   return (
     <div className="flex flex-col justify-between items-center bg-ac-gray w-full min-h-[100vh]">
       <ReturnToTop />
@@ -96,7 +95,7 @@ export default function Page({ params }: Props) {
               <div className="flex flex-col justify-start items-start gap-2">
                 {formation.objectives.map((objective) => {
                   return (
-                    <p key={objective} className="indent-2 text-lg text-left text-black">
+                    <p key={objective} className="ml-2 text-lg text-left text-black">
                       • {objective}
                     </p>
                   )
@@ -112,11 +111,11 @@ export default function Page({ params }: Props) {
                 {formation.program.map((step, index) => {
                   return (
                     <div key={step.title} className="flex flex-col justify-start items-start gap-4">
-                      <h5 className="indent-2 text-xl text-left text-black font-semibold">{index + 1} - {step.title}</h5>
+                      <h5 className="ml-2 text-xl text-left text-black font-semibold">{index + 1} - {step.title}</h5>
                       <div className="flex flex-col justify-start items-start gap-2">
                         {step.parts.map((part) => {
                           return (
-                            <p key={part} className="indent-6 text-lg text-left text-black">
+                            <p key={part} className="ml-6 text-lg text-left text-black">
                               • {part}
                             </p>
                           )
@@ -135,7 +134,7 @@ export default function Page({ params }: Props) {
               <div className="flex flex-col justify-start items-start gap-2">
                 {formation.targets.map((target) => {
                   return (
-                    <p key={target} className="indent-2 text-lg text-left text-black">
+                    <p key={target} className="ml-2 text-lg text-left text-black">
                       • {target}
                     </p>
                   )
@@ -150,7 +149,7 @@ export default function Page({ params }: Props) {
               <div className="flex flex-col justify-start items-start gap-2">
                 {formation.prerequisites.map((prerequisite) => {
                   return (
-                    <p key={prerequisite} className="indent-2 text-lg text-left text-black">
+                    <p key={prerequisite} className="ml-2 text-lg text-left text-black">
                       • {prerequisite}
                     </p>
                   )
@@ -160,7 +159,7 @@ export default function Page({ params }: Props) {
             </div>
           </div>
           {/* Formation Card + Billing + Available Dates*/}
-          <div className="xm:sticky xm:top-48 flex flex-col justify-start items-stretch gap-10 xm:-translate-y-28 lg:-translate-y-56">
+          <div className="xm:sticky xm:top-60 flex flex-col justify-start items-stretch gap-10 xm:-translate-y-28 lg:-translate-y-56">
             <div className={ibmFont.className + " xm:hidden flex justify-start items-center gap-2"}>
               <Link href={"/formations"}>
                 <p className="font-semibold text-base text-center text-black uppercase">Formations</p>
