@@ -4,6 +4,7 @@ import Footer from '@/components/Footer';
 import FormationCard from '@/components/FormationCard';
 import Navbar from '@/components/Navbar';
 import ReturnToTop from '@/components/ReturnToTop';
+import { formations } from '@/content/pages';
 import { formationsData } from '@/utils/mockData/formationsData';
 import { Lato, Montserrat } from 'next/font/google';
 
@@ -29,7 +30,7 @@ export default function Formations({ }: Props) {
                             Formations
                         </h1>
                         <h3 className={latoFont.className + " text-xs sm:text-sm xm:text-base font-medium text-white text-center max-w-[300px] sm:max-w-sm"}>
-                            Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...
+                           {formations.hero}
                         </h3>
                     </a>
                 </div>
@@ -48,6 +49,7 @@ export default function Formations({ }: Props) {
                                     key={formation.formation_id}
                                     formation_id={formation.formation_id}
                                     title={formation.title}
+                                    hero={formation.hero ? formation.hero : ""}
                                     description={formation.description}
                                     image_url={formation.image_url}
                                     price={formation.price}

@@ -5,11 +5,12 @@ import Navbar from "@/components/Navbar";
 import ReturnToTop from "@/components/ReturnToTop";
 import { getNextMondaysSeparatedBy3Weeks, readableDateFromString } from "@/utils/functions";
 import { formationsData } from "@/utils/mockData/formationsData";
-import { currency, datesDisplayed, fixedReferenceDate } from "@/utils/variables";
+import { currency, dailyHours, datesDisplayed, fixedReferenceDate } from "@/utils/variables";
 import { IBM_Plex_Sans_Condensed, Lato, Montserrat } from "next/font/google";
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
+import { BiTimeFive } from "react-icons/bi";
 import { MdOutlineKeyboardArrowRight } from "react-icons/md";
 import { RiCopperCoinLine } from "react-icons/ri";
 
@@ -53,8 +54,8 @@ export default function Page({ params }: Props) {
           <div className="absolute top-0 left-0 w-full h-full z-20 bg-[#00000050]"></div>
           <div className="flex flex-col justify-start items-center mt-20 mb-24 mx-4 sm:ml-[10%] xm:ml-[5%] formation1:ml-[15%] rounded-xl bg-ac-bleu gap-3 py-3 px-4 sm:py-6 sm:px-8 xm:px-12 z-30">
             <h1 className={montserratFont.className + " text-3xl sm:text-4xl xm:text-5xl font-medium text-white text-center max-w-[270px] fold:max-w-[350px] xs:max-w-md"}>Formation {formation.title}</h1>
-            <h3 className={latoFont.className + " text-xs sm:text-sm xm:text-base font-medium text-white text-center max-w-[300px] sm:max-w-sm line-clamp-1"}>
-              {formation.description}
+            <h3 className={latoFont.className + " text-xs sm:text-sm xm:text-base font-medium text-white text-center max-w-[300px] sm:max-w-sm"}>
+              {formation.hero}
             </h3>
           </div>
         </div>
@@ -70,16 +71,96 @@ export default function Page({ params }: Props) {
               <MdOutlineKeyboardArrowRight size={17} color="black" />
               <p className="font-semibold text-base text-center text-black uppercase">{formation.title}</p>
             </div>
-            {/* Description */}
-            <div className="flex flex-col justify-start items-start gap-8 max-w-xl">
-              <h3 className={montserratFont.className + " text-3xl text-start text-black font-semibold"}>Description</h3>
-              <p className={latoFont.className + " text-lg text-start text-black"}>
-                {formation.description}
-              </p>
+            <div className={latoFont.className + " flex flex-col justify-start items-start gap-8 max-w-xl"}>
+
+              {/* Description */}
+              <div className="flex justify-center xs:justify-start items-center w-full">
+                <h3 className={montserratFont.className + " text-xl fold:text-2xl xs:text-3xl text-left text-black font-semibold whitespace-nowrap bg-gray-100 border border-black rounded-full py-2 px-4"}>Description</h3>
+                <div className="hidden xs:block w-full h-px bg-black"></div>
+              </div>
+              <div className="flex flex-col justify-start items-start gap-2">
+                {formation.description.split("\n").map((text) => {
+                  return (
+                    <p key={text} className=" indent-2 text-lg text-left text-black">
+                      {text}
+                    </p>
+                  )
+                })}
+              </div>
+
+              {/* Objectifs pédagogiques */}
+              <div className="flex justify-center xs:justify-start items-center w-full">
+                <h3 className={montserratFont.className + " text-xl fold:text-2xl xs:text-3xl text-left text-black font-semibold whitespace-nowrap bg-gray-100 border border-black rounded-full py-2 px-4"}>Objectifs pédagogiques</h3>
+                <div className="hidden xs:block w-full h-px bg-black"></div>
+              </div>
+              <div className="flex flex-col justify-start items-start gap-2">
+                {formation.objectives.map((objective) => {
+                  return (
+                    <p key={objective} className="indent-2 text-lg text-left text-black">
+                      • {objective}
+                    </p>
+                  )
+                })}
+              </div>
+
+              {/* Programme */}
+              <div className="flex justify-center xs:justify-start items-center w-full">
+                <h3 className={montserratFont.className + " text-xl fold:text-2xl xs:text-3xl text-left text-black font-semibold whitespace-nowrap bg-gray-100 border border-black rounded-full py-2 px-4"}>Programme</h3>
+                <div className="hidden xs:block w-full h-px bg-black"></div>
+              </div>
+              <div className="flex flex-col justify-start items-start gap-6">
+                {formation.program.map((step, index) => {
+                  return (
+                    <div key={step.title} className="flex flex-col justify-start items-start gap-4">
+                      <h5 className="indent-2 text-xl text-left text-black font-semibold">{index + 1} - {step.title}</h5>
+                      <div className="flex flex-col justify-start items-start gap-2">
+                        {step.parts.map((part) => {
+                          return (
+                            <p key={part} className="indent-6 text-lg text-left text-black">
+                              • {part}
+                            </p>
+                          )
+                        })}
+                      </div>
+                    </div>
+                  )
+                })}
+              </div>
+
+              {/* Public Cible */}
+              <div className="flex justify-center xs:justify-start items-center w-full">
+                <h3 className={montserratFont.className + " text-xl fold:text-2xl xs:text-3xl text-left text-black font-semibold whitespace-nowrap bg-gray-100 border border-black rounded-full py-2 px-4"}>Public Cible</h3>
+                <div className="hidden xs:block w-full h-px bg-black"></div>
+              </div>
+              <div className="flex flex-col justify-start items-start gap-2">
+                {formation.targets.map((target) => {
+                  return (
+                    <p key={target} className="indent-2 text-lg text-left text-black">
+                      • {target}
+                    </p>
+                  )
+                })}
+              </div>
+
+              {/* Prérequis */}
+              <div className="flex justify-center xs:justify-start items-center w-full">
+                <h3 className={montserratFont.className + " text-xl fold:text-2xl xs:text-3xl text-left text-black font-semibold whitespace-nowrap bg-gray-100 border border-black rounded-full py-2 px-4"}>Prérequis</h3>
+                <div className="hidden xs:block w-full h-px bg-black"></div>
+              </div>
+              <div className="flex flex-col justify-start items-start gap-2">
+                {formation.prerequisites.map((prerequisite) => {
+                  return (
+                    <p key={prerequisite} className="indent-2 text-lg text-left text-black">
+                      • {prerequisite}
+                    </p>
+                  )
+                })}
+              </div>
+
             </div>
           </div>
           {/* Formation Card + Billing + Available Dates*/}
-          <div className="flex flex-col justify-start items-stretch gap-10 xm:-translate-y-28 lg:-translate-y-56">
+          <div className="xm:sticky xm:top-48 flex flex-col justify-start items-stretch gap-10 xm:-translate-y-28 lg:-translate-y-56">
             <div className={ibmFont.className + " xm:hidden flex justify-start items-center gap-2"}>
               <Link href={"/formations"}>
                 <p className="font-semibold text-base text-center text-black uppercase">Formations</p>
@@ -116,10 +197,10 @@ export default function Page({ params }: Props) {
               <div className="hidden xm:block w-0.5 bg-[#888888]"></div>
               <div className="flex flex-col justify-start items-center gap-4 xm:gap-10 xm:max-w-[125px]">
                 <div className="flex justify-center items-center gap-2.5">
-                  <RiCopperCoinLine className="fill-ac-bleu" size={25} />
+                  <BiTimeFive className="fill-ac-bleu" size={25} />
                   <p className="text-xl font-bold uppercase text-black text-center">Durée</p>
                 </div>
-                <p className="text-base font-medium text-center text-black uppsercase"><span className="font-bold">{Math.ceil(formation.duration / 8)}</span> jours (<span className="font-bold">{formation.duration}</span>&nbsp;heures)</p>
+                <p className="text-base font-medium text-center text-black uppsercase"><span className="font-bold">{Math.ceil(formation.duration / dailyHours)}</span> jours (<span className="font-bold">{formation.duration}</span>&nbsp;heures)</p>
               </div>
             </div>
 

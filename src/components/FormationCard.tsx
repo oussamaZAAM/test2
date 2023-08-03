@@ -1,4 +1,4 @@
-import { currency } from '@/utils/variables';
+import { currency, dailyHours } from '@/utils/variables';
 
 import { Lato, Montserrat } from 'next/font/google';
 import Image from 'next/image';
@@ -7,6 +7,7 @@ import Link from 'next/link';
 type Props = {
   formation_id: string,
   title: string,
+  hero: string,
   description: string,
   image_url: string,
   price: number,
@@ -16,7 +17,7 @@ type Props = {
 const montserratFont = Montserrat({ subsets: ["latin"] });
 const latoFont = Lato({ weight: "400", subsets: ["latin"] });
 
-export default function FormationCard({ formation_id, title, description, image_url, price, duration }: Props) {
+export default function FormationCard({ formation_id, title, hero, description, image_url, price, duration }: Props) {
   return (
     <Link className="
                   flex flex-col justify-between items-center w-full
@@ -35,18 +36,18 @@ export default function FormationCard({ formation_id, title, description, image_
 
         <div className="bg-ac-violet h-0.5 w-full"></div>
         <p className={latoFont.className + " text-black text-base text-center font-medium line-clamp-2"}>
-          {description}
+          {hero}
         </p>
       </div>
       <div className="flex flex-col justify-start items-stretch gap-3 w-full">
         <div className="flex justify-start items-center gap-6 w-full">
           <Image src="/Formations/coin.png" width={50} height={50} alt='Prix' />
-          <p className={montserratFont.className + " font-medium text-black text-lg text-start"}>{price + " " + currency} HT / personne</p>
+          <p className={montserratFont.className + " font-medium text-black text-lg text-left"}>{price + " " + currency} HT / personne</p>
         </div>
 
         <div className="flex justify-start items-center gap-6 w-full">
           <Image src="/Formations/hourglass.png" width={50} height={50} alt='Durée' />
-          <p className={montserratFont.className + " font-medium text-black text-lg text-start"}>{Math.ceil(duration / 8)} jours ({duration} heures)</p>
+          <p className={montserratFont.className + " font-medium text-black text-lg text-left"}>{Math.ceil(duration / dailyHours)} jours ({duration} heures)</p>
         </div>
 
         <div className="flex justify-center items-center">

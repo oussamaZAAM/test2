@@ -29,11 +29,18 @@ export interface User {
 export interface Formation {
   formation_id: string;
   title: string;
+  hero: string;
   description: string;
+  objectives: string[];
+  program: {
+    title: string;
+    parts: string[];
+  }[],
+  targets: string[],
+  prerequisites: string[],
   price: number;
   duration: number;
   image_url: string;
-  lessons?: Array<string>;
 }
 
 export interface DevisInputs {
