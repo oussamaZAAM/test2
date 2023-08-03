@@ -1,4 +1,4 @@
-import ConsultingCurvyLine from '@/components/ConsultingCurvyLine';
+import ConsultingCurvyLine from '@/components/Consulting/ConsultingCurvyLine';
 import Footer from '@/components/Footer';
 import Navbar from '@/components/Navbar';
 import ReturnToTop from '@/components/ReturnToTop';

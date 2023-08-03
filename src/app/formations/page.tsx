@@ -1,5 +1,5 @@
 import Footer from '@/components/Footer';
-import FormationCard from '@/components/FormationCard';
+import FormationCard from '@/components/Formation/FormationCard';
 import Navbar from '@/components/Navbar';
 import ReturnToTop from '@/components/ReturnToTop';
 import { formations } from '@/content/pages';

@@ -1,12 +1,12 @@
 "use client";
 
-import DevisForm from '@/components/DevisForm';
 import Footer from '@/components/Footer';
+import DevisForm from '@/components/Formation/DevisForm';
 import Navbar from '@/components/Navbar';
 import ReturnToTop from '@/components/ReturnToTop';
 import { namifySlug } from '@/utils/functions';
 import { useSearchParams } from 'next/navigation';
-import { ToastContainer, toast } from 'react-toastify';
+import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 type Props = {}

@@ -1,5 +1,5 @@
-import BlogCard from '@/components/BlogCard';
-import BlogPageTitle from '@/components/BlogPageTitle';
+import BlogCard from '@/components/Blog/BlogCard';
+import BlogPageTitle from '@/components/Blog/BlogPageTitle';
 import Footer from '@/components/Footer';
 import Navbar from '@/components/Navbar';
 import ReturnToTop from '@/components/ReturnToTop';

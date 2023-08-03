@@ -1,8 +1,8 @@
 import Footer from '@/components/Footer';
 import Navbar from '@/components/Navbar';
 import ReturnToTop from '@/components/ReturnToTop';
-import { readableDate } from '@/utils/functions';
 import { blogsData } from '@/data/blogsData';
+import { readableDate } from '@/utils/functions';
 import { Jost, Montserrat } from 'next/font/google';
 import Image from 'next/image';
 import { AiFillLinkedin } from 'react-icons/ai';
