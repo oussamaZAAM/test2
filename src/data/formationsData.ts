@@ -11,10 +11,10 @@ export const formationsData: Formation[] = [
                   La formation Postman couvre différents aspects de l'utilisation de l'outil, tels que la création de requêtes HTTP, l'envoi de données, la validation des réponses et la gestion des environnements. Les développeurs apprennent également à utiliser des fonctionnalités avancées telles que la collaboration en équipe, l'automatisation des tests et la génération de rapports.
                   La formation Postman est souvent dispensée en ligne ou en présentiel et peut être adaptée aux besoins spécifiques des développeurs. Les participants peuvent suivre des cours pour débutants ou des cours avancés selon leur niveau d'expérience avec l'outil.`,
     objectives: [
-                `Comprendre les bases du protocole HTTP`, 
-                `Tester manuellement des APIs avec Postman`, 
-                `Ecrire des scripts automatique d'APIs`, 
-                `Executer les tests Postman en ligne de commande`
+      `Comprendre les bases du protocole HTTP`,
+      `Tester manuellement des APIs avec Postman`,
+      `Ecrire des scripts automatique d'APIs`,
+      `Executer les tests Postman en ligne de commande`
     ],
     program: [
       {
@@ -78,10 +78,62 @@ export const formationsData: Formation[] = [
                   Notre programme vous permettra de maîtriser les différents aspects de Cypress, depuis l'installation jusqu'à l'écriture de scénarios complets en passant par la gestion des assertions et des commandes. 
                   Nos formateurs expérimentés vous guideront tout au long de la formation, avec des exercices pratiques et des cas concrets pour vous aider à progresser rapidement. Avec notre formation sur Cypress, vous serez prêt(e) à intégrer cette technologie à vos projets et à améliorer votre processus de développement. 
                   Inscrivez-vous dès maintenant et boostez vos compétences en automatisation de tests avec Cypress !`,
-    objectives: [],
-    program: [],
-    targets: [],
-    prerequisites: [],
+    objectives: [
+      `Maitriser les bases du tests automatiques avec Cypress`,
+      `Comprendre les commandes Cypress`,
+      `Comprendre l’intérêt de l’intégration continue dans un contexte Agile`,
+      `Industrialiser des tests Cypress sur Github Actions`
+    ],
+    program: [
+      {
+        title: `Introduction à l'automatisationIntroduction à l'automatisation`,
+        parts: [
+          `Pourquoi l’automatisation des tests`,
+          `Pattern d’automatisation : Arrange – Act - Assert`
+        ]
+      },
+      {
+        title: `Écrire des tests avec Cypress`,
+        parts: [
+          `Comprendre le mécanisme de retry`,
+          `Utilisation des hooks Cypress`,
+          `Configuration`,
+          `Commandes personnalisées`
+        ]
+      },
+      {
+        title: `Présentation de Cypress`,
+        parts: [
+          `Architecture et concepts`,
+          `Installation de l’environnement de développement`,
+          `Les commandes de base`
+        ]
+      },
+      {
+        title: `Notions avancées`,
+        parts: [
+          `Data Driven Test avec Robot Framework`,
+          `Écrire des tests en Gherkin`,
+          `Intercepter des requêtes http`
+        ]
+      },
+      {
+        title: `Industrialisation des tests`,
+        parts: [
+          `Générer des rapports`,
+          `Automatiser l’exécution sur Github Actions`
+        ]
+      },
+    ],
+    targets: [
+      `Testeurs`,
+      `Chefs de projets`,
+      `Développeurs`
+    ],
+    prerequisites: [
+      `Connaissances en test logiciel`,
+      `Une expérience avec un langage de programmation est un plus`
+    ],
     price: 2250,
     duration: 16,
     image_url: `/Formations/cypress.png`
