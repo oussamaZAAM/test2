@@ -1,12 +1,15 @@
+"use client";
+
 import React, { useEffect, useRef, useState } from 'react';
 
 interface AnimatedElementProps {
     children: React.ReactNode;
     duration: number;
     delay?: number;
+    className?: string;
 }
 
-const AnimatedElement: React.FC<AnimatedElementProps> = ({ children, duration, delay }) => {
+const AnimatedElement: React.FC<AnimatedElementProps> = ({ children, duration, delay, className }) => {
     const [isVisible, setIsVisible] = useState(false);
     const elementRef = useRef<HTMLDivElement>(null);
 
@@ -22,7 +25,7 @@ const AnimatedElement: React.FC<AnimatedElementProps> = ({ children, duration, d
 
     useEffect(() => {
         window.addEventListener('scroll', handleScroll);
-        handleScroll(); // Check initial visibility
+        handleScroll();
 
         return () => {
             window.removeEventListener('scroll', handleScroll);
@@ -31,7 +34,7 @@ const AnimatedElement: React.FC<AnimatedElementProps> = ({ children, duration, d
 
     return (
         <div
-            className={`transition delay-${delay} duration-500 ${isVisible ? 'scale-100' : 'scale-0'}`}
+            className={`${className} transition delay-${delay} duration-500 ${isVisible ? 'scale-100' : 'scale-0'}`}
             ref={elementRef}
         >
             {children}
