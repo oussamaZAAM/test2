@@ -7,7 +7,7 @@ const inter = Inter({ subsets: ['latin'] })
 export const metadata = {
   title: pageMetadata.title,
   description: pageMetadata.description,
-  metadataBase: new URL('https://www.aleeconseil.com'),
+  metadataBase: new URL(pageMetadata.baseUrl),
   openGraph: {
     images: '/og-image.png',
   },
