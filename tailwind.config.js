@@ -44,11 +44,17 @@ module.exports = {
           "83%": {transform: "scale(0)"},
           "100%": {transform: "scale(0.33)"}
         },
+        popup: {
+          "0%": {transform: "scale(0)"},
+          "80%": {transform: "scale(1.2)"},
+          "100%": {transform: "scale(1)"},
+        }
       }, 
       animation: {
         "loading1": "loading1 0.75s linear infinite",
         "loading2": "loading2 0.75s linear infinite",
-        "loading3": "loading3 0.75s linear infinite"
+        "loading3": "loading3 0.75s linear infinite",
+        "popup": "popup 0.5s linear"
       }
     },
     screens: {

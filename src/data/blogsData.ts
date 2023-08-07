@@ -20,7 +20,7 @@ const users: User[] = [
 export const blogsData: Blog[] = [
   {
     id: `tests-api`,
-    title: `Les tests api , pourquoi et comment ?`,
+    title: `Les tests api, pourquoi et comment ?`,
     body: [
       {
         section: 1,
