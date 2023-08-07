@@ -5,7 +5,7 @@ import React, { useEffect, useRef, useState } from 'react';
 interface AnimatedElementProps {
     children: React.ReactNode;
     duration: number;
-    delay?: number;
+    delay: number;
     className?: string;
 }
 
@@ -19,7 +19,7 @@ const AnimatedElement: React.FC<AnimatedElementProps> = ({ children, duration, d
             const windowHeight = window.innerHeight;
             if (top < windowHeight) {
                 setIsVisible(true);
-              }
+            }
         }
     };
 
@@ -34,7 +34,8 @@ const AnimatedElement: React.FC<AnimatedElementProps> = ({ children, duration, d
 
     return (
         <div
-            className={`${className} transition delay-${delay} duration-500 ${isVisible ? 'scale-100' : 'scale-0'}`}
+            style={{transitionDelay: delay + "ms", transitionDuration: duration + "ms"}}
+            className={`${className} transition ${isVisible ? 'scale-100' : 'scale-0'}`}
             ref={elementRef}
         >
             {children}

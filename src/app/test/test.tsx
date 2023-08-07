@@ -27,7 +27,7 @@ export default function Homepage({ }: Props) {
                         </h1>
                     </div>
                     <div className="relative flex flex-col md:flex-row justify-between items-center md:items-start w-full gap-12 md:gap-2">
-                        <AnimatedElement duration={500}>
+                        <AnimatedElement duration={500} delay={0}>
                             <div className="flex flex-col justify-start items-center md:items-start gap-5 max-w-[250px] cursor-pointer transition duration-300 hover:scale-125">
                                 <h2 className={poppins.className + " text-center md:text-left text-4xl text-ac-bleu"}>Formations</h2>
                                 <p className={roboto.className + " text-center md:text-left text-black text-lg italic"}>
@@ -35,7 +35,7 @@ export default function Homepage({ }: Props) {
                                 </p>
                             </div>
                         </AnimatedElement>
-                        <AnimatedElement duration={500}>
+                        <AnimatedElement duration={500} delay={500}>
                             <div className="flex flex-col justify-start items-center md:items-end gap-5 max-w-[250px] cursor-pointer transition duration-300 hover:scale-125">
                                 <h2 className={poppins.className + " text-center md:text-right text-4xl text-ac-violet"}>Consultant?</h2>
                                 <p className={roboto.className + " text-center md:text-right text-black text-lg italic"}>
@@ -52,14 +52,14 @@ export default function Homepage({ }: Props) {
                 </div>
 
                 <div className="flex flex-col md:flex-row justify-evenly items-center w-full gap-4 z-30">
-                    <AnimatedElement duration={500}>
+                    <AnimatedElement duration={500} delay={0}>
                         <h3 className={poppins.className + ' text-center md:text-left text-ac-bleu text-2xl font-bold w-[250px] fold:w-[300px] transition cursor-pointer group'}>
                             Nos formations
                             <span className="block max-w-0 group-hover:max-w-full transition-all duration-300 h-1 bg-ac-bleu"></span>
                         </h3>
                     </AnimatedElement>
                     <div className="h-1 md:h-6 w-6 md:w-1 bg-black rounded-xl"></div>
-                    <AnimatedElement duration={500}>
+                    <AnimatedElement duration={500} delay={0}>
                         <h3 className={poppins.className + ' text-center md:text-right text-ac-violet text-2xl font-bold w-[250px] fold:w-[300px] transition cursor-pointer group'}>
                             Je suis un Consultant
                             <span className="block max-w-0 group-hover:max-w-full transition-all duration-300 h-1 bg-ac-violet"></span>
