@@ -9,7 +9,7 @@ export const metadata = {
   description: pageMetadata.description,
   metadataBase: new URL(pageMetadata.baseUrl),
   openGraph: {
-    images: '/og-image.png',
+    images: '/icon.png',
   },
 }
 
