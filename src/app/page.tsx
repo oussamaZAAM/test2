@@ -69,7 +69,12 @@ export default function Home() {
 
       {/* Contact Us */}
       <div className="flex flex-col xm:flex-row justify-center items-start gap-8 w-full pt-8 bg-ac-gray -translate-y-6 rounded-t-3xl ">
-        <AnimatedElement className="flex flex-col justify-start items-center gap-4 w-full" duration={500} delay={0}>
+        <AnimatedElement
+          className="flex flex-col justify-start items-center gap-4 w-full"
+          type="zoom-in"
+          duration={500}
+          delay={0}
+        >
           <h2 className={montserratBoldFont.className + " font-bold text-4xl text-black text-left"}><span className='text-ac-violet'>Nous</span> Trouver</h2>
           <Image src="/Homepage/hand-drawn-arrow.png" width={96} height={96} alt='' />
           <iframe
@@ -82,7 +87,12 @@ export default function Home() {
           </iframe>
         </AnimatedElement>
 
-        <AnimatedElement className="flex flex-col justify-start items-center gap-4 w-full" duration={500} delay={500}>
+        <AnimatedElement
+          className="flex flex-col justify-start items-center gap-4 w-full"
+          type="zoom-in"
+          duration={500}
+          delay={500}
+        >
           <div className="flex flex-col justify-start items-center gap-4 w-full">
             <h2 className={montserratBoldFont.className + " font-bold text-4xl text-black text-left"}>Contactez-<span className='text-ac-violet'>nous</span></h2>
             <Image src="/Homepage/hand-drawn-arrow2.png" width={96} height={96} alt='' />
