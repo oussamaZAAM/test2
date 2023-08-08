@@ -268,6 +268,7 @@ export default function DevisForm({ formation, formationDate }: Props) {
                             selected={devisDate}
                             onSelect={setDevisDate}
                             onChange={() => { }}
+                            highlightDates={nextDates}
                             includeDates={nextDates}
                             showDisabledMonthNavigation
                         />
