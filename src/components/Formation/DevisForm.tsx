@@ -10,6 +10,8 @@ import { BsCalendar } from 'react-icons/bs';
 
 import "react-datepicker/dist/react-datepicker.css";
 import { toast } from 'react-toastify';
+import { getNextMondaysSeparatedBy3Weeks } from '@/utils/functions';
+import { datesDisplayedNumber, fixedReferenceDate } from '@/utils/variables';
 
 
 const montserratNormalFont = Montserrat({ weight: "400", subsets: ["latin"] });
@@ -138,6 +140,10 @@ export default function DevisForm({ formation, formationDate }: Props) {
         }
     }
 
+    const nextDates = getNextMondaysSeparatedBy3Weeks(fixedReferenceDate, datesDisplayedNumber).map((string) => new Date(string));
+
+
+
     return (
         <div className='flex flex-col justify-start items-center mt-10 mb-4 mx-2 py-6 px-5 box-shadow2 w-[464px] bg-white gap-5'>
             <div className="flex flex-col justify-start items-start w-full gap-3">
@@ -262,6 +268,8 @@ export default function DevisForm({ formation, formationDate }: Props) {
                             selected={devisDate}
                             onSelect={setDevisDate}
                             onChange={() => { }}
+                            includeDates={nextDates}
+                            showDisabledMonthNavigation
                         />
                     </div>
                 </div>

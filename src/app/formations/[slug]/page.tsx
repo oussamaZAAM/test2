@@ -3,7 +3,7 @@ import Navbar from "@/components/Navbar";
 import ReturnToTop from "@/components/ReturnToTop";
 import { formationsData } from "@/data/formationsData";
 import { getNextMondaysSeparatedBy3Weeks, readableDateFromString } from "@/utils/functions";
-import { currency, dailyHours, datesDisplayed, fixedReferenceDate } from "@/utils/variables";
+import { currency, dailyHours, datesDisplayedNumber, fixedReferenceDate } from "@/utils/variables";
 
 import { IBM_Plex_Sans_Condensed, Lato, Montserrat } from "next/font/google";
 import Image from "next/image";
@@ -27,9 +27,8 @@ export default function Page({ params }: Props) {
   const formation_id = params.slug;
   const formation = formationsData.find((formation) => formation.formation_id === formation_id);
 
-  const nextDates = getNextMondaysSeparatedBy3Weeks(fixedReferenceDate, datesDisplayed);
+  const nextDates = getNextMondaysSeparatedBy3Weeks(fixedReferenceDate, datesDisplayedNumber);
   
-
   if (!formation) {
     return (
       <div className="flex flex-col justify-center items-center gap-6 w-screen h-screen bg-black text-white text-center">
