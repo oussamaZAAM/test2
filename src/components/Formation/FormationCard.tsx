@@ -17,7 +17,7 @@ type Props = {
 const montserratFont = Montserrat({ subsets: ["latin"] });
 const latoFont = Lato({ weight: "400", subsets: ["latin"] });
 
-export default function FormationCard({ formation_id, title, hero, description, image_url, price, duration }: Props) {
+export default function FormationCard({ formation_id, title, hero, image_url, price, duration }: Props) {
   return (
     <Link className="
                   flex flex-col justify-between items-center w-full

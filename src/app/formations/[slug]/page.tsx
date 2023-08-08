@@ -28,7 +28,7 @@ export default function Page({ params }: Props) {
   const formation = formationsData.find((formation) => formation.formation_id === formation_id);
 
   const nextDates = getNextMondaysSeparatedBy3Weeks(fixedReferenceDate, datesDisplayedNumber);
-  
+
   if (!formation) {
     return (
       <div className="flex flex-col justify-center items-center gap-6 w-screen h-screen bg-black text-white text-center">
@@ -173,7 +173,7 @@ export default function Page({ params }: Props) {
               <div className="flex flex-col justify-start items-center gap-4 px-4 xs:px-8 xm:px-12">
                 <Image src={formation.image_url} width={200} height={200} alt='testing' />
                 <div className="w-full xm:w-[140%] h-px bg-[#888888]"></div>
-                <Link href={{ pathname: '/devis', query: { formation: formation.formation_id } }}>
+                <Link href={{ pathname: '/devis', query: { formation: formation.formation_id, date: nextDates[0] } }}>
                   <div className="flex justify-center items-center bg-ac-bleu rounded-full py-3 xm:py-4 px-3 sm:px-4 xm:px-8">
                     <p className={ibmFont.className + " text-sm xs:text-base font-bold text-white uppercase text-center whitespace-nowrap"}>Recevoir un devis</p>
                   </div>
@@ -204,7 +204,7 @@ export default function Page({ params }: Props) {
             <div className="grid grid-cols-2 justify-center items-center gap-2">
               {nextDates.map((date) => {
                 return (
-                  <Link key={date} href={"/devis?formation=" + formation.formation_id + "&date=" + date} className="flex flex-col justify-start items-center py-2 px-4 bg-white rounded-xl cursor-pointer border border-ac-bleu hover:bg-ac-bleu group">
+                  <Link key={date} href={{ pathname: '/devis', query: { formation: formation.formation_id, date: date } }} className="flex flex-col justify-start items-center py-2 px-4 bg-white rounded-xl cursor-pointer border border-ac-bleu hover:bg-ac-bleu group">
                     <p className="text-lg text-ac-bleu text-center font-bold group-hover:text-white">{readableDateFromString(date).split(" ").slice(0, 2).join(" ")}</p>
                     <p className="text-base text-black text-center font-medium group-hover:text-gray-300">{readableDateFromString(date).split(" ")[readableDateFromString(date).split(" ").length - 1]}</p>
                   </Link>
