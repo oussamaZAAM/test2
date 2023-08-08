@@ -3,7 +3,7 @@ import Navbar from "@/components/Navbar";
 import ReturnToTop from "@/components/ReturnToTop";
 import { formationsData } from "@/data/formationsData";
 import { getNextMondaysSeparatedBy3Weeks, readableDateFromString } from "@/utils/functions";
-import { currency, dailyHours, datesDisplayedNumber, fixedReferenceDate } from "@/utils/variables";
+import { currency, dailyHours, datesDisplayedNumber, fixedReferenceDate } from "@/utils/constants";
 
 import { IBM_Plex_Sans_Condensed, Lato, Montserrat } from "next/font/google";
 import Image from "next/image";

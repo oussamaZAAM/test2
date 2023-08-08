@@ -2,7 +2,7 @@ import ContactUsForm from '@/components/ContactUsForm';
 import Footer from '@/components/Footer';
 import Navbar from '@/components/Navbar';
 import ReturnToTop from '@/components/ReturnToTop';
-import { calendlyEmbed } from '@/utils/variables';
+import { calendlyEmbed } from '@/utils/constants';
 import { Montserrat } from 'next/font/google';
 import Image from 'next/image';
 import { ToastContainer } from 'react-toastify';

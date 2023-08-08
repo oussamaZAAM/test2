@@ -5,7 +5,7 @@ import Hero from '@/components/Hero';
 import Navbar from '@/components/Navbar';
 import ReturnToTop from '@/components/ReturnToTop';
 import { homepage } from "@/content/pages";
-import { googleMapsEmbed } from '@/utils/variables';
+import { googleMapsEmbed } from '@/utils/constants';
 
 import { IBM_Plex_Sans, Lato, Montserrat } from 'next/font/google';
 import Image from 'next/image';

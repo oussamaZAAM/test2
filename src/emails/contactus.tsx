@@ -1,6 +1,6 @@
 import { namifySlug } from '@/utils/functions';
 import { ContactUsPayload } from '@/utils/interfaces';
-import { logoOnGithub } from '@/utils/variables';
+import { logoOnGithub } from '@/utils/constants';
 import {
     Body,
     Column,

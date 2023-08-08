@@ -11,7 +11,7 @@ import { BsCalendar } from 'react-icons/bs';
 import "react-datepicker/dist/react-datepicker.css";
 import { toast } from 'react-toastify';
 import { getNextMondaysSeparatedBy3Weeks } from '@/utils/functions';
-import { datesDisplayedNumber, fixedReferenceDate } from '@/utils/variables';
+import { datesDisplayedNumber, fixedReferenceDate } from '@/utils/constants';
 
 
 const montserratNormalFont = Montserrat({ weight: "400", subsets: ["latin"] });

@@ -1,6 +1,6 @@
 import { readableDate } from '@/utils/functions';
 import { DevisPayload } from '@/utils/interfaces';
-import { currency, dailyHours, logoOnGithub } from '@/utils/variables';
+import { currency, dailyHours, logoOnGithub } from '@/utils/constants';
 import {
     Body,
     Column,

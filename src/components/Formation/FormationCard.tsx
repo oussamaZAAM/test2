@@ -1,4 +1,4 @@
-import { currency, dailyHours } from '@/utils/variables';
+import { currency, dailyHours } from '@/utils/constants';
 
 import { Lato, Montserrat } from 'next/font/google';
 import Image from 'next/image';
