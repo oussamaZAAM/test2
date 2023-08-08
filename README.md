@@ -8,6 +8,19 @@ Bienvenue sur le Site de Alee Conseil ! Ce site affiche nos solutions en domaine
 Découvrez notre démo en direct [ici](https://www.aleeconseil.com).
 
 Voici quelques captures d'écrans de notre site web:
+<div align="center"><img src="https://i.ibb.co/XXT3608/logo.png" /></div>
+<br/>
+<div align="center"><img src="https://i.ibb.co/XXT3608/logo.png" /></div>
+<br/>
+<div align="center"><img src="https://i.ibb.co/XXT3608/logo.png" /></div>
+<br/>
+<div align="center"><img src="https://i.ibb.co/XXT3608/logo.png" /></div>
+<br/>
+<div align="center"><img src="https://i.ibb.co/XXT3608/logo.png" /></div>
+<br/>
+<div align="center"><img src="https://i.ibb.co/XXT3608/logo.png" /></div>
+<br/>
+<div align="center"><img src="https://i.ibb.co/XXT3608/logo.png" /></div>
 
 ## Technologies Utilisées
 - Next.js
