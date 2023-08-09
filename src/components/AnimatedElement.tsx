@@ -33,7 +33,7 @@ const AnimatedElement: React.FC<AnimatedElementProps> = ({ children, type, durat
         };
     }, []);
 
-    if (type === "zoom-in") {
+    if (type === "popup") {
         return (
             <div
                 style={{transitionDelay: delay + "ms", transitionDuration: duration + "ms"}}

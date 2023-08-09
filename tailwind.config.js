@@ -54,7 +54,7 @@ module.exports = {
         "loading1": "loading1 0.75s linear infinite",
         "loading2": "loading2 0.75s linear infinite",
         "loading3": "loading3 0.75s linear infinite",
-        "popup": "popup 0.5s linear"
+        "popup": "popup 0.5s linear",
       }
     },
     screens: {

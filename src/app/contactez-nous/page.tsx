@@ -1,3 +1,5 @@
+"use client";
+
 import ContactUsForm from '@/components/ContactUsForm';
 import Footer from '@/components/Footer';
 import Navbar from '@/components/Navbar';
@@ -5,27 +7,30 @@ import ReturnToTop from '@/components/ReturnToTop';
 import { calendlyEmbed } from '@/utils/constants';
 import { Montserrat } from 'next/font/google';
 import Image from 'next/image';
+import { useState } from 'react';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 type Props = {}
 
-
 const montserratBoldFont = Montserrat({ weight: "700", subsets: ["latin"] });
 
 export default function ContactUs({ }: Props) {
+    const [isIframeLoading, setIsIframeLoading] = useState(true);
     return (
         <div className="bg-ac-gray flex flex-col justify-start items-center w-full">
             <ReturnToTop />
             <Navbar />
 
             {/* Calendly */}
-            <div className="flex justify-start items-center w-full xm:w-3/4 h-full">
+            <div className="flex justify-center items-center w-full xm:w-3/4 h-full">
+                {/* <div className={" h-[750px] w-[700px] bg-ac-gray2 brightness-75 mt-4 rounded-lg animate-pulse"}></div> */}
                 <iframe
-                    className='w-full h-full min-h-[1250px] calendly:min-h-[750px] border-0 box-border'
+                    onLoad={() => console.log("Iframe load!")}
+                    className={"w-full h-full min-h-[1250px] calendly:min-h-[750px] border-0 box-border"}
                     src={calendlyEmbed}
-                    title='Select a Date & Time - Calendly'>
-                </iframe>
+                    title='Select a Date & Time - Calendly'
+                ></iframe>
             </div>
 
             {/* Contact Us */}

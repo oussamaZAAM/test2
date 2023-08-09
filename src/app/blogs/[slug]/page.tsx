@@ -122,7 +122,7 @@ export default function Blog({ params }: Props) {
                                 }
                                 if (section.type === "iframe" && section.url) {
                                     return (
-                                        <iframe key={section.section} style={{ height: 100 * (9 / 16) + "vw" }} className={'max-w-full xm:!h-[280px] lg:!h-[360px] self-center'} allow="fullscreen" width={640} height={360} src={section.url} />
+                                        <iframe key={section.section} style={{ height: 100 * (9 / 16) + "vw" }} className={'max-w-full xm:!h-[280px] lg:!h-[360px] self-center'} allow="fullscreen" width={640} height={360} src={section.url} ></iframe>
                                     )
                                 }
                             })}

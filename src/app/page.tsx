@@ -71,7 +71,7 @@ export default function Home() {
       <div className="flex flex-col xm:flex-row justify-center items-start gap-8 w-full pt-8 bg-ac-gray -translate-y-6 rounded-t-3xl ">
         <AnimatedElement
           className="flex flex-col justify-start items-center gap-4 w-full"
-          type="zoom-in"
+          type="popup"
           duration={500}
           delay={0}
         >
@@ -83,13 +83,13 @@ export default function Home() {
             height="600"
             loading="lazy"
             allowFullScreen={true}
-            src={googleMapsEmbed}>
-          </iframe>
+            src={googleMapsEmbed}
+          ></iframe>
         </AnimatedElement>
 
         <AnimatedElement
           className="flex flex-col justify-start items-center gap-4 w-full"
-          type="zoom-in"
+          type="popup"
           duration={500}
           delay={500}
         >
