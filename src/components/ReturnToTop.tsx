@@ -26,7 +26,7 @@ export default function ReturnToTop({ }: Props) {
         setClicked(true);
         setTimeout(() => {
             setClicked(false);
-        }, 1500);
+        }, 500);
     }
 
     return (
@@ -35,7 +35,7 @@ export default function ReturnToTop({ }: Props) {
             (clicked ? "border-0 border-transparent bg-transparent" : "bg-ac-gray hover:bg-gray-100 border-2 border-ac-violet")
         }>
             <p className={"text-base text-ac-violet font-bold uppercase " + (clicked ? "opacity-0" : "opacity-100")}>Top</p>
-            <PiRocketFill className={"w-6 h-6 fill-ac-violet transition rotate-90 " + (clicked ? "translate-x-[1000px] scale-[4] duration-[1500ms]" : "duration-0")} />
+            <PiRocketFill className={"w-6 h-6 fill-ac-violet transition rotate-90 " + (clicked ? "translate-x-[500px] scale-[4] duration-[750ms]" : "duration-0")} />
         </a>
     )
 }
