@@ -8,6 +8,8 @@ export interface BlogBody {
     body: string;
   }[],
   imageCaption?: string;
+  language?: string;
+  code?: string;
 }
 
 export interface Blog {

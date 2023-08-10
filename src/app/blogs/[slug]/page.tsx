@@ -1,3 +1,4 @@
+import CodeViewer from '@/components/Blog/CodeViewer';
 import Footer from '@/components/Footer';
 import Navbar from '@/components/Navbar';
 import ReturnToTop from '@/components/ReturnToTop';
@@ -117,6 +118,13 @@ export default function Blog({ params }: Props) {
                                                     </p>
                                                 )
                                             })}
+                                        </div>
+                                    )
+                                }
+                                if (section.type === "code" && section.code) {
+                                    return (
+                                        <div key={section.section} className="flex w-full">
+                                            <CodeViewer code={section.code} showLines={true} />
                                         </div>
                                     )
                                 }

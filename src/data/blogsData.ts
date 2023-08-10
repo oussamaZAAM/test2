@@ -186,6 +186,16 @@ export const blogsData: Blog[] = [
       },
       {
         section: 20,
+        type: `code`,
+        language: `javascript`,
+        code: `function addNumbers (x, y) {
+  return x + y;
+}
+const a, b = 2, 7;
+console.log(addNumber(a, b)); // 9`
+      },
+      {
+        section: 21,
         type: `iframe`,
         url: `https://www.youtube.com/embed/xg3CpNGyfA0?wmode=opaque&widget_referrer=https%3A%2F%2Fmedium.com%2F%40jakanhamza%2Fles-tests-api-pourquoi-et-comment-207e22a33ea2&enablejsapi=1&origin=https%3A%2F%2Fcdn.embedly.com&widgetid=1`
       }
