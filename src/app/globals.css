@@ -11,6 +11,7 @@
 :root {
   --foreground-rgb: 0, 0, 0;
   --background-rgb: 250, 250, 250;
+  --animation-speed: 10s;
 }
 
 @media (prefers-color-scheme: light) {
@@ -34,6 +35,7 @@ body {
 /* Chrome + Safari */
 ::-webkit-scrollbar {
   width: 7.5px;
+  height: 0px;
 }
 
 ::-webkit-scrollbar-track {

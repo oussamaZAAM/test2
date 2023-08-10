@@ -48,6 +48,10 @@ module.exports = {
           "0%": {transform: "scale(0)"},
           "80%": {transform: "scale(1.2)"},
           "100%": {transform: "scale(1)"},
+        },
+        autoscroll: {
+          "0%": {transform: "translateX(0)"},
+          "100%": {transform: "translateX(-104%)"}
         }
       }, 
       animation: {
@@ -55,6 +59,7 @@ module.exports = {
         "loading2": "loading2 0.75s linear infinite",
         "loading3": "loading3 0.75s linear infinite",
         "popup": "popup 0.5s linear",
+        "autoscroll": "autoscroll var(--animation-speed) linear infinite"
       }
     },
     screens: {
@@ -67,7 +72,7 @@ module.exports = {
       'lg2': '1145px',
       'xl': '1280px',
       '2xl': '1536px',
-      'formation1': "1220px",
+      'formation': "1220px",
       'calendly': "1333px",
     }
   },

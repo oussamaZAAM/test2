@@ -2,13 +2,14 @@ import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
 import ReturnToTop from "@/components/ReturnToTop";
 import { formationsData } from "@/data/formationsData";
-import { getNextMondaysSeparatedBy3Weeks, readableDateFromString } from "@/utils/functions";
 import { currency, dailyHours, datesDisplayedNumber, fixedReferenceDate } from "@/utils/constants";
+import { getNextMondaysSeparatedBy3Weeks, readableDateFromString } from "@/utils/functions";
 
 import { IBM_Plex_Sans_Condensed, Lato, Montserrat } from "next/font/google";
 import Image from "next/image";
 import Link from "next/link";
 
+import FormationsSlider from "@/components/Formation/SliderComponent";
 import { BiTimeFive } from "react-icons/bi";
 import { MdOutlineKeyboardArrowRight } from "react-icons/md";
 import { RiCopperCoinLine } from "react-icons/ri";
@@ -48,7 +49,7 @@ export default function Page({ params }: Props) {
           <div className="parallax-formations absolute inset-0 bg-fixed bg-center"></div>
           {/* Overlay */}
           <div className="absolute top-0 left-0 w-full h-full z-20 bg-[#00000050]"></div>
-          <div className="flex flex-col justify-start items-center mt-20 mb-24 mx-4 sm:ml-[10%] xm:ml-[5%] formation1:ml-[15%] rounded-xl bg-ac-bleu gap-3 py-3 px-4 sm:py-6 sm:px-8 xm:px-12 z-30">
+          <div className="flex flex-col justify-start items-center mt-20 mb-24 mx-4 sm:ml-[10%] xm:ml-[5%] formation:ml-[15%] rounded-xl bg-ac-bleu gap-3 py-3 px-4 sm:py-6 sm:px-8 xm:px-12 z-30">
             <h1 className={montserratFont.className + " text-3xl sm:text-4xl xm:text-5xl font-medium text-white text-center max-w-[270px] fold:max-w-[350px] xs:max-w-md"}>Formation {formation.title}</h1>
             <h3 className={latoFont.className + " text-xs sm:text-sm xm:text-base font-medium text-white text-center max-w-[300px] sm:max-w-sm"}>
               {formation.hero}
@@ -152,7 +153,6 @@ export default function Page({ params }: Props) {
                   )
                 })}
               </div>
-
             </div>
           </div>
           {/* Formation Card + Billing + Available Dates*/}
@@ -171,7 +171,7 @@ export default function Page({ params }: Props) {
                 <p className="text-2xl text-center font-bold text-black">{formation.title}</p>
               </div>
               <div className="flex flex-col justify-start items-center gap-4 px-4 xs:px-8 xm:px-12">
-                <Image src={formation.image_url} width={200} height={200} alt='testing' />
+                <Image src={formation.image_url} width={200} height={200} alt={formation.title} />
                 <div className="w-full xm:w-[140%] h-px bg-[#888888]"></div>
                 <Link href={{ pathname: '/devis', query: { formation: formation.formation_id, date: nextDates[0] } }}>
                   <div className="flex justify-center items-center bg-ac-bleu rounded-full py-3 xm:py-4 px-3 sm:px-4 xm:px-8">
@@ -213,6 +213,10 @@ export default function Page({ params }: Props) {
             </div>
           </div>
         </div>
+
+        {/* Other Formations */}
+        <h3 className={montserratFont.className + " text-xl fold:text-2xl xs:text-3xl text-left text-black font-semibold whitespace-nowrap ml-2"}>Autres Formations</h3>
+        <FormationsSlider />
       </div>
 
       <Footer />
