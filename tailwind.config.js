@@ -59,7 +59,7 @@ module.exports = {
         "loading2": "loading2 0.75s linear infinite",
         "loading3": "loading3 0.75s linear infinite",
         "popup": "popup 0.5s linear",
-        "autoscroll": "autoscroll var(--animation-speed) linear infinite"
+        "autoscroll": "autoscroll 30s linear infinite"
       }
     },
     screens: {

@@ -44,12 +44,12 @@ const FormationsSlider = () => {
     }, []);
 
     return (
-        <div className="flex justify-between items-center max-w-[95vw] overflow-x-hidden gap-12 px-2 my-6 group">
+        <div className="flex justify-between items-center max-w-[95vw] overflow-x-hidden gap-12 px-2 my-6">
             {divList.map((div, index) => {
                 return (
                     <div
                         key={index}
-                        className="flex gap-12 animate-autoscroll group-hover:[--animation-speed:50s]"
+                        className="flex gap-12 animate-autoscroll"
                     >
                         {div}
                     </div>
