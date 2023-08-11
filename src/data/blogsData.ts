@@ -188,10 +188,12 @@ export const blogsData: Blog[] = [
         section: 20,
         type: `code`,
         language: `javascript`,
-        code: `function addNumbers (x, y) {
+        code: 
+`function addNumbers(x, y) {
   return x + y;
 }
-const a, b = 2, 7;
+const a = 2;
+const b = 7;
 console.log(addNumber(a, b)); // 9`
       },
       {

@@ -123,9 +123,7 @@ export default function Blog({ params }: Props) {
                                 }
                                 if (section.type === "code" && section.code) {
                                     return (
-                                        <div key={section.section} className="flex w-full">
-                                            <CodeViewer code={section.code} showLines={true} />
-                                        </div>
+                                        <CodeViewer key={section.section} code={section.code} showLines={true} />
                                     )
                                 }
                                 if (section.type === "iframe" && section.url) {
