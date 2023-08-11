@@ -17,14 +17,17 @@ const CodeViewer = ({ code, showLines }: Props) => {
         .replace(/\bfunction\b/g, '<span class="text-[#ff79c6]">function</span>')
         .replace(/\breturn\b/g, '<span class="text-[#ff79c6]">return</span>')
         .replace(/\bconsole.log\b/g, '<span>console</span>.<span class="text-yellow-300">log</span>')
-        .replace(/\/\/(.*)/g, '<span class="text-gray-400">//$1</span>')
         .replace(/(\w+)\s*\(([^)]*)\)/g, '<span class="text-yellow-300">$1</span><span class="text-[#8fd8fe]">($2)</span>')
         .replace(/[.,;:{}()]/g, '<span class="text-white">$&</span>')
+        .replace(/\/\/(.*)/g, '<span class="text-gray-400">//$1</span>')
     const replacedLightText = code
+        .replace(/[\+\-*><=?\n\r]/g, '<span class="text-black">$&</span>')
         .replace(/\bconst\b/g, '<span class="text-pink-600">const</span>')
         .replace(/\bfunction\b/g, '<span class="text-pink-600">function</span>')
         .replace(/\breturn\b/g, '<span class="text-pink-600">return</span>')
-        .replace(/\bconsole.log\b/g, '<span class="text-cyan-600">console</span>.<span class="text-yellow-600">log</span>')
+        .replace(/\bconsole.log\b/g, '<span>console</span>.<span class="text-yellow-600">log</span>')
+        .replace(/(\w+)\s*\(([^)]*)\)/g, '<span class="text-yellow-600">$1</span><span class="text-cyan-600">($2)</span>')
+        .replace(/[.,;:{}()]/g, '<span class="text-black">$&</span>')
         .replace(/\/\/(.*)/g, '<span class="text-gray-400">//$1</span>')
     const replacedText = darkMode ? replacedDarkText : replacedLightText;
 
