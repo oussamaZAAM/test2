@@ -194,7 +194,10 @@ export const blogsData: Blog[] = [
 }
 const a = 2;
 const b = 7;
-console.log(addNumber(a, b)); // 9`
+console.log(addNumber(a, b)); // 9
+const a = 2;
+const b = 7;
+console.log(addNumber(a, b)); // 9console.log(addNumber(a, b)); // 9`
       },
       {
         section: 21,
