@@ -1,6 +1,7 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { BiCopy, BiSolidCopy } from "react-icons/bi";
 import { MdLightMode, MdNightlight } from "react-icons/md";
 
 type Props = {
@@ -11,32 +12,59 @@ type Props = {
 const CodeViewer = ({ code, showLines }: Props) => {
     const [darkMode, setDarkMode] = useState(true);
 
+    const [copied, setCopied] = useState(false);
+
+    const copyToClipboard = async () => {
+        try {
+            await navigator.clipboard.writeText(code);
+            setCopied(true);
+        } catch (error) {
+            console.error('Failed to copy text: ', error);
+        }
+    };
+
+    useEffect(() => {
+        if (copied) {
+            const timeout = setTimeout(() => {
+                setCopied(false);
+            }, 1500);
+
+            return () => clearTimeout(timeout);
+        }
+    }, [copied]);
+
     const replacedDarkText = code
-        .replace(/[\+\-*><=?\n\r]/g, '<span class="text-white">$&</span>')
-        .replace(/\bconst\b/g, '<span class="text-[#ff79c6]">const</span>')
-        .replace(/\bfunction\b/g, '<span class="text-[#ff79c6]">function</span>')
-        .replace(/\breturn\b/g, '<span class="text-[#ff79c6]">return</span>')
-        .replace(/\bconsole.log\b/g, '<span>console</span>.<span class="text-yellow-300">log</span>')
-        .replace(/(\w+)\s*\(([^)]*)\)/g, '<span class="text-yellow-300">$1</span><span class="text-[#8fd8fe]">($2)</span>')
-        .replace(/[.,;:{}()]/g, '<span class="text-white">$&</span>')
-        .replace(/\/\/(.*)/g, '<span class="text-gray-400">//$1</span>')
+        .replace(/[\+\-*><=?\n\r]/g, '<span class="text-white">$&</span>') // Check operators "+ - * ? < > =" and replace them
+        .replace(/(?<!\/\/.*)\b\d+(\.\d+)?\b/g, '<span class="text-[#3ce87b]">$&</span>') // Check for numbers excluding inside comments and replace them
+        .replace(/\bconst\b/g, '<span class="text-[#ff79c6]">const</span>') // Replace "const"
+        .replace(/\bfunction\b/g, '<span class="text-[#ff79c6]">function</span>') // Replace "function"
+        .replace(/\breturn\b/g, '<span class="text-[#ff79c6]">return</span>') // Replace "return"
+        .replace(/\bconsole.log\b/g, '<span>console</span>.<span class="text-yellow-300">log</span>') // Replace "console.log"
+        .replace(/(\w+)\s*\(([^)]*)\)/g, '<span class="text-yellow-300">$1</span><span class="text-[#8fd8fe]">($2)</span>') // Replace functions
+        .replace(/[.,;:{}()]/g, '<span class="text-white">$&</span>') // Replace special characters ".,:;{}()"
+        .replace(/\/\/(.*)/g, '<span class="text-[#9CA38F]">//$1</span>') // Check comments and replace them
     const replacedLightText = code
-        .replace(/[\+\-*><=?\n\r]/g, '<span class="text-black">$&</span>')
-        .replace(/\bconst\b/g, '<span class="text-pink-600">const</span>')
-        .replace(/\bfunction\b/g, '<span class="text-pink-600">function</span>')
-        .replace(/\breturn\b/g, '<span class="text-pink-600">return</span>')
-        .replace(/\bconsole.log\b/g, '<span>console</span>.<span class="text-yellow-600">log</span>')
-        .replace(/(\w+)\s*\(([^)]*)\)/g, '<span class="text-yellow-600">$1</span><span class="text-cyan-600">($2)</span>')
-        .replace(/[.,;:{}()]/g, '<span class="text-black">$&</span>')
-        .replace(/\/\/(.*)/g, '<span class="text-gray-400">//$1</span>')
+        .replace(/[\+\-*><=?\n\r]/g, '<span class="text-black">$&</span>') // Check operators "+ - * ? < > =" and replace them
+        .replace(/(?<!\/\/.*)\b\d+(\.\d+)?\b/g, '<span class="text-[#2ca358]">$&</span>') // Check for numbers excluding inside comments and replace them
+        .replace(/\bconst\b/g, '<span class="text-pink-600">const</span>') // Replace "const"
+        .replace(/\bfunction\b/g, '<span class="text-pink-600">function</span>') // Replace "function"
+        .replace(/\breturn\b/g, '<span class="text-pink-600">return</span>') // Replace "return"
+        .replace(/\bconsole.log\b/g, '<span>console</span>.<span class="text-yellow-600">log</span>') // Replace "console.log"
+        .replace(/(\w+)\s*\(([^)]*)\)/g, '<span class="text-yellow-600">$1</span><span class="text-cyan-600">($2)</span>') // Replace functions
+        .replace(/[.,;:{}()]/g, '<span class="text-black">$&</span>') // Replace special characters ".,:;{}()"
+        .replace(/\/\/(.*)/g, '<span class="text-[#9CA38F]">//$1</span>') // Check comments and replace them
     const replacedText = darkMode ? replacedDarkText : replacedLightText;
 
     return (
-        <div className={"relative max-h-[400px] overflow-y-auto max-w-[92.5vw] fold:max-w-[85vw] xm:max-w-[60vw] text-ellipsis flex flex-col justify-start items-start w-full p-4 rounded-md shadow-md " + (darkMode ? "bg-gray-900 text-[#8fd8fe]" : "bg-gray-200 text-black")}>
-            <div className="sticky top-0 left-[95%] flex justify-end z-40">
+        <div className={"relative max-h-[400px] overflow-y-auto max-w-[92.5vw] fold:max-w-[85vw] xm:max-w-[60vw] text-ellipsis flex flex-col justify-start items-start w-full p-4 rounded-md shadow-md " + (darkMode ? "bg-gray-900 text-[#8fd8fe]" : "bg-gray-200 text-[#30b6fc]")}>
+            <div className="sticky top-0 left-[80%] sm:left-[90%] lg:left-[92.5%] flex justify-center items-center gap-2 z-40">
                 {darkMode
                     ? <MdLightMode onClick={() => setDarkMode(false)} className="p-1 self-center rounded-md border bg-gray-900 border-white cursor-pointer" size={30} color="white" />
                     : <MdNightlight onClick={() => setDarkMode(true)} className="p-1 self-center rounded-md border bg-gray-200 border-black cursor-pointer" size={30} color="black" />
+                }
+                {darkMode
+                    ? <BiSolidCopy onClick={copyToClipboard} className={"p-1 self-center rounded-md border bg-gray-900 cursor-pointer " + (copied ? "border-[#3ce87b]" : "border-white")} size={30} color={copied ? "#3ce87b" : "white"} />
+                    : <BiSolidCopy onClick={copyToClipboard} className={"p-1 self-center rounded-md border bg-gray-200 cursor-pointer " + (copied ? "border-[#2ca358]" : "border-black")} size={30} color={copied ? "#2ca358" : "black"} />
                 }
             </div>
             <pre className="flex flex-col justify-start items-start w-full mt-1">
