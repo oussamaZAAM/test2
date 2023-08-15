@@ -189,12 +189,31 @@ export const blogsData: Blog[] = [
         type: `code`,
         language: `javascript`,
         code: 
-`function addNumbers(x, y) {
-  return x + y;
+`// Function to fetch data from an API
+async function fetchData(url: string) {
+  try {
+    const response = await axios.get(url);
+    return response.data;
+  } catch (error) {
+    throw new Error('Failed to fetch data: ' + {error.message});
+  }
 }
-const a = 2;
-const b = 7;
-console.log(addNumber(a, b)); // 9`
+
+describe('API Tests', () => {
+  const apiUrl = 'https://jsonplaceholder.typicode.com/posts/1';
+
+  it('should fetch data from the API', async () => {
+    const data = await fetchData(apiUrl);
+    expect(data).toBeDefined();
+    expect(data.id).toEqual(1);
+    expect(data.title).toEqual('sunt aut facere repellat provident occaecati excepturi optio reprehenderit');
+  });
+
+  it('should handle errors when fetching data', async () => {
+    const invalidUrl = 'https://jsonplaceholder.typicode.com/nonexistent';
+    await expect(fetchData(invalidUrl)).rejects.toThrowError('Failed to fetch data');
+  });
+});`
       },
       {
         section: 21,
