@@ -23,11 +23,9 @@ export default function BlogCard({ id, title, body }: Props) {
                     {firstParagraph ? firstParagraph.text : ""}
                 </h5>
             </div>
-            <Link href={"/blogs/" + id}>
-                <p className={montserratFont.className + " w-full text-[#5C8BFC] group-hover:text-black underline text-left font-semibold text-base"}>
+            <p className={montserratFont.className + " w-full text-[#5C8BFC] group-hover:text-black underline text-left font-semibold text-base"}>
                 Lire plus
-                </p>
-            </Link>
+            </p>
         </Link>
     )
 }

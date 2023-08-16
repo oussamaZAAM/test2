@@ -33,9 +33,6 @@ export default function Navbar({ }: Props) {
                         <Link className='w-11/12 sm:w-10/12 flex justify-center items-center bg-gray-100 hover:bg-gray-200 rounded-lg cursor-pointer' href={"/blogs"}>
                             <p className="block py-2 pl-3 pr-4 text-gray-900 rounded md:border-0 ">Blog</p>
                         </Link>
-                        {/* <li className='w-11/12 sm:w-10/12 flex justify-center items-center bg-gray-100 hover:bg-gray-200 rounded-lg cursor-pointer'>
-                            <a href="" className="block py-2 pl-3 pr-4 text-gray-900 rounded md:border-0 ">Qui sommes-nous?</a>
-                        </li> */}
                         <Link href={"/contactez-nous"}>
                             <li className="w-11/12 sm:w-10/12 flex justify-center items-center bg-ac-violet rounded-lg gap-1 py-2.5 px-5 mt-2 cursor-pointer">
                                 <p className="text-base uppercase font-bold text-center text-white whitespace-nowrap">Contactez-nous</p>
