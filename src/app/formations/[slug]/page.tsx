@@ -71,9 +71,8 @@ export default function Page({ params }: Props) {
             <div className={latoFont.className + " flex flex-col justify-start items-start gap-8 max-w-xl"}>
 
               {/* Description */}
-              <div className="flex justify-center xs:justify-start items-center w-full">
-                <h3 className={montserratFont.className + " text-xl fold:text-2xl xs:text-3xl text-left text-black font-semibold whitespace-nowrap bg-gray-100 border border-black rounded-full py-2 px-4"}>Description</h3>
-                <div className="hidden xs:block w-full h-px bg-black"></div>
+              <div className="flex justify-center sm:justify-start items-center bg-ac-bleu rounded-md w-full">
+                <h3 className={montserratFont.className + " text-xl fold:text-2xl xs:text-3xl text-center text-white font-semibold rounded-full py-2 px-4"}>Description</h3>
               </div>
               <div className="flex flex-col justify-start items-start gap-2">
                 {formation.description.split("\n").map((text) => {
@@ -86,9 +85,8 @@ export default function Page({ params }: Props) {
               </div>
 
               {/* Objectifs pédagogiques */}
-              <div className="flex justify-center xs:justify-start items-center w-full">
-                <h3 className={montserratFont.className + " text-xl fold:text-2xl xs:text-3xl text-left text-black font-semibold whitespace-nowrap bg-gray-100 border border-black rounded-full py-2 px-4"}>Objectifs pédagogiques</h3>
-                <div className="hidden xs:block w-full h-px bg-black"></div>
+              <div className="flex justify-center sm:justify-start items-center bg-ac-bleu rounded-md w-full">
+                <h3 className={montserratFont.className + " text-xl fold:text-2xl xs:text-3xl text-center text-white font-semibold rounded-full py-2 px-4"}>Objectifs pédagogiques</h3>
               </div>
               <div className="flex flex-col justify-start items-start gap-2">
                 {formation.objectives.map((objective) => {
@@ -101,9 +99,8 @@ export default function Page({ params }: Props) {
               </div>
 
               {/* Programme */}
-              <div className="flex justify-center xs:justify-start items-center w-full">
-                <h3 className={montserratFont.className + " text-xl fold:text-2xl xs:text-3xl text-left text-black font-semibold whitespace-nowrap bg-gray-100 border border-black rounded-full py-2 px-4"}>Programme</h3>
-                <div className="hidden xs:block w-full h-px bg-black"></div>
+              <div className="flex justify-center sm:justify-start items-center bg-ac-bleu rounded-md w-full">
+                <h3 className={montserratFont.className + " text-xl fold:text-2xl xs:text-3xl text-center text-white font-semibold rounded-full py-2 px-4"}>Programme</h3>
               </div>
               <div className="flex flex-col justify-start items-start gap-6">
                 {formation.program.map((step, index) => {
@@ -125,9 +122,8 @@ export default function Page({ params }: Props) {
               </div>
 
               {/* Public Cible */}
-              <div className="flex justify-center xs:justify-start items-center w-full">
-                <h3 className={montserratFont.className + " text-xl fold:text-2xl xs:text-3xl text-left text-black font-semibold whitespace-nowrap bg-gray-100 border border-black rounded-full py-2 px-4"}>Public Cible</h3>
-                <div className="hidden xs:block w-full h-px bg-black"></div>
+              <div className="flex justify-center sm:justify-start items-center bg-ac-bleu rounded-md w-full">
+                <h3 className={montserratFont.className + " text-xl fold:text-2xl xs:text-3xl text-center text-white font-semibold rounded-full py-2 px-4"}>Public Cible</h3>
               </div>
               <div className="flex flex-col justify-start items-start gap-2">
                 {formation.targets.map((target) => {
@@ -140,9 +136,8 @@ export default function Page({ params }: Props) {
               </div>
 
               {/* Prérequis */}
-              <div className="flex justify-center xs:justify-start items-center w-full">
-                <h3 className={montserratFont.className + " text-xl fold:text-2xl xs:text-3xl text-left text-black font-semibold whitespace-nowrap bg-gray-100 border border-black rounded-full py-2 px-4"}>Prérequis</h3>
-                <div className="hidden xs:block w-full h-px bg-black"></div>
+              <div className="flex justify-center sm:justify-start items-center bg-ac-bleu rounded-md w-full">
+                <h3 className={montserratFont.className + " text-xl fold:text-2xl xs:text-3xl text-center text-white font-semibold rounded-full py-2 px-4"}>Prérequis</h3>
               </div>
               <div className="flex flex-col justify-start items-start gap-2">
                 {formation.prerequisites.map((prerequisite) => {
@@ -175,7 +170,7 @@ export default function Page({ params }: Props) {
                 <div className="w-full xm:w-[140%] h-px bg-[#888888]"></div>
                 <Link href={{ pathname: '/devis', query: { formation: formation.formation_id, date: nextDates[0] } }}>
                   <div className="flex justify-center items-center bg-ac-bleu rounded-full py-3 xm:py-4 px-3 sm:px-4 xm:px-8">
-                    <p className={ibmFont.className + " text-sm xs:text-base font-bold text-white uppercase text-center whitespace-nowrap"}>Recevoir un devis</p>
+                    <p className={ibmFont.className + " text-sm xs:text-base font-bold text-white uppercase text-center"}>Recevoir un devis</p>
                   </div>
                 </Link>
               </div>
@@ -201,12 +196,13 @@ export default function Page({ params }: Props) {
             </div>
 
             {/* Available Dates */}
-            <div className="grid grid-cols-2 justify-center items-center gap-2">
+            <div className="grid grid-cols-1 xm:grid-cols-2 justify-center items-center gap-2">
               {nextDates.map((date) => {
                 return (
-                  <Link key={date} href={{ pathname: '/devis', query: { formation: formation.formation_id, date: date } }} className="flex flex-col justify-start items-center py-2 px-4 bg-white rounded-xl cursor-pointer border border-ac-bleu hover:bg-ac-bleu group">
-                    <p className="text-lg text-ac-bleu text-center font-bold group-hover:text-white">{readableDateFromString(date).split(" ").slice(0, 2).join(" ")}</p>
-                    <p className="text-base text-black text-center font-medium group-hover:text-gray-300">{readableDateFromString(date).split(" ")[readableDateFromString(date).split(" ").length - 1]}</p>
+                  <Link key={date} href={{ pathname: '/devis', query: { formation: formation.formation_id, date: date } }} className="flex flex-row xm:flex-col justify-center xm:justify-start items-center py-2 px-4 bg-white rounded-xl cursor-pointer border border-ac-bleu hover:bg-ac-bleu group">
+                    <p className="xm:hidden text-lg text-ac-bleu text-center font-bold group-hover:text-white">{readableDateFromString(date).split(" ").join(" ")}</p>
+                    <p className="hidden xm:block text-lg text-ac-bleu text-center font-bold group-hover:text-white">{readableDateFromString(date).split(" ").slice(0, 2).join(" ")}</p>
+                    <p className="hidden xm:block text-base text-black text-center font-medium group-hover:text-gray-300">{readableDateFromString(date).split(" ")[readableDateFromString(date).split(" ").length - 1]}</p>
                   </Link>
                 )
               })}
@@ -215,7 +211,7 @@ export default function Page({ params }: Props) {
         </div>
 
         {/* Other Formations */}
-        <h3 className={montserratFont.className + " text-xl fold:text-2xl xs:text-3xl text-left text-black font-semibold whitespace-nowrap ml-2"}>Autres Formations</h3>
+        <h3 className={montserratFont.className + " text-xl fold:text-2xl xs:text-3xl text-left text-black font-semibold ml-2"}>Autres Formations</h3>
         <FormationsSlider />
       </div>
 
