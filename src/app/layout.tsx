@@ -5,7 +5,7 @@ import { Inter } from 'next/font/google'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata = {
-  title: pageMetadata.title,
+  title: "Partenaire de confiance pour un accompagnement réussi",
   description: pageMetadata.description,
   metadataBase: new URL(pageMetadata.baseUrl),
   openGraph: {

@@ -4,6 +4,7 @@ import Footer from '@/components/Footer';
 import Hero from '@/components/Hero';
 import Navbar from '@/components/Navbar';
 import ReturnToTop from '@/components/ReturnToTop';
+import { pageMetadata } from '@/content/general';
 import { homepage } from "@/content/pages";
 import { googleMapsEmbed } from '@/utils/constants';
 
@@ -19,6 +20,15 @@ const montserratFont = Montserrat({ weight: "400", subsets: ["latin"] });
 const latoFont = Lato({ weight: "400", subsets: ["latin"] });
 const ibmFont = IBM_Plex_Sans({ weight: "700", subsets: ["latin"] });
 const montserratBoldFont = Montserrat({ weight: "700", subsets: ["latin"] });
+
+export const metadata = {
+  title: pageMetadata.title,
+  description: pageMetadata.description,
+  metadataBase: new URL(pageMetadata.baseUrl),
+  openGraph: {
+    images: '/icon.png',
+  },
+}
 
 export default function Home() {
   return (
