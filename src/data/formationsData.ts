@@ -208,11 +208,77 @@ export const formationsData: Formation[] = [
     formation_id: `playwright`,
     title: `Playwright`,
     hero: `Apprends à écrire des tests rapide et stable, du back comme du front end. Playwright est un outil d'automatisation de tests incontournable de nos jours pour les projets de développement logiciel.`,
-    description: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi rhoncus`,
-    objectives: [],
-    program: [],
-    targets: [],
-    prerequisites: [],
+    description: `Découvrez les possibilités passionnantes de l’automatisation de tests web avec notre formation approfondie axée sur l’utilisation de Playwright.
+                  Cette formation pratique est conçue pour les professionnels qui souhaitent maîtriser l’automatisation des tests pour les applications web, en mettant en avant les fonctionnalités avancées et intuitives de Playwright.`,
+    objectives: [
+      `Maîtrise de l’Automatisation des Tests Web avec Playwright`,
+      `Création de Scénarios de Test Complexes`,
+      `Intégration des Tests dans les Pipelines de Développement`
+    ],
+    program: [
+      {
+        title: `Introduction à l’Automatisation de Tests Web avec Playwright`,
+        parts: [
+          `Aperçu de l’automatisation de tests web et des avantages de Playwright.`,
+          `Installation et configuration de l’environnement Playwright.`
+        ]
+      },
+      {
+        title: `Fondamentaux de Playwright et Création de Scénarios de Test`,
+        parts: [
+          `Introduction aux concepts clés de Playwright.`,
+          `Création de scénarios de test basiques avec Playwright.`,
+          `Interaction avec les éléments de l’interface utilisateur (boutons, champs de saisie, etc.).`
+        ]
+      },
+      {
+        title: `Validation Automatique des Résultats et Gestion des Attentes`,
+        parts: [
+          `Utilisation d’assertions pour valider les résultats des tests.`,
+          `Gestion des attentes - Temps de chargement, éléments asynchrones.`
+        ]
+      },
+      {
+        title: `Automatisation Avancée et Tests Multi-Navigateurs`,
+        parts: [
+          `Automatisation de tests multi-navigateurs avec Playwright.`,
+          `Interaction avec des pop-ups, des éléments dynamiques, etc.`,
+          `Utilisation de Playwright pour les tests de réactivité et de performance.`
+        ]
+      },
+      {
+        title: `Intégration dans les Pipelines de Développement et Débogage`,
+        parts: [
+          `Intégration des tests Playwright dans les pipelines CI/CD.`,
+          `Stratégies de débogage avancées - Identification et résolution des problèmes.`,
+          `Analyse et génération de rapports de test détaillés.`
+        ]
+      },
+      {
+        title: `Pratique Guidée et Projets Réels`,
+        parts: [
+          `Création et exécution de scénarios de test avancés.`,
+          `Travailler sur des projets pratiques pour appliquer les compétences acquises.`
+        ]
+      },
+      {
+        title: `Tendances Actuelles et Perspectives en Automatisation de Tests Web`,
+        parts: [
+          `Aperçu des tendances actuelles en automatisation de tests web.`,
+          `Aperçu des nouvelles fonctionnalités et mises à jour de Playwright.`
+        ]
+      }
+    ],
+    targets: [
+      `Testeurs Logiciels`,
+      `Professionnels du Développement (Développeurs ou DevOps)`,
+      `Analystes en Tests`
+    ],
+    prerequisites: [
+      `Connaissance de Base en Programmation`,
+      `Familiarité avec les Technologies Web`,
+      `Notions de Tests Logiciels`
+    ],
     price: 2250,
     duration: 16,
     image_url: `/Formations/playwright.png`
@@ -277,11 +343,75 @@ export const formationsData: Formation[] = [
     formation_id: `soapui`,
     title: `SoapUI`,
     hero: `Apprenez à mettre en place des tests automatisés sur vos APIs avec SoapUI, l'outil de test d'API Open Source le plus largement utilisé pour les API SOAP et REST.`,
-    description: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi rhoncus`,
-    objectives: [],
-    program: [],
-    targets: [],
-    prerequisites: [],
+    description: `Explorez les bases de l’automatisation des tests API avec notre formation en utilisant SoapUI. Cette formation pratique est conçue pour les testeurs qui souhaitent acquérir les compétences nécessaires pour automatiser les tests de services web et d’API en utilisant l’outil SoapUI.`,
+    objectives: [
+      `Compréhension de base de l’Automatisation des Tests API`,
+      `Maîtrise de l’Utilisation de SoapUI`,
+      `Création et Exécution de Scénarios de Test Automatisés`,
+      `Intégration dans le Processus de Développement`
+    ],
+    program: [
+      {
+        title: `Introduction à l’Automatisation de Tests API avec SoapUI`,
+        parts: [
+          `Aperçu de l’automatisation des tests API et de l’importance de SoapUI.`,
+          `Installation et configuration de l’environnement SoapUI.`
+        ]
+      },
+      {
+        title: `Fondamentaux de SoapUI et Création de Scénarios de Test`,
+        parts: [
+          `Introduction aux concepts clés de SoapUI.`,
+          `Création de scénarios de test basiques avec SoapUI.`,
+          `Utilisation de requêtes et de réponses API.`
+        ]
+      },
+      {
+        title: `Validation Automatique des Résultats et Assertions`,
+        parts: [
+          `tilisation d’assertions pour valider les résultats des tests API.`,
+          `Gestion des attentes - Temps de réponse, données de sortie.`
+        ]
+      },
+      {
+        title: `Automatisation Avancée et Tests de Performance`,
+        parts: [
+          `Automatisation de tests avancés avec des scripts Groovy.`,
+          `Configuration et exécution de tests de performance avec SoapUI.`
+        ]
+      },
+      {
+        title: `Intégration dans les Pipelines de Développement et Débogage`,
+        parts: [
+          `Intégration des tests SoapUI dans les pipelines CI/CD.`,
+          `Stratégies de débogage pour identifier et résoudre les problèmes.`
+        ]
+      },
+      {
+        title: `Pratique Guidée et Projets Réels`,
+        parts: [
+          `Création et exécution de scénarios de test automatisés.`,
+          `Travailler sur des projets pratiques pour appliquer les compétences acquises.`
+        ]
+      },
+      {
+        title: `Tendances Actuelles et Perspectives en Automatisation de Tests API`,
+        parts: [
+          `Aperçu des tendances actuelles en automatisation de tests API.`,
+          `Aperçu des nouvelles fonctionnalités et outils dans le domaine.`
+        ]
+      }
+    ],
+    targets: [
+      `Professionnels du Développement (Développeurs ou DevOps)`,
+      `Testeurs Logiciels`,
+      `Analystes en Tests`
+    ],
+    prerequisites: [
+      `Connaissance de Base de l’Informatique`,
+      `Compétences de Navigation et d’Interface Utilisateur`,
+      `Familiarité avec les Services Web et API (Optionnel)`
+    ],
     price: 599,
     duration: 16,
     image_url: `/Formations/soapui.png`
