@@ -221,11 +221,54 @@ export const formationsData: Formation[] = [
     formation_id: `selenium`,
     title: `Selenium`,
     hero: `Notre formation Selenium WebDriver vous enseignera comment utiliser Selenium pour automatiser vos tests de développement.`,
-    description: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi rhoncus`,
-    objectives: [],
-    program: [],
-    targets: [],
-    prerequisites: [],
+    description: `Plongez au cœur de l’automatisation web de niveau avancé avec notre formation dédiée exclusivement à Selenium WebDriver. Cette formation intensive vous permettra de maîtriser les compétences essentielles de Selenium WebDriver, en mettant l’accent sur son application dans l’automatisation de tests et de tâches spécifiques.
+                  Que vous soyez un professionnel du développement, un testeur logiciel ou un passionné d’automatisation, cette formation en Selenium WebDriver vous fournira une expertise précieuse pour automatiser efficacement les tâches web et améliorer votre productivité. Rejoignez notre formation dès maintenant et explorez les possibilités passionnantes de l’automatisation web avec Selenium WebDriver.
+                  Ce programme intensif de 3 jours offre une introduction complète à Selenium WebDriver et aux concepts clés de l’automatisation des tests logiciels. Les participants auront l’opportunité d’acquérir des compétences pratiques essentielles et de travailler sur des scénarios de test réels pour une expérience d’apprentissage immersive.`,
+    objectives: [
+      `Maîtriser les Fondamentaux de Selenium WebDriver`,
+      `Écrire des Scripts de Test Avancés`,
+      `Intégrer l’Automatisation des Tests dans le Processus de Développement`,
+      `Déboguer et Résoudre les Problèmes de Test`,
+      `Créer des Rapports de Test Complets`
+    ],
+    program: [
+      {
+        title: `Introduction à Selenium WebDriver et Scripting de Base`,
+        parts: [
+          `Présentation de la formation et aperçu de Selenium WebDriver`,
+          `Installation et configuration de l’environnement Selenium`,
+          `Premiers pas avec Selenium WebDriver - Écriture de scripts simples`,
+          `Interaction avec les éléments de l’interface utilisateur - Boutons, champs de saisie`
+        ]
+      },
+      {
+        title: `Automatisation Avancée et Intégration`,
+        parts: [
+          `Gestion des attentes - Temps de chargement et éléments asynchrones`,
+          `Interaction avec les fenêtres contextuelles et les onglets`,
+          `Utilisation de sélecteurs avancés pour identifier les éléments`,
+          `Automatisation de tests de régression et intégration dans le processus de développement`
+        ]
+      },
+      {
+        title: `Débogage, Rapports de Test et Projet Pratique`,
+        parts: [
+          `Stratégies de débogage avancées - Identification et résolution des problèmes`,
+          `Génération de rapports de test détaillés`,
+          `Projet pratique - Automatisation d’un scénario réaliste`,
+          `Présentation des projets, retours d’expérience et conclusion de la formation`
+        ]
+      }
+    ],
+    targets: [
+      `Professionnels du Développement (Développeurs ou DevOps)`,
+      `Testeurs Logiciels`
+    ],
+    prerequisites: [
+      `Connaissance de base en programmation`,
+      `Familiarité avec un langage de programmation comme Java, Python, C#, PHP ou Javascript`,
+      `Compréhension des tests logiciels`
+    ],
     price: 2450,
     duration: 16,
     image_url: `/Formations/selenium.png`
