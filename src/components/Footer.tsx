@@ -50,15 +50,15 @@ export default function Footer({ }: Props) {
                             </div>
                             <div className="flex justify-start items-center gap-3">
                                 <MdOutlinePhone size={20} color='white' />
-                                <p className={robotoFont + "text-sm font-light text-white whitespace-normal max-w-[180px]"}>
+                                <a href={"tel:" + footer.phone} className={robotoFont + "text-sm font-light text-white whitespace-normal max-w-[180px]"}>
                                     {footer.phone}
-                                </p>
+                                </a>
                             </div>
                             <div className="flex justify-start items-center gap-3">
                                 <TbMailFilled size={20} color='white' />
-                                <p className={robotoFont + "text-sm font-light text-white whitespace-normal max-w-[180px]"}>
+                                <a href={"mailto:" + footer.email} className={robotoFont + "text-sm font-light text-white whitespace-normal max-w-[180px]"}>
                                     {footer.email}
-                                </p>
+                                </a>
                             </div>
                         </div>
                         <div className="relative flex justify-center items-center gap-8">

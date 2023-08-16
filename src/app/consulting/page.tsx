@@ -37,7 +37,7 @@ export default function Consulting({ }: Props) {
                     <div className="absolute top-0 left-0 w-full h-full z-20 bg-[#00000050]"></div>
                     <a href='#formations' className="flex flex-col justify-start items-center mt-20 mb-24 mx-4 sm:mr-[10%] xm:mr-[15%] rounded-xl bg-ac-violet gap-3 py-3 px-4 sm:py-6 sm:px-8 xm:px-12 z-30">
                         <h1 className={montserratFont.className + " text-3xl sm:text-4xl xm:text-5xl font-medium text-white text-center max-w-[270px] fold:max-w-[350px] xs:max-w-xs"}>
-                            Consultation
+                            Conseil
                         </h1>
                         <h3 className={latoFont.className + " text-xs sm:text-sm xm:text-base font-medium text-white text-center max-w-[300px] sm:max-w-sm"}>
                             {consulting.hero}
@@ -58,12 +58,12 @@ export default function Consulting({ }: Props) {
                         {/* Offre 1 */}
                         <div className="flex flex-row justify-center sm:justify-between items-center sm:mr-4 md:mr-10 xm:mr-20 w-full gap-4">
                             <AnimatedElement type='from-left' duration={500} delay={0}>
-                                <Image className='hidden sm:block max-w-md max-h-72 object-contain object-center' src="/Consulting/cloud.png" width={448} height={288} alt='consulting-1' />
+                                <Image className='hidden sm:block max-w-xs lg:max-w-md max-h-72 xm:max-h-60 lg:max-h-72 object-contain object-center' src="/Consulting/cloud.png" width={448} height={288} alt='consulting-1' />
                             </AnimatedElement>
                             <div className="flex flex-col justify-center items-center gap-8 sm:gap-16">
                                 <h3 className={poppinsFont.className + " font-semibold text-center text-4xl text-black"}>Audit</h3>
-                                <Image className='sm:hidden w-full max-w-sm sm:max-w-md max-h-72 object-contain object-center' src="/Consulting/cloud.png" width={448} height={288} alt='consulting-1' />
-                                <p className={montserratFont.className + " text-lg text-black text-center font-medium w-full max-w-sm sm:max-w-md"}>
+                                <Image className='sm:hidden w-full max-w-sm max-h-60 object-contain object-center' src="/Consulting/cloud.png" width={448} height={288} alt='consulting-1' />
+                                <p className={montserratFont.className + " text-base text-black text-center font-medium w-full max-w-sm sm:max-w-md"}>
                                     {consulting.audit}
                                 </p>
                             </div>
@@ -71,12 +71,12 @@ export default function Consulting({ }: Props) {
                         {/* Offre 2 */}
                         <div className="flex flex-row-reverse justify-center sm:justify-between items-center sm:ml-4 md:ml-10 xm:ml-20 w-full gap-4">
                             <AnimatedElement type='from-left' duration={500} delay={0}>
-                                <Image className='hidden sm:block max-w-md max-h-72 object-contain object-center' src="/Consulting/cyber-security.png" width={448} height={288} alt='consulting-2' />
+                                <Image className='hidden sm:block max-w-xs lg:max-w-md max-h-72 xm:max-h-60 lg:max-h-72 object-contain object-center' src="/Consulting/cyber-security.png" width={448} height={288} alt='consulting-2' />
                             </AnimatedElement>
                             <div className="flex flex-col justify-center items-center gap-8 sm:gap-16">
                                 <h3 className={poppinsFont.className + " font-semibold text-center text-4xl text-black"}>Prestation</h3>
-                                <Image className='sm:hidden w-full max-w-sm sm:max-w-md max-h-72 object-contain object-center' src="/Consulting/cyber-security.png" width={448} height={288} alt='consulting-2' />
-                                <p className={montserratFont.className + " text-lg text-black text-center font-medium w-full max-w-sm sm:max-w-md"}>
+                                <Image className='sm:hidden w-full max-w-sm max-h-72 object-contain object-center' src="/Consulting/cyber-security.png" width={448} height={288} alt='consulting-2' />
+                                <p className={montserratFont.className + " text-base text-black text-center font-medium w-full max-w-sm sm:max-w-md"}>
                                     {consulting.prestation}
                                 </p>
                             </div>
@@ -84,12 +84,12 @@ export default function Consulting({ }: Props) {
                         {/* Offre 3 */}
                         <div className="flex flex-row justify-center sm:justify-between items-center sm:mr-4 md:mr-10 xm:mr-20 w-full gap-4">
                             <AnimatedElement type='from-left' duration={500} delay={0}>
-                                <Image className='hidden sm:block max-w-md max-h-72 object-contain object-center' src="/Consulting/testing.png" width={448} height={288} alt='consulting-3' />
+                                <Image className='hidden sm:block max-w-sm lg:max-w-md max-h-72 xm:max-h-60 lg:max-h-72 object-contain object-center' src="/Consulting/testing.png" width={448} height={288} alt='consulting-3' />
                             </AnimatedElement>
                             <div className="flex flex-col justify-center items-center gap-8 sm:gap-16">
                                 <h3 className={poppinsFont.className + " font-semibold text-center text-4xl text-black"}>Off-Shore</h3>
-                                <Image className='sm:hidden w-full max-w-sm sm:max-w-md max-h-72 object-contain object-center' src="/Consulting/testing.png" width={448} height={288} alt='consulting-3' />
-                                <p className={montserratFont.className + " text-lg text-black text-center font-medium w-full max-w-sm sm:max-w-md"}>
+                                <Image className='sm:hidden w-full max-w-sm max-h-72 object-contain object-center' src="/Consulting/testing.png" width={448} height={288} alt='consulting-3' />
+                                <p className={montserratFont.className + " text-base text-black text-center font-medium w-full max-w-sm sm:max-w-md"}>
                                     {consulting.offshore}
                                 </p>
                             </div>
