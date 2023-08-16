@@ -1,13 +1,23 @@
-import Footer from '@/components/Footer';
-import FormationCard from '@/components/Formation/FormationCard';
-import Navbar from '@/components/Navbar';
-import ReturnToTop from '@/components/ReturnToTop';
-import { formations } from '@/content/pages';
-import { formationsData } from '@/data/formationsData';
 import { Lato, Montserrat } from 'next/font/google';
+import Footer from '../../components/Footer';
+import FormationCard from '../../components/Formation/FormationCard';
+import Navbar from '../../components/Navbar';
+import ReturnToTop from '../../components/ReturnToTop';
+import { pageMetadata } from '../../content/general';
+import { formations } from '../../content/pages';
+import { formationsData } from '../../data/formationsData';
 
 const montserratFont = Montserrat({ subsets: ["latin"] })
 const latoFont = Lato({ weight: "400", subsets: ["latin"] })
+
+export const metadata = {
+    title: pageMetadata.title,
+    description: pageMetadata.description,
+    metadataBase: new URL(pageMetadata.baseUrl),
+    openGraph: {
+        images: '/icon.png',
+    },
+}
 
 type Props = {}
 
@@ -28,7 +38,7 @@ export default function Formations({ }: Props) {
                             Formations
                         </h1>
                         <h3 className={latoFont.className + " text-xs sm:text-sm xm:text-base font-medium text-white text-center max-w-[300px] sm:max-w-sm"}>
-                           {formations.hero}
+                            {formations.hero}
                         </h3>
                     </a>
                 </div>
@@ -55,7 +65,7 @@ export default function Formations({ }: Props) {
                                 />
                             )
                         })}
-                
+
                     </div>
                 </div>
             </div>

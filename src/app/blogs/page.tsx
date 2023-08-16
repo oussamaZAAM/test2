@@ -1,19 +1,25 @@
-import BlogCard from '@/components/Blog/BlogCard';
-import BlogPageTitle from '@/components/Blog/BlogPageTitle';
-import Footer from '@/components/Footer';
-import Navbar from '@/components/Navbar';
-import ReturnToTop from '@/components/ReturnToTop';
-import { blogsData } from '@/data/blogsData';
 import { Jost } from 'next/font/google';
+import BlogCard from '../../components/Blog/BlogCard';
+import BlogPageTitle from '../../components/Blog/BlogPageTitle';
+import Footer from '../../components/Footer';
+import Navbar from '../../components/Navbar';
+import ReturnToTop from '../../components/ReturnToTop';
+import { pageMetadata } from '../../content/general';
+import { blogsData } from '../../data/blogsData';
 
 const jostFont = Jost({ subsets: ["latin"] });
 
+export const metadata = {
+  title: pageMetadata.title,
+  description: pageMetadata.description,
+  metadataBase: new URL(pageMetadata.baseUrl),
+  openGraph: {
+    images: '/icon.png',
+  },
+}
+
 type Props = {}
 
-export const metadata = {
-  title: "Alee Conseil - Blog",
-  description: "Les blogs tech qui vont vous aider a augmenter"
-}
 
 export default function Blogs({ }: Props) {
   return (

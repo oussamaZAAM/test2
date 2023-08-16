@@ -1,15 +1,25 @@
-import CodeViewer from '@/components/Blog/CodeViewer';
-import Footer from '@/components/Footer';
-import Navbar from '@/components/Navbar';
-import ReturnToTop from '@/components/ReturnToTop';
-import { blogsData } from '@/data/blogsData';
-import { readableDate } from '@/utils/functions';
 import { Jost, Montserrat } from 'next/font/google';
 import Image from 'next/image';
 import { AiFillLinkedin } from 'react-icons/ai';
+import CodeViewer from '../../../components/Blog/CodeViewer';
+import Footer from '../../../components/Footer';
+import Navbar from '../../../components/Navbar';
+import ReturnToTop from '../../../components/ReturnToTop';
+import { pageMetadata } from '../../../content/general';
+import { blogsData } from '../../../data/blogsData';
+import { readableDate } from '../../../utils/functions';
 
 const jostFont = Jost({ subsets: ["latin"] });
 const montserratFont = Montserrat({ subsets: ["latin"] });
+
+export const metadata = {
+    title: pageMetadata.title,
+    description: pageMetadata.description,
+    metadataBase: new URL(pageMetadata.baseUrl),
+    openGraph: {
+        images: '/icon.png',
+    },
+}
 
 type Props = {
     params: {

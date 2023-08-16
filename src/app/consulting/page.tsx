@@ -1,15 +1,25 @@
-import AnimatedElement from '@/components/AnimatedElement';
-import ConsultingCurvyLine from '@/components/Consulting/ConsultingCurvyLine';
-import Footer from '@/components/Footer';
-import Navbar from '@/components/Navbar';
-import ReturnToTop from '@/components/ReturnToTop';
-import { consulting } from '@/content/pages';
 import { Lato, Montserrat, Poppins } from 'next/font/google';
 import Image from 'next/image';
+import AnimatedElement from '../../components/AnimatedElement';
+import ConsultingCurvyLine from '../../components/Consulting/ConsultingCurvyLine';
+import Footer from '../../components/Footer';
+import Navbar from '../../components/Navbar';
+import ReturnToTop from '../../components/ReturnToTop';
+import { pageMetadata } from '../../content/general';
+import { consulting } from '../../content/pages';
 
 const montserratFont = Montserrat({ subsets: ["latin"] })
 const latoFont = Lato({ weight: "400", subsets: ["latin"] })
 const poppinsFont = Poppins({ weight: "600", subsets: ["latin"] })
+
+export const metadata = {
+    title: pageMetadata.title,
+    description: pageMetadata.description,
+    metadataBase: new URL(pageMetadata.baseUrl),
+    openGraph: {
+        images: '/icon.png',
+    },
+}
 
 type Props = {}
 

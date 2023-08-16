@@ -1,15 +1,15 @@
 "use client";
 
-import ContactUsForm from '@/components/ContactUsForm';
-import Footer from '@/components/Footer';
-import Navbar from '@/components/Navbar';
-import ReturnToTop from '@/components/ReturnToTop';
-import { calendlyEmbed } from '@/utils/constants';
 import { Montserrat } from 'next/font/google';
 import Image from 'next/image';
 import { useEffect, useState } from 'react';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import ContactUsForm from '../../components/ContactUsForm';
+import Footer from '../../components/Footer';
+import Navbar from '../../components/Navbar';
+import ReturnToTop from '../../components/ReturnToTop';
+import { calendlyEmbed } from '../../utils/constants';
 
 type Props = {}
 

@@ -1,22 +1,30 @@
-import Footer from "@/components/Footer";
-import Navbar from "@/components/Navbar";
-import ReturnToTop from "@/components/ReturnToTop";
-import { formationsData } from "@/data/formationsData";
-import { currency, dailyHours, datesDisplayedNumber, fixedReferenceDate } from "@/utils/constants";
-import { getNextMondaysSeparatedBy3Weeks, readableDateFromString } from "@/utils/functions";
-
 import { IBM_Plex_Sans_Condensed, Lato, Montserrat } from "next/font/google";
 import Image from "next/image";
 import Link from "next/link";
-
-import FormationsSlider from "@/components/Formation/SliderComponent";
 import { BiTimeFive } from "react-icons/bi";
 import { MdOutlineKeyboardArrowRight } from "react-icons/md";
 import { RiCopperCoinLine } from "react-icons/ri";
+import Footer from "../../../components/Footer";
+import FormationsSlider from "../../../components/Formation/SliderComponent";
+import Navbar from "../../../components/Navbar";
+import ReturnToTop from "../../../components/ReturnToTop";
+import { formationsData } from "../../../data/formationsData";
+import { currency, dailyHours, datesDisplayedNumber, fixedReferenceDate } from "../../../utils/constants";
+import { getNextMondaysSeparatedBy3Weeks, readableDateFromString } from "../../../utils/functions";
+import { pageMetadata } from "../../../content/general";
 
 const montserratFont = Montserrat({ subsets: ["latin"] })
 const ibmFont = IBM_Plex_Sans_Condensed({ weight: "700", subsets: ["latin"] })
 const latoFont = Lato({ weight: "400", subsets: ["latin"] })
+
+export const metadata = {
+  title: pageMetadata.title,
+  description: pageMetadata.description,
+  metadataBase: new URL(pageMetadata.baseUrl),
+  openGraph: {
+    images: '/icon.png',
+  },
+}
 
 type Props = {
   params: {

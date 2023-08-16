@@ -22,5 +22,5 @@ export const consulting = {
 }
 
 export const formations = {
-    hero: `Monter en compétences techniques sur les sujets d'automatisations de tests logiciels pour répondre aux besoin du marché.`
+    hero: `Monter en compétences techniques sur les sujets d'automatisation de tests logiciels pour répondre aux besoin du marché.`
 }
