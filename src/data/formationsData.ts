@@ -343,7 +343,8 @@ export const formationsData: Formation[] = [
     formation_id: `soapui`,
     title: `SoapUI`,
     hero: `Apprenez à mettre en place des tests automatisés sur vos APIs avec SoapUI, l'outil de test d'API Open Source le plus largement utilisé pour les API SOAP et REST.`,
-    description: `Explorez les bases de l’automatisation des tests API avec notre formation en utilisant SoapUI. Cette formation pratique est conçue pour les testeurs qui souhaitent acquérir les compétences nécessaires pour automatiser les tests de services web et d’API en utilisant l’outil SoapUI.`,
+    description: `Explorez les bases de l’automatisation des tests API avec notre formation en utilisant SoapUI.
+                  Cette formation pratique est conçue pour les testeurs qui souhaitent acquérir les compétences nécessaires pour automatiser les tests de services web et d’API en utilisant l’outil SoapUI.`,
     objectives: [
       `Compréhension de base de l’Automatisation des Tests API`,
       `Maîtrise de l’Utilisation de SoapUI`,
@@ -369,7 +370,7 @@ export const formationsData: Formation[] = [
       {
         title: `Validation Automatique des Résultats et Assertions`,
         parts: [
-          `tilisation d’assertions pour valider les résultats des tests API.`,
+          `Utilisation d’assertions pour valider les résultats des tests API.`,
           `Gestion des attentes - Temps de réponse, données de sortie.`
         ]
       },
