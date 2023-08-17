@@ -23,6 +23,7 @@ export const metadata = {
     title: pageMetadata.title,
     description: pageMetadata.description,
     siteName: pageMetadata.siteName,
+    url: 'https://www.aleeconseil.com',
     images: '/icon.png',
     locale: 'fr_MA',
     type: 'website',
