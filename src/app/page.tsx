@@ -85,6 +85,17 @@ export default function Home() {
           </div>
         </div>
       </div>
+      <div className="hidden">
+        <h1 className="">Formation Cypress</h1>
+        <h1 className="">Formation Postman</h1>
+        <h1 className="">Formation robot framework</h1>
+        <h1 className="">Formation soap ui</h1>
+        <h1 className="">Formation soapui</h1>
+        <h1 className="">Formation automatisation des tests</h1>
+        <h1 className="">Automatisation des tests</h1>
+        <h1 className="">Formation playwright</h1>
+        <h1 className="">Formation selenium</h1>
+      </div>
 
       {/* Contact Us */}
       <div className="flex flex-col xm:flex-row justify-center items-start gap-8 w-full pt-8 bg-ac-gray -translate-y-6 rounded-t-3xl ">

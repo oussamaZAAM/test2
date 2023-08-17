@@ -21,9 +21,9 @@ export default function Hero({ }: Props) {
                     <h1 className={taglineFont.className + " max-w-[270px] fold:max-w-xs xs:max-w-sm sm:max-w-md md:max-w-lg lg:max-w-xl text-black whitespace-normal text-4xl sm:text-5xl"}>
                         {homepage.tagline}
                     </h1>
-                    <p className={miniTaglineFont + " text-black text-md sm:text-lg italic max-w-sm md:max-w-md"}>
+                    <h1 className={miniTaglineFont + " hidden text-black text-md sm:text-lg italic max-w-sm md:max-w-md"}>
                         {homepage.subtagline}
-                    </p>
+                    </h1>
                 </div>
                 <a href="#services">
                     <div className="flex justify-center items-center bg-ac-bleu p-5 max-w-[200px] group hover:bg-transparent border-2 border-ac-bleu transition duration-300 cursor-pointer">

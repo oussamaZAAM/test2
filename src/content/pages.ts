@@ -1,6 +1,6 @@
 export const homepage = {
     tagline: `Partenaire de confiance pour un accompagnement réussi`,
-    subtagline: ``,
+    subtagline: `Formation cypress formation postman formation robot framework formation soap ui formation soapui formation automatisation des tests automatisation des tests formation playwright formation selenium`,
     formations: `Nous proposons des formations en différentes technologies en automatisation des tests`,
     consulting: `Nous vous aidons à accroitre votre confiance dans la qualité de vos produits logiciels`,
 }
