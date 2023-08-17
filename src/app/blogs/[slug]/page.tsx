@@ -88,9 +88,9 @@ export default function Blog({ params }: Props) {
                                 }
                                 if (section.type === "header1" && section.text) {
                                     return (
-                                        <h1 key={section.section} className={"font-bold text-xl text-black text-left " + (section.section === 1 ? "indent-5" : "")}>
-                                            {section.text}
-                                        </h1>
+                                        <h2 key={section.section} className={"font-semibold text-xl text-black text-left " + (section.section === 1 ? "indent-5" : "")}>
+                                            <strong>{section.text}</strong>
+                                        </h2>
                                     )
                                 }
                                 if (section.type === "header2" && section.text) {
