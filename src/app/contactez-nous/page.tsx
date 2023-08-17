@@ -10,6 +10,7 @@ import Footer from '../../components/Footer';
 import Navbar from '../../components/Navbar';
 import ReturnToTop from '../../components/ReturnToTop';
 import { calendlyEmbed } from '../../utils/constants';
+import Script from 'next/script';
 
 type Props = {}
 
@@ -22,6 +23,17 @@ export default function ContactUs({ }: Props) {
     }, [])
     return (
         <div className="bg-ac-gray flex flex-col justify-start items-center w-full">
+            <Script src="https://www.googletagmanager.com/gtag/js?id=G-6L5ZVZDMVJ" />
+            <Script id="google-analytics">
+                {`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+ 
+          gtag('config', 'G-6L5ZVZDMVJ');
+        `}
+            </Script>
+
             <ReturnToTop />
             <Navbar />
 

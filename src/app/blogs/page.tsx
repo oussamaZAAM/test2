@@ -6,6 +6,7 @@ import Navbar from '../../components/Navbar';
 import ReturnToTop from '../../components/ReturnToTop';
 import { pageMetadata } from '../../content/general';
 import { blogsData } from '../../data/blogsData';
+import Script from 'next/script';
 
 const jostFont = Jost({ subsets: ["latin"] });
 
@@ -24,6 +25,17 @@ type Props = {}
 export default function Blogs({ }: Props) {
   return (
     <div className="flex flex-col justify-between items-center w-full h-full min-h-[100vh] bg-ac-gray">
+      <Script src="https://www.googletagmanager.com/gtag/js?id=G-6L5ZVZDMVJ" />
+      <Script id="google-analytics">
+        {`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+ 
+          gtag('config', 'G-6L5ZVZDMVJ');
+        `}
+      </Script>
+
       <ReturnToTop />
       <div className="flex flex-col justify-start items-center w-full h-full  bg-ac-gray">
         <Navbar />

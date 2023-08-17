@@ -8,6 +8,7 @@ import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import ReturnToTop from '../../components/ReturnToTop';
 import { namifySlug } from '../../utils/functions';
+import Script from 'next/script';
 
 type Props = {}
 
@@ -38,6 +39,17 @@ export default function Devis({ }: Props) {
 
     return (
         <div className="flex flex-col justify-between items-center w-full min-h-[100vh] bg-ac-gray">
+            <Script src="https://www.googletagmanager.com/gtag/js?id=G-6L5ZVZDMVJ" />
+            <Script id="google-analytics">
+                {`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+ 
+          gtag('config', 'G-6L5ZVZDMVJ');
+        `}
+            </Script>
+
             <ReturnToTop />
             <div className="flex flex-col justify-start items-center w-full h-full bg-ac-gray mb-24">
                 <Navbar />

@@ -6,6 +6,7 @@ import AnimatedElement from '@/components/AnimatedElement';
 import { footer } from '@/content/general';
 import { K2D, Poppins, Roboto } from 'next/font/google';
 import Image from 'next/image';
+import Script from 'next/script';
 import { AiFillLinkedin, AiFillYoutube } from 'react-icons/ai';
 
 type Props = {}
@@ -17,6 +18,17 @@ export default function Homepage({ }: Props) {
 
     return (
         <div className="flex flex-col justify-center items-center w-full bg-ac-gray">
+            <Script src="https://www.googletagmanager.com/gtag/js?id=G-6L5ZVZDMVJ" />
+            <Script id="google-analytics">
+                {`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+ 
+          gtag('config', 'G-6L5ZVZDMVJ');
+        `}
+            </Script>
+
             <div className="relative flex flex-col justify-start items-center gap-9 mb-9 w-[95%] md:w-11/12 background-logo">
                 <Image src="/logo2.png" className='w-48 xs:w-96 sm:w-[512px] h-48 xs:h-96 sm:h-[512px] absolute opacity-[.03] -rotate-[23deg] left-0 md:left-16 top-36 xs:top-12 z-0' width={512} height={512} alt='' />
                 <div className="flex flex-col justify-start items-center gap-16 w-full px-4 md:px-16 xm:px-24 py-12 sm:py-16 xm:py-24 border-b-2 fold:border-b-4 border-x-2 fold:border-x-4 border-ac-bleu rounded-b-3xl z-30">

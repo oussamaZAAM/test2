@@ -7,6 +7,7 @@ import Navbar from '../../components/Navbar';
 import ReturnToTop from '../../components/ReturnToTop';
 import { pageMetadata } from '../../content/general';
 import { consulting } from '../../content/pages';
+import Script from 'next/script';
 
 const montserratFont = Montserrat({ subsets: ["latin"] })
 const latoFont = Lato({ weight: "400", subsets: ["latin"] })
@@ -26,6 +27,17 @@ type Props = {}
 export default function Consulting({ }: Props) {
     return (
         <div className="flex flex-col justify-between items-center bg-ac-gray w-full min-h-[100vh]">
+            <Script src="https://www.googletagmanager.com/gtag/js?id=G-6L5ZVZDMVJ" />
+            <Script id="google-analytics">
+                {`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+ 
+          gtag('config', 'G-6L5ZVZDMVJ');
+        `}
+            </Script>
+
             <ReturnToTop />
             <div className="flex flex-col justify-start items-center bg-ac-gray w-full">
                 <Navbar />

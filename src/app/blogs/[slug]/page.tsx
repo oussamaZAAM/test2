@@ -8,6 +8,7 @@ import ReturnToTop from '../../../components/ReturnToTop';
 import { pageMetadata } from '../../../content/general';
 import { blogsData } from '../../../data/blogsData';
 import { readableDate } from '../../../utils/functions';
+import Script from 'next/script';
 
 const jostFont = Jost({ subsets: ["latin"] });
 const montserratFont = Montserrat({ subsets: ["latin"] });
@@ -42,6 +43,17 @@ export default function Blog({ params }: Props) {
 
     return (
         <div className="flex flex-col justify-between items-center w-full min-h-[100vh] bg-ac-gray2">
+            <Script src="https://www.googletagmanager.com/gtag/js?id=G-6L5ZVZDMVJ" />
+            <Script id="google-analytics">
+                {`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+ 
+          gtag('config', 'G-6L5ZVZDMVJ');
+        `}
+            </Script>
+
             <ReturnToTop />
             <Navbar />
 

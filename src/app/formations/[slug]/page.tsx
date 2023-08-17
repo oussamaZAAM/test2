@@ -12,6 +12,7 @@ import { formationsData } from "../../../data/formationsData";
 import { currency, dailyHours, datesDisplayedNumber, fixedReferenceDate } from "../../../utils/constants";
 import { getNextMondaysSeparatedBy3Weeks, readableDateFromString } from "../../../utils/functions";
 import { pageMetadata } from "../../../content/general";
+import Script from "next/script";
 
 const montserratFont = Montserrat({ subsets: ["latin"] })
 const ibmFont = IBM_Plex_Sans_Condensed({ weight: "700", subsets: ["latin"] })
@@ -48,6 +49,17 @@ export default function Page({ params }: Props) {
   }
   return (
     <div className="flex flex-col justify-between items-center bg-ac-gray w-full min-h-[100vh]">
+      <Script src="https://www.googletagmanager.com/gtag/js?id=G-6L5ZVZDMVJ" />
+      <Script id="google-analytics">
+        {`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+ 
+          gtag('config', 'G-6L5ZVZDMVJ');
+        `}
+      </Script>
+
       <ReturnToTop />
       <div className="flex flex-col justify-center items-center bg-ac-gray w-full">
         <Navbar />
