@@ -53,32 +53,32 @@ export default function Home() {
       {/* Nos Services */}
       <div id='services' className="flex justify-center items-center bg-ac-bleu rounded-t-3xl w-full pb-28 px-4 pt-20">
         <div className="flex flex-col justify-start items-center gap-8 xm:gap-16">
-          <h1 className={montserratFont.className + " font-medium text-4xl xm:text-5xl text-center text-white"}>Nos Services</h1>
+          <h2 className={montserratFont.className + " font-medium text-4xl xm:text-5xl text-center text-white"}>Nos Services</h2>
           <div className="flex flex-col md:flex-row justify-between items-center md:items-start gap-20 md:gap-56">
 
             {/* Formations Service  */}
             <div className="flex flex-col justify-start items-center gap-4 max-w-[236px]">
               <Image className='w-24 h-24' width={96} height={96} src="/Homepage/formations.png" alt='service-formation' />
-              <h1 className={latoFont.className + " font-semibold text-2xl xm:text-3xl leading-7 text-center text-white"}>Formation</h1>
+              <h2 className={latoFont.className + " font-semibold text-2xl xm:text-3xl leading-7 text-center text-white"}>Formation</h2>
               <p className={latoFont.className + " font-medium text-sm xm:text-base leading-5 text-center text-white"}>
                 {homepage.formations}
               </p>
               <Link href={"/formations"}>
                 <div className="flex justify-center items-center rounded-sm bg-white px-5 py-2 cursor-pointer">
-                  <h2 className={ibmFont.className + " text-ac-bleu uppercase text-xl font-bold"}>Catalogue</h2>
+                  <h3 className={ibmFont.className + " text-ac-bleu uppercase text-xl font-bold"}>Catalogue</h3>
                 </div>
               </Link>
             </div>
             {/* Consulting Service  */}
             <div className="flex flex-col justify-start items-center gap-4 max-w-[236px]">
               <Image className='w-24 h-24' width={96} height={96} src="/Homepage/consulting.png" alt='service-conseil' />
-              <h1 className={latoFont.className + " font-semibold text-2xl xm:text-3xl leading-7 text-center text-white"}>Qualité Logicielle</h1>
+              <h2 className={latoFont.className + " font-semibold text-2xl xm:text-3xl leading-7 text-center text-white"}>Qualité Logicielle</h2>
               <p className={latoFont.className + " font-medium text-sm xm:text-base leading-5 text-center text-white"}>
                 {homepage.consulting}
               </p>
               <Link href={"/consulting"}>
                 <div className="flex justify-center items-center rounded-sm bg-white px-5 py-2 cursor-pointer">
-                  <h2 className={ibmFont.className + " text-ac-bleu uppercase text-xl font-bold"}>Services</h2>
+                  <h3 className={ibmFont.className + " text-ac-bleu uppercase text-xl font-bold"}>Services</h3>
                 </div>
               </Link>
             </div>
@@ -86,15 +86,15 @@ export default function Home() {
         </div>
       </div>
       <div className="hidden">
-        <h1 className="">Formation Cypress</h1>
-        <h1 className="">Formation Postman</h1>
-        <h1 className="">Formation robot framework</h1>
-        <h1 className="">Formation soap ui</h1>
-        <h1 className="">Formation soapui</h1>
-        <h1 className="">Formation automatisation des tests</h1>
-        <h1 className="">Automatisation des tests</h1>
-        <h1 className="">Formation playwright</h1>
-        <h1 className="">Formation selenium</h1>
+        <h2 className="">Formation Cypress</h2>
+        <h2 className="">Formation Postman</h2>
+        <h2 className="">Formation robot framework</h2>
+        <h2 className="">Formation soap ui</h2>
+        <h2 className="">Formation soapui</h2>
+        <h2 className="">Formation automatisation des tests</h2>
+        <h2 className="">Automatisation des tests</h2>
+        <h2 className="">Formation playwright</h2>
+        <h2 className="">Formation selenium</h2>
       </div>
 
       {/* Contact Us */}
