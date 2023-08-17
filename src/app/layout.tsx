@@ -8,6 +8,9 @@ export const metadata = {
   title: "Partenaire de confiance pour un accompagnement réussi",
   description: pageMetadata.description,
   metadataBase: new URL(pageMetadata.baseUrl),
+  icons: {
+    icon: '/icon.png',
+  },
   openGraph: {
     images: '/icon.png',
   },
