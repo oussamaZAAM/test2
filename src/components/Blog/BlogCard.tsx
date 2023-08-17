@@ -16,12 +16,12 @@ export default function BlogCard({ id, title, body }: Props) {
     return (
         <Link href={"/blogs/" + id} className="w-full flex flex-col justify-between items-start py-5 px-6 border-2 gap-4 cursor-pointer transition duration-300 border-ac-bleu group text-black hover:text-white hover:bg-ac-bleu">
             <div className="w-full flex flex-col justify-start items-start gap-4">
-                <h3 className={jostFont.className + " font-bold text-2xl text-left line-clamp-2 md:h-16"}>
+                <h1 className={jostFont.className + " font-bold text-2xl text-left line-clamp-2 md:h-16"}>
                     {title}
-                </h3>
-                <h5 className={montserratFont.className + " font-normal text-sm text-left line-clamp-6"}>
+                </h1>
+                <h2 className={montserratFont.className + " font-normal text-sm text-left line-clamp-6"}>
                     {firstParagraph ? firstParagraph.text : ""}
-                </h5>
+                </h2>
             </div>
             <p className={montserratFont.className + " w-full text-[#5C8BFC] group-hover:text-black underline text-left font-semibold text-base"}>
                 Lire plus

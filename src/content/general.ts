@@ -2,7 +2,7 @@ export const pageMetadata = {
     baseUrl: "https://www.aleeconseil.com",
     siteName: "Alee Conseil",
     title: "Partenaire de confiance pour un accompagnement réussi",
-    description: "Alee Conseil est une société dans le domaine du conseil et de la formation en développement logiciel. Elle propose des produits à destinations du grand public et des entreprises"
+    description: "Alee Conseil est spécialisée dans conseil et la formation en qualité logiciel. Elle propose des produits à destinations du grand public et des entreprises"
 }
 
 export const footer = {

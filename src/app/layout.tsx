@@ -8,6 +8,12 @@ export const metadata = {
   title: pageMetadata.title,
   description: pageMetadata.description,
   metadataBase: new URL(pageMetadata.baseUrl),
+  alternates: {
+    canonical: '/',
+    languages: {
+      'fr_MA': '/',
+    },
+  },
   icons: {
     icon: '/icon.png',
     shortcut: '/shortcut-icon.png',

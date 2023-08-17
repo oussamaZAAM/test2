@@ -30,7 +30,7 @@ export default function Homepage({ }: Props) {
             </Script>
 
             <div className="relative flex flex-col justify-start items-center gap-9 mb-9 w-[95%] md:w-11/12 background-logo">
-                <Image src="/logo2.png" className='w-48 xs:w-96 sm:w-[512px] h-48 xs:h-96 sm:h-[512px] absolute opacity-[.03] -rotate-[23deg] left-0 md:left-16 top-36 xs:top-12 z-0' width={512} height={512} alt='' />
+                <Image src="/logo2.png" className='w-48 xs:w-96 sm:w-[512px] h-48 xs:h-96 sm:h-[512px] absolute opacity-[.03] -rotate-[23deg] left-0 md:left-16 top-36 xs:top-12 z-0' width={512} height={512} alt='Logo2' />
                 <div className="flex flex-col justify-start items-center gap-16 w-full px-4 md:px-16 xm:px-24 py-12 sm:py-16 xm:py-24 border-b-2 fold:border-b-4 border-x-2 fold:border-x-4 border-ac-bleu rounded-b-3xl z-30">
                     <div className="flex flex-col justify-start items-center gap-10 xs:gap-[75px]">
                         <Image className='w-[374px] h-[187px] object-cover object-center' src="/logo.png" width={374} height={187} alt="Alee Conseil" />
@@ -57,7 +57,7 @@ export default function Homepage({ }: Props) {
                         </AnimatedElement>
                         <div className="hidden md:block origin-bottom-right scale-y-75 scale-x-150 absolute right-8 -top-[150%]">
                             <AnimatedElement type="popup" delay={500} duration={500}>
-                                <Image src="/Homepage2/effect2.svg" width={225} height={243} alt='' />
+                                <Image src="/Homepage2/effect2.svg" width={225} height={243} alt='Homepage' />
                             </AnimatedElement>
                         </div>
                     </div>

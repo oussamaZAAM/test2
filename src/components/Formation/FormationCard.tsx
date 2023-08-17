@@ -30,7 +30,7 @@ export default function FormationCard({ formation_id, title, hero, image_url, pr
     >
       <div className="flex flex-col justify-start items-center gap-3 w-full">
         <div className="flex justify-between items-center w-full">
-          <Image className='w-16 fold:w-[75px] lg:w-16 lg2:w-[75px] h-16 fold:h-[75px] lg:h-16 lg2:h-[75px]' src={image_url} width={75} height={75} alt='testing' />
+          <Image className='w-16 fold:w-[75px] lg:w-16 lg2:w-[75px] h-16 fold:h-[75px] lg:h-16 lg2:h-[75px]' src={image_url} width={75} height={75} alt={title} />
           <h1 className={montserratFont.className + " text-2xl fold:text-3xl lg:text-2xl lg2:text-3xl text-ac-violet text-left font-medium w-min"}>{title}</h1>
         </div>
 

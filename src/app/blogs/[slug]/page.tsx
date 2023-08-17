@@ -81,23 +81,23 @@ export default function Blog({ params }: Props) {
                                 }
                                 if (section.type === "paragraph" && section.text) {
                                     return (
-                                        <p key={section.section} className={"font-medium text-lg text-black text-left " + (section.section === 1 ? "indent-5" : "")}>
+                                        <h3 key={section.section} className={"font-medium text-lg text-black text-left " + (section.section === 1 ? "indent-5" : "")}>
                                             {section.text}
-                                        </p>
+                                        </h3>
                                     )
                                 }
                                 if (section.type === "header1" && section.text) {
                                     return (
-                                        <p key={section.section} className={"font-bold text-xl text-black text-left " + (section.section === 1 ? "indent-5" : "")}>
+                                        <h1 key={section.section} className={"font-bold text-xl text-black text-left " + (section.section === 1 ? "indent-5" : "")}>
                                             {section.text}
-                                        </p>
+                                        </h1>
                                     )
                                 }
                                 if (section.type === "header2" && section.text) {
                                     return (
-                                        <p key={section.section} className={"font-semibold text-lg text-black text-left " + (section.section === 1 ? "indent-5" : "")}>
+                                        <h2 key={section.section} className={"font-semibold text-lg text-black text-left " + (section.section === 1 ? "indent-5" : "")}>
                                             {section.text}
-                                        </p>
+                                        </h2>
                                     )
                                 }
                                 if (section.type === "itemize" && section.items) {
@@ -108,7 +108,7 @@ export default function Blog({ params }: Props) {
                                                     return <></>
                                                 }
                                                 return (
-                                                    <p key={item.title ? item.title : item.body} className="font-medium text-lg text-black text-left">
+                                                    <h4 key={item.title ? item.title : item.body} className="font-medium text-lg text-black text-left">
                                                         <span>● </span>
                                                         {item.title &&
                                                             <>
@@ -117,7 +117,7 @@ export default function Blog({ params }: Props) {
                                                             </>
                                                         }
                                                         <span dangerouslySetInnerHTML={{ __html: item.body }} />
-                                                    </p>
+                                                    </h4>
                                                 )
                                             })}
                                         </div>
@@ -131,10 +131,10 @@ export default function Blog({ params }: Props) {
                                                     return <></>
                                                 }
                                                 return (
-                                                    <p key={item.title ? item.title : item.body} className="font-medium text-lg text-black text-left">
+                                                    <h4 key={item.title ? item.title : item.body} className="font-medium text-lg text-black text-left">
                                                         <span>{index + 1}. </span>
                                                         {item.body}
-                                                    </p>
+                                                    </h4>
                                                 )
                                             })}
                                         </div>
