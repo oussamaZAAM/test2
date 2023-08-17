@@ -11,6 +11,7 @@ import { googleMapsEmbed } from '@/utils/constants';
 import { IBM_Plex_Sans, Lato, Montserrat } from 'next/font/google';
 import Image from 'next/image';
 import Link from 'next/link';
+import Script from 'next/script';
 
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -33,6 +34,17 @@ export const metadata = {
 export default function Home() {
   return (
     <div className="flex flex-col justify-center items-center bg-ac-gray w-full">
+      <Script src="https://www.googletagmanager.com/gtag/js?id=G-6L5ZVZDMVJ" />
+      <Script id="google-analytics">
+        {`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+ 
+          gtag('config', 'G-6L5ZVZDMVJ');
+        `}
+      </Script>
+      
       <ReturnToTop />
 
       {/* Navbar  */}
