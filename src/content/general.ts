@@ -1,7 +1,7 @@
 export const pageMetadata = {
     baseUrl: "https://www.aleeconseil.com",
     siteName: "Alee Conseil",
-    title: "Partenaire de confiance pour un accompagnement réussi",
+    title: "Votre partenaire de qualité en formation et automatisation des tests",
     description: "Alee Conseil est spécialisée dans conseil et la formation en qualité logiciel. Elle propose des produits à destinations du grand public et des entreprises"
 }
 
@@ -18,9 +18,9 @@ export const footer = {
 }
 
 export const devis = {
-    description: `Enim tempor eget pharetra facilisis sed maecenas adipiscing. Eu leo molestie vel, ornare non id blandit netus.`
+    description: `Nous sommes ravis de vous entendre ! Remplissez simplement les champs ci-dessous et nous vous répondrons dans les plus brefs délais.`
 }
 
 export const contactus = {
-    description: `Enim tempor eget pharetra facilisis sed maecenas adipiscing. Eu leo molestie vel, ornare non id blandit netus.`
+    description: `Nous sommes ravis de vous entendre ! Veuillez utiliser ce formulaire pour nous envoyer vos questions, commentaires ou demandes de renseignements. Remplissez simplement les champs ci-dessous et nous vous répondrons dans les plus brefs délais.`
 }
