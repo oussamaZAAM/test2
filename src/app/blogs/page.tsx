@@ -13,10 +13,7 @@ const jostFont = Jost({ subsets: ["latin"] });
 export const metadata = {
   title: pageMetadata.title,
   description: pageMetadata.description,
-  metadataBase: new URL(pageMetadata.baseUrl),
-  openGraph: {
-    images: '/icon.png',
-  },
+  metadataBase: new URL(pageMetadata.baseUrl)
 }
 
 type Props = {}

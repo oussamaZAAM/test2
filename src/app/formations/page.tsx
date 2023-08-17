@@ -14,10 +14,7 @@ const latoFont = Lato({ weight: "400", subsets: ["latin"] })
 export const metadata = {
     title: pageMetadata.title,
     description: pageMetadata.description,
-    metadataBase: new URL(pageMetadata.baseUrl),
-    openGraph: {
-        images: '/icon.png',
-    },
+    metadataBase: new URL(pageMetadata.baseUrl)
 }
 
 type Props = {}
@@ -49,9 +46,9 @@ export default function Formations({ }: Props) {
                         <h1 className={montserratFont.className + " text-3xl sm:text-4xl xm:text-5xl font-medium text-white text-center max-w-[270px] fold:max-w-[350px] xs:max-w-xs"}>
                             Formations
                         </h1>
-                        <h3 className={latoFont.className + " text-xs sm:text-sm xm:text-base font-medium text-white text-center max-w-[300px] sm:max-w-sm"}>
+                        <h2 className={latoFont.className + " text-xs sm:text-sm xm:text-base font-medium text-white text-center max-w-[300px] sm:max-w-sm"}>
                             {formations.hero}
-                        </h3>
+                        </h2>
                     </a>
                 </div>
                 {/* Nos Formations */}

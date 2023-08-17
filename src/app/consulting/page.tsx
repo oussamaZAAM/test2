@@ -16,10 +16,7 @@ const poppinsFont = Poppins({ weight: "600", subsets: ["latin"] })
 export const metadata = {
     title: pageMetadata.title,
     description: pageMetadata.description,
-    metadataBase: new URL(pageMetadata.baseUrl),
-    openGraph: {
-        images: '/icon.png',
-    },
+    metadataBase: new URL(pageMetadata.baseUrl)
 }
 
 type Props = {}
@@ -51,9 +48,9 @@ export default function Consulting({ }: Props) {
                         <h1 className={montserratFont.className + " text-3xl sm:text-4xl xm:text-5xl font-medium text-white text-center max-w-[270px] fold:max-w-[350px] xs:max-w-xs"}>
                             Conseil
                         </h1>
-                        <h3 className={latoFont.className + " text-xs sm:text-sm xm:text-base font-medium text-white text-center max-w-[300px] sm:max-w-sm"}>
+                        <h2 className={latoFont.className + " text-xs sm:text-sm xm:text-base font-medium text-white text-center max-w-[300px] sm:max-w-sm"}>
                             {consulting.hero}
-                        </h3>
+                        </h2>
                     </a>
                 </div>
                 {/* Offres de Consultations */}
@@ -70,40 +67,40 @@ export default function Consulting({ }: Props) {
                         {/* Offre 1 */}
                         <div className="flex flex-row justify-center sm:justify-between items-center sm:mr-4 md:mr-10 xm:mr-20 w-full gap-4">
                             <AnimatedElement type='from-left' duration={500} delay={0}>
-                                <Image className='hidden sm:block max-w-xs lg:max-w-md max-h-72 xm:max-h-60 lg:max-h-72 object-contain object-center' src="/Consulting/cloud.png" width={448} height={288} alt='consulting-1' />
+                                <Image className='hidden sm:block max-w-xs lg:max-w-md max-h-72 xm:max-h-60 lg:max-h-72 object-contain object-center' src="/Consulting/cloud.png" width={448} height={288} alt='audit' />
                             </AnimatedElement>
                             <div className="flex flex-col justify-center items-center gap-8 sm:gap-16">
-                                <h3 className={poppinsFont.className + " font-semibold text-center text-4xl text-black"}>Audit</h3>
-                                <Image className='sm:hidden w-full max-w-sm max-h-60 object-contain object-center' src="/Consulting/cloud.png" width={448} height={288} alt='consulting-1' />
-                                <p className={montserratFont.className + " text-base text-black text-center font-medium w-full max-w-sm sm:max-w-md"}>
+                                <h1 className={poppinsFont.className + " font-semibold text-center text-4xl text-black"}>Audit</h1>
+                                <Image className='sm:hidden w-full max-w-sm max-h-60 object-contain object-center' src="/Consulting/cloud.png" width={448} height={288} alt='audit' />
+                                <h2 className={montserratFont.className + " text-base text-black text-center font-medium w-full max-w-sm sm:max-w-md"}>
                                     {consulting.audit}
-                                </p>
+                                </h2>
                             </div>
                         </div>
                         {/* Offre 2 */}
                         <div className="flex flex-row-reverse justify-center sm:justify-between items-center sm:ml-4 md:ml-10 xm:ml-20 w-full gap-4">
                             <AnimatedElement type='from-left' duration={500} delay={0}>
-                                <Image className='hidden sm:block max-w-xs lg:max-w-md max-h-72 xm:max-h-60 lg:max-h-72 object-contain object-center' src="/Consulting/cyber-security.png" width={448} height={288} alt='consulting-2' />
+                                <Image className='hidden sm:block max-w-xs lg:max-w-md max-h-72 xm:max-h-60 lg:max-h-72 object-contain object-center' src="/Consulting/cyber-security.png" width={448} height={288} alt='prestation' />
                             </AnimatedElement>
                             <div className="flex flex-col justify-center items-center gap-8 sm:gap-16">
-                                <h3 className={poppinsFont.className + " font-semibold text-center text-4xl text-black"}>Prestation</h3>
-                                <Image className='sm:hidden w-full max-w-sm max-h-72 object-contain object-center' src="/Consulting/cyber-security.png" width={448} height={288} alt='consulting-2' />
-                                <p className={montserratFont.className + " text-base text-black text-center font-medium w-full max-w-sm sm:max-w-md"}>
+                                <h1 className={poppinsFont.className + " font-semibold text-center text-4xl text-black"}>Prestation</h1>
+                                <Image className='sm:hidden w-full max-w-sm max-h-72 object-contain object-center' src="/Consulting/cyber-security.png" width={448} height={288} alt='prestation' />
+                                <h2 className={montserratFont.className + " text-base text-black text-center font-medium w-full max-w-sm sm:max-w-md"}>
                                     {consulting.prestation}
-                                </p>
+                                </h2>
                             </div>
                         </div>
                         {/* Offre 3 */}
                         <div className="flex flex-row justify-center sm:justify-between items-center sm:mr-4 md:mr-10 xm:mr-20 w-full gap-4">
                             <AnimatedElement type='from-left' duration={500} delay={0}>
-                                <Image className='hidden sm:block max-w-sm lg:max-w-md max-h-72 xm:max-h-60 lg:max-h-72 object-contain object-center' src="/Consulting/testing.png" width={448} height={288} alt='consulting-3' />
+                                <Image className='hidden sm:block max-w-sm lg:max-w-md max-h-72 xm:max-h-60 lg:max-h-72 object-contain object-center' src="/Consulting/testing.png" width={448} height={288} alt='off-shore' />
                             </AnimatedElement>
                             <div className="flex flex-col justify-center items-center gap-8 sm:gap-16">
-                                <h3 className={poppinsFont.className + " font-semibold text-center text-4xl text-black"}>Off-Shore</h3>
-                                <Image className='sm:hidden w-full max-w-sm max-h-72 object-contain object-center' src="/Consulting/testing.png" width={448} height={288} alt='consulting-3' />
-                                <p className={montserratFont.className + " text-base text-black text-center font-medium w-full max-w-sm sm:max-w-md"}>
+                                <h1 className={poppinsFont.className + " font-semibold text-center text-4xl text-black"}>Off-Shore</h1>
+                                <Image className='sm:hidden w-full max-w-sm max-h-72 object-contain object-center' src="/Consulting/testing.png" width={448} height={288} alt='off-shore' />
+                                <h2 className={montserratFont.className + " text-base text-black text-center font-medium w-full max-w-sm sm:max-w-md"}>
                                     {consulting.offshore}
-                                </p>
+                                </h2>
                             </div>
                         </div>
                     </div>

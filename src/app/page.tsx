@@ -25,10 +25,7 @@ const montserratBoldFont = Montserrat({ weight: "700", subsets: ["latin"] });
 export const metadata = {
   title: pageMetadata.title,
   description: pageMetadata.description,
-  metadataBase: new URL(pageMetadata.baseUrl),
-  openGraph: {
-    images: '/icon.png',
-  },
+  metadataBase: new URL(pageMetadata.baseUrl)
 }
 
 export default function Home() {
@@ -56,32 +53,32 @@ export default function Home() {
       {/* Nos Services */}
       <div id='services' className="flex justify-center items-center bg-ac-bleu rounded-t-3xl w-full pb-28 px-4 pt-20">
         <div className="flex flex-col justify-start items-center gap-8 xm:gap-16">
-          <h5 className={montserratFont.className + " font-medium text-4xl xm:text-5xl text-center text-white"}>Nos Services</h5>
+          <h1 className={montserratFont.className + " font-medium text-4xl xm:text-5xl text-center text-white"}>Nos Services</h1>
           <div className="flex flex-col md:flex-row justify-between items-center md:items-start gap-20 md:gap-56">
 
             {/* Formations Service  */}
             <div className="flex flex-col justify-start items-center gap-4 max-w-[236px]">
               <Image className='w-24 h-24' width={96} height={96} src="/Homepage/formations.png" alt='service-formation' />
-              <h6 className={latoFont.className + " font-semibold text-2xl xm:text-3xl leading-7 text-center text-white"}>Formation</h6>
+              <h1 className={latoFont.className + " font-semibold text-2xl xm:text-3xl leading-7 text-center text-white"}>Formation</h1>
               <p className={latoFont.className + " font-medium text-sm xm:text-base leading-5 text-center text-white"}>
                 {homepage.formations}
               </p>
               <Link href={"/formations"}>
                 <div className="flex justify-center items-center rounded-sm bg-white px-5 py-2 cursor-pointer">
-                  <h6 className={ibmFont.className + " text-ac-bleu uppercase text-xl font-bold"}>Catalogue</h6>
+                  <h2 className={ibmFont.className + " text-ac-bleu uppercase text-xl font-bold"}>Catalogue</h2>
                 </div>
               </Link>
             </div>
             {/* Consulting Service  */}
             <div className="flex flex-col justify-start items-center gap-4 max-w-[236px]">
-              <Image className='w-24 h-24' width={96} height={96} src="/Homepage/consulting.png" alt='service-formation' />
-              <h6 className={latoFont.className + " font-semibold text-2xl xm:text-3xl leading-7 text-center text-white"}>Qualité Logicielle</h6>
+              <Image className='w-24 h-24' width={96} height={96} src="/Homepage/consulting.png" alt='service-conseil' />
+              <h1 className={latoFont.className + " font-semibold text-2xl xm:text-3xl leading-7 text-center text-white"}>Qualité Logicielle</h1>
               <p className={latoFont.className + " font-medium text-sm xm:text-base leading-5 text-center text-white"}>
                 {homepage.consulting}
               </p>
               <Link href={"/consulting"}>
                 <div className="flex justify-center items-center rounded-sm bg-white px-5 py-2 cursor-pointer">
-                  <h6 className={ibmFont.className + " text-ac-bleu uppercase text-xl font-bold"}>Services</h6>
+                  <h2 className={ibmFont.className + " text-ac-bleu uppercase text-xl font-bold"}>Services</h2>
                 </div>
               </Link>
             </div>
@@ -98,7 +95,7 @@ export default function Home() {
           delay={0}
         >
           <h2 className={montserratBoldFont.className + " font-bold text-4xl text-black text-left"}><span className='text-ac-violet'>Nous</span> Trouver</h2>
-          <Image src="/Homepage/hand-drawn-arrow.png" width={96} height={96} alt='' />
+          <Image src="/Homepage/hand-drawn-arrow.png" width={96} height={96} alt='Arrow' />
           <iframe
             className='w-[270px] fold:w-80 sm:w-[450px] xm:w-[400px] lg:w-[450px] rounded-2xl box-shadow2 '
             width="450"

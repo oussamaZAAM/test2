@@ -52,7 +52,7 @@ export default function ContactUs({ }: Props) {
             {/* Contact Us */}
             <div className="flex flex-col justify-center items-center gap-4 w-full pt-8 bg-ac-gray -translate-y-6 rounded-t-3xl ">
                 <h2 className={montserratBoldFont.className + " font-bold text-4xl text-black text-left"}>Contactez-<span className='text-ac-violet'>nous</span></h2>
-                <Image src="/Homepage/hand-drawn-arrow.png" width={96} height={96} alt='' />
+                <Image src="/Homepage/hand-drawn-arrow.png" width={96} height={96} alt='Arrow' />
                 <ContactUsForm />
             </div>
 
