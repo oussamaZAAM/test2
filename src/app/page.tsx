@@ -69,14 +69,14 @@ export default function Home() {
                 </div>
               </Link>
             </div>
-            {/* Consulting Service  */}
+            {/* Conseil Service  */}
             <div className="flex flex-col justify-start items-center gap-4 max-w-[236px]">
-              <Image className='w-24 h-24' width={96} height={96} src="/Homepage/consulting.png" alt='service-conseil' />
+              <Image className='w-24 h-24' width={96} height={96} src="/Homepage/conseil.png" alt='service-conseil' />
               <h2 className={latoFont.className + " font-semibold text-2xl xm:text-3xl leading-7 text-center text-white"}>Qualité Logicielle</h2>
               <p className={latoFont.className + " font-medium text-sm xm:text-base leading-5 text-center text-white"}>
-                {homepage.consulting}
+                {homepage.conseil}
               </p>
-              <Link href={"/consulting"}>
+              <Link href={"/conseil"}>
                 <div className="flex justify-center items-center rounded-sm bg-white px-5 py-2 cursor-pointer">
                   <h3 className={ibmFont.className + " text-ac-bleu uppercase text-xl font-bold"}>Services</h3>
                 </div>

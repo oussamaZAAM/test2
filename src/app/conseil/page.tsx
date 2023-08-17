@@ -1,12 +1,12 @@
 import { Lato, Montserrat, Poppins } from 'next/font/google';
 import Image from 'next/image';
 import AnimatedElement from '../../components/AnimatedElement';
-import ConsultingCurvyLine from '../../components/Consulting/ConsultingCurvyLine';
+import ConseilCurvyLine from '../../components/Conseil/ConseilCurvyLine';
 import Footer from '../../components/Footer';
 import Navbar from '../../components/Navbar';
 import ReturnToTop from '../../components/ReturnToTop';
 import { pageMetadata } from '../../content/general';
-import { consulting } from '../../content/pages';
+import { conseil } from '../../content/pages';
 import Script from 'next/script';
 
 const montserratFont = Montserrat({ subsets: ["latin"] })
@@ -21,7 +21,7 @@ export const metadata = {
 
 type Props = {}
 
-export default function Consulting({ }: Props) {
+export default function Conseil({ }: Props) {
     return (
         <div className="flex flex-col justify-between items-center bg-ac-gray w-full min-h-[100vh]">
             <Script src="https://www.googletagmanager.com/gtag/js?id=G-6L5ZVZDMVJ" />
@@ -38,10 +38,10 @@ export default function Consulting({ }: Props) {
             <ReturnToTop />
             <div className="flex flex-col justify-start items-center bg-ac-gray w-full">
                 <Navbar />
-                {/* Consulting Page Hero */}
+                {/* Conseil Page Hero */}
                 <div className="flex justify-center sm:justify-end items-center w-full relative">
                     {/* Parallax Background */}
-                    <div className="parallax-consulting absolute inset-0 bg-fixed bg-center"></div>
+                    <div className="parallax-conseil absolute inset-0 bg-fixed bg-center"></div>
                     {/* Overlay */}
                     <div className="absolute top-0 left-0 w-full h-full z-20 bg-[#00000050]"></div>
                     <a href='#formations' className="flex flex-col justify-start items-center mt-20 mb-24 mx-4 sm:mr-[10%] xm:mr-[15%] rounded-xl bg-ac-violet gap-3 py-3 px-4 sm:py-6 sm:px-8 xm:px-12 z-30">
@@ -49,7 +49,7 @@ export default function Consulting({ }: Props) {
                             Conseil
                         </h1>
                         <h2 className={latoFont.className + " text-xs sm:text-sm xm:text-base font-medium text-white text-center max-w-[300px] sm:max-w-sm"}>
-                            {consulting.hero}
+                            {conseil.hero}
                         </h2>
                     </a>
                 </div>
@@ -61,45 +61,45 @@ export default function Consulting({ }: Props) {
                         </div>
                         <div className="absolute w-full h-px bg-ac-violet z-10"></div>
                     </div>
-                    <ConsultingCurvyLine />
+                    <ConseilCurvyLine />
                     {/* Liste des Offres */}
                     <div className="w-full flex flex-col justify-start items-center gap-40">
                         {/* Offre 1 */}
                         <div className="flex flex-row justify-center sm:justify-between items-center sm:mr-4 md:mr-10 xm:mr-20 w-full gap-4">
                             <AnimatedElement type='from-left' duration={500} delay={0}>
-                                <Image className='hidden sm:block max-w-xs lg:max-w-md max-h-72 xm:max-h-60 lg:max-h-72 object-contain object-center' src="/Consulting/cloud.png" width={448} height={288} alt='audit' />
+                                <Image className='hidden sm:block max-w-xs lg:max-w-md max-h-72 xm:max-h-60 lg:max-h-72 object-contain object-center' src="/Conseil/cloud.png" width={448} height={288} alt='audit' />
                             </AnimatedElement>
                             <div className="flex flex-col justify-center items-center gap-8 sm:gap-16">
                                 <h1 className={poppinsFont.className + " font-semibold text-center text-4xl text-black"}>Audit</h1>
-                                <Image className='sm:hidden w-full max-w-sm max-h-60 object-contain object-center' src="/Consulting/cloud.png" width={448} height={288} alt='audit' />
+                                <Image className='sm:hidden w-full max-w-sm max-h-60 object-contain object-center' src="/Conseil/cloud.png" width={448} height={288} alt='audit' />
                                 <h2 className={montserratFont.className + " text-base text-black text-center font-medium w-full max-w-sm sm:max-w-md"}>
-                                    {consulting.audit}
+                                    {conseil.audit}
                                 </h2>
                             </div>
                         </div>
                         {/* Offre 2 */}
                         <div className="flex flex-row-reverse justify-center sm:justify-between items-center sm:ml-4 md:ml-10 xm:ml-20 w-full gap-4">
                             <AnimatedElement type='from-left' duration={500} delay={0}>
-                                <Image className='hidden sm:block max-w-xs lg:max-w-md max-h-72 xm:max-h-60 lg:max-h-72 object-contain object-center' src="/Consulting/cyber-security.png" width={448} height={288} alt='prestation' />
+                                <Image className='hidden sm:block max-w-xs lg:max-w-md max-h-72 xm:max-h-60 lg:max-h-72 object-contain object-center' src="/Conseil/cyber-security.png" width={448} height={288} alt='prestation' />
                             </AnimatedElement>
                             <div className="flex flex-col justify-center items-center gap-8 sm:gap-16">
                                 <h1 className={poppinsFont.className + " font-semibold text-center text-4xl text-black"}>Prestation</h1>
-                                <Image className='sm:hidden w-full max-w-sm max-h-72 object-contain object-center' src="/Consulting/cyber-security.png" width={448} height={288} alt='prestation' />
+                                <Image className='sm:hidden w-full max-w-sm max-h-72 object-contain object-center' src="/Conseil/cyber-security.png" width={448} height={288} alt='prestation' />
                                 <h2 className={montserratFont.className + " text-base text-black text-center font-medium w-full max-w-sm sm:max-w-md"}>
-                                    {consulting.prestation}
+                                    {conseil.prestation}
                                 </h2>
                             </div>
                         </div>
                         {/* Offre 3 */}
                         <div className="flex flex-row justify-center sm:justify-between items-center sm:mr-4 md:mr-10 xm:mr-20 w-full gap-4">
                             <AnimatedElement type='from-left' duration={500} delay={0}>
-                                <Image className='hidden sm:block max-w-sm lg:max-w-md max-h-72 xm:max-h-60 lg:max-h-72 object-contain object-center' src="/Consulting/testing.png" width={448} height={288} alt='off-shore' />
+                                <Image className='hidden sm:block max-w-sm lg:max-w-md max-h-72 xm:max-h-60 lg:max-h-72 object-contain object-center' src="/Conseil/testing.png" width={448} height={288} alt='off-shore' />
                             </AnimatedElement>
                             <div className="flex flex-col justify-center items-center gap-8 sm:gap-16">
                                 <h1 className={poppinsFont.className + " font-semibold text-center text-4xl text-black"}>Off-Shore</h1>
-                                <Image className='sm:hidden w-full max-w-sm max-h-72 object-contain object-center' src="/Consulting/testing.png" width={448} height={288} alt='off-shore' />
+                                <Image className='sm:hidden w-full max-w-sm max-h-72 object-contain object-center' src="/Conseil/testing.png" width={448} height={288} alt='off-shore' />
                                 <h2 className={montserratFont.className + " text-base text-black text-center font-medium w-full max-w-sm sm:max-w-md"}>
-                                    {consulting.offshore}
+                                    {conseil.offshore}
                                 </h2>
                             </div>
                         </div>

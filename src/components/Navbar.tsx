@@ -27,7 +27,7 @@ export default function Navbar({ }: Props) {
                         <Link className='w-11/12 sm:w-10/12 flex justify-center items-center bg-gray-100 hover:bg-gray-200 rounded-lg cursor-pointer' href={"/formations"}>
                             <p className="block py-2 pl-3 pr-4 text-gray-900 rounded md:border-0 ">Formation</p>
                         </Link>
-                        <Link className='w-11/12 sm:w-10/12 flex justify-center items-center bg-gray-100 hover:bg-gray-200 rounded-lg cursor-pointer' href={"/consulting"}>
+                        <Link className='w-11/12 sm:w-10/12 flex justify-center items-center bg-gray-100 hover:bg-gray-200 rounded-lg cursor-pointer' href={"/conseil"}>
                             <p className="block py-2 pl-3 pr-4 text-gray-900 rounded md:border-0 ">Conseil</p>
                         </Link>
                         <Link className='w-11/12 sm:w-10/12 flex justify-center items-center bg-gray-100 hover:bg-gray-200 rounded-lg cursor-pointer' href={"/blogs"}>
@@ -52,7 +52,7 @@ export default function Navbar({ }: Props) {
                     <Link href={"/formations"}>
                         <p className="text-sm lg:text-base uppercase font-semibold text-center text-black whitespace-nowrap select-none cursor-pointer hover:text-gray-600">Formation</p>
                     </Link>
-                    <Link href={"/consulting"}>
+                    <Link href={"/conseil"}>
                         <p className="text-sm lg:text-base uppercase font-semibold text-center text-black whitespace-nowrap select-none cursor-pointer hover:text-gray-600">Conseil</p>
                     </Link>
                     <Link href={"/blogs"}>

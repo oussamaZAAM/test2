@@ -2,7 +2,7 @@
 
 <div align="center"><img src="https://i.ibb.co/XXT3608/logo.png" /></div>
 
-Bienvenue sur le Site de Alee Conseil ! Ce site affiche nos solutions en domaines de formations technologiques d'automation et en domaine de consulting.
+Bienvenue sur le Site de Alee Conseil ! Ce site affiche nos solutions en domaines de formations technologiques d'automation et en domaine de conseil.
 
 ## Démo
 Découvrez notre démo en direct [ici](https://www.aleeconseil.com).

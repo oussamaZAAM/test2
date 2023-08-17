@@ -35,7 +35,7 @@ export default function Footer({ }: Props) {
                         <div className="flex flex-col justify-start items-start gap-2">
                             {/* <p className={robotoFont + "text-sm font-light text-white"}>Qui sommes-nous?</p> */}
                             <Link href={"/formations"}><p className={robotoFont + "text-sm font-light text-white"}>Formation</p></Link>
-                            <Link href={"/consulting"}><p className={robotoFont + "text-sm font-light text-white"}>Conseil</p></Link>
+                            <Link href={"/conseil"}><p className={robotoFont + "text-sm font-light text-white"}>Conseil</p></Link>
                             <Link href={"/blogs"}><p className={robotoFont + "text-sm font-light text-white"}>Blog</p></Link>
                             <Link href={"/contactez-nous"}><p className={robotoFont + "text-sm font-light text-white"}>Contact</p></Link>
                         </div>
@@ -86,7 +86,7 @@ export default function Footer({ }: Props) {
                         <div className="flex flex-col justify-start items-start gap-2">
                             {/* <p className={robotoFont + "text-sm font-light text-white"}>Qui sommes-nous?</p> */}
                             <Link href={"/formations"}><p className={robotoFont + "text-sm font-light text-white"}>Formation</p></Link>
-                            <Link href={"/consulting"}><p className={robotoFont + "text-sm font-light text-white"}>Conseil</p></Link>
+                            <Link href={"/conseil"}><p className={robotoFont + "text-sm font-light text-white"}>Conseil</p></Link>
                             <Link href={"/blogs"}><p className={robotoFont + "text-sm font-light text-white"}>Blog</p></Link>
                             <Link href={"/contactez-nous"}><p className={robotoFont + "text-sm font-light text-white"}>Contact</p></Link>
                         </div>

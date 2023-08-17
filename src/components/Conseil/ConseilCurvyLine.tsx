@@ -5,7 +5,7 @@ import { useEffect, useState } from 'react';
 
 type Props = {}
 
-export default function ConsultingCurvyLine({ }: Props) {
+export default function ConseilCurvyLine({ }: Props) {
     const [xPosition, setXPosition] = useState(0);
     const [yPosition, setYPosition] = useState(-18);
 

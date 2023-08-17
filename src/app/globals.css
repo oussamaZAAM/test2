@@ -102,10 +102,10 @@ html::-webkit-scrollbar-thumb:hover {
   background-size: cover;
 }
 
-.parallax-consulting {
+.parallax-conseil {
   width: 100%;
   height: 100%;
-  background-image: url(../../public/Consulting/consulting.png);
+  background-image: url(../../public/Conseil/conseil.png);
 
   background-attachment: fixed;
   background-position: 65%;
