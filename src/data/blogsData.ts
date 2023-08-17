@@ -465,27 +465,33 @@ describe('API Tests', () => {
       },
       {
         section: 39,
-        type: `itemize`,
-        items: [
-          {
-            body: `<a class="anchor-style" target="_blank" href="https://www.browserstack.com/guide/visual-testing-beginners-guide">https://www.browserstack.com/guide/visual-testing-beginners-guide</a>`
-          },
-          {
-            body: `<a class="anchor-style" target="_blank" href="https://www.geeksforgeeks.org/software-testing-visual-testing/">https://www.geeksforgeeks.org/software-testing-visual-testing/</a>`
-          },
-          {
-            body: `<a class="anchor-style" target="_blank" href="https://saucelabs.com/resources/blog/what-is-visual-testing">https://saucelabs.com/resources/blog/what-is-visual-testing</a>`
-          },
-          {
-            body: `<a class="anchor-style" target="_blank" href="https://www.youtube.com/watch?v=MXfZeE9RQDw&t=939s">https://www.youtube.com/watch?v=MXfZeE9RQDw&t=939s</a>`
-          },
-          {
-            body: `<a class="anchor-style" target="_blank" href="https://docs.percy.io/v1/docs">https://docs.percy.io/v1/docs</a>`
-          },
-          {
-            body: `<a class="anchor-style" target="_blank" href="https://smartbear.com/blog/what-is-visual-testing/">https://smartbear.com/blog/what-is-visual-testing/</a>`
-          },
-        ]
+        type: `link`,
+        text: `https://www.browserstack.com/guide/visual-testing-beginners-guide`
+      },
+      {
+        section: 40,
+        type: `link`,
+        text: `https://www.geeksforgeeks.org/software-testing-visual-testing`
+      },
+      {
+        section: 41,
+        type: `link`,
+        text: `https://saucelabs.com/resources/blog/what-is-visual-testing`
+      },
+      {
+        section: 42,
+        type: `link`,
+        text: `https://www.youtube.com/watch?v=MXfZeE9RQDw&t=939s`
+      },
+      {
+        section: 43,
+        type: `link`,
+        text: `https://docs.percy.io/v1/docs`
+      },
+      {
+        section: 44,
+        type: `link`,
+        text: `https://smartbear.com/blog/what-is-visual-testing`
       }
     ],
     author: users[1],

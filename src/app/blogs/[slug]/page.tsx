@@ -116,7 +116,7 @@ export default function Blog({ params }: Props) {
                                                                 {" "} : {" "}
                                                             </>
                                                         }
-                                                        <span dangerouslySetInnerHTML={{ __html: item.body }} />
+                                                        {item.body}
                                                     </h4>
                                                 )
                                             })}
@@ -138,6 +138,11 @@ export default function Blog({ params }: Props) {
                                                 )
                                             })}
                                         </div>
+                                    )
+                                }
+                                if (section.type === "link" && section.text) {
+                                    return (
+                                        <a key={section.section} target='_blank' href={section.text} className="anchor-style">{section.text}</a>
                                     )
                                 }
                                 if (section.type === "code" && section.code) {
