@@ -21,12 +21,12 @@ export default function Homepage({ }: Props) {
             <Script src="https://www.googletagmanager.com/gtag/js?id=G-6L5ZVZDMVJ" />
             <Script id="google-analytics">
                 {`
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
- 
-          gtag('config', 'G-6L5ZVZDMVJ');
-        `}
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){dataLayer.push(arguments);}
+                gtag('js', new Date());
+        
+                gtag('config', 'G-6L5ZVZDMVJ');
+                `}
             </Script>
 
             <div className="relative flex flex-col justify-start items-center gap-9 mb-9 w-[95%] md:w-11/12 background-logo">

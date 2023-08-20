@@ -18,45 +18,45 @@ type Props = {}
 export default function Footer({ }: Props) {
     return (
         <>
-            <div id='footer' className='hidden translate-y-1 bg-ac-violet rounded-t-[25px] w-full md:flex justify-between items-stretch py-12 px-6 xm:px-24 lg:px-36 xl:px-48 gap-4'>
+            <div itemProp='author' itemScope itemType='https://schema.org/Organization' id='footer' className='hidden translate-y-1 bg-ac-violet rounded-t-[25px] w-full md:flex justify-between items-stretch py-12 px-6 xm:px-24 lg:px-36 xl:px-48 gap-4'>
                 <div className="flex flex-col justify-between items-start">
                     <div className="w-full flex justify-start items-center">
                         {/* Logo  */}
-                        <Image className='w-36 h-20 object-cover object-center brightness-150' src="/logo.png" height={400} width={400} alt='AleeConseil' />
+                        <Image itemProp='logo' className='w-36 h-20 object-cover object-center brightness-150' src="/logo.png" height={400} width={400} alt='AleeConseil' />
                     </div>
                     <div className="flex flex-col justify-start items-start">
-                        <p className="text-sm text-white">{footer.copyright1}</p>
+                        <p itemProp='copyrightHolder' className="text-sm text-white">{footer.copyright1}</p>
                         <p className="text-sm text-white">{footer.copyright2}</p>
                     </div>
                 </div>
                 <div className="flex justify-end items-center gap-12">
                     <div className="flex flex-col justify-start items-stretch gap-4">
-                        <p className={latoFont + "text-sm font-semibold text-white uppercase"}>Alee Conseil</p>
+                        <p itemProp='legalName' className={latoFont + "text-sm font-semibold text-white uppercase"}>Alee Conseil</p>
                         <div className="flex flex-col justify-start items-start gap-2">
                             {/* <p className={robotoFont + "text-sm font-light text-white"}>Qui sommes-nous?</p> */}
-                            <Link href={"/formations"}><p className={robotoFont + "text-sm font-light text-white"}>Formation</p></Link>
-                            <Link href={"/conseil"}><p className={robotoFont + "text-sm font-light text-white"}>Conseil</p></Link>
-                            <Link href={"/blogs"}><p className={robotoFont + "text-sm font-light text-white"}>Blog</p></Link>
-                            <Link href={"/contactez-nous"}><p className={robotoFont + "text-sm font-light text-white"}>Contact</p></Link>
+                            <Link href={"/formations"}><p itemProp='keywords' className={robotoFont + "text-sm font-light text-white"}>Formation</p></Link>
+                            <Link href={"/conseil"}><p itemProp='keywords' className={robotoFont + "text-sm font-light text-white"}>Conseil</p></Link>
+                            <Link href={"/blogs"}><p itemProp='keywords' className={robotoFont + "text-sm font-light text-white"}>Blog</p></Link>
+                            <Link href={"/contactez-nous"}><p itemProp='keywords' className={robotoFont + "text-sm font-light text-white"}>Contact</p></Link>
                         </div>
                     </div>
                     <div className="flex flex-col justify-start items-stretch gap-8">
                         <div className="flex flex-col justify-start items-stretch gap-4">
                             <div className="flex justify-start items-center gap-3">
                                 <PiMapPinLine size={20} color='white' />
-                                <p className={robotoFont + "text-sm font-light text-white whitespace-normal max-w-[180px]"}>
+                                <p itemProp='address' className={robotoFont + "text-sm font-light text-white whitespace-normal max-w-[180px]"}>
                                     {footer.address}
                                 </p>
                             </div>
                             <div className="flex justify-start items-center gap-3">
                                 <MdOutlinePhone size={20} color='white' />
-                                <a href={"tel:" + footer.phone} className={robotoFont + "text-sm font-light text-white whitespace-normal max-w-[180px]"}>
+                                <a itemProp='telephone' href={"tel:" + footer.phone} className={robotoFont + "text-sm font-light text-white whitespace-normal max-w-[180px]"}>
                                     {footer.phone}
                                 </a>
                             </div>
                             <div className="flex justify-start items-center gap-3">
                                 <TbMailFilled size={20} color='white' />
-                                <a href={"mailto:" + footer.email} className={robotoFont + "text-sm font-light text-white whitespace-normal max-w-[180px]"}>
+                                <a itemProp='email' href={"mailto:" + footer.email} className={robotoFont + "text-sm font-light text-white whitespace-normal max-w-[180px]"}>
                                     {footer.email}
                                 </a>
                             </div>

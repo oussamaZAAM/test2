@@ -30,7 +30,11 @@ export const metadata = {
 
 export default function Home() {
   return (
-    <div className="flex flex-col justify-center items-center bg-ac-gray w-full">
+    <div
+      itemScope
+      itemType="https://schema.org/Website"
+      className="flex flex-col justify-center items-center bg-ac-gray w-full"
+    >
       <Script src="https://www.googletagmanager.com/gtag/js?id=G-6L5ZVZDMVJ" />
       <Script id="google-analytics">
         {`
@@ -41,7 +45,7 @@ export default function Home() {
           gtag('config', 'G-6L5ZVZDMVJ');
         `}
       </Script>
-      
+
       <ReturnToTop />
 
       {/* Navbar  */}
@@ -54,13 +58,13 @@ export default function Home() {
       <div id='services' className="flex justify-center items-center bg-ac-bleu rounded-t-3xl w-full pb-28 px-4 pt-20">
         <div className="flex flex-col justify-start items-center gap-8 xm:gap-16">
           <h2 className={montserratFont.className + " font-medium text-4xl xm:text-5xl text-center text-white"}>Nos Services</h2>
-          <div className="flex flex-col md:flex-row justify-between items-center md:items-start gap-20 md:gap-56">
+          <div itemProp='offers' className="flex flex-col md:flex-row justify-between items-center md:items-start gap-20 md:gap-56">
 
             {/* Formations Service  */}
-            <div className="flex flex-col justify-start items-center gap-4 max-w-[236px]">
-              <Image className='w-24 h-24' width={96} height={96} src="/Homepage/formations.png" alt='service-formation' />
-              <h2 className={latoFont.className + " font-semibold text-2xl xm:text-3xl leading-7 text-center text-white"}>Formation</h2>
-              <p className={latoFont.className + " font-medium text-sm xm:text-base leading-5 text-center text-white"}>
+            <div itemScope itemType='https://schema.org/Offer' className="flex flex-col justify-start items-center gap-4 max-w-[236px]">
+              <Image itemProp='image' className='w-24 h-24' width={96} height={96} src="/Homepage/formations.png" alt='service-formation' />
+              <h2 itemProp='name' className={latoFont.className + " font-semibold text-2xl xm:text-3xl leading-7 text-center text-white"}>Formation</h2>
+              <p itemProp='description' className={latoFont.className + " font-medium text-sm xm:text-base leading-5 text-center text-white"}>
                 {homepage.formations}
               </p>
               <Link href={"/formations"}>
@@ -70,10 +74,10 @@ export default function Home() {
               </Link>
             </div>
             {/* Conseil Service  */}
-            <div className="flex flex-col justify-start items-center gap-4 max-w-[236px]">
-              <Image className='w-24 h-24' width={96} height={96} src="/Homepage/conseil.png" alt='service-conseil' />
-              <h2 className={latoFont.className + " font-semibold text-2xl xm:text-3xl leading-7 text-center text-white"}>Qualité Logicielle</h2>
-              <p className={latoFont.className + " font-medium text-sm xm:text-base leading-5 text-center text-white"}>
+            <div itemScope itemType='https://schema.org/Offer' className="flex flex-col justify-start items-center gap-4 max-w-[236px]">
+              <Image itemProp='image' className='w-24 h-24' width={96} height={96} src="/Homepage/conseil.png" alt='service-conseil' />
+              <h2 itemProp='name' className={latoFont.className + " font-semibold text-2xl xm:text-3xl leading-7 text-center text-white"}>Qualité Logicielle</h2>
+              <p itemProp='description' className={latoFont.className + " font-medium text-sm xm:text-base leading-5 text-center text-white"}>
                 {homepage.conseil}
               </p>
               <Link href={"/conseil"}>

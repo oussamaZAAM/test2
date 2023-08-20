@@ -78,7 +78,7 @@ export default function Page({ params }: Props) {
           {/* Path + Description */}
           <div
             itemScope
-            itemType="http://schema.org/Course"
+            itemType="https://schema.org/Course"
             className="flex flex-col justify-start items-start gap-16"
           >
             {/* Path */}
@@ -174,7 +174,7 @@ export default function Page({ params }: Props) {
           {/* Formation Card + Billing + Available Dates*/}
           <div
             itemScope
-            itemType="http://schema.org/Offer"
+            itemType="https://schema.org/Offer"
             className="xm:sticky xm:top-60 flex flex-col justify-start items-stretch gap-10 xm:-translate-y-28 lg:-translate-y-56"
           >
             <div className={ibmFont.className + " xm:hidden flex justify-start items-center gap-2"}>

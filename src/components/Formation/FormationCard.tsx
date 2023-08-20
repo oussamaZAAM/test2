@@ -30,7 +30,7 @@ export default function FormationCard({ formation_id, title, hero, image_url, pr
     >
       <div
         itemScope
-        itemType="http://schema.org/Offer"
+        itemType="https://schema.org/Offer"
         className="
                   flex flex-col justify-between items-center w-full
                   gap-6
