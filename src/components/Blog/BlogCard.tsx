@@ -15,11 +15,21 @@ export default function BlogCard({ id, title, body }: Props) {
     const firstParagraph = body.find((section) => section.type === "paragraph" || section.type === "header1" || section.type === "header2");
     return (
         <Link href={"/blogs/" + id} className="w-full flex flex-col justify-between items-start py-5 px-6 border-2 gap-4 cursor-pointer transition duration-300 border-ac-bleu group text-black hover:text-white hover:bg-ac-bleu">
-            <div className="w-full flex flex-col justify-start items-start gap-4">
-                <h1 className={jostFont.className + " font-bold text-2xl text-left line-clamp-2 md:h-16"}>
+            <div
+                itemScope
+                itemType="https://schema.org/Article"
+                className="w-full flex flex-col justify-start items-start gap-4"
+            >
+                <h1
+                    itemProp="name"
+                    className={jostFont.className + " font-bold text-2xl text-left line-clamp-2 md:h-16"}
+                >
                     {title}
                 </h1>
-                <h2 className={montserratFont.className + " font-normal text-sm text-left line-clamp-6"}>
+                <h2
+                    itemProp="description"
+                    className={montserratFont.className + " font-normal text-sm text-left line-clamp-6"}
+                >
                     {firstParagraph ? firstParagraph.text : ""}
                 </h2>
             </div>
