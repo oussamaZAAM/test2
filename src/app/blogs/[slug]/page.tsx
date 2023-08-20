@@ -39,7 +39,11 @@ export default function Blog({ params }: Props) {
     }
 
     return (
-        <div className="flex flex-col justify-between items-center w-full min-h-[100vh] bg-ac-gray2">
+        <div
+            itemScope
+            itemType='https://schema.org/Blog'
+            className="flex flex-col justify-between items-center w-full min-h-[100vh] bg-ac-gray2"
+        >
             <Script src="https://www.googletagmanager.com/gtag/js?id=G-6L5ZVZDMVJ" />
             <Script id="google-analytics">
                 {`
@@ -56,11 +60,11 @@ export default function Blog({ params }: Props) {
 
             <div className="flex flex-col justify-start items-center w-full bg-ac-gray2">
                 <div className="flex flex-col justify-start items-start w-full gap-12 pt-10 px-6 sm:px-12 md:px-20 xm:px-6 lg:px-12 xl:px-20 mx-6 sm:mx-12 md:mx-20 xm:mx-6 lg:mx-12 xl:mx-20">
-                    <h1 className={jostFont.className + " font-bold text-3xl xm:text-5xl lg:text-5xl xl:text-6xl text-left text-black"}>
+                    <h1 itemProp='name' className={jostFont.className + " font-bold text-3xl xm:text-5xl lg:text-5xl xl:text-6xl text-left text-black"}>
                         {blog.title}
                     </h1>
                     <div className={montserratFont.className + " flex flex-col xm:flex-row justify-start items-start xm:items-center gap-6 xm:gap-32 font-medium text-xl text-left text-black"}>
-                        <p>{readableDate(blog.date)}</p>
+                        <p itemProp='dateCreated'>{readableDate(blog.date)}</p>
                         <p>par {blog.author.name}</p>
                     </div>
                 </div>
@@ -166,8 +170,8 @@ export default function Blog({ params }: Props) {
                         </div>
                         <div className="flex flex-col justify-start items-center gap-4">
                             <div className="flex flex-col justify-start items-center gap-1">
-                                <p className="uppercase font-bold text-2xl text-black text-center">{blog.author.name}</p>
-                                <p className="font-semibold text-xl text-black text-center">{blog.author.job}</p>
+                                <p itemProp='author' className="uppercase font-bold text-2xl text-black text-center">{blog.author.name}</p>
+                                <p itemProp='audience' className="font-semibold text-xl text-black text-center">{blog.author.job}</p>
                             </div>
                             <a target='_blank' href={blog.author.contact} className="flex justify-center items-center">
                                 <AiFillLinkedin size={20} />
