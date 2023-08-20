@@ -16,8 +16,8 @@ export const metadata = {
   },
   icons: {
     icon: 'https://www.aleeconseil.com/icon.png',
-    shortcut: 'https://www.aleeconseil.com/icon.png',
-    apple: 'https://www.aleeconseil.com/icon.png',
+    shortcut: 'https://www.aleeconseil.com/shortcut-icon.png',
+    apple: 'https://www.aleeconseil.com/apple-icon.png',
   },
   openGraph: {
     title: pageMetadata.title,
@@ -26,8 +26,8 @@ export const metadata = {
     url: 'https://www.aleeconseil.com',
     images: {
       url: 'https://www.aleeconseil.com/icon.png',
-      width: 16,
-      height: 16,
+      width: 96,
+      height: 96,
     },
     locale: 'fr_MA',
     type: 'website',
@@ -42,7 +42,7 @@ export const metadata = {
       noimageindex: false,
       'max-video-preview': 'large',
       'max-image-preview': 'large',
-      'max-snippet': -1,
+      'max-snippet': 1024,
     },
   },
   themeColor: "#644E9B",
