@@ -43,7 +43,7 @@ export const metadata = {
       'max-video-preview': 'large',
       'max-image-preview': 'large',
       'max-snippet': 1024,
-    },
+    }
   },
   themeColor: "#644E9B",
   category: 'technology',
