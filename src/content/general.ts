@@ -13,7 +13,7 @@ export const footer = {
     email: `contact@aleeconseil.com`,
     socialLinks: {
         linkedin: `https://www.linkedin.com/company/alee-conseil-ma`,
-        youtube: ``
+        youtube: `#`
     }
 }
 
