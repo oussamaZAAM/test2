@@ -8,7 +8,7 @@ type Props = {}
 
 export default function Hero({ }: Props) {
     return (
-        <div className='relative flex w-full px-1 fold:px-12 xm:px-24 lg:px-36 xl:px-48 py-20 fold:py-24 sm:py-20 md:py-24 xm:py-32'>
+        <div className='relative flex w-full px-1 fold:px-12 xm:px-24 lg:px-36 xl:px-48 py-24 sm:py-20 md:py-24 xm:py-32'>
             <div className="parallax-bg absolute inset-0 h-full bg-fixed bg-center"></div>
             {/* Web Overlay  */}
             <div className="hidden md:block absolute top-0 left-0 w-full h-full z-20 hero-gradient"></div>
