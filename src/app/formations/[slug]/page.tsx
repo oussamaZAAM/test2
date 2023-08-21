@@ -1,6 +1,8 @@
+import type { Metadata, ResolvingMetadata } from "next";
 import { IBM_Plex_Sans_Condensed, Lato, Montserrat } from "next/font/google";
 import Image from "next/image";
 import Link from "next/link";
+import Script from "next/script";
 import { BiTimeFive } from "react-icons/bi";
 import { MdOutlineKeyboardArrowRight } from "react-icons/md";
 import { RiCopperCoinLine } from "react-icons/ri";
@@ -8,25 +10,70 @@ import Footer from "../../../components/Footer";
 import FormationsSlider from "../../../components/Formation/SliderComponent";
 import Navbar from "../../../components/Navbar";
 import ReturnToTop from "../../../components/ReturnToTop";
+import { pageMetadata } from "../../../content/general";
 import { formationsData } from "../../../data/formationsData";
 import { currency, dailyHours, datesDisplayedNumber, fixedReferenceDate } from "../../../utils/constants";
 import { getNextMondaysSeparatedBy3Weeks, readableDateFromString } from "../../../utils/functions";
-import { pageMetadata } from "../../../content/general";
-import Script from "next/script";
 
 const montserratFont = Montserrat({ subsets: ["latin"] })
 const ibmFont = IBM_Plex_Sans_Condensed({ weight: "700", subsets: ["latin"] })
 const latoFont = Lato({ weight: "400", subsets: ["latin"] })
 
-export const metadata = {
-  title: pageMetadata.title,
-  description: pageMetadata.description,
-  metadataBase: new URL(pageMetadata.baseUrl)
-}
-
 type Props = {
   params: {
     slug: string
+  }
+}
+
+export async function generateMetadata(
+  { params }: Props,
+  parent?: ResolvingMetadata
+): Promise<Metadata> {
+  const formation_id = params.slug;
+  const formation = formationsData.find((formation) => formation.formation_id === formation_id);
+  return {
+    title: "Alee Conseil - Formation " + formation?.title,
+    description: pageMetadata.description,
+    metadataBase: new URL(pageMetadata.baseUrl),
+    alternates: {
+      canonical: '/',
+      languages: {
+        'fr': '/',
+      },
+    },
+    icons: {
+      icon: 'https://www.aleeconseil.com/icon.png',
+      shortcut: 'https://www.aleeconseil.com/shortcut-icon.png',
+      apple: 'https://www.aleeconseil.com/apple-icon.png',
+    },
+    openGraph: {
+      title: pageMetadata.title,
+      description: pageMetadata.description,
+      siteName: pageMetadata.siteName,
+      url: 'https://www.aleeconseil.com',
+      images: {
+        url: 'https://www.aleeconseil.com/icon.png',
+        width: 96,
+        height: 96,
+      },
+      locale: 'fr-MA',
+      type: 'website',
+    },
+    robots: {
+      index: true,
+      follow: true,
+      nocache: false,
+      googleBot: {
+        index: true,
+        follow: true,
+        noimageindex: false,
+        'max-video-preview': 'large',
+        'max-image-preview': 'large',
+        'max-snippet': 1024,
+      }
+    },
+    themeColor: "#644E9B",
+    category: 'technology'
   }
 }
 

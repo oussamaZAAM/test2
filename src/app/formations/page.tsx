@@ -12,9 +12,48 @@ const montserratFont = Montserrat({ subsets: ["latin"] })
 const latoFont = Lato({ weight: "400", subsets: ["latin"] })
 
 export const metadata = {
-    title: pageMetadata.title,
+    title: "Alee Conseil - Formations",
     description: pageMetadata.description,
-    metadataBase: new URL(pageMetadata.baseUrl)
+    metadataBase: new URL(pageMetadata.baseUrl),
+    alternates: {
+        canonical: '/',
+        languages: {
+          'fr-MA': '/',
+        },
+      },
+      icons: {
+        icon: 'https://www.aleeconseil.com/icon.png',
+        shortcut: 'https://www.aleeconseil.com/shortcut-icon.png',
+        apple: 'https://www.aleeconseil.com/apple-icon.png',
+      },
+      openGraph: {
+        title: pageMetadata.title,
+        description: pageMetadata.description,
+        siteName: pageMetadata.siteName,
+        url: 'https://www.aleeconseil.com',
+        images: {
+          url: 'https://www.aleeconseil.com/icon.png',
+          width: 96,
+          height: 96,
+        },
+        locale: 'fr-MA',
+        type: 'website',
+      },
+      robots: {
+        index: true,
+        follow: true,
+        nocache: false,
+        googleBot: {
+          index: true,
+          follow: true,
+          noimageindex: false,
+          'max-video-preview': 'large',
+          'max-image-preview': 'large',
+          'max-snippet': 1024,
+        }
+      },
+      themeColor: "#644E9B",
+      category: 'technology'
 }
 
 type Props = {}

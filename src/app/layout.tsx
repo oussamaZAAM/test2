@@ -11,7 +11,7 @@ export const metadata = {
   alternates: {
     canonical: '/',
     languages: {
-      'fr_MA': '/',
+      'fr-MA': '/',
     },
   },
   icons: {
@@ -29,7 +29,7 @@ export const metadata = {
       width: 96,
       height: 96,
     },
-    locale: 'fr_MA',
+    locale: 'fr-MA',
     type: 'website',
   },
   robots: {

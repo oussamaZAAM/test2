@@ -1,5 +1,7 @@
+import type { Metadata, ResolvingMetadata } from 'next';
 import { Jost, Montserrat } from 'next/font/google';
 import Image from 'next/image';
+import Script from 'next/script';
 import { AiFillLinkedin } from 'react-icons/ai';
 import CodeViewer from '../../../components/Blog/CodeViewer';
 import Footer from '../../../components/Footer';
@@ -8,22 +10,68 @@ import ReturnToTop from '../../../components/ReturnToTop';
 import { pageMetadata } from '../../../content/general';
 import { blogsData } from '../../../data/blogsData';
 import { readableDate } from '../../../utils/functions';
-import Script from 'next/script';
 
 const jostFont = Jost({ subsets: ["latin"] });
 const montserratFont = Montserrat({ subsets: ["latin"] });
-
-export const metadata = {
-    title: pageMetadata.title,
-    description: pageMetadata.description,
-    metadataBase: new URL(pageMetadata.baseUrl)
-}
 
 type Props = {
     params: {
         slug: string
     }
 }
+
+export async function generateMetadata(
+    { params }: Props,
+    parent?: ResolvingMetadata
+  ): Promise<Metadata> {
+    const blog_id = params.slug;
+    const blog = blogsData.find((blog) => blog.id === blog_id);
+
+    return {
+      title: "Alee Conseil - Blog " + blog?.title,
+      description: pageMetadata.description,
+      metadataBase: new URL(pageMetadata.baseUrl),
+      alternates: {
+        canonical: '/',
+        languages: {
+          'fr': '/',
+        },
+      },
+      icons: {
+        icon: 'https://www.aleeconseil.com/icon.png',
+        shortcut: 'https://www.aleeconseil.com/shortcut-icon.png',
+        apple: 'https://www.aleeconseil.com/apple-icon.png',
+      },
+      openGraph: {
+        title: pageMetadata.title,
+        description: pageMetadata.description,
+        siteName: pageMetadata.siteName,
+        url: 'https://www.aleeconseil.com',
+        images: {
+          url: 'https://www.aleeconseil.com/icon.png',
+          width: 96,
+          height: 96,
+        },
+        locale: 'fr-MA',
+        type: 'website',
+      },
+      robots: {
+        index: true,
+        follow: true,
+        nocache: false,
+        googleBot: {
+          index: true,
+          follow: true,
+          noimageindex: false,
+          'max-video-preview': 'large',
+          'max-image-preview': 'large',
+          'max-snippet': 1024,
+        }
+      },
+      themeColor: "#644E9B",
+      category: 'technology'
+    }
+  }
 
 export default function Blog({ params }: Props) {
     const blog_id = params.slug;
