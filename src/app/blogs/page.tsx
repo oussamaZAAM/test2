@@ -15,9 +15,9 @@ export const metadata = {
   description: pageMetadata.description,
   metadataBase: new URL(pageMetadata.baseUrl),
   alternates: {
-      canonical: '/',
+      canonical: '/blogs',
       languages: {
-        'fr-MA': '/',
+        'fr-MA': '/blogs',
       },
     },
     icons: {

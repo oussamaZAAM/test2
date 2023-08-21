@@ -36,9 +36,9 @@ export async function generateMetadata(
     description: pageMetadata.description,
     metadataBase: new URL(pageMetadata.baseUrl),
     alternates: {
-      canonical: '/',
+      canonical: '/formations/' + formation_id,
       languages: {
-        'fr': '/',
+        'fr': '/formations/' + formation_id,
       },
     },
     icons: {

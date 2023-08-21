@@ -32,9 +32,9 @@ export async function generateMetadata(
       description: pageMetadata.description,
       metadataBase: new URL(pageMetadata.baseUrl),
       alternates: {
-        canonical: '/',
+        canonical: '/blogs/' + blog_id,
         languages: {
-          'fr': '/',
+          'fr': '/blogs/' + blog_id,
         },
       },
       icons: {
