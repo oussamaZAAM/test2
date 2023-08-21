@@ -41,7 +41,7 @@ const FormationsSlider = () => {
         return () => {
             clearInterval(intervalId); // Clean up the interval when the component unmounts
         };
-    }, []);
+    }, [myDiv]);
 
     return (
         <div className="flex justify-between items-center max-w-[95vw] overflow-x-hidden gap-12 px-2 my-6">
