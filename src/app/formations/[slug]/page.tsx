@@ -267,10 +267,10 @@ export default function Page({ params }: Props) {
             </div>
 
             {/* Available Dates */}
-            <div className="grid grid-cols-1 xm:grid-cols-2 justify-center items-center gap-2">
+            <div className="grid grid-cols-1 xm:grid-cols-2 justify-center items-stretch gap-2">
               {nextDates.map((date) => {
                 return (
-                  <Link key={date} href={{ pathname: '/devis', query: { formation: formation.formation_id, date: date } }} className="flex flex-row xm:flex-col justify-center xm:justify-start items-center py-2 px-4 bg-white rounded-xl cursor-pointer border border-ac-bleu hover:bg-ac-bleu group">
+                  <Link key={date} href={{ pathname: '/devis', query: { formation: formation.formation_id, date: date } }} className="flex flex-row xm:flex-col justify-center items-center py-2 px-4 bg-white rounded-xl cursor-pointer border border-ac-bleu hover:bg-ac-bleu group">
                     <p itemProp="availabilityStarts" className="xm:hidden text-lg text-ac-bleu text-center font-bold group-hover:text-white">{readableDateFromString(date).split(" ").join(" ")}</p>
                     <p className="hidden xm:block text-lg text-ac-bleu text-center font-bold group-hover:text-white">{readableDateFromString(date).split(" ").slice(0, 2).join(" ")}</p>
                     <p className="hidden xm:block text-base text-black text-center font-medium group-hover:text-gray-300">{readableDateFromString(date).split(" ")[readableDateFromString(date).split(" ").length - 1]}</p>
