@@ -1,4 +1,4 @@
-import type { Metadata, ResolvingMetadata } from "next";
+import type { Metadata } from "next";
 import { IBM_Plex_Sans_Condensed, Lato, Montserrat } from "next/font/google";
 import Image from "next/image";
 import Link from "next/link";
@@ -26,13 +26,12 @@ type Props = {
 }
 
 export async function generateMetadata(
-  { params }: Props,
-  parent?: ResolvingMetadata
+  { params }: Props
 ): Promise<Metadata> {
   const formation_id = params.slug;
   const formation = formationsData.find((formation) => formation.formation_id === formation_id);
   return {
-    title: "Alee Conseil - Formation " + formation?.title,
+    title: formation ? "Alee Conseil - Formation " + formation.title : "Alee Conseil - 404",
     description: pageMetadata.description,
     metadataBase: new URL(pageMetadata.baseUrl),
     alternates: {

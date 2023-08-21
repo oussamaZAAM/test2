@@ -1,4 +1,4 @@
-import type { Metadata, ResolvingMetadata } from 'next';
+import type { Metadata } from 'next';
 import { Jost, Montserrat } from 'next/font/google';
 import Image from 'next/image';
 import Script from 'next/script';
@@ -21,57 +21,56 @@ type Props = {
 }
 
 export async function generateMetadata(
-    { params }: Props,
-    parent?: ResolvingMetadata
-  ): Promise<Metadata> {
+    { params }: Props
+): Promise<Metadata> {
     const blog_id = params.slug;
     const blog = blogsData.find((blog) => blog.id === blog_id);
 
     return {
-      title: "Alee Conseil - Blog " + blog?.title,
-      description: pageMetadata.description,
-      metadataBase: new URL(pageMetadata.baseUrl),
-      alternates: {
-        canonical: '/blogs/' + blog_id,
-        languages: {
-          'fr': '/blogs/' + blog_id,
-        },
-      },
-      icons: {
-        icon: 'https://www.aleeconseil.com/icon.png',
-        shortcut: 'https://www.aleeconseil.com/shortcut-icon.png',
-        apple: 'https://www.aleeconseil.com/apple-icon.png',
-      },
-      openGraph: {
-        title: pageMetadata.title,
+        title: blog ? blog.title : "Alee Conseil - 404",
         description: pageMetadata.description,
-        siteName: pageMetadata.siteName,
-        url: 'https://www.aleeconseil.com',
-        images: {
-          url: 'https://www.aleeconseil.com/icon.png',
-          width: 96,
-          height: 96,
+        metadataBase: new URL(pageMetadata.baseUrl),
+        alternates: {
+            canonical: '/blogs/' + blog_id,
+            languages: {
+                'fr': '/blogs/' + blog_id,
+            },
         },
-        locale: 'fr-MA',
-        type: 'website',
-      },
-      robots: {
-        index: true,
-        follow: true,
-        nocache: false,
-        googleBot: {
-          index: true,
-          follow: true,
-          noimageindex: false,
-          'max-video-preview': 'large',
-          'max-image-preview': 'large',
-          'max-snippet': 1024,
-        }
-      },
-      themeColor: "#644E9B",
-      category: 'technology'
+        icons: {
+            icon: 'https://www.aleeconseil.com/icon.png',
+            shortcut: 'https://www.aleeconseil.com/shortcut-icon.png',
+            apple: 'https://www.aleeconseil.com/apple-icon.png',
+        },
+        openGraph: {
+            title: pageMetadata.title,
+            description: pageMetadata.description,
+            siteName: pageMetadata.siteName,
+            url: 'https://www.aleeconseil.com',
+            images: {
+                url: 'https://www.aleeconseil.com/icon.png',
+                width: 96,
+                height: 96,
+            },
+            locale: 'fr-MA',
+            type: 'website',
+        },
+        robots: {
+            index: true,
+            follow: true,
+            nocache: false,
+            googleBot: {
+                index: true,
+                follow: true,
+                noimageindex: false,
+                'max-video-preview': 'large',
+                'max-image-preview': 'large',
+                'max-snippet': 1024,
+            }
+        },
+        themeColor: "#644E9B",
+        category: 'technology'
     }
-  }
+}
 
 export default function Blog({ params }: Props) {
     const blog_id = params.slug;
