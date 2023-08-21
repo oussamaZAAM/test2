@@ -194,7 +194,7 @@ export default function Blog({ params }: Props) {
                                 }
                                 if (section.type === "link" && section.text) {
                                     return (
-                                        <a key={section.section} target='_blank' href={section.text} className="anchor-style">{section.text}</a>
+                                        <a key={section.section} target='_blank' rel="noopener" href={section.text} className="anchor-style">{section.text}</a>
                                     )
                                 }
                                 if (section.type === "code" && section.code) {
@@ -221,7 +221,7 @@ export default function Blog({ params }: Props) {
                                 <p itemProp='author' className="uppercase font-bold text-2xl text-black text-center">{blog.author.name}</p>
                                 <p itemProp='audience' className="font-semibold text-xl text-black text-center">{blog.author.job}</p>
                             </div>
-                            <a target='_blank' href={blog.author.contact} className="flex justify-center items-center">
+                            <a target='_blank' rel="noopener" href={blog.author.contact} className="flex justify-center items-center">
                                 <AiFillLinkedin size={20} />
                             </a>
                         </div>

@@ -18,12 +18,13 @@ export default function Hero({ }: Props) {
 
             <div className="flex flex-col justify-center items-center gap-12 z-30">
                 <div className="flex flex-col justify-center items-start gap-4">
+                    <h1 itemProp='description' className="hidden">Formations : Cypress Postman Robot framework SoapUI Soap UI Automatisation des tests Playwright Selenium</h1>
                     <h2 itemProp='name' className={taglineFont.className + " max-w-[270px] fold:max-w-xs xs:max-w-sm sm:max-w-md md:max-w-lg lg:max-w-xl text-black whitespace-normal text-4xl sm:text-5xl"}>
                         {homepage.tagline}
                     </h2>
-                    <h1 itemProp='description' className={miniTaglineFont + " hidden text-black text-md sm:text-lg italic max-w-sm md:max-w-md"}>
+                    <h2 className={miniTaglineFont + " text-black text-md sm:text-lg italic max-w-sm md:max-w-md"}>
                         {homepage.subtagline}
-                    </h1>
+                    </h2>
                 </div>
                 <a href="#services">
                     <div className="flex justify-center items-center bg-ac-bleu p-5 max-w-[200px] group hover:bg-transparent border-2 border-ac-bleu transition duration-300 cursor-pointer">

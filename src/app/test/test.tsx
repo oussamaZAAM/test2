@@ -87,11 +87,11 @@ export default function Homepage({ }: Props) {
                         <Image className='object-cover object-center w-[118px] h-[62px] brightness-150' src="/logo.png" width={118} height={62} alt='Alee Conseil' />
                     </div>
                     <div className="relative flex justify-center items-center gap-8">
-                        <a target='_blank' href={footer.socialLinks.linkedin} className="flex justify-center items-center">
+                        <a target='_blank' rel="noopener" href={footer.socialLinks.linkedin} className="flex justify-center items-center">
                             <AiFillLinkedin size={25} color='white' />
                             <div className="w-9 h-9 absolute bg-white opacity-10 rounded-full"></div>
                         </a>
-                        <a target='_blank' href={footer.socialLinks.youtube} className="flex justify-center items-center">
+                        <a target='_blank' rel="noopener" href={footer.socialLinks.youtube} className="flex justify-center items-center">
                             <AiFillYoutube size={25} color='white' />
                             <div className="w-9 h-9 absolute bg-white opacity-10 rounded-full"></div>
                         </a>

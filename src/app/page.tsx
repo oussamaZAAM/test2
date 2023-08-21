@@ -129,21 +129,20 @@ export default function Home() {
         </div>
       </div>
       <div className="hidden">
-        <h2 className="">Formation Cypress</h2>
+        <h2 className="">Formation</h2>
         <h2 className="">Cypress</h2>
-        <h2 className="">Formation Postman</h2>
         <h2 className="">Postman</h2>
-        <h2 className="">Formation robot framework</h2>
         <h2 className="">Robot framework</h2>
+        <h2 className="">Robot</h2>
+        <h2 className="">Framework</h2>
         <h2 className="">Formation soap ui</h2>
         <h2 className="">Soap UI</h2>
-        <h2 className="">Formation soapui</h2>
         <h2 className="">SoapUI</h2>
         <h2 className="">Formation automatisation des tests</h2>
         <h2 className="">Automatisation des tests</h2>
-        <h2 className="">Formation playwright</h2>
+        <h2 className="">Automatisation</h2>
+        <h2 className="">Tests</h2>
         <h2 className="">Playwright</h2>
-        <h2 className="">Formation selenium</h2>
         <h2 className="">Selenium</h2>
         <h2 className="">tests api</h2>
         <h2 className="">tests visuel</h2>
