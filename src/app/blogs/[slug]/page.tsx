@@ -118,7 +118,7 @@ export default function Blog({ params }: Props) {
                 <div className={montserratFont.className + " w-[97%] flex flex-col xm:flex-row justify-start items-center xm:items-start rounded-md bg-white gap-16 py-8 px-2 fold:px-6 sm:px-12 md:px-20 xm:px-6 lg:px-12 xl:px-20 mx-2 fold:mx-6 sm:mx-12 md:mx-20 xm:mx-6 lg:mx-12 xl:mx-20 my-11"}>
                     {/* Article Body */}
                     <div className="flex w-full flex-col justify-start items-start gap-8">
-                        <h5 className="uppercase font-medium text-base text-black text-left">Share</h5>
+                        <p className="uppercase font-medium text-base text-black text-left">Share</p>
                         <div className="w-full h-px bg-black"></div>
                         <div className="flex flex-col justify-start items-start gap-10 break-words">
                             {blog.body.map(section => {

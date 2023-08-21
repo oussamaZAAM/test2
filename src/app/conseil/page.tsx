@@ -109,11 +109,11 @@ export default function Conseil({ }: Props) {
                                 <Image className='hidden sm:block max-w-xs lg:max-w-md max-h-72 xm:max-h-60 lg:max-h-72 object-contain object-center' src="/Conseil/cloud.png" width={448} height={288} alt='audit' />
                             </AnimatedElement>
                             <div className="flex flex-col justify-center items-center gap-8 sm:gap-16">
-                                <h1 className={poppinsFont.className + " font-semibold text-center text-4xl text-black"}>Audit</h1>
+                                <h2 className={poppinsFont.className + " font-semibold text-center text-4xl text-black"}>Audit</h2>
                                 <Image className='sm:hidden w-full max-w-sm max-h-60 object-contain object-center' src="/Conseil/cloud.png" width={448} height={288} alt='audit' />
-                                <h2 className={montserratFont.className + " text-base text-black text-center font-medium w-full max-w-sm sm:max-w-md"}>
+                                <h3 className={montserratFont.className + " text-base text-black text-center font-medium w-full max-w-sm sm:max-w-md"}>
                                     {conseil.audit}
-                                </h2>
+                                </h3>
                             </div>
                         </div>
                         {/* Offre 2 */}
@@ -122,11 +122,11 @@ export default function Conseil({ }: Props) {
                                 <Image className='hidden sm:block max-w-xs lg:max-w-md max-h-72 xm:max-h-60 lg:max-h-72 object-contain object-center' src="/Conseil/cyber-security.png" width={448} height={288} alt='prestation' />
                             </AnimatedElement>
                             <div className="flex flex-col justify-center items-center gap-8 sm:gap-16">
-                                <h1 className={poppinsFont.className + " font-semibold text-center text-4xl text-black"}>Prestation</h1>
+                                <h2 className={poppinsFont.className + " font-semibold text-center text-4xl text-black"}>Prestation</h2>
                                 <Image className='sm:hidden w-full max-w-sm max-h-72 object-contain object-center' src="/Conseil/cyber-security.png" width={448} height={288} alt='prestation' />
-                                <h2 className={montserratFont.className + " text-base text-black text-center font-medium w-full max-w-sm sm:max-w-md"}>
+                                <h3 className={montserratFont.className + " text-base text-black text-center font-medium w-full max-w-sm sm:max-w-md"}>
                                     {conseil.prestation}
-                                </h2>
+                                </h3>
                             </div>
                         </div>
                         {/* Offre 3 */}
@@ -135,11 +135,11 @@ export default function Conseil({ }: Props) {
                                 <Image className='hidden sm:block max-w-sm lg:max-w-md max-h-72 xm:max-h-60 lg:max-h-72 object-contain object-center' src="/Conseil/testing.png" width={448} height={288} alt='off-shore' />
                             </AnimatedElement>
                             <div className="flex flex-col justify-center items-center gap-8 sm:gap-16">
-                                <h1 className={poppinsFont.className + " font-semibold text-center text-4xl text-black"}>Off-Shore</h1>
+                                <h2 className={poppinsFont.className + " font-semibold text-center text-4xl text-black"}>Off-Shore</h2>
                                 <Image className='sm:hidden w-full max-w-sm max-h-72 object-contain object-center' src="/Conseil/testing.png" width={448} height={288} alt='off-shore' />
-                                <h2 className={montserratFont.className + " text-base text-black text-center font-medium w-full max-w-sm sm:max-w-md"}>
+                                <h3 className={montserratFont.className + " text-base text-black text-center font-medium w-full max-w-sm sm:max-w-md"}>
                                     {conseil.offshore}
-                                </h2>
+                                </h3>
                             </div>
                         </div>
                     </div>
