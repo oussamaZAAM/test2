@@ -1,20 +1,19 @@
-import AnimatedElement from '@/components/AnimatedElement';
-import ContactUsForm from '@/components/ContactUsForm';
-import Footer from '@/components/Footer';
-import Hero from '@/components/Hero';
-import Navbar from '@/components/Navbar';
-import ReturnToTop from '@/components/ReturnToTop';
-import { pageMetadata } from '@/content/general';
-import { homepage } from "@/content/pages";
-import { googleMapsEmbed } from '@/utils/constants';
-
 import { IBM_Plex_Sans, Lato, Montserrat } from 'next/font/google';
 import Image from 'next/image';
 import Link from 'next/link';
 import Script from 'next/script';
-
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { WebSite, WithContext } from 'schema-dts';
+import AnimatedElement from '../components/AnimatedElement';
+import ContactUsForm from '../components/ContactUsForm';
+import Footer from '../components/Footer';
+import Hero from '../components/Hero';
+import Navbar from '../components/Navbar';
+import ReturnToTop from '../components/ReturnToTop';
+import { pageMetadata } from '../content/general';
+import { homepage } from "../content/pages";
+import { googleMapsEmbed } from '../utils/constants';
 
 
 const montserratFont = Montserrat({ weight: "400", subsets: ["latin"] });
@@ -27,44 +26,53 @@ export const metadata = {
   description: pageMetadata.description,
   metadataBase: new URL(pageMetadata.baseUrl),
   alternates: {
-      canonical: '/',
-      languages: {
-        'fr-MA': '/',
-      },
+    canonical: '/',
+    languages: {
+      'fr-MA': '/',
     },
-    icons: {
-      icon: 'https://www.aleeconseil.com/icon.png',
-      shortcut: 'https://www.aleeconseil.com/shortcut-icon.png',
-      apple: 'https://www.aleeconseil.com/apple-icon.png',
+  },
+  icons: {
+    icon: 'https://www.aleeconseil.com/favicon.ico',
+    apple: 'https://www.aleeconseil.com/apple-icon.png',
+  },
+  openGraph: {
+    title: pageMetadata.title,
+    description: pageMetadata.description,
+    siteName: pageMetadata.siteName,
+    url: 'https://www.aleeconseil.com',
+    images: {
+      url: 'https://www.aleeconseil.com/favicon.ico',
+      width: 96,
+      height: 96,
     },
-    openGraph: {
-      title: pageMetadata.title,
-      description: pageMetadata.description,
-      siteName: pageMetadata.siteName,
-      url: 'https://www.aleeconseil.com',
-      images: {
-        url: 'https://www.aleeconseil.com/icon.png',
-        width: 96,
-        height: 96,
-      },
-      locale: 'fr-MA',
-      type: 'website',
-    },
-    robots: {
+    locale: 'fr-MA',
+    type: 'website',
+  },
+  robots: {
+    index: true,
+    follow: true,
+    nocache: false,
+    googleBot: {
       index: true,
       follow: true,
-      nocache: false,
-      googleBot: {
-        index: true,
-        follow: true,
-        noimageindex: false,
-        'max-video-preview': 'large',
-        'max-image-preview': 'large',
-        'max-snippet': 1024,
-      }
-    },
-    themeColor: "#644E9B",
-    category: 'technology'
+      noimageindex: false,
+      'max-video-preview': 'large',
+      'max-image-preview': 'large',
+      'max-snippet': 1024,
+    }
+  },
+  themeColor: "#644E9B",
+  category: 'technology'
+}
+
+const jsonLd: WithContext<WebSite> = {
+  '@context': 'https://schema.org',
+  '@type': 'WebSite',
+  name: 'Alee Conseil',
+  image: 'https://www.aleeconseil.com/favicon.ico',
+  description: pageMetadata.description,
+  alternateName: ["AleeConseil", "Alee conseil", "alee conseil"],
+  url: "https://www.aleeconseil.com"
 }
 
 export default function Home() {
@@ -74,6 +82,13 @@ export default function Home() {
       itemType="https://schema.org/Website"
       className="flex flex-col justify-center items-center bg-ac-gray w-full"
     >
+      {/* Add Structured data */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+
+      {/* Add Google search console config */}
       <Script src="https://www.googletagmanager.com/gtag/js?id=G-6L5ZVZDMVJ" />
       <Script id="google-analytics">
         {`

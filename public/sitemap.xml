@@ -1,50 +1,58 @@
 <urlset xmlns="https://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
         <loc>https://www.aleeconseil.com</loc>
-        <lastmod>2023-08-07</lastmod>
+        <lastmod>2023-08-22</lastmod>
     </url>
     <url>
         <loc>https://www.aleeconseil.com/formations</loc>
-        <lastmod>2023-07-20</lastmod>
+        <lastmod>2023-08-22</lastmod>
     </url>
     <url>
         <loc>https://www.aleeconseil.com/formations/postman</loc>
-        <lastmod>2023-08-08</lastmod>
+        <lastmod>2023-08-22</lastmod>
     </url>
     <url>
         <loc>https://www.aleeconseil.com/formations/cypress</loc>
-        <lastmod>2023-08-08</lastmod>
+        <lastmod>2023-08-22</lastmod>
     </url>
     <url>
         <loc>https://www.aleeconseil.com/formations/robot-framework</loc>
-        <lastmod>2023-08-08</lastmod>
+        <lastmod>2023-08-22</lastmod>
     </url>
     <url>
         <loc>https://www.aleeconseil.com/formations/playwright</loc>
-        <lastmod>2023-08-16</lastmod>
+        <lastmod>2023-08-22</lastmod>
     </url>
     <url>
         <loc>https://www.aleeconseil.com/formations/selenium</loc>
-        <lastmod>2023-08-16</lastmod>
+        <lastmod>2023-08-22</lastmod>
     </url>
     <url>
         <loc>https://www.aleeconseil.com/formations/soapui</loc>
-        <lastmod>2023-08-16</lastmod>
+        <lastmod>2023-08-22</lastmod>
     </url>
     <url>
         <loc>https://www.aleeconseil.com/conseil</loc>
-        <lastmod>2023-07-10</lastmod>
+        <lastmod>2023-08-22</lastmod>
     </url>
     <url>
         <loc>https://www.aleeconseil.com/blogs</loc>
-        <lastmod>2023-07-30</lastmod>
+        <lastmod>2023-08-22</lastmod>
     </url>
     <url>
         <loc>https://www.aleeconseil.com/blogs/tests-api</loc>
-        <lastmod>2023-08-05</lastmod>
+        <lastmod>2023-08-22</lastmod>
     </url>
     <url>
         <loc>https://www.aleeconseil.com/blogs/test-visuel</loc>
-        <lastmod>2023-08-05</lastmod>
+        <lastmod>2023-08-22</lastmod>
+    </url>
+    <url>
+        <loc>https://www.aleeconseil.com/favicon.ico</loc>
+        <lastmod>2023-08-22</lastmod>
+    </url>
+    <url>
+        <loc>https://www.aleeconseil.com/apple-icon.png</loc>
+        <lastmod>2023-08-22</lastmod>
     </url>
 </urlset>

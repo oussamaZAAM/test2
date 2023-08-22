@@ -21,8 +21,7 @@ export const metadata = {
     },
   },
   icons: {
-    icon: 'https://www.aleeconseil.com/icon.png',
-    shortcut: 'https://www.aleeconseil.com/shortcut-icon.png',
+    icon: 'https://www.aleeconseil.com/favicon.ico',
     apple: 'https://www.aleeconseil.com/apple-icon.png',
   },
   openGraph: {
@@ -31,7 +30,7 @@ export const metadata = {
     siteName: pageMetadata.siteName,
     url: 'https://www.aleeconseil.com',
     images: {
-      url: 'https://www.aleeconseil.com/icon.png',
+      url: 'https://www.aleeconseil.com/favicon.ico',
       width: 96,
       height: 96,
     },
