@@ -21,7 +21,7 @@ const FormationsSlider = () => {
                 </Link>
             ))}
         </>
-    ), [formationsData]);
+    ), []);
 
     const [divList, setDivList] = useState<JSX.Element[]>([myDiv, myDiv, myDiv]);
 
