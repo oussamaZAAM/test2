@@ -1,5 +1,6 @@
 import { BlogBody } from "@/utils/interfaces";
 import { Jost, Montserrat } from "next/font/google";
+import Image from "next/image";
 import Link from "next/link";
 
 const jostFont = Jost({ subsets: ["latin"] });
@@ -8,10 +9,11 @@ const montserratFont = Montserrat({ subsets: ["latin"] });
 type Props = {
     id: string,
     title: string,
-    body: BlogBody[]
+    body: BlogBody[],
+    authorName: string
 }
 
-export default function BlogCard({ id, title, body }: Props) {
+export default function BlogCard({ id, title, body, authorName }: Props) {
     const firstParagraph = body.find((section) => section.type === "paragraph" || section.type === "header1" || section.type === "header2");
     return (
         <Link href={"/blogs/" + id} className="w-full flex flex-col justify-between items-start py-5 px-6 border-2 gap-4 cursor-pointer transition duration-300 border-ac-bleu group text-black hover:text-white hover:bg-ac-bleu">
@@ -32,6 +34,9 @@ export default function BlogCard({ id, title, body }: Props) {
                 >
                     {firstParagraph ? firstParagraph.text : ""}
                 </h2>
+                <p itemProp="author" className="hidden">{authorName}</p>
+                <p itemProp="headline" className="hidden">{firstParagraph ? firstParagraph.text : ""}</p>
+                <Image itemProp="image" className="hidden" src="https://www.aleeconseil.com/logo.png" width={16} height={16} alt="Image" />
             </div>
             <p className={montserratFont.className + " w-full text-[#5C8BFC] group-hover:text-black underline text-left font-semibold text-base"}>
                 Lire plus

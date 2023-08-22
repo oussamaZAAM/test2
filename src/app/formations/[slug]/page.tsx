@@ -117,6 +117,7 @@ export default function Page({ params }: Props) {
             <h2 itemProp="description" className={latoFont.className + " text-xs sm:text-sm xm:text-base font-medium text-white text-center max-w-[300px] sm:max-w-sm"}>
               {formation.hero}
             </h2>
+            <h2 itemProp="provider" className="hidden">Alee Conseil</h2>
           </div>
         </div>
         {/* Formation Infos */}
@@ -133,7 +134,10 @@ export default function Page({ params }: Props) {
                 <h3 className="font-semibold text-base text-center text-black uppercase">Formations</h3>
               </Link>
               <MdOutlineKeyboardArrowRight size={17} color="black" />
-              <h2 className="font-semibold text-base text-center text-black uppercase"><strong itemProp="name">{formation.title}</strong></h2>
+              <h2 className="font-semibold text-base text-center text-black uppercase">
+                <strong itemProp="name">{formation.title}</strong>
+              </h2>
+              <h2 itemProp="provider" className="hidden">Alee Conseil</h2>
             </div>
             <div className={latoFont.className + " flex flex-col justify-start items-start gap-8 max-w-xl"}>
 

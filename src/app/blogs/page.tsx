@@ -1,4 +1,5 @@
 import { Jost } from 'next/font/google';
+import Script from 'next/script';
 import BlogCard from '../../components/Blog/BlogCard';
 import BlogPageTitle from '../../components/Blog/BlogPageTitle';
 import Footer from '../../components/Footer';
@@ -6,7 +7,6 @@ import Navbar from '../../components/Navbar';
 import ReturnToTop from '../../components/ReturnToTop';
 import { pageMetadata } from '../../content/general';
 import { blogsData } from '../../data/blogsData';
-import Script from 'next/script';
 
 const jostFont = Jost({ subsets: ["latin"] });
 
@@ -15,44 +15,44 @@ export const metadata = {
   description: pageMetadata.description,
   metadataBase: new URL(pageMetadata.baseUrl),
   alternates: {
-      canonical: '/blogs',
-      languages: {
-        'fr-MA': '/blogs',
-      },
+    canonical: '/blogs',
+    languages: {
+      'fr-MA': '/blogs',
     },
-    icons: {
-      icon: 'https://www.aleeconseil.com/icon.png',
-      shortcut: 'https://www.aleeconseil.com/shortcut-icon.png',
-      apple: 'https://www.aleeconseil.com/apple-icon.png',
+  },
+  icons: {
+    icon: 'https://www.aleeconseil.com/icon.png',
+    shortcut: 'https://www.aleeconseil.com/shortcut-icon.png',
+    apple: 'https://www.aleeconseil.com/apple-icon.png',
+  },
+  openGraph: {
+    title: pageMetadata.title,
+    description: pageMetadata.description,
+    siteName: pageMetadata.siteName,
+    url: 'https://www.aleeconseil.com',
+    images: {
+      url: 'https://www.aleeconseil.com/icon.png',
+      width: 96,
+      height: 96,
     },
-    openGraph: {
-      title: pageMetadata.title,
-      description: pageMetadata.description,
-      siteName: pageMetadata.siteName,
-      url: 'https://www.aleeconseil.com',
-      images: {
-        url: 'https://www.aleeconseil.com/icon.png',
-        width: 96,
-        height: 96,
-      },
-      locale: 'fr-MA',
-      type: 'website',
-    },
-    robots: {
+    locale: 'fr-MA',
+    type: 'website',
+  },
+  robots: {
+    index: true,
+    follow: true,
+    nocache: false,
+    googleBot: {
       index: true,
       follow: true,
-      nocache: false,
-      googleBot: {
-        index: true,
-        follow: true,
-        noimageindex: false,
-        'max-video-preview': 'large',
-        'max-image-preview': 'large',
-        'max-snippet': 1024,
-      }
-    },
-    themeColor: "#644E9B",
-    category: 'technology'
+      noimageindex: false,
+      'max-video-preview': 'large',
+      'max-image-preview': 'large',
+      'max-snippet': 1024,
+    }
+  },
+  themeColor: "#644E9B",
+  category: 'technology'
 }
 
 type Props = {}
@@ -86,7 +86,7 @@ export default function Blogs({ }: Props) {
           <div className="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-10 px-6 sm:px-12 md:px-24 lg:px-36 xl:px-48">
             {blogsData.map(blog => {
               return (
-                <BlogCard key={blog.id} id={blog.id} title={blog.title} body={blog.body} />
+                <BlogCard key={blog.id} id={blog.id} title={blog.title} body={blog.body} authorName={blog.author.name} />
               )
             })}
           </div>
