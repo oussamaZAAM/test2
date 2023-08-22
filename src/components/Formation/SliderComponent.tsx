@@ -3,12 +3,12 @@
 import { formationsData } from '@/data/formationsData';
 import Image from 'next/image';
 import Link from 'next/link';
-import { useEffect, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 
 const FormationsSlider = () => {
 
-    const myDiv: JSX.Element =
-        (<>
+    const myDiv = useMemo(() => (
+        <>
             {formationsData.map((formation) => (
                 <Link
                     href={"/formations/" + formation.formation_id}
@@ -20,7 +20,8 @@ const FormationsSlider = () => {
                     </div>
                 </Link>
             ))}
-        </>)
+        </>
+    ), [formationsData]);
 
     const [divList, setDivList] = useState<JSX.Element[]>([myDiv, myDiv, myDiv]);
 
