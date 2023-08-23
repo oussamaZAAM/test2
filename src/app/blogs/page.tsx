@@ -85,7 +85,7 @@ export default function Blogs({ }: Props) {
           <div className="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-10 px-6 sm:px-12 md:px-24 lg:px-36 xl:px-48">
             {blogsData.map(blog => {
               return (
-                <BlogCard key={blog.id} id={blog.id} title={blog.title} body={blog.body} authorName={blog.author.name} />
+                <BlogCard key={blog.id} id={blog.id} title={blog.title} body={blog.body} author={blog.author} />
               )
             })}
           </div>

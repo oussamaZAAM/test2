@@ -1,4 +1,4 @@
-import { BlogBody } from "@/utils/interfaces";
+import { BlogBody, User } from "@/utils/interfaces";
 import { Jost, Montserrat } from "next/font/google";
 import Image from "next/image";
 import Link from "next/link";
@@ -10,10 +10,10 @@ type Props = {
     id: string,
     title: string,
     body: BlogBody[],
-    authorName: string
+    author: User
 }
 
-export default function BlogCard({ id, title, body, authorName }: Props) {
+export default function BlogCard({ id, title, body, author }: Props) {
     const firstParagraph = body.find((section) => section.type === "paragraph" || section.type === "header1" || section.type === "header2");
     return (
         <Link href={"/blogs/" + id} className="w-full flex flex-col justify-between items-start py-5 px-6 border-2 gap-4 cursor-pointer transition duration-300 border-ac-bleu group text-black hover:text-white hover:bg-ac-bleu">
@@ -34,7 +34,10 @@ export default function BlogCard({ id, title, body, authorName }: Props) {
                 >
                     {firstParagraph ? firstParagraph.text : ""}
                 </h2>
-                <p itemProp="author" className="hidden">{authorName}</p>
+                <p itemProp="author" itemScope itemType="https://schema.org/Person" className="hidden">
+                    <span itemProp="name">{author.name}</span>
+                    <span itemProp="url">{author.contact}</span>
+                </p>
                 <p itemProp="headline" className="hidden">{firstParagraph ? firstParagraph.text : ""}</p>
                 <Image itemProp="image" className="hidden" src="https://www.aleeconseil.com/logo.png" width={16} height={16} alt="Image" />
             </div>
