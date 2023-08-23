@@ -24,9 +24,9 @@ export default function Footer({ }: Props) {
                         {/* Logo  */}
                         <Image itemProp='logo' className='w-36 h-20 object-cover object-center brightness-150' src="/logo.png" height={400} width={400} alt='AleeConseil' />
                     </div>
-                    <div itemProp='copyrightHolder' itemScope itemType='https://schema.org/CreativeWork' className="flex flex-col justify-start items-start">
-                        <p itemProp='name' className="text-sm text-white">{footer.copyright1}</p>
-                        <p itemProp='alternateName' className="text-sm text-white">{footer.copyright2}</p>
+                    <div className="flex flex-col justify-start items-start">
+                        <p className="text-sm text-white">{footer.copyright1}</p>
+                        <p className="text-sm text-white">{footer.copyright2}</p>
                     </div>
                 </div>
                 <div className="flex justify-end items-center gap-12">
@@ -127,9 +127,9 @@ export default function Footer({ }: Props) {
                         </div>
                     </div>
                 </div>
-                <div itemProp='copyrightHolder' itemScope itemType='https://schema.org/CreativeWork' className="flex flex-col justify-center items-center mt-8 mb-2">
-                    <p itemProp='name' className="text-sm text-white">{footer.copyright1}</p>
-                    <p itemProp='alternateName' className="text-sm text-white">{footer.copyright2}</p>
+                <div className="flex flex-col justify-center items-center mt-8 mb-2">
+                    <p className="text-sm text-white">{footer.copyright1}</p>
+                    <p className="text-sm text-white">{footer.copyright2}</p>
                 </div>
             </div>
         </>
