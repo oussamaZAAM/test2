@@ -6,6 +6,7 @@ import Script from "next/script";
 import { BiTimeFive } from "react-icons/bi";
 import { MdOutlineKeyboardArrowRight } from "react-icons/md";
 import { RiCopperCoinLine } from "react-icons/ri";
+import { Offer, WithContext } from "schema-dts";
 import Footer from "../../../components/Footer";
 import FormationsSlider from "../../../components/Formation/SliderComponent";
 import Navbar from "../../../components/Navbar";
@@ -80,6 +81,17 @@ export default function Page({ params }: Props) {
   const formation = formationsData.find((formation) => formation.formation_id === formation_id);
 
   const nextDates = getNextMondaysSeparatedBy3Weeks(fixedReferenceDate, datesDisplayedNumber);
+
+  const jsonLd: WithContext<Offer> = {
+    '@context': 'https://schema.org',
+    '@type': 'Offer',
+    name: formation?.title,
+    description: formation?.hero,
+    image: formation?.image_url,
+    price: formation?.price,
+    availabilityStarts: nextDates[0],
+    availabilityEnds: nextDates[1]
+  }
 
   if (!formation) {
     return (
