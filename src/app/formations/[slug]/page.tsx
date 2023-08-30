@@ -6,7 +6,7 @@ import Script from "next/script";
 import { BiTimeFive } from "react-icons/bi";
 import { MdOutlineKeyboardArrowRight } from "react-icons/md";
 import { RiCopperCoinLine } from "react-icons/ri";
-import { Offer, WithContext } from "schema-dts";
+import { Graph, Offer, WithContext } from "schema-dts";
 import Footer from "../../../components/Footer";
 import FormationsSlider from "../../../components/Formation/SliderComponent";
 import Navbar from "../../../components/Navbar";
@@ -82,16 +82,86 @@ export default function Page({ params }: Props) {
 
   const nextDates = getNextMondaysSeparatedBy3Weeks(fixedReferenceDate, datesDisplayedNumber);
 
-  const jsonLd: WithContext<Offer> = {
+  const graph: Graph = {
     '@context': 'https://schema.org',
-    '@type': 'Offer',
-    name: formation?.title,
-    description: formation?.hero,
-    image: formation?.image_url,
-    price: formation?.price,
-    availabilityStarts: nextDates[0],
-    availabilityEnds: nextDates[1]
+    '@graph': [
+      {
+        '@type': 'Course',
+        '@id': "https://www.aleeconseil.com/formations/" + formation_id + "#",
+        name: formation?.title,
+        description: formation?.description,
+        image: formation?.image_url,
+        offers: {
+          '@type': 'Offer',
+          price: formation?.price,
+          priceCurrency: currency,
+          availability: 'https://schema.org/InStock',
+          validFrom: nextDates[0],
+          validThrough: nextDates[1]
+        },
+        provider: {
+          '@type': 'Organization',
+          name: "Alee Conseil"
+        },
+        hasCourseInstance: {
+          '@type': 'CourseInstance',
+          identifier: formation_id,
+          name: formation?.title,
+          description: formation?.description,
+          url: "https://www.aleeconseil.com/formations/" + formation_id,
+          startDate: nextDates[0],
+          endDate: nextDates[1],
+          duration: "PT" + formation?.duration + "H",
+          image: formation?.image_url,
+          offers: {
+            '@type': 'Offer',
+            price: formation?.price,
+            priceCurrency: currency,
+            availability: 'https://schema.org/InStock',
+            validFrom: nextDates[0],
+            validThrough: nextDates[1]
+          },
+          isAccessibleForFree: false,
+        },
+        coursePrerequisites: formation?.prerequisites.map((course) => {
+          return {
+            '@type': 'Course',
+            name: course,
+            description: course
+          }
+        }),
+        audience: formation?.targets.map((target) => {
+          return {
+            '@type': 'Audience',
+            audienceType: target,
+            description: target
+          }
+        }),
+        teaches: formation?.objectives.map((objective) => {
+          return {
+            '@type': 'DefinedTerm',
+            name: objective,
+            description: objective,
+          }
+        })
+      }
+    ]
   }
+
+  // Easy Route
+
+  // const jsonLd: WithContext<Offer> = {
+  //   '@context': 'https://schema.org',
+  //   '@type': 'Offer',
+  //   name: formation?.title,
+  //   description: formation?.hero,
+  //   image: formation?.image_url,
+  //   price: formation?.price,
+  //   availabilityStarts: nextDates[0],
+  //   availabilityEnds: nextDates[1],
+  //   leaseLength: "PT" + formation?.duration + "H", // Duration using ISO 8601
+  //   priceCurrency: currency
+  // }
 
   if (!formation) {
     return (
@@ -233,11 +303,7 @@ export default function Page({ params }: Props) {
             </div>
           </div>
           {/* Formation Card + Billing + Available Dates*/}
-          <div
-            itemScope
-            itemType="https://schema.org/Offer"
-            className="xm:sticky xm:top-60 flex flex-col justify-start items-stretch gap-10 xm:-translate-y-28 lg:-translate-y-56"
-          >
+          <div className="xm:sticky xm:top-60 flex flex-col justify-start items-stretch gap-10 xm:-translate-y-28 lg:-translate-y-56">
             <div className={ibmFont.className + " xm:hidden flex justify-start items-center gap-2"}>
               <Link href={"/formations"}>
                 <p className="font-semibold text-base text-center text-black uppercase">Formations</p>
@@ -249,10 +315,10 @@ export default function Page({ params }: Props) {
             <div className="flex flex-col justify-start items-center w-full bg-white shadow-formation-card rounded-xl px-1 fold:px-2 xm:px-5 py-2.5 gap-2.5">
               <div className={montserratFont.className + " flex flex-col justify-start items-center gap-1.5"}>
                 <h3 className="text-sm text-center text-[#5A5A5A]">Se former en</h3>
-                <h2 className="text-2xl text-center font-normal text-black"><strong itemProp="name">{formation.title}</strong></h2>
+                <h2 className="text-2xl text-center font-normal text-black"><strong>{formation.title}</strong></h2>
               </div>
               <div className="flex flex-col justify-start items-center gap-4 px-4 xs:px-8 xm:px-12">
-                <Image itemProp="image" src={formation.image_url} width={200} height={200} alt={formation.title} />
+                <Image src={formation.image_url} width={200} height={200} alt={formation.title} />
                 <div className="w-full xm:w-[140%] h-px bg-[#888888]"></div>
                 <Link href={{ pathname: '/devis', query: { formation: formation.formation_id, date: nextDates[0] } }}>
                   <div className="flex justify-center items-center bg-ac-bleu rounded-full py-3 xm:py-4 px-3 sm:px-4 xm:px-8">
@@ -269,7 +335,7 @@ export default function Page({ params }: Props) {
                   <RiCopperCoinLine className="fill-ac-bleu" size={25} />
                   <p className="text-xl font-bold uppercase text-black text-center">Prix</p>
                 </div>
-                <p className="text-base font-medium text-center text-black uppsercase whitespace-normal"><span itemProp="price" className="font-bold">{formation.price}</span> <span itemProp="priceCurrency">{currency}</span> HT / personne</p>
+                <p className="text-base font-medium text-center text-black uppsercase whitespace-normal"><span className="font-bold">{formation.price}</span> <span>{currency}</span> HT / personne</p>
               </div>
               <div className="hidden xm:block w-0.5 bg-[#888888]"></div>
               <div className="flex flex-col justify-start items-center gap-4 xm:gap-10 xm:max-w-[125px]">
@@ -277,7 +343,7 @@ export default function Page({ params }: Props) {
                   <BiTimeFive className="fill-ac-bleu" size={25} />
                   <p className="text-xl font-bold uppercase text-black text-center">Durée</p>
                 </div>
-                <p className="text-base font-medium text-center text-black uppsercase"><span itemProp='eligibleDuration' className="font-bold">{Math.ceil(formation.duration / dailyHours)}</span> jours (<span itemProp='leaseLength' className="font-bold">{formation.duration}</span>&nbsp;heures)</p>
+                <p className="text-base font-medium text-center text-black uppsercase"><span className="font-bold">{Math.ceil(formation.duration / dailyHours)}</span> jours (<span className="font-bold">{formation.duration}</span>&nbsp;heures)</p>
               </div>
             </div>
 
@@ -286,7 +352,7 @@ export default function Page({ params }: Props) {
               {nextDates.map((date) => {
                 return (
                   <Link key={date} href={{ pathname: '/devis', query: { formation: formation.formation_id, date: date } }} className="flex flex-row xm:flex-col justify-center items-center py-2 px-4 bg-white rounded-xl cursor-pointer border border-ac-bleu hover:bg-ac-bleu group">
-                    <p itemProp="availabilityStarts" className="xm:hidden text-lg text-ac-bleu text-center font-bold group-hover:text-white">{readableDateFromString(date).split(" ").join(" ")}</p>
+                    <p className="xm:hidden text-lg text-ac-bleu text-center font-bold group-hover:text-white">{readableDateFromString(date).split(" ").join(" ")}</p>
                     <p className="hidden xm:block text-lg text-ac-bleu text-center font-bold group-hover:text-white">{readableDateFromString(date).split(" ").slice(0, 2).join(" ")}</p>
                     <p className="hidden xm:block text-base text-black text-center font-medium group-hover:text-gray-300">{readableDateFromString(date).split(" ")[readableDateFromString(date).split(" ").length - 1]}</p>
                   </Link>
