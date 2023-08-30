@@ -127,7 +127,11 @@ export default function Page({ params }: Props) {
           return {
             '@type': 'Course',
             name: course,
-            description: course
+            description: course,
+            provider: {
+              '@type': 'Organization',
+              name: "Alee Conseil"
+            },
           }
         }),
         audience: formation?.targets.map((target) => {
