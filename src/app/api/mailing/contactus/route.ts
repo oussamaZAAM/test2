@@ -8,7 +8,7 @@ export async function POST(request: NextRequest) {
     try {
         const data = await request.json();
         if (!data || !data.nom || !data.prenom || !data.telephone || !data.email || !data.message) {
-            return NextResponse.json({ message: 'Invalid input data' }, { status: 400 });
+            return NextResponse.json({ message: 'Veuillez remplir tous les champs!' }, { status: 400 });
         }
 
         if (process.env.EMAIL_SENDER && process.env.EMAIL_SENDER !== "" && process.env.EMAIL_RECEIVER && process.env.EMAIL_RECEIVER !== "") {

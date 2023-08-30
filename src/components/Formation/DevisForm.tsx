@@ -98,8 +98,8 @@ export default function DevisForm({ formation, formationDate }: Props) {
                 const data = await response.json();
 
                 if (!response.ok) {
-                    triggerToaster("error", "Erreur de configuration de serveur");
-                    throw new Error(data.message.message);
+                    triggerToaster("error", data.message);
+                    throw new Error(data.message);
                 }
                 triggerToaster("success", "Votre demande de devis a été envoyé avec succés")
                 setDevisInputs({ // Wipe the devis inputs Data to prevent spam
@@ -113,7 +113,7 @@ export default function DevisForm({ formation, formationDate }: Props) {
                 setLoading(false);
                 setTimeout(() => {
                     router.replace("/formations");
-                }, 2750); // Redirect to /formations page after 2s
+                }, 2750); // Redirect to /formations page after 2.75s
             } catch (error) {
                 console.log(error);
                 setLoading(false);
@@ -123,7 +123,7 @@ export default function DevisForm({ formation, formationDate }: Props) {
         }
     }
     const handleSubmit = async () => {
-        if ((formation !== "" || devisInputs.formation !== "") && devisInputs.entreprise !== "" && devisInputs.email !== "" && devisInputs.fullname !== "") {
+        if ((formation !== "" || devisInputs.formation !== "") && devisInputs.entreprise !== "" && devisInputs.telephone !== "" && devisInputs.email !== "" && devisInputs.fullname !== "") {
             if (!loading) {
                 await handleSendDevis({
                     formation: formation || devisInputs.formation,
