@@ -38,7 +38,7 @@ export default function ContactUs({ }: Props) {
             <Navbar />
 
             {/* Calendly */}
-            <div className="flex justify-center items-center w-full xm:w-3/4 h-full">
+            {/* <div className="flex justify-center items-center w-full xm:w-3/4 h-full">
                 {isIframeLoading
                     ? <iframe
                         className={"w-full h-full min-h-[1250px] calendly:min-h-[750px] border-0 box-border"}
@@ -47,7 +47,7 @@ export default function ContactUs({ }: Props) {
                     ></iframe>
                     : <div className={" w-full h-full min-h-[1250px] calendly:min-h-[750px] bg-ac-gray2 brightness-75 mt-4 rounded-lg animate-pulse"}></div>
                 }
-            </div>
+            </div> */}
 
             {/* Contact Us */}
             <div className="flex flex-col justify-center items-center gap-4 w-full pt-8 bg-ac-gray -translate-y-6 rounded-t-3xl ">
