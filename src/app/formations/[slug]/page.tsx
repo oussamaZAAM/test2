@@ -6,7 +6,7 @@ import Script from "next/script";
 import { BiTimeFive } from "react-icons/bi";
 import { MdOutlineKeyboardArrowRight } from "react-icons/md";
 import { RiCopperCoinLine } from "react-icons/ri";
-import { Graph, Offer, WithContext } from "schema-dts";
+import { Graph } from "schema-dts";
 import Footer from "../../../components/Footer";
 import FormationsSlider from "../../../components/Formation/SliderComponent";
 import Navbar from "../../../components/Navbar";
@@ -173,6 +173,12 @@ export default function Page({ params }: Props) {
   }
   return (
     <div className="flex flex-col justify-between items-center bg-ac-gray w-full min-h-[100vh]">
+      {/* Add Structured data */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(graph) }}
+      />
+
       <Script src="https://www.googletagmanager.com/gtag/js?id=G-6L5ZVZDMVJ" />
       <Script id="google-analytics">
         {`
