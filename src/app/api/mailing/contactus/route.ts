@@ -7,7 +7,7 @@ export async function POST(request: NextRequest) {
 
     try {
         const data = await request.json();
-        if (!data || !data.nom || !data.prenom || !data.email || !data.message) {
+        if (!data || !data.nom || !data.prenom || !data.telephone || !data.email || !data.message) {
             return NextResponse.json({ message: 'Invalid input data' }, { status: 400 });
         }
 

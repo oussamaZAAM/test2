@@ -94,7 +94,7 @@ export default function ContactUsForm({ }: Props) {
         }
     }
     const handleSubmit = async () => {
-        if (contactInputs.nom !== "" && contactInputs.prenom !== "" && contactInputs.message !== "") {
+        if (contactInputs.nom !== "" && contactInputs.prenom !== "" && contactInputs.telephone !== "" && contactInputs.email !== "" && contactInputs.message !== "") {
             if (!loading) {
                 await handleSendEmail({
                     nom: contactInputs.nom,
@@ -156,6 +156,7 @@ export default function ContactUsForm({ }: Props) {
                 <div className="flex flex-col justify-center items-start w-full">
                     <label htmlFor="telephone" className="flex justify-center items-center text-sm gap-1">
                         <h3 className="font-semibold text-sm text-black text-left">Téléphone</h3>
+                        <span className="text-red-500">*</span>
                     </label>
                     <div className="flex justify-center items-center border border-zinc-300 w-full">
                         <input
