@@ -1,6 +1,6 @@
 export interface BlogBody {
   section: number;
-  type: string;
+  type: string; //paragraph | header1 | header2 | image | itemize | enumerate | link | code  | iframe
   text?: string;
   url?: string;
   items?: {
