@@ -66,7 +66,7 @@ export const formationsData: Formation[] = [
       `Connaissances en test logiciel`,
       `Une expérience avec un langage de programmation est un plus`
     ],
-    price: 1950,
+    price: 2850,
     duration: 14,
     image_url: `/Formations/postman.png`
   },
@@ -134,7 +134,7 @@ export const formationsData: Formation[] = [
       `Connaissances en test logiciel`,
       `Une expérience avec un langage de programmation est un plus`
     ],
-    price: 2250,
+    price: 3250,
     duration: 14,
     image_url: `/Formations/cypress.png`
   },
@@ -200,7 +200,7 @@ export const formationsData: Formation[] = [
       `Connaissances en test logiciel`,
       `Une expérience avec un langage de programmation est un plus est une nouvelle ligne`
     ],
-    price: 2150,
+    price: 2950,
     duration: 14,
     image_url: `/Formations/robot-framework.png`
   },
@@ -279,7 +279,7 @@ export const formationsData: Formation[] = [
       `Familiarité avec les Technologies Web`,
       `Notions de Tests Logiciels`
     ],
-    price: 2250,
+    price: 3150,
     duration: 14,
     image_url: `/Formations/playwright.png`
   },
@@ -335,7 +335,7 @@ export const formationsData: Formation[] = [
       `Familiarité avec un langage de programmation comme Java, Python, C#, PHP ou Javascript`,
       `Compréhension des tests logiciels`
     ],
-    price: 2450,
+    price: 3250,
     duration: 14,
     image_url: `/Formations/selenium.png`
   },
@@ -413,7 +413,7 @@ export const formationsData: Formation[] = [
       `Compétences de Navigation et d’Interface Utilisateur`,
       `Familiarité avec les Services Web et API (Optionnel)`
     ],
-    price: 599,
+    price: 2550,
     duration: 14,
     image_url: `/Formations/soapui.png`
   },
