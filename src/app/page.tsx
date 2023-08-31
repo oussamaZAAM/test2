@@ -4,7 +4,7 @@ import Link from 'next/link';
 import Script from 'next/script';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import { WebSite, WithContext } from 'schema-dts';
+import { Graph } from 'schema-dts';
 import AnimatedElement from '../components/AnimatedElement';
 import ContactUsForm from '../components/ContactUsForm';
 import Footer from '../components/Footer';
@@ -65,27 +65,48 @@ export const metadata = {
   category: 'technology'
 }
 
-const jsonLd: WithContext<WebSite> = {
+const graph: Graph = {
   '@context': 'https://schema.org',
-  '@type': 'WebSite',
-  name: 'Alee Conseil',
-  image: 'https://www.aleeconseil.com/favicon.ico',
-  description: pageMetadata.description,
-  alternateName: ["AleeConseil", "Alee conseil", "alee conseil"],
-  url: "https://www.aleeconseil.com"
+  '@graph': [
+    {
+      '@type': 'WebSite',
+      '@id': 'https://www.aleeconseil.com',
+      name: 'Alee Conseil',
+      alternateName: 'Alee conseil',
+      url: 'https://www.aleeconseil.com',
+      offers: [
+        {
+          '@type': 'Offer',
+          name: 'Formations',
+          description: 'Nous proposons des formations en différentes technologies en automatisation des tests'
+        },
+        {
+          '@type': 'Offer',
+          name: 'Qualité Logicielle',
+          description: 'Nous vous aidons à accroitre votre confiance dans la qualité de vos produits logiciels'
+        },
+      ],
+      author: {
+        '@type': 'Organization',
+        logo: 'https://www.aleeconseil.com/logo.png',
+        legalName: 'Alee Conseil',
+        url: 'https://www.aleeconseil.com',
+        keywords: ['Formation', 'Conseil', 'Blog', 'Contact'],
+        address: 'Rue Al Borj, Résidence Zineb, Appt12, Rabat 10020, Maroc',
+        telephone: '+212 6 62 88 28 41',
+        email: 'contact@aleeconseil.com'
+      }
+    }
+  ]
 }
 
 export default function Home() {
   return (
-    <div
-      itemScope
-      itemType="https://schema.org/Website"
-      className="flex flex-col justify-center items-center bg-ac-gray w-full"
-    >
+    <div className="flex flex-col justify-center items-center bg-ac-gray w-full">
       {/* Add Structured data */}
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(graph) }}
       />
 
       {/* Add Google search console config */}
@@ -112,7 +133,7 @@ export default function Home() {
       <div id='services' className="flex justify-center items-center bg-ac-bleu rounded-t-3xl w-full pb-28 px-4 pt-20">
         <div className="flex flex-col justify-start items-center gap-8 xm:gap-16">
           <h2 className={montserratFont.className + " font-medium text-4xl xm:text-5xl text-center text-white"}>Nos Services</h2>
-          <div itemProp='offers' className="flex flex-col md:flex-row justify-between items-center md:items-start gap-20 md:gap-56">
+          <div className="flex flex-col md:flex-row justify-between items-center md:items-start gap-20 md:gap-56">
 
             {/* Formations Service  */}
             <div itemScope itemType='https://schema.org/Offer' className="flex flex-col justify-start items-center gap-4 max-w-[236px]">
