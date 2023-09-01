@@ -1,6 +1,7 @@
 import { pageMetadata } from '@/content/general'
-import './globals.css'
 import { Inter } from 'next/font/google'
+import { Graph } from 'schema-dts'
+import './globals.css'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -48,6 +49,41 @@ export const metadata = {
   category: 'technology',
 }
 
+const graph: Graph = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'WebSite',
+      '@id': 'https://www.aleeconseil.com',
+      name: 'Alee Conseil',
+      alternateName: 'Alee conseil',
+      url: 'https://www.aleeconseil.com',
+      offers: [
+        {
+          '@type': 'Offer',
+          name: 'Formations',
+          description: 'Nous proposons des formations en différentes technologies en automatisation des tests'
+        },
+        {
+          '@type': 'Offer',
+          name: 'Qualité Logicielle',
+          description: 'Nous vous aidons à accroitre votre confiance dans la qualité de vos produits logiciels'
+        },
+      ],
+      author: {
+        '@type': 'Organization',
+        logo: 'https://www.aleeconseil.com/logo.png',
+        legalName: 'Alee Conseil',
+        url: 'https://www.aleeconseil.com',
+        keywords: ['Formation', 'Conseil', 'Blog', 'Contact'],
+        address: 'Rue Al Borj, Résidence Zineb, Appt12, Rabat 10020, Maroc',
+        telephone: '+212 6 62 88 28 41',
+        email: 'contact@aleeconseil.com'
+      }
+    }
+  ]
+}
+
 export default function RootLayout({
   children,
 }: {
@@ -55,6 +91,12 @@ export default function RootLayout({
 }) {
   return (
     <html lang="fr">
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(graph) }}
+        />
+      </head>
       <body className={inter.className}>{children}</body>
     </html>
   )

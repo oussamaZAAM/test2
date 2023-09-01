@@ -136,16 +136,21 @@ export default function Blog({ params }: Props) {
                                         </h3>
                                     )
                                 }
+                                if (section.type === "dangerousParagraph" && section.text) {
+                                    return (
+                                        <h3 dangerouslySetInnerHTML={{__html: section.text}} key={section.section} className={"font-medium text-lg text-black text-left " + (section.section === 1 ? "indent-5" : "")}/>
+                                    )
+                                }
                                 if (section.type === "header1" && section.text) {
                                     return (
-                                        <h2 key={section.section} className={"font-semibold text-xl text-black text-left " + (section.section === 1 ? "indent-5" : "")}>
+                                        <h2 key={section.section} className={"font-semibold text-2xl text-black text-left " + (section.section === 1 ? "indent-5" : "")}>
                                             <strong>{section.text}</strong>
                                         </h2>
                                     )
                                 }
                                 if (section.type === "header2" && section.text) {
                                     return (
-                                        <h2 key={section.section} className={"font-semibold text-lg text-black text-left " + (section.section === 1 ? "indent-5" : "")}>
+                                        <h2 key={section.section} className={"font-semibold text-xl text-black text-left " + (section.section === 1 ? "indent-5" : "")}>
                                             {section.text}
                                         </h2>
                                     )

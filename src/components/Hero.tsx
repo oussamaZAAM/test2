@@ -18,8 +18,16 @@ export default function Hero({ }: Props) {
 
             <div className="flex flex-col justify-center items-center gap-12 z-30">
                 <div className="flex flex-col justify-center items-start gap-4">
-                    <h1 itemProp='description' className="hidden">Formations : Cypress Postman Robot framework SoapUI Soap UI Automatisation des tests Playwright Selenium</h1>
-                    <h2 itemProp='name' className={taglineFont.className + " max-w-[270px] fold:max-w-xs xs:max-w-sm sm:max-w-md md:max-w-lg lg:max-w-xl text-black whitespace-normal text-4xl sm:text-5xl"}>
+                    <div className="hidden">
+                        <h1>Formations : Cypress Postman Robot framework SoapUI Soap UI Automatisation des tests Playwright Selenium</h1>
+                        <h2>Formation Cypress</h2>
+                        <h2>Formation Potsman</h2>
+                        <h2>Cypress Formation</h2>
+                        <h2>Tests api</h2>
+                        <h2>Tests Cypress</h2>
+                        <h2>Formation Robot Framework</h2>
+                    </div>
+                    <h2 className={taglineFont.className + " max-w-[270px] fold:max-w-xs xs:max-w-sm sm:max-w-md md:max-w-lg lg:max-w-xl text-black whitespace-normal text-4xl sm:text-5xl"}>
                         {homepage.tagline}
                     </h2>
                     <h2 className={miniTaglineFont + " text-black text-md sm:text-lg italic max-w-sm md:max-w-md"}>
